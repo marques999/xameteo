@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-
+using Acr.UserDialogs;
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 
@@ -24,11 +24,20 @@ namespace Xameteo
             Geolocator = CrossGeolocator.Current;
             MyPlaces = new Places(Settings.Places);
             Localization = new L10N(Settings.Language);
+            Dialogs = new Dialogs(UserDialogs.Instance);
         }
 
         /// <summary>
         /// </summary>
         public static Places MyPlaces
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// </summary>
+        public static Dialogs Dialogs
         {
             get;
             private set;

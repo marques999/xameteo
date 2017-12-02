@@ -1,8 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
 
-using Xamarin.Forms.Xaml;
 using Xameteo.Adapters;
+using Xamarin.Forms.Xaml;
+using Xameteo.Constants;
+using Xameteo.Helpers;
 
 namespace Xameteo
 {
@@ -31,22 +33,20 @@ namespace Xameteo
         /// <param name="e"></param>
         public async void GetWeather(object sender, EventArgs e)
         {
-            /*var locations = Xameteo.Places.Get();
-
-            if (locations.Count > 0)
-            {
-                _viewModel.Text = (await Xameteo.Weather(locations[0]).Current()).ToString();
-            }      */
+            var progressDialog = Xameteo.Dialogs.InfiniteProgress;
 
             try
             {
+                progressDialog.Show();
                 var position = await Xameteo.MyLocation;
                 _viewModel.Text = (await Xameteo.Weather(new CoordinatesAdapter(position.Latitude, position.Longitude)).Current()).ToString();
+                progressDialog.Hide();
             }
             catch (Exception exception)
             {
-                _viewModel.Text = exception.Message;
-            } 
+                progressDialog.Hide();
+                await Xameteo.Dialogs.Alert(this, exception);
+            }
         }
     }
 
@@ -84,7 +84,7 @@ namespace Xameteo
         public CurrentWeatherViewModel()
         {
             //_text = "Ola Kira!";
-            _text = Xameteo.Settings.Language;
+            _text = Units.ConvertToString(Pressure.Atmosphere, 1050);
         }
 
         /// <summary>

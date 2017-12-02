@@ -288,4 +288,58 @@
   <data name="condition_1282" xml:space="preserve">
     <value>Moderate or heavy snow in area with thunder</value>
   </data>
+  <data name="unit_Atmosphere" xml:space="preserve">
+    <value>atm</value>
+  </data>
+  <data name="unit_Celsius" xml:space="preserve">
+    <value>ºC</value>
+  </data>
+  <data name="unit_Centimeters" xml:space="preserve">
+    <value>cm</value>
+  </data>
+  <data name="unit_Fahrenheit" xml:space="preserve">
+    <value>ºF</value>
+  </data>
+  <data name="unit_Inches" xml:space="preserve">
+    <value>in</value>
+  </data>
+  <data name="unit_Kelvin" xml:space="preserve">
+    <value>K</value>
+  </data>
+  <data name="unit_Kilometers" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="unit_KilometersPerHour" xml:space="preserve">
+    <value>kph</value>
+  </data>
+  <data name="unit_Knots" xml:space="preserve">
+    <value>knots</value>
+  </data>
+  <data name="unit_KPa" xml:space="preserve">
+    <value>KPa</value>
+  </data>
+  <data name="unit_Meters" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="unit_MetersPerSecond" xml:space="preserve">
+    <value>m/s</value>
+  </data>
+  <data name="unit_Miles" xml:space="preserve">
+    <value>mi</value>
+  </data>
+  <data name="unit_MilesPerHour" xml:space="preserve">
+    <value>mph</value>
+  </data>
+  <data name="unit_Milibars" xml:space="preserve">
+    <value>milibars</value>
+  </data>
+  <data name="unit_Milimeters" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="unit_Psi" xml:space="preserve">
+    <value>psi</value>
+  </data>
+  <data name="unit_Torr" xml:space="preserve">
+    <value>torr</value>
+  </data>
 </root>

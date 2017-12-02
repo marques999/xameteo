@@ -1,9 +1,10 @@
-﻿using Android.OS;
+﻿using Acr.UserDialogs;
+using Android.OS;
 using Android.App;
 using Android.Content.PM;
 
 using Plugin.Permissions;
-
+using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 namespace Xameteo.Droid
@@ -21,7 +22,8 @@ namespace Xameteo.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
             base.OnCreate(bundle);
-            Xamarin.Forms.Forms.Init(this, bundle);
+            Forms.Init(this, bundle);
+            UserDialogs.Init(this);
             LoadApplication(new App());
         }
 

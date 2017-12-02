@@ -1,4 +1,5 @@
-﻿using System.Resources;
+﻿using System;
+using System.Resources;
 using System.Reflection;
 using System.Globalization;
 
@@ -34,6 +35,12 @@ namespace Xameteo.Globalization
         /// <param name="key"></param>
         /// <returns></returns>
         public string Get(string key) => ResourceManager.GetString(key, _locale) ?? key;
+
+        /// <summary>
+        /// </summary>
+        /// <param name="unitEnum"></param>
+        /// <returns></returns>
+        public string GetUni(Enum unitEnum) => Get("unit_" + unitEnum);
 
         /// <summary>
         /// </summary>

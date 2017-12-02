@@ -36,6 +36,13 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
+        /// <param name="units"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string ConvertToString(Temperature units, double value) => $"{Convert(units, value):0.###} {Xameteo.Localization.GetUni(units)}";
+
+        /// <summary>
+        /// </summary>
         private static readonly Dictionary<Distance, FormulaDelegate> DistanceTable = new Dictionary<Distance, FormulaDelegate>
         {
             {
@@ -55,6 +62,13 @@ namespace Xameteo.Helpers
         /// <param name="value"></param>
         /// <returns></returns>
         public static double Convert(Distance units, double value) => DistanceTable.TryGetValue(units, out var delegateFunction) ? delegateFunction(value) : value;
+
+        /// <summary>
+        /// </summary>
+        /// <param name="units"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string ConvertToString(Distance units, double value) => $"{Convert(units, value):0.###} {Xameteo.Localization.GetUni(units)}";
 
         /// <summary>
         /// 
@@ -84,6 +98,13 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
+        /// <param name="units"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string ConvertToString(Pressure units, double value) => $"{Convert(units, value):0.###} {Xameteo.Localization.GetUni(units)}";
+
+        /// <summary>
+        /// </summary>
         private static readonly Dictionary<Velocity, FormulaDelegate> VelocityTable = new Dictionary<Velocity, FormulaDelegate>
         {
             {
@@ -106,6 +127,13 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
+        /// <param name="units"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string ConvertToString(Velocity units, double value) => $"{Convert(units, value):0.###} {Xameteo.Localization.GetUni(units)}";
+
+        /// <summary>
+        /// </summary>
         private static readonly Dictionary<Precipitation, FormulaDelegate> PrecipitationTable = new Dictionary<Precipitation, FormulaDelegate>
         {
             {
@@ -122,6 +150,13 @@ namespace Xameteo.Helpers
         /// <param name="value"></param>
         /// <returns></returns>
         public static double Convert(Precipitation units, double value) => PrecipitationTable.TryGetValue(units, out var delegateFunction) ? delegateFunction(value) : value;
+
+        /// <summary>
+        /// </summary>
+        /// <param name="units"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string ConvertToString(Precipitation units, double value) => $"{Convert(units, value):0.###} {Xameteo.Localization.GetUni(units)}";
 
         /// <summary>
         /// 

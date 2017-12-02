@@ -573,5 +573,167 @@ namespace Xameteo.Resx {
                 return ResourceManager.GetString("condition_1282", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to atm.
+        /// </summary>
+        internal static string unit_Atmosphere {
+            get {
+                return ResourceManager.GetString("unit_Atmosphere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ºC.
+        /// </summary>
+        internal static string unit_Celsius {
+            get {
+                return ResourceManager.GetString("unit_Celsius", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cm.
+        /// </summary>
+        internal static string unit_Centimeters {
+            get {
+                return ResourceManager.GetString("unit_Centimeters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ºF.
+        /// </summary>
+        internal static string unit_Fahrenheit {
+            get {
+                return ResourceManager.GetString("unit_Fahrenheit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to in.
+        /// </summary>
+        internal static string unit_Inches {
+            get {
+                return ResourceManager.GetString("unit_Inches", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to K.
+        /// </summary>
+        internal static string unit_Kelvin {
+            get {
+                return ResourceManager.GetString("unit_Kelvin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to km.
+        /// </summary>
+        internal static string unit_Kilometers {
+            get {
+                return ResourceManager.GetString("unit_Kilometers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to kph.
+        /// </summary>
+        internal static string unit_KilometersPerHour {
+            get {
+                return ResourceManager.GetString("unit_KilometersPerHour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to knots.
+        /// </summary>
+        internal static string unit_Knots {
+            get {
+                return ResourceManager.GetString("unit_Knots", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to KPa.
+        /// </summary>
+        internal static string unit_KPa {
+            get {
+                return ResourceManager.GetString("unit_KPa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to m.
+        /// </summary>
+        internal static string unit_Meters {
+            get {
+                return ResourceManager.GetString("unit_Meters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to m/s.
+        /// </summary>
+        internal static string unit_MetersPerSecond {
+            get {
+                return ResourceManager.GetString("unit_MetersPerSecond", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mi.
+        /// </summary>
+        internal static string unit_Miles {
+            get {
+                return ResourceManager.GetString("unit_Miles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mph.
+        /// </summary>
+        internal static string unit_MilesPerHour {
+            get {
+                return ResourceManager.GetString("unit_MilesPerHour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to milibars.
+        /// </summary>
+        internal static string unit_Milibars {
+            get {
+                return ResourceManager.GetString("unit_Milibars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mm.
+        /// </summary>
+        internal static string unit_Milimeters {
+            get {
+                return ResourceManager.GetString("unit_Milimeters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to psi.
+        /// </summary>
+        internal static string unit_Psi {
+            get {
+                return ResourceManager.GetString("unit_Psi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to torr.
+        /// </summary>
+        internal static string unit_Torr {
+            get {
+                return ResourceManager.GetString("unit_Torr", resourceCulture);
+            }
+        }
     }
 }
