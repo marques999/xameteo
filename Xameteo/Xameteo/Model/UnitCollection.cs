@@ -1,13 +1,16 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
 
+using Xameteo.Helpers;
+using Xameteo.Globalization;
+
 using Plugin.Settings.Abstractions;
 
 namespace Xameteo.Model
 {
     /// <summary>
     /// </summary>
-    public class UnitFactory
+    internal class UnitFactory
     {
         /// <summary>
         /// </summary>
@@ -44,7 +47,7 @@ namespace Xameteo.Model
         /// <param name="name"></param>
         /// <param name="formula"></param>
         /// <param name="translations"></param>
-        public void RegisterUnit(string name, FormulaDelegate formula, string[] translations)
+        protected void Register(string name, FormulaDelegate formula, string[] translations)
         {
             var unit = new Unit(name, formula, translations);
 
@@ -62,17 +65,17 @@ namespace Xameteo.Model
 
         /// <summary>
         /// </summary>
-        /// <returns></returns>
-        public List<Unit> Enumerate() => _table.Values.ToList();
-
-        /// <summary>
-        /// </summary>
         private readonly Dictionary<string, Unit> _table = new Dictionary<string, Unit>();
 
         /// <summary>
         /// </summary>
         /// <param name="unit"></param>
         /// <returns></returns>
-        public Unit this[string unit] => _table.TryGetValue(unit, out var value) ? value : _default;
+        private Unit this[string unit] => _table.TryGetValue(unit, out var value) ? value : _default;
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<LocalizationPair> Enumerate(Locale locale) => _table.Values.Select(it => it.Enumerate(locale));
     }
 }

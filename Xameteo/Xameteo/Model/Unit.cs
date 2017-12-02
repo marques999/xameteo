@@ -1,4 +1,9 @@
-﻿namespace Xameteo.Model
+﻿using System;
+using System.Collections.Generic;
+using Xameteo.Globalization;
+using Xameteo.Helpers;
+
+namespace Xameteo.Model
 {
     /// <summary>
     /// </summary>
@@ -8,7 +13,7 @@
 
     /// <summary>
     /// </summary>
-    public class Unit
+    internal class Unit
     {
         public string Name
         {
@@ -26,18 +31,15 @@
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public string ToString(double value)
-        {
-            return $"{Convert(value):0.###} {Get((int) Xameteo.Settings.Locale)}";
-        }
+        public string ToString(double value) => $"{Convert(value):0.###} {Name}";
 
         /// <summary>
         /// </summary>
-        /// <param name="index"></param>
+        /// <param name="locale"></param>
         /// <returns></returns>
-        private string Get(int index)
+        public LocalizationPair Enumerate(Locale locale)
         {
-            return index < _localizations.Length ? _localizations[index] : _localizations[0];
+            return new LocalizationPair(Name, _localizations[(int)locale] ?? _localizations[0]);
         }
 
         /// <summary>

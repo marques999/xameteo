@@ -12,9 +12,9 @@ namespace Xameteo.Units
         /// </summary>
         public PrecipitationUnits() : base("precipitation")
         {
-            RegisterUnit("mm", null, new[] { "Milimeters", "Milímetros" });
-            RegisterUnit("cm", value => value * 0.1, new[] { "Centimeters", "Centímetros" });
-            RegisterUnit("in", value => value * 0.039370, new[] { "Inches", "Polegadas" });
+            Register("mm", null, new[] { "Milimeters", "Milímetros" });
+            Register("cm", value => value * 0.1, new[] { "Centimeters", "Centímetros" });
+            Register("in", value => value * 0.039370, new[] { "Inches", "Polegadas" });
         }
     }
 }

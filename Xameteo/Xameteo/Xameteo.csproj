@@ -43,6 +43,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Globalization\LocalizationPair.cs" />
     <Compile Include="Units\DistanceUnits.cs" />
     <Compile Include="Globalization\Locale.cs" />
     <Compile Include="Globalization\Localization.cs" />

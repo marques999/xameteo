@@ -52,50 +52,62 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
-        private readonly TemperatureUnits _temperatureUnits = new TemperatureUnits();
+        public TemperatureUnits TemperatureUnits
+        {
+            get;
+        } = new TemperatureUnits();
 
         /// <summary>
         /// </summary>
-        public Unit TemperatureFactoryUnits
+        public Unit Temperature
         {
-            get => _temperatureUnits.Load(SettingsManager);
-            set => _temperatureUnits.Save(SettingsManager, value);
+            get => TemperatureUnits.Load(SettingsManager);
+            set => TemperatureUnits.Save(SettingsManager, value);
         }
 
         /// <summary>
         /// </summary>
-        private readonly PressureUnits _pressureUnits = new PressureUnits();
+        public PressureUnits PressureUnits
+        {
+            get;
+        } = new PressureUnits();
 
         /// <summary>
         /// </summary>
-        public Unit PressureUnits
+        public Unit Pressure
         {
-            get => _pressureUnits.Load(SettingsManager);
-            set => _pressureUnits.Save(SettingsManager, value);
+            get => PressureUnits.Load(SettingsManager);
+            set => PressureUnits.Save(SettingsManager, value);
         }
 
         /// <summary>
         /// </summary>
-        private readonly PrecipitationUnits _precipitationUnits = new PrecipitationUnits();
+        public PrecipitationUnits PrecipitationUnits
+        {
+            get;
+        } = new PrecipitationUnits();
 
         /// <summary>
         /// </summary>
-        public Unit PrecipitationUnits
+        public Unit Precipitation
         {
-            get => _precipitationUnits.Load(SettingsManager);
-            set => _precipitationUnits.Save(SettingsManager, value);
+            get => PrecipitationUnits.Load(SettingsManager);
+            set => PrecipitationUnits.Save(SettingsManager, value);
         }
 
         /// <summary>
         /// </summary>
-        private readonly DistanceUnits _distanceUnits = new DistanceUnits();
+        public DistanceUnits DistanceUnits
+        {
+            get;
+        } = new DistanceUnits();
 
         /// <summary>
         /// </summary>
-        public Unit DistanceUnits
+        public Unit Distance
         {
-            get => _distanceUnits.Load(SettingsManager);
-            set => _distanceUnits.Save(SettingsManager, value);
+            get => DistanceUnits.Load(SettingsManager);
+            set => DistanceUnits.Save(SettingsManager, value);
         }
 
         /// <summary>
@@ -112,14 +124,17 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
-        private readonly VelocityUnits _velocityUnits = new VelocityUnits();
+        public VelocityUnits VelocityUnits
+        {
+            get;
+        } = new VelocityUnits();
 
         /// <summary>
         /// </summary>
-        public Unit VelocityUnits
+        public Unit Velocity
         {
-            get => _velocityUnits.Load(SettingsManager);
-            set => _velocityUnits.Save(SettingsManager, value);
+            get => VelocityUnits.Load(SettingsManager);
+            set => VelocityUnits.Save(SettingsManager, value);
         }
 
         /// <summary>

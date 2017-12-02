@@ -12,10 +12,10 @@ namespace Xameteo.Units
         /// </summary>
         public VelocityUnits() : base("velocity")
         {
-            RegisterUnit("knot", value => value * 0.53996, new[] { "Knots", "Nós" });
-            RegisterUnit("km/h", null, new[] { "Kilometers/hour", "Quilómetros/hora" });
-            RegisterUnit("mph", value => value * 0.621388, new[] { "Miles/hour", "Milhas/hora" });
-            RegisterUnit("m/s", value => value * 0.277777, new[] { "Meters/second", "Metros/segundo" });
+            Register("knot", value => value * 0.53996, new[] { "Knots", "Nós" });
+            Register("km/h", null, new[] { "Kilometers/hour", "Quilómetros/hora" });
+            Register("mph", value => value * 0.621388, new[] { "Miles/hour", "Milhas/hora" });
+            Register("m/s", value => value * 0.277777, new[] { "Meters/second", "Metros/segundo" });
         }
     }
 }
