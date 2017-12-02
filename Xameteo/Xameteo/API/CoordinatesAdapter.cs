@@ -1,9 +1,9 @@
-﻿namespace Xameteo.Adapters
+﻿namespace Xameteo.API
 {
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    internal class CoordinatesAdapter : ApixuAdapter
+    internal class CoordinatesAdapter : PlacesAdapter
     {
         /// <inheritdoc />
         /// <summary>

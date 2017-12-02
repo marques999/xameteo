@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
 
-namespace Xameteo.Adapters
+namespace Xameteo.API
 {
     /// <summary>
     /// </summary>
-    internal abstract class ApixuAdapter
+    internal abstract class PlacesAdapter
     {
         /// <summary>
         /// </summary>
@@ -18,7 +18,7 @@ namespace Xameteo.Adapters
         /// <summary>
         /// </summary>
         /// <param name="parameters"></param>
-        protected ApixuAdapter(string parameters)
+        protected PlacesAdapter(string parameters)
         {
             Parameters = parameters;
         }

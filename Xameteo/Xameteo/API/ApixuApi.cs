@@ -4,8 +4,7 @@ using System.Net;
 using System.Threading.Tasks;
 
 using Newtonsoft.Json;
-
-using Xameteo.Adapters;
+using Xameteo.Model;
 
 namespace Xameteo.API
 {
@@ -29,7 +28,7 @@ namespace Xameteo.API
         /// </summary>
         /// <param name="apiKey"></param>
         /// <param name="adapter"></param>
-        public ApixuApi(string apiKey, ApixuAdapter adapter)
+        public ApixuApi(string apiKey, PlacesAdapter adapter)
         {
             _apiKey = apiKey;
             _parameters = adapter.Parameters;

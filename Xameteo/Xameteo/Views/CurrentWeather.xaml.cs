@@ -3,8 +3,6 @@ using System.ComponentModel;
 
 using Xameteo.Adapters;
 using Xamarin.Forms.Xaml;
-using Xameteo.Globalization;
-using Xameteo.Helpers;
 
 namespace Xameteo
 {

@@ -1,6 +1,4 @@
-﻿using Xameteo.Model;
-
-namespace Xameteo.Units
+﻿namespace Xameteo.Units
 {
     /// <inheritdoc />
     /// <summary>

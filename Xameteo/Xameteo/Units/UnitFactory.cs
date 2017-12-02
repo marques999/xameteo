@@ -6,7 +6,7 @@ using Xameteo.Globalization;
 
 using Plugin.Settings.Abstractions;
 
-namespace Xameteo.Model
+namespace Xameteo.Units
 {
     /// <summary>
     /// </summary>
@@ -76,6 +76,9 @@ namespace Xameteo.Model
         /// <summary>
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<LocalizationPair> Enumerate(Locale locale) => _table.Values.Select(it => it.Enumerate(locale));
+        public IEnumerable<LocalizationPair> Enumerate(Locale locale)
+        {
+            return _table.Values.Select(it => it.Enumerate(locale));
+        }
     }
 }
