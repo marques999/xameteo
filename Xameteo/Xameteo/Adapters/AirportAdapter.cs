@@ -1,4 +1,4 @@
-﻿using Xameteo.Constants;
+﻿using Xameteo.Globalization;
 
 namespace Xameteo.Adapters
 {
@@ -11,7 +11,7 @@ namespace Xameteo.Adapters
         /// <summary>
         /// </summary>
         /// <param name="query"></param>
-        public AirportAdapter(Airports query) : base("iata:" + query.ToString().ToUpper())
+        public AirportAdapter(Localization query) : base("iata:" + query.Id)
         {
         }
     }

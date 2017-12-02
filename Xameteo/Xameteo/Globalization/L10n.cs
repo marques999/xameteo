@@ -1,57 +1,94 @@
-﻿using System;
-using System.Resources;
+﻿using System.IO;
+using System.Linq;
 using System.Reflection;
-using System.Globalization;
-
-using Xameteo.Constants;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Xameteo.Globalization
 {
+    //
+    using DictionaryL10N = Dictionary<string, Localization>;
+
+    //
     /// <summary>
     /// </summary>
-    public class L10N
+    internal class L10N
     {
         /// <summary>
         /// </summary>
-        private readonly CultureInfo _locale;
+        private readonly Locale _locale;
 
         /// <summary>
         /// </summary>
-        /// <param name="languageCulture"></param>
-        public L10N(string languageCulture)
+        private readonly DictionaryL10N _resources;
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        private readonly DictionaryL10N _conditions;
+
+        /// <summary>
+        /// </summary>
+        public DictionaryL10N Airports
         {
-            _locale = new CultureInfo(languageCulture);
+            get;
         }
 
         /// <summary>
         /// </summary>
-        public ResourceManager ResourceManager
+        /// <param name="locale"></param>
+        public L10N(Locale locale)
         {
-            get;
-        } = new ResourceManager("Xameteo.Resx.Xameteo", typeof(L10N).GetTypeInfo().Assembly);
+            _locale = locale;
+            Airports = ParseJson("Airports.json");
+            _resources = ParseJson("Xameteo.json");
+            _conditions = ParseJson("Conditions.json");
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        public static string ReadFile(string fileName)
+        {
+            var stream = typeof(L10N).GetTypeInfo().Assembly.GetManifestResourceStream("Xameteo.Assets." + fileName);
+
+            using (var reader = new StreamReader(stream))
+            {
+                return reader.ReadToEnd();
+            }
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        private static DictionaryL10N ParseJson(string fileName)
+        {
+            return JsonConvert.DeserializeObject<IEnumerable<Localization>>(ReadFile(fileName)).ToDictionary(it => it.Id, it => it);
+        }
 
         /// <summary>
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public string Get(string key) => ResourceManager.GetString(key, _locale) ?? key;
+        public string Get(string key)
+        {
+            return _resources.TryGetValue(key, out var resource) ? resource.Localize(_locale) : key;
+        }
 
         /// <summary>
         /// </summary>
-        /// <param name="unitEnum"></param>
+        /// <param name="condition"></param>
         /// <returns></returns>
-        public string GetUni(Enum unitEnum) => Get("unit_" + unitEnum);
+        public string GetCondition(int condition)
+        {
+            return _conditions.TryGetValue(condition.ToString(), out var resource) ? resource.Localize(_locale) : "N/A";
+        }
 
         /// <summary>
         /// </summary>
-        /// <param name="weatherCondition"></param>
         /// <returns></returns>
-        public string GetCondition(int weatherCondition) => Get("condition_" + weatherCondition);
-
-        /// <summary>
-        /// </summary>
-        /// <param name="airport"></param>
-        /// <returns></returns>
-        public string GetAirport(Airports airport) => Get("airport_" + airport.ToString().ToUpper());
+        public Dictionary<string, string> EnumerateAirports() => Airports.ToDictionary(it => it.Key, it => it.Value.Localize(_locale));
     }
 }

@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 using Xameteo.Adapters;
 using Xamarin.Forms.Xaml;
-using Xameteo.Constants;
+using Xameteo.Globalization;
 using Xameteo.Helpers;
 
 namespace Xameteo
@@ -34,7 +34,7 @@ namespace Xameteo
         public async void GetWeather(object sender, EventArgs e)
         {
             var progressDialog = Xameteo.Dialogs.InfiniteProgress;
-
+ 
             try
             {
                 progressDialog.Show();
@@ -84,7 +84,7 @@ namespace Xameteo
         public CurrentWeatherViewModel()
         {
             //_text = "Ola Kira!";
-            _text = Units.ConvertToString(Pressure.Atmosphere, 1050);
+            _text = Xameteo.Settings.PressureUnits.ToString(1050);
         }
 
         /// <summary>

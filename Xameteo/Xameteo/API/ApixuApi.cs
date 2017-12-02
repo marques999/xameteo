@@ -19,7 +19,7 @@ namespace Xameteo.API
 
         /// <summary>
         /// </summary>
-        private readonly ApixuAdapter _adapter;
+        private readonly string _parameters;
 
         /// <summary>
         /// </summary>
@@ -32,14 +32,14 @@ namespace Xameteo.API
         public ApixuApi(string apiKey, ApixuAdapter adapter)
         {
             _apiKey = apiKey;
-            _adapter = adapter;
+            _parameters = adapter.Parameters;
         }
 
         /// <summary>
         /// </summary>
         /// <returns></returns>
         public Task<ApixuCurrent> Current() => HttpGetAsync<ApixuCurrent>(
-            $"{ApiUrl}/current.json?key={_apiKey}&q={_adapter.Parameters}"
+            $"{ApiUrl}/current.json?key={_apiKey}&q={_parameters}"
         );
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Xameteo.API
         /// <param name="end"></param>
         /// <returns></returns>
         public Task<ApixuHistory> History(DateTime start, DateTime end) => HttpGetAsync<ApixuHistory>(
-            $"{ApiUrl}/history.json?key={_apiKey}&q={_adapter.Parameters}&dt={start:d}&end_dt={end:d}"
+            $"{ApiUrl}/history.json?key={_apiKey}&q={_parameters}&dt={start:d}&end_dt={end:d}"
         );
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Xameteo.API
         /// <param name="days"></param>
         /// <returns></returns>
         public Task<ApixuForecast> Forecast(int days) => HttpGetAsync<ApixuForecast>(
-            $"{ApiUrl}/forecast.json?key={_apiKey}&q={_adapter.Parameters}&days={days}"
+            $"{ApiUrl}/forecast.json?key={_apiKey}&q={_parameters}&days={days}"
         );
 
         /// <summary>

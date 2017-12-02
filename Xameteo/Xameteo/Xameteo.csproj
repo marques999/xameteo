@@ -43,15 +43,20 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Constants\Units.cs" />
-    <Compile Include="Globalization\L10n.cs" />
+    <Compile Include="Units\DistanceUnits.cs" />
+    <Compile Include="Globalization\Locale.cs" />
+    <Compile Include="Globalization\Localization.cs" />
+    <Compile Include="Units\PrecipitationUnits.cs" />
+    <Compile Include="Units\PressureUnits.cs" />
+    <Compile Include="Units\TemperatureUnits.cs" />
+    <Compile Include="Model\UnitCollection.cs" />
+    <Compile Include="Model\Clock.cs" />
+    <Compile Include="Units\VelocityUnits.cs" />
+    <Compile Include="Globalization\L10N.cs" />
     <Compile Include="Globalization\TranslateExtension.cs" />
-    <Compile Include="Constants\Airports.cs" />
     <Compile Include="API\ApixuCurrent.cs" />
     <Compile Include="API\ApixuForecast.cs" />
     <Compile Include="API\ApixuHistory.cs" />
-    <Compile Include="Helpers\CollectionExtensions.cs" />
-    <Compile Include="Helpers\DateExtensions.cs" />
     <Compile Include="Helpers\Dialogs.cs" />
     <Compile Include="Helpers\TaskExtensions.cs" />
     <Compile Include="Model\Astrology.cs" />
@@ -63,17 +68,7 @@
     <Compile Include="Model\Hourly.cs" />
     <Compile Include="Model\Location.cs" />
     <Compile Include="Model\Places.cs" />
-    <Compile Include="Helpers\Units.cs" />
-    <Compile Include="Resx\Xameteo.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Xameteo.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resx\Xameteo.pt.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Xameteo.pt.resx</DependentUpon>
-    </Compile>
+    <Compile Include="Model\Unit.cs" />
     <Compile Include="Views\CurrentWeather.xaml.cs">
       <DependentUpon>CurrentWeather.xaml</DependentUpon>
     </Compile>
@@ -133,6 +128,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Assets\Airports.json" />
+    <EmbeddedResource Include="Assets\Xameteo.json" />
+    <EmbeddedResource Include="Assets\Conditions.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -154,14 +152,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resx\Xameteo.pt.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Xameteo.pt.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resx\Xameteo.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Xameteo.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\CurrentWeather.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>

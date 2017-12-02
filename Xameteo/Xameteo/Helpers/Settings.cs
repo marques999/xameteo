@@ -3,7 +3,9 @@
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
 
-using Xameteo.Constants;
+using Xameteo.Model;
+using Xameteo.Units;
+using Xameteo.Globalization;
 
 namespace Xameteo.Helpers
 {
@@ -50,98 +52,90 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
-        private const string TemperatureUnitsKey = "temperature";
+        private readonly TemperatureUnits _temperatureUnits = new TemperatureUnits();
 
         /// <summary>
         /// </summary>
-        public Temperature TemperatureUnits
+        public Unit TemperatureFactoryUnits
         {
-            get => ReadEnum(TemperatureUnitsKey, Temperature.Celsius);
-            set => WriteEnum(TemperatureUnitsKey, value);
+            get => _temperatureUnits.Load(SettingsManager);
+            set => _temperatureUnits.Save(SettingsManager, value);
         }
 
         /// <summary>
         /// </summary>
-        private const string PressureUnitsKey = "pressure";
+        private readonly PressureUnits _pressureUnits = new PressureUnits();
 
         /// <summary>
         /// </summary>
-        public Pressure PressureUnits
+        public Unit PressureUnits
         {
-            get => ReadEnum(PressureUnitsKey, Pressure.Milibars);
-            set => WriteEnum(PressureUnitsKey, value);
+            get => _pressureUnits.Load(SettingsManager);
+            set => _pressureUnits.Save(SettingsManager, value);
         }
 
         /// <summary>
         /// </summary>
-        private const string PrecipitationUnitsKey = "precipitation";
+        private readonly PrecipitationUnits _precipitationUnits = new PrecipitationUnits();
 
         /// <summary>
         /// </summary>
-        public Precipitation PrecipitationUnits
+        public Unit PrecipitationUnits
         {
-            get => ReadEnum(PrecipitationUnitsKey, Precipitation.Milimeters);
-            set => WriteEnum(PrecipitationUnitsKey, value);
+            get => _precipitationUnits.Load(SettingsManager);
+            set => _precipitationUnits.Save(SettingsManager, value);
         }
 
         /// <summary>
         /// </summary>
-        private const string DistanceUnitsKey = "distance";
+        private readonly DistanceUnits _distanceUnits = new DistanceUnits();
 
         /// <summary>
         /// </summary>
-        public Distance DistanceUnits
+        public Unit DistanceUnits
         {
-            get => ReadEnum(DistanceUnitsKey, Distance.Kilometers);
-            set => WriteEnum(DistanceUnitsKey, value);
+            get => _distanceUnits.Load(SettingsManager);
+            set => _distanceUnits.Save(SettingsManager, value);
         }
 
         /// <summary>
         /// </summary>
-        private const string ClockUnitsKey = "clock";
-
-        /// <summary>
-        /// </summary>
-        public Clock ClockUnits
+        public int ClockUnits
         {
-            get => ReadEnum(ClockUnitsKey, Clock.TwentyFour);
-            set => WriteEnum(ClockUnitsKey, value);
+            get => SettingsManager.GetValueOrDefault("clock", 0);
+            set => SettingsManager.AddOrUpdateValue("clock", value);
         }
 
         /// <summary>
         /// </summary>
-        private const string VelocityUnitsKey = "velocity";
+        public Clock Clock => ClockFactory.Get(ClockUnits);
 
         /// <summary>
         /// </summary>
-        public Velocity VelocityUnits
+        private readonly VelocityUnits _velocityUnits = new VelocityUnits();
+
+        /// <summary>
+        /// </summary>
+        public Unit VelocityUnits
         {
-            get => ReadEnum(VelocityUnitsKey, Velocity.KilometersPerHour);
-            set => WriteEnum(VelocityUnitsKey, value);
+            get => _velocityUnits.Load(SettingsManager);
+            set => _velocityUnits.Save(SettingsManager, value);
         }
 
         /// <summary>
         /// </summary>
-        private const string LanguageKey = "language";
-
-        /// <summary>
-        /// </summary>
-        public string Language
+        public Locale Locale
         {
-            get => SettingsManager.GetValueOrDefault(LanguageKey, "en-US");
-            set => SettingsManager.AddOrUpdateValue(LanguageKey, value);
+            get => ReadEnum("language", Locale.English);
+            set => WriteEnum("language", value);
         }
-
-        /// <summary>
-        /// </summary>
-        private const string PlacesKey = "places";
 
         /// <summary>
         /// </summary>
         public string Places
         {
-            get => SettingsManager.GetValueOrDefault(PlacesKey, "[]");
-            set => SettingsManager.AddOrUpdateValue(PlacesKey, value);
+            get => SettingsManager.GetValueOrDefault("places", "[]");
+            set => SettingsManager.AddOrUpdateValue("places", value);
         }
     }
 }

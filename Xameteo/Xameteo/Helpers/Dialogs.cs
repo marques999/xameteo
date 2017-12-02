@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-
 using Acr.UserDialogs;
-
 using Xamarin.Forms;
 
 namespace Xameteo.Helpers
@@ -33,12 +31,15 @@ namespace Xameteo.Helpers
             exception.GetType().Name
         );
 
+        public Task Alert(string message) => _instance.AlertAsync(message);
+
         /// <summary>
         /// </summary>
         /// <returns></returns>
         public IProgressDialog InfiniteProgress => _instance.Progress(new ProgressDialogConfig
         {
-            AutoShow = true, IsDeterministic = false
+            AutoShow = true,
+            IsDeterministic = false
         });
     }
 }
