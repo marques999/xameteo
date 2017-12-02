@@ -1,19 +1,35 @@
-﻿using System;
-
-using Xamarin.Forms;
-
-namespace Xameteo
+﻿namespace Xameteo
 {
-    public partial class App : Application
+    /// <inheritdoc />
+    /// <summary>
+    /// </summary>
+    public partial class App
     {
+        /// <summary>
+        /// </summary>
         public App()
         {
             InitializeComponent();
+            MainPage = new MainPage();
+        }
 
-            if (Device.RuntimePlatform == Device.iOS)
-                MainPage = new MainPage();
-            else
-                MainPage = new NavigationPage(new MainPage());
+        /// <summary>
+        /// </summary>
+        protected override void OnStart()
+        {
+            Xameteo.Initialize();
+        }
+
+        /// <summary>
+        /// </summary>
+        protected override void OnSleep()
+        {
+        }
+
+        /// <summary>
+        /// </summary>
+        protected override void OnResume()
+        {
         }
     }
 }

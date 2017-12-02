@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="fab9d45c-b20a-4ae1-8ac9-597e0f5d2599"
-    Publisher="CN=MARQUES"
+    Name="d047efcb-4615-4228-a352-750b44c129f7"
+    Publisher="CN=Carlos Samouco"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="fab9d45c-b20a-4ae1-8ac9-597e0f5d2599" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="d047efcb-4615-4228-a352-750b44c129f7" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>Xameteo.UWP</DisplayName>
-    <PublisherDisplayName>MARQUES</PublisherDisplayName>
+    <PublisherDisplayName>Carlos Samouco</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -26,7 +26,7 @@
   <Resources>
     <Resource Language="x-generate"/>
   </Resources>
-  
+
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
