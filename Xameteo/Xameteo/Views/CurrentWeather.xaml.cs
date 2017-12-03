@@ -1,8 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
-
-using Xameteo.Adapters;
 using Xamarin.Forms.Xaml;
+using Xameteo.API;
 
 namespace Xameteo
 {
@@ -81,8 +80,8 @@ namespace Xameteo
         /// </summary>
         public CurrentWeatherViewModel()
         {
-            //_text = "Ola Kira!";
-            _text = Xameteo.Settings.Pressure.ToString(1050);
+            _text = "Ola Kira!";
+           // _text = Xameteo.Settings.Pressure.Current.ToString(1050);
         }
 
         /// <summary>

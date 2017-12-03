@@ -36,28 +36,29 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="API\ApixuApi.cs" />
-    <Compile Include="Adapters\ApixuAdapter.cs" />
-    <Compile Include="Adapters\AirportAdapter.cs" />
-    <Compile Include="Adapters\CityAdapter.cs" />
-    <Compile Include="Adapters\CoordinatesAdapter.cs" />
+    <Compile Include="API\PlacesAdapter.cs" />
+    <Compile Include="API\AirportAdapter.cs" />
+    <Compile Include="API\LocationAdapter.cs" />
+    <Compile Include="API\CoordinatesAdapter.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Globalization\LocalizationPair.cs" />
-    <Compile Include="Units\DistanceUnits.cs" />
+    <Compile Include="Units\ClockFactory.cs" />
+    <Compile Include="Units\Distance.cs" />
     <Compile Include="Globalization\Locale.cs" />
     <Compile Include="Globalization\Localization.cs" />
-    <Compile Include="Units\PrecipitationUnits.cs" />
-    <Compile Include="Units\PressureUnits.cs" />
-    <Compile Include="Units\TemperatureUnits.cs" />
-    <Compile Include="Model\UnitCollection.cs" />
-    <Compile Include="Model\Clock.cs" />
-    <Compile Include="Units\VelocityUnits.cs" />
+    <Compile Include="Units\Precipitation.cs" />
+    <Compile Include="Units\Pressure.cs" />
+    <Compile Include="Units\Temperature.cs" />
+    <Compile Include="Units\UnitFactory.cs" />
+    <Compile Include="Units\Clock.cs" />
+    <Compile Include="Units\Velocity.cs" />
     <Compile Include="Globalization\L10N.cs" />
     <Compile Include="Globalization\TranslateExtension.cs" />
-    <Compile Include="API\ApixuCurrent.cs" />
-    <Compile Include="API\ApixuForecast.cs" />
-    <Compile Include="API\ApixuHistory.cs" />
+    <Compile Include="Model\ApixuCurrent.cs" />
+    <Compile Include="Model\ApixuForecast.cs" />
+    <Compile Include="Model\ApixuHistory.cs" />
     <Compile Include="Helpers\Dialogs.cs" />
     <Compile Include="Helpers\TaskExtensions.cs" />
     <Compile Include="Model\Astrology.cs" />
@@ -68,8 +69,8 @@
     <Compile Include="Model\ForecastDaily.cs" />
     <Compile Include="Model\Hourly.cs" />
     <Compile Include="Model\Location.cs" />
-    <Compile Include="Model\Places.cs" />
-    <Compile Include="Model\Unit.cs" />
+    <Compile Include="API\Places.cs" />
+    <Compile Include="Units\Unit.cs" />
     <Compile Include="Views\CurrentWeather.xaml.cs">
       <DependentUpon>CurrentWeather.xaml</DependentUpon>
     </Compile>
@@ -158,7 +159,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.4.0.280\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.4.0.280\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -1,14 +1,7 @@
-﻿using Xameteo.Helpers;
-using Xameteo.Globalization;
+﻿using Xameteo.Globalization;
 
 namespace Xameteo.Units
 {
-    /// <summary>
-    /// </summary>
-    /// <param name="value"></param>
-    /// <returns></returns>
-    public delegate double FormulaDelegate(double value);
-
     /// <summary>
     /// </summary>
     internal class Unit
@@ -30,7 +23,9 @@ namespace Xameteo.Units
 
         /// <summary>
         /// </summary>
-        private readonly string[] _localizations;
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public delegate double FormulaDelegate(double value);
 
         /// <summary>
         /// </summary>
@@ -46,29 +41,24 @@ namespace Xameteo.Units
 
         /// <summary>
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public double Convert(double value)
-        {
-            return Formula?.Invoke(value) ?? value;
-        }
+        private readonly string[] _localizations;
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public string ToString(double value)
-        {
-            return $"{Convert(value):0.###} {Name}";
-        }
+        public double Convert(double value) => Formula?.Invoke(value) ?? value;
+
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public string ToString(double value) => $"{Convert(value):0.###} {Name}";
 
         /// <summary>
         /// </summary>
         /// <param name="locale"></param>
         /// <returns></returns>
-        public LocalizationPair Enumerate(Locale locale)
-        {
-            return new LocalizationPair(Name, _localizations[(int)locale] ?? _localizations[0]);
-        }
+        public string Translate(Locale locale) => _localizations[(int)locale] ?? _localizations[0];
     }
 }

@@ -2,14 +2,13 @@
 using System.Linq;
 using System.Reflection;
 using System.Collections.Generic;
+
 using Newtonsoft.Json;
 
 namespace Xameteo.Globalization
 {
-    //
     using DictionaryL10N = Dictionary<string, Localization>;
 
-    //
     /// <summary>
     /// </summary>
     internal class L10N
@@ -85,10 +84,5 @@ namespace Xameteo.Globalization
         {
             return _conditions.TryGetValue(condition.ToString(), out var resource) ? resource.Localize(_locale) : "N/A";
         }
-
-        /// <summary>
-        /// </summary>
-        /// <returns></returns>
-        public Dictionary<string, string> EnumerateAirports() => Airports.ToDictionary(it => it.Key, it => it.Value.Localize(_locale));
     }
 }
