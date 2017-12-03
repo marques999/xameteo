@@ -22,24 +22,8 @@ namespace Xameteo.Units
         /// </summary>
         public Clock Current
         {
-            get
-            {
-                try
-                {
-                    return Clocks[_settings.GetValueOrDefault("clock", Clocks[0].Id)];
-                }
-                catch
-                {
-                    return Clocks[0];
-                }
-            }
-            set
-            {
-                if (value.Id < Clocks.Length)
-                {
-                    _settings.AddOrUpdateValue("clock", Current.ToString());
-                }
-            }
+            set => Update(value);
+            get => Clocks[_settings.GetValueOrDefault("clock", 0)];
         }
 
         /// <summary>
@@ -48,6 +32,16 @@ namespace Xameteo.Units
         public ClockFactory(ISettings settings)
         {
             _settings = settings;
+        }
+
+        /// <summary>
+        /// </summary>
+        private void Update(Clock clock)
+        {
+            if (clock.Id < Clocks.Length)
+            {
+                _settings.AddOrUpdateValue("clock", Current.Id);
+            }
         }
     }
 }
