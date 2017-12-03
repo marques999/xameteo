@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Text;
-
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace Xameteo.Model
 {
@@ -13,20 +11,5 @@ namespace Xameteo.Model
         /// </summary>
         [JsonProperty("forecastday")]
         public List<ForecastDaily> Days { get; set; }
-
-        /// <summary>
-        /// </summary>
-        /// <returns></returns>
-        public override string ToString()
-        {
-            var builder = new StringBuilder();
-
-            foreach (var day in Days)
-            {
-                builder.Append(day);
-            }
-
-            return builder.ToString();
-        }
     }
 }

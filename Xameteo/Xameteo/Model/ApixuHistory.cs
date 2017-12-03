@@ -15,13 +15,5 @@ namespace Xameteo.Model
         /// </summary>
         [JsonProperty("forecast")]
         public Forecast Forecast { get; set; }
-
-        /// <summary>
-        /// </summary>
-        /// <returns></returns>
-        public override string ToString() => $@"
-Location {{{Location}}}
-            
-{Forecast}";
     }
 }

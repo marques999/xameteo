@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
+
 using Acr.UserDialogs;
+
 using Xamarin.Forms;
 
 namespace Xameteo.Helpers
@@ -26,12 +28,10 @@ namespace Xameteo.Helpers
         /// <param name="page"></param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public Task Alert(Page page, Exception exception) => _instance.AlertAsync(
-            exception.Message,
-            exception.GetType().Name
-        );
-
-        public Task Alert(string message) => _instance.AlertAsync(message);
+        public Task Alert(Page page, Exception exception)
+        {
+            return _instance.AlertAsync(exception.Message, exception.GetType().Name);
+        }
 
         /// <summary>
         /// </summary>

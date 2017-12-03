@@ -23,7 +23,7 @@ namespace Xameteo.API
         /// <summary>
         /// </summary>
         /// <returns></returns>
-        public List<PlacesAdapter> Get()
+        public List<PlacesAdapter> Enumerate()
         {
             return _places.ToList();
         }

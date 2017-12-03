@@ -4,7 +4,7 @@ namespace Xameteo.API
 {
     /// <summary>
     /// </summary>
-    internal abstract class PlacesAdapter
+    public abstract class PlacesAdapter
     {
         /// <summary>
         /// </summary>

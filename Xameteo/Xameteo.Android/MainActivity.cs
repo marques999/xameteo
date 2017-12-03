@@ -1,9 +1,11 @@
 ﻿using Acr.UserDialogs;
+
 using Android.OS;
 using Android.App;
 using Android.Content.PM;
 
 using Plugin.Permissions;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
