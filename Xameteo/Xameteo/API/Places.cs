@@ -1,7 +1,8 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
-
+using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Xameteo.Model;
 
 namespace Xameteo.API
 {
@@ -44,6 +45,14 @@ namespace Xameteo.API
         public bool Remove(PlacesAdapter adapter)
         {
             return _places.Remove(adapter);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        public List<Task<ApixuCurrent>> Current()
+        {
+            return _places.Select(it => new ApixuApi(it).Current()).ToList();
         }
 
         /// <summary>

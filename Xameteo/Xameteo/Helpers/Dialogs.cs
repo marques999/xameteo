@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-
 using Acr.UserDialogs;
-
 using Xamarin.Forms;
+using Xameteo.Units;
 
 namespace Xameteo.Helpers
 {
@@ -13,15 +13,7 @@ namespace Xameteo.Helpers
     {
         /// <summary>
         /// </summary>
-        private readonly IUserDialogs _instance;
-
-        /// <summary>
-        /// </summary>
-        /// <param name="instance"></param>
-        public Dialogs(IUserDialogs instance)
-        {
-            _instance = instance;
-        }
+        private readonly IUserDialogs _instance = UserDialogs.Instance;
 
         /// <summary>
         /// </summary>
@@ -35,11 +27,39 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
+        /// <param name="choice"></param>
+        /// <returns></returns>
+        public delegate Action SelectUnitCallback(Unit choice);
+
+        /// <summary>
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="factory"></param>
+        /// <param name="generator"></param>
+        /// <returns></returns>
+        public IDisposable SelectUnit(UnitFactory factory, SelectUnitCallback generator)
+        {
+            var locale = Xameteo.Settings.Locale;
+            var configuration = new ActionSheetConfig();
+
+            foreach (var unit in factory.Units)
+            {
+                configuration.Add($"{unit.Translate(locale)} ({unit.Name})", generator(unit));
+            }
+
+            configuration.Title = $"Select {factory.Type} units";
+            configuration.SetCancel();
+            configuration.UseBottomSheet = false;
+
+            return _instance.ActionSheet(configuration);
+        }
+
+        /// <summary>
+        /// </summary>
         /// <returns></returns>
         public IProgressDialog InfiniteProgress => _instance.Progress(new ProgressDialogConfig
         {
-            AutoShow = true,
-            IsDeterministic = false
+            AutoShow = true, IsDeterministic = false
         });
     }
 }

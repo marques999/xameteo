@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-using Acr.UserDialogs;
-
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 
@@ -20,11 +18,14 @@ namespace Xameteo
         /// </summary>
         public static void Initialize()
         {
+            Dialogs = new Dialogs();
             Settings = new Settings();
             Geolocator = CrossGeolocator.Current;
-            Dialogs = new Dialogs(UserDialogs.Instance);
             MyPlaces = new Places(Settings.Places);
-            Localization = new L10N(Settings.Locale);         
+            MyPlaces.Insert(new AirportAdapter("OPO"));
+            MyPlaces.Insert(new CoordinatesAdapter(35.6732619, 139.5703036));
+            MyPlaces.Insert(new LocationAdapter("Valongo, Porto"));
+            Localization = new L10N(Settings.Locale);
         }
 
         /// <summary>
@@ -70,11 +71,5 @@ namespace Xameteo
         /// <summary>
         /// </summary>
         public static Task<Position> MyLocation => Geolocator.GetPositionAsync(TimeSpan.FromSeconds(5));
-
-        /// <summary>
-        /// </summary>
-        /// <param name="adapter"></param>
-        /// <returns></returns>
-        public static ApixuApi Weather(PlacesAdapter adapter) => new ApixuApi(Settings.ApiKey, adapter);
     }
 }

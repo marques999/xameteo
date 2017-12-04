@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xameteo.Views;
 
 namespace Xameteo
 {
@@ -34,8 +35,8 @@ namespace Xameteo
                 MenuItems = new ObservableCollection<MainPageMenuItem>(new[]
                 {
                     new MainPageMenuItem { Id = 0, Title = "Page 1",  TargetType = typeof(CurrentWeather) },
-                    new MainPageMenuItem { Id = 1, Title = "Page 2" },
-                    new MainPageMenuItem { Id = 2, Title = "Page 3" },
+                    new MainPageMenuItem { Id = 1, Title = "Page 2",  TargetType = typeof(OptionsPage) },
+                    new MainPageMenuItem { Id = 2, Title = "Page 3,", TargetType = typeof(PlacesPage) },
                     new MainPageMenuItem { Id = 3, Title = "Page 4" },
                     new MainPageMenuItem { Id = 4, Title = "Page 5" },
                 });

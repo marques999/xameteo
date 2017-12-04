@@ -9,7 +9,7 @@ namespace Xameteo.Units
     {
         /// <summary>
         /// </summary>
-        public static readonly Unit[] Units =
+        public static readonly Unit[] DistanceUnits =
         {
             new Unit("km", null, new[] { "Kilometers", "Quilómetros" }),
             new Unit("m", value => value * 1000, new[] { "Meters", "Metros" }),
@@ -20,7 +20,7 @@ namespace Xameteo.Units
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public Distance(ISettings settings) : base("distance", settings, Units)
+        public Distance(ISettings settings) : base("distance", settings, DistanceUnits)
         {
         }
     }

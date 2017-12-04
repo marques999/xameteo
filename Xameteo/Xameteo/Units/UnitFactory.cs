@@ -9,7 +9,17 @@ namespace Xameteo.Units
     {
         /// <summary>
         /// </summary>
-        private readonly string _type;
+        public string Type
+        {
+            get;
+        }
+
+        /// <summary>
+        /// </summary>
+        public Unit[] Units
+        {
+            get;
+        }
 
         /// <summary>
         /// </summary>
@@ -31,7 +41,7 @@ namespace Xameteo.Units
             {
                 try
                 {
-                    return _table[_settings.GetValueOrDefault(_type, _default.Name)];
+                    return _table[_settings.GetValueOrDefault(Type, _default.Name)];
                 }
                 catch
                 {
@@ -42,7 +52,7 @@ namespace Xameteo.Units
             {
                 if (_table.ContainsKey(value.Name))
                 {
-                    _settings.AddOrUpdateValue(_type, Current.Name);
+                    _settings.AddOrUpdateValue(Type, Current.Name);
                 }
             }
         }
@@ -52,9 +62,10 @@ namespace Xameteo.Units
         /// <param name="settings"></param>
         /// <param name="type"></param>
         /// <param name="units"></param>
-        protected UnitFactory(string type, ISettings settings, IEnumerable<Unit> units)
+        protected UnitFactory(string type, ISettings settings, Unit[] units)
         {
-            _type = type;
+            Type = type;
+            Units = units;
             _settings = settings;
 
             foreach (var unit in units)

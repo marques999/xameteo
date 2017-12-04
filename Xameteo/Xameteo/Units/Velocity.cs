@@ -9,7 +9,7 @@ namespace Xameteo.Units
     {
         /// <summary>
         /// </summary>
-        public static readonly Unit[] Units =
+        private static readonly Unit[] VelocityUnits =
         {
             new Unit("km/h", null, new[] { "Kilometers/hour", "Quilómetros/hora" }),
             new Unit("knot", value => value * 0.53996, new[] { "Knots", "Nós" }),
@@ -20,7 +20,7 @@ namespace Xameteo.Units
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public Velocity(ISettings settings) : base("velocity", settings, Units)
+        public Velocity(ISettings settings) : base("velocity", settings, VelocityUnits)
         {
         }
     }

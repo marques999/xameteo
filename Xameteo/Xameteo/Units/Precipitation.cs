@@ -9,7 +9,7 @@ namespace Xameteo.Units
     {
         /// <summary>
         /// </summary>
-        public static readonly Unit[] Units =
+        private static readonly Unit[] PrecipitationUnits =
         {
             new Unit("mm", null, new[] { "Milimeters", "Milímetros" }),
             new Unit("cm", value => value * 0.1, new[] { "Centimeters", "Centímetros" }),
@@ -19,7 +19,7 @@ namespace Xameteo.Units
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public Precipitation(ISettings settings) : base("precipitation", settings, Units)
+        public Precipitation(ISettings settings) : base("precipitation", settings, PrecipitationUnits)
         {
         }
     }

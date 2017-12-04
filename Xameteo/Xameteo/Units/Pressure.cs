@@ -9,7 +9,7 @@ namespace Xameteo.Units
     {
         /// <summary>
         /// </summary>
-        public static readonly Unit[] Units =
+        private static readonly Unit[] PressureUnits =
         {
             new Unit("mbar", null, new[] { "Millibars", "Milibares" }),
             new Unit("kPA", value => value * 0.1, new[] { "Kilopascal", "Quilopascal" }),
@@ -20,7 +20,7 @@ namespace Xameteo.Units
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public Pressure(ISettings settings) : base("pressure", settings, Units)
+        public Pressure(ISettings settings) : base("pressure", settings, PressureUnits)
         {
         }
     }

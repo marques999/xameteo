@@ -9,7 +9,7 @@ namespace Xameteo.Units
     {
         /// <summary>
         /// </summary>
-        public static readonly Unit[] Units =
+        private static readonly Unit[] TemperatureUnits =
         {
             new Unit("C", null, new[] { "Celsius", "Celsius" }),
             new Unit("F", value => value - 273.15, new[] { "Kelvin", "Kelvin" }),
@@ -19,7 +19,7 @@ namespace Xameteo.Units
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public Temperature(ISettings settings) : base("temperature", settings, Units)
+        public Temperature(ISettings settings) : base("temperature", settings, TemperatureUnits)
         {
         }
     }

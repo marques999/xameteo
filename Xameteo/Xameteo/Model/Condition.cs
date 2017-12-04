@@ -4,7 +4,7 @@ namespace Xameteo.Model
 {
     /// <summary>
     /// </summary>
-    internal class Condition
+    public class Condition
     {
         /// <summary>
         /// Weather condition unique code

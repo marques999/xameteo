@@ -29,9 +29,9 @@ namespace Xameteo.API
         /// </summary>
         /// <param name="apiKey"></param>
         /// <param name="adapter"></param>
-        public ApixuApi(string apiKey, PlacesAdapter adapter)
+        public ApixuApi(PlacesAdapter adapter)
         {
-            _apiKey = apiKey;
+            _apiKey = Xameteo.Settings.ApiKey;
             _parameters = adapter.Parameters;
         }
 

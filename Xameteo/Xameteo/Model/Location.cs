@@ -5,7 +5,7 @@ namespace Xameteo.Model
 {
     /// <summary>
     /// </summary>
-    internal class Location
+    public class Location
     {
         /// <summary>
         /// Location name

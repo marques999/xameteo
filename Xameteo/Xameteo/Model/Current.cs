@@ -5,7 +5,7 @@ namespace Xameteo.Model
 {
     /// <summary>
     /// </summary>
-    internal class Current
+    public class Current
     {
         /// <summary>
         /// Cloud cover as percentage
