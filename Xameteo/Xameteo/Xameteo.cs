@@ -21,11 +21,20 @@ namespace Xameteo
             Dialogs = new Dialogs();
             Settings = new Settings();
             Geolocator = CrossGeolocator.Current;
+            Api = new ApixuApi(Settings.ApiKey);
             MyPlaces = new Places(Settings.Places);
             MyPlaces.Insert(new AirportAdapter("OPO"));
             MyPlaces.Insert(new CoordinatesAdapter(35.6732619, 139.5703036));
             MyPlaces.Insert(new LocationAdapter("Valongo, Porto"));
             Localization = new L10N(Settings.Locale);
+        }
+
+        /// <summary>
+        /// </summary>
+        public static ApixuApi Api
+        {
+            get;
+            private set;
         }
 
         /// <summary>

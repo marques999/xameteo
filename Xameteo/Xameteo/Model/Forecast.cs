@@ -5,7 +5,7 @@ namespace Xameteo.Model
 {
     /// <summary>
     /// </summary>
-    internal class Forecast
+    public class Forecast
     {
         /// <summary>
         /// </summary>

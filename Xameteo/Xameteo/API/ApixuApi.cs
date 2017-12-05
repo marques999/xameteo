@@ -1,9 +1,11 @@
 ﻿using System;
-using System.IO;
-using System.Net;
+using System.Net.Http;
+using System.Reactive.Linq;
 using System.Threading.Tasks;
 
-using Newtonsoft.Json;
+using Refit;
+using Akavache;
+using ModernHttpClient;
 
 using Xameteo.Model;
 
@@ -15,81 +17,64 @@ namespace Xameteo.API
     {
         /// <summary>
         /// </summary>
+        private readonly IApuxApi _api;
+
+        /// <summary>
+        /// </summary>
         private readonly string _apiKey;
 
         /// <summary>
         /// </summary>
-        private readonly string _parameters;
+        private readonly IBlobCache _cache = BlobCache.LocalMachine;
 
         /// <summary>
         /// </summary>
-        private const string ApiUrl = "http://api.apixu.com/v1";
+        private readonly DateTimeOffset _expires = DateTimeOffset.Now.AddHours(12);
+
+        /// <summary>
+        /// </summary>
+        private readonly HttpClient _client = new HttpClient(new NativeMessageHandler())
+        {
+            BaseAddress = new Uri("http://api.apixu.com/v1")
+        };
 
         /// <summary>
         /// </summary>
         /// <param name="apiKey"></param>
-        /// <param name="adapter"></param>
-        public ApixuApi(PlacesAdapter adapter)
+        public ApixuApi(string apiKey)
         {
-            _apiKey = Xameteo.Settings.ApiKey;
-            _parameters = adapter.Parameters;
+            _apiKey = apiKey;
+            _api = RestService.For<IApuxApi>(_client);
         }
 
         /// <summary>
         /// </summary>
+        /// <param name="place"></param>
         /// <returns></returns>
-        public Task<ApixuCurrent> Current() => HttpGetAsync<ApixuCurrent>(
-            $"{ApiUrl}/current.json?key={_apiKey}&q={_parameters}"
-        );
+        public async Task<ApixuCurrent> Current(PlaceAdapter place)
+        {
+            return await _cache.GetOrFetchObject("current_" + place.Parameters, () => _api.GetCurrent(_apiKey, place.Parameters), _expires);
+        }
 
         /// <summary>
+        /// 
         /// </summary>
-        /// <param name="start"></param>
-        /// <param name="end"></param>
-        /// <returns></returns>
-        public Task<ApixuHistory> History(DateTime start, DateTime end) => HttpGetAsync<ApixuHistory>(
-            $"{ApiUrl}/history.json?key={_apiKey}&q={_parameters}&dt={start:d}&end_dt={end:d}"
-        );
-
-        /// <summary>
-        /// </summary>
+        /// <param name="place"></param>
         /// <param name="days"></param>
         /// <returns></returns>
-        public Task<ApixuForecast> Forecast(int days) => HttpGetAsync<ApixuForecast>(
-            $"{ApiUrl}/forecast.json?key={_apiKey}&q={_parameters}&days={days}"
-        );
+        public async Task<ApixuForecast> Forecast(PlaceAdapter place, int days)
+        {
+            return await _cache.GetOrFetchObject("forecast_" + place.Parameters, () => _api.GetForecast(_apiKey, place.Parameters, days), _expires);
+        }
 
         /// <summary>
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="uri"></param>
+        /// <param name="place"></param>
+        /// <param name="parameters"></param>
         /// <returns></returns>
-        private static async Task<T> HttpGetAsync<T>(string uri)
+        public async Task<ApixuHistory> History(PlaceAdapter place, HistoryParameters parameters)
         {
-            var request = WebRequest.Create(uri) as HttpWebRequest;
-
-            request.Method = "GET";
-            request.ContentType = "application/json";
-
-            using (var response = await request.GetResponseAsync())
-            {
-                if (!(response is HttpWebResponse httpResponse))
-                {
-                    return default(T);
-                }
-
-                var statusCode = httpResponse.StatusCode;
-
-                if (statusCode != HttpStatusCode.OK)
-                {
-                    return default(T);
-                }
-
-                using (var reader = new StreamReader(response.GetResponseStream()))
-                {
-                    return JsonConvert.DeserializeObject<T>(reader.ReadToEnd());
-                }
-            }
+            return await _cache.GetOrFetchObject("history_" + place.Parameters, () => _api.GetHistory(_apiKey, place.Parameters, parameters), _expires);
         }
     }
 }

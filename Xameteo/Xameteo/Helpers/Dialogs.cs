@@ -1,7 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
+
 using Acr.UserDialogs;
+
 using Xamarin.Forms;
 using Xameteo.Units;
 
@@ -33,7 +34,6 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
-        /// <param name="name"></param>
         /// <param name="factory"></param>
         /// <param name="generator"></param>
         /// <returns></returns>
@@ -59,7 +59,8 @@ namespace Xameteo.Helpers
         /// <returns></returns>
         public IProgressDialog InfiniteProgress => _instance.Progress(new ProgressDialogConfig
         {
-            AutoShow = true, IsDeterministic = false
+            AutoShow = true,
+            IsDeterministic = false
         });
     }
 }

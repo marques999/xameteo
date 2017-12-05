@@ -36,7 +36,7 @@ namespace Xameteo.Views
         private async void InitializeList()
         {
             _progressDialog.Show();
-            (await Task.WhenAll(Xameteo.MyPlaces.Current())).ForEach(it => Items.Add(it));
+            (await Task.WhenAll(Xameteo.MyPlaces.Current()).ConfigureAwait(false)).ForEach(it => Items.Add(it));
             MyListView.ItemsSource = Items;
             _progressDialog.Hide();
         }

@@ -3,7 +3,7 @@
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    internal class CoordinatesAdapter : PlacesAdapter
+    internal class CoordinatesAdapter : PlaceAdapter
     {
         /// <inheritdoc />
         /// <summary>

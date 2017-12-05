@@ -5,7 +5,7 @@ namespace Xameteo.API
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    internal class LocationAdapter : PlacesAdapter
+    internal class LocationAdapter : PlaceAdapter
     {
         /// <inheritdoc />
         /// <summary>

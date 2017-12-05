@@ -5,7 +5,7 @@ namespace Xameteo.Model
 {
     /// <summary>
     /// </summary>
-    internal class Astrology
+    public class Astrology
     {
         /// <summary>
         /// Sunrise time (12 hours)

@@ -1,7 +1,9 @@
 ﻿using System.Linq;
-using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+
 using Newtonsoft.Json;
+
 using Xameteo.Model;
 
 namespace Xameteo.API
@@ -12,7 +14,7 @@ namespace Xameteo.API
     {
         /// <summary>
         /// </summary>
-        private readonly HashSet<PlacesAdapter> _places = new HashSet<PlacesAdapter>();
+        private readonly HashSet<PlaceAdapter> _places = new HashSet<PlaceAdapter>();
 
         /// <summary>
         /// </summary>
@@ -24,7 +26,7 @@ namespace Xameteo.API
         /// <summary>
         /// </summary>
         /// <returns></returns>
-        public List<PlacesAdapter> Enumerate()
+        public List<PlaceAdapter> Enumerate()
         {
             return _places.ToList();
         }
@@ -33,7 +35,7 @@ namespace Xameteo.API
         /// </summary>
         /// <param name="adapter"></param>
         /// <returns></returns>
-        public bool Insert(PlacesAdapter adapter)
+        public bool Insert(PlaceAdapter adapter)
         {
             return _places.Add(adapter);
         }
@@ -42,7 +44,7 @@ namespace Xameteo.API
         /// </summary>
         /// <param name="adapter"></param>
         /// <returns></returns>
-        public bool Remove(PlacesAdapter adapter)
+        public bool Remove(PlaceAdapter adapter)
         {
             return _places.Remove(adapter);
         }
@@ -50,9 +52,9 @@ namespace Xameteo.API
         /// <summary>
         /// </summary>
         /// <returns></returns>
-        public List<Task<ApixuCurrent>> Current()
+        public IEnumerable<Task<ApixuCurrent>> Current()
         {
-            return _places.Select(it => new ApixuApi(it).Current()).ToList();
+            return _places.Select(it => Xameteo.Api.Current(it));
         }
 
         /// <summary>
@@ -68,7 +70,7 @@ namespace Xameteo.API
         /// <param name="jsonData"></param>
         public Places(string jsonData)
         {
-            _places.UnionWith(JsonConvert.DeserializeObject<IEnumerable<PlacesAdapter>>(jsonData, _settings));
+            _places.UnionWith(JsonConvert.DeserializeObject<IEnumerable<PlaceAdapter>>(jsonData, _settings));
         }
     }
 }

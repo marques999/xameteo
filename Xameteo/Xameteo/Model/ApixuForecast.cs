@@ -4,7 +4,7 @@ namespace Xameteo.Model
 {
     /// <summary>
     /// </summary>
-    internal class ApixuForecast
+    public class ApixuForecast
     {
         /// <summary>
         /// </summary>

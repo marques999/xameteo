@@ -4,7 +4,7 @@ namespace Xameteo.Model
 {
     /// <summary>
     /// </summary>
-    internal class ApixuHistory
+    public class ApixuHistory
     {
         /// <summary>
         /// </summary>

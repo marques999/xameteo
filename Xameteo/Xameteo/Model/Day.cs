@@ -4,7 +4,7 @@ namespace Xameteo.Model
 {
     /// <summary>
     /// </summary>
-    internal class Day
+    public class Day
     {
         /// <summary>
         ///

@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Reactive.Linq;
 using System.ComponentModel;
 
-using Xamarin.Forms.Xaml;
 using Xameteo.API;
-using Xameteo.Units;
+using Xamarin.Forms.Xaml;
 
 namespace Xameteo
 {
@@ -39,7 +39,7 @@ namespace Xameteo
             {
                 progressDialog.Show();
                 var position = await Xameteo.MyLocation;
-                _viewModel.Text = (await new ApixuApi(new CoordinatesAdapter(position.Latitude, position.Longitude)).Current()).ToString();
+                _viewModel.Text = (await Xameteo.Api.Current(new CoordinatesAdapter(position.Latitude, position.Longitude)).ConfigureAwait(false)).ToString();
                 progressDialog.Hide();
             }
             catch (Exception exception)

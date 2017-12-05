@@ -4,7 +4,7 @@ namespace Xameteo.API
 {
     /// <summary>
     /// </summary>
-    public abstract class PlacesAdapter
+    public abstract class PlaceAdapter
     {
         /// <summary>
         /// </summary>
@@ -18,7 +18,7 @@ namespace Xameteo.API
         /// <summary>
         /// </summary>
         /// <param name="parameters"></param>
-        protected PlacesAdapter(string parameters)
+        protected PlaceAdapter(string parameters)
         {
             Parameters = parameters;
         }

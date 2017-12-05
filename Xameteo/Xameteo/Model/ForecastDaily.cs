@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
+using System.Collections.Generic;
 
 using Newtonsoft.Json;
 
@@ -8,7 +8,7 @@ namespace Xameteo.Model
 {
     /// <summary>
     /// </summary>
-    internal class ForecastDaily
+    public class ForecastDaily
     {
         /// <summary>
         /// Contains the forecast date

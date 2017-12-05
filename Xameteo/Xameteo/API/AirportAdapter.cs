@@ -3,7 +3,7 @@
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    internal class AirportAdapter : PlacesAdapter
+    internal class AirportAdapter : PlaceAdapter
     {
         /// <inheritdoc />
         /// <summary>
