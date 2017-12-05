@@ -11,25 +11,25 @@ namespace Xameteo.Model
         /// Sunrise time (12 hours)
         /// </summary>
         [JsonProperty("sunrise")]
-        public DateTime Sunrise { get; set; }
+        public string Sunrise { get; set; }
 
         /// <summary>
         /// Sunset time (12 hours)
         /// </summary>
         [JsonProperty("sunset")]
-        public DateTime Sunset { get; set; }
+        public string Sunset { get; set; }
 
         /// <summary>
         /// Moonrise time (12 hours)
         /// </summary>
         [JsonProperty("moonrise")]
-        public DateTime Moonrise { get; set; }
+        public string Moonrise { get; set; }
 
         /// <summary>
         /// Moonset time (12 hours)
         /// </summary>
         [JsonProperty("moonset")]
-        public DateTime Moonset { get; set; }
+        public string Moonset { get; set; }
 
         /// <summary>
         /// </summary>

@@ -1,45 +1,30 @@
-﻿using System;
-using System.Reactive.Linq;
-using System.ComponentModel;
-
-using Xameteo.API;
+﻿using System.ComponentModel;
 using Xamarin.Forms.Xaml;
 
-namespace Xameteo
+namespace Xameteo.Views
 {
     /// <inheritdoc />
     /// <summary>
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CurrentWeather
+    public partial class TodayHourlyPage
     {
         /// <summary>
         /// </summary>
-        public CurrentWeather()
+        public TodayHourlyPage()
         {
-            _viewModel = new CurrentWeatherViewModel();
-            BindingContext = _viewModel;
             InitializeComponent();
         }
 
-
-        /// <summary>
-        /// </summary>
-        private readonly CurrentWeatherViewModel _viewModel;
-
-        /// <summary>
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public async void GetWeather(object sender, EventArgs e)
+        /*public async void GetWeather(object sender, EventArgs e)
         {
-            var progressDialog = Xameteo.Dialogs.InfiniteProgress;
+            //var progressDialog = Xameteo.Dialogs.InfiniteProgress;
 
             try
             {
                 progressDialog.Show();
                 var position = await Xameteo.MyLocation;
-                _viewModel.Text = (await Xameteo.Api.Current(new CoordinatesAdapter(position.Latitude, position.Longitude)).ConfigureAwait(false)).ToString();
+                //_viewModel.Text = (await Xameteo.Api.Current(new CoordinatesAdapter(position.Latitude, position.Longitude)).ConfigureAwait(false)).ToString();
                 progressDialog.Hide();
             }
             catch (Exception exception)
@@ -47,7 +32,7 @@ namespace Xameteo
                 progressDialog.Hide();
                 await Xameteo.Dialogs.Alert(this, exception);
             }
-        }
+        }*/
     }
 
     /// <inheritdoc />
@@ -84,7 +69,6 @@ namespace Xameteo
         public CurrentWeatherViewModel()
         {
             _text = "Ola Kira!";
-           // _text = Xameteo.Settings.Pressure.Current.ToString(1050);
         }
 
         /// <summary>

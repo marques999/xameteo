@@ -9,11 +9,17 @@
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
-          <StackLayout>
-            <Label Text="{Binding Location.Name}" 
-                   Style="{DynamicResource ListItemTextStyle}" />
+          <StackLayout Orientation="Horizontal">
             <Label Text="{Binding Current.Temperature}" 
-                   Style="{DynamicResource ListItemDetailTextStyle}"/>
+                   Style="{DynamicResource ListItemTextStyle}" />
+            <StackLayout Orientation="Vertical">
+              <Label Text="{Binding Location.Name}" 
+                     Style="{DynamicResource ListItemTextStyle}" />
+              <Label Text="{Binding Current.Temperature}" 
+                     Style="{DynamicResource ListItemDetailTextStyle}"/>
+            </StackLayout>
+            <Label Text="ababb" 
+                   Style="{DynamicResource ListItemTextStyle}" />
           </StackLayout>
         </ViewCell>
       </DataTemplate>

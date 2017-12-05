@@ -9,6 +9,7 @@
         /// </summary>
         public App()
         {
+            Xameteo.Initialize();
             InitializeComponent();
             MainPage = new MainPage();
         }
@@ -17,7 +18,7 @@
         /// </summary>
         protected override void OnStart()
         {
-            Xameteo.Initialize();
+            
         }
 
         /// <summary>

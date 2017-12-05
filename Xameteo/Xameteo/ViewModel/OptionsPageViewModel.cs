@@ -9,11 +9,13 @@ namespace Xameteo.Views
     /// </summary>
     public class OptionsPageViewModel : INotifyPropertyChanged
     {
-        private string _temperature;
-        private string _pressure;
-        private string _precipitation;
+        /// <summary>
+        /// </summary>
         private string _distance;
+        private string _pressure;
         private string _velocity;
+        private string _temperature;
+        private string _precipitation;
 
         /// <inheritdoc />
         /// <summary>
@@ -32,6 +34,8 @@ namespace Xameteo.Views
             }
         }
 
+        /// <summary>
+        /// </summary>
         public string Pressure
         {
             get => _pressure;
@@ -42,6 +46,8 @@ namespace Xameteo.Views
             }
         }
 
+        /// <summary>
+        /// </summary>
         public string Precipitation
         {
             get => _precipitation;
@@ -59,7 +65,7 @@ namespace Xameteo.Views
             get => _distance;
             set
             {
-                _distance =  "Distance: " + value;
+                _distance = "Distance: " + value;
                 OnPropertyChanged(nameof(Distance));
             }
         }
@@ -91,20 +97,20 @@ namespace Xameteo.Views
 
         /// <summary>
         /// </summary>
-        /// <param name="precipitationChoice"></param>
+        /// <param name="velocityChoice"></param>
         /// <returns></returns>
         internal Action HandleVelocity(Unit velocityChoice)
         {
             return () =>
             {
-                Velocity = velocityChoice.ToString(17);;
+                Velocity = velocityChoice.ToString(17); ;
                 Xameteo.Settings.Velocity.Current = velocityChoice;
             };
         }
 
         /// <summary>
         /// </summary>
-        /// <param name="precipitationChoice"></param>
+        /// <param name="temperatureChoice"></param>
         /// <returns></returns>
         internal Action HandleTemperature(Unit temperatureChoice)
         {
@@ -117,7 +123,7 @@ namespace Xameteo.Views
 
         /// <summary>
         /// </summary>
-        /// <param name="precipitationChoice"></param>
+        /// <param name="pressureChoice"></param>
         /// <returns></returns>
         internal Action HandlePressure(Unit pressureChoice)
         {

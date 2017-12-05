@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xameteo.Views.TodayHourlyPage">
+  <ContentPage.Content>
+    <ScrollView>
+      <Label Text="HOURLY DETAILS"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Time"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand" />
+        <Label Text="Weather"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand" />
+        <Label Text="Wind"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand" />
+      </StackLayout>
+      <ListView x:Name="HourlyForecast"
+                ItemsSource="{Binding Hourly}"
+                CachingStrategy="RecycleElement">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout Padding="16, 8" Orientation="Horizontal">
+                <Label Text="{Binding Date, Converter={StaticResource CnvHour}}"
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="Start" />
+                <Label Text="{Binding Temperature, Converter={StaticResource CnvTemperature}}"
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="CenterAndExpand" />
+                <Label Text="{Binding WindVelocity, Converter={StaticResource CnvVelocity}}"
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="End" />
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

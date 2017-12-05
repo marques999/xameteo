@@ -84,24 +84,5 @@ namespace Xameteo.Model
         /// </summary>
         [JsonProperty("last_updated")]
         public DateTime LastUpdated { get; set; }
-
-        /// <summary>
-        /// </summary>
-        /// <returns></returns>
-        public override string ToString() => $@"
-  LastUpdated = {LastUpdated}
-  Temperature = {Temperature}
-  IsDay = {IsDay}
-  Condition = {Condition}
-  WindVelocity = {WindVelocity}
-  WindDegree = {WindDegree}
-  WindDirection = {WindDirection}
-  Pressure = {Pressure}
-  Precipitation = {Precipitation}
-  Humidity = {Humidity}
-  Cloud = {Cloud}
-  FeelsLike = {FeelsLike}
-  Visibility = {Visibility}
-";
     }
 }

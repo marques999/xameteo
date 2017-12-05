@@ -1,15 +1,16 @@
-﻿using System.Collections.ObjectModel;
-using System.Threading.Tasks;
-using Acr.UserDialogs;
+﻿using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
+
 using Xameteo.Model;
 
 namespace Xameteo.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PlacesPage : ContentPage
+    public partial class PlacesPage
     {
         /// <summary>
         /// </summary>
@@ -21,24 +22,23 @@ namespace Xameteo.Views
 
         /// <summary>
         /// </summary>
-        private readonly IProgressDialog _progressDialog = Xameteo.Dialogs.InfiniteProgress;
-
-        /// <summary>
-        /// </summary>
         public PlacesPage()
         {
             InitializeComponent();
-            InitializeList();
+            MyListView.ItemsSource = Items;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// </summary>
-        private async void InitializeList()
+        protected override async void OnAppearing()
         {
-            _progressDialog.Show();
-            (await Task.WhenAll(Xameteo.MyPlaces.Current()).ConfigureAwait(false)).ForEach(it => Items.Add(it));
-            MyListView.ItemsSource = Items;
-            _progressDialog.Hide();
+            using (var progressDialog = Xameteo.Dialogs.InfiniteProgress)
+            {
+                progressDialog.Show();
+                (await Task.WhenAll(Xameteo.MyPlaces.Current())).ForEach(it => Items.Add(it));         
+                progressDialog.Hide();
+            }
         }
 
         /// <summary>

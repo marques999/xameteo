@@ -21,7 +21,6 @@ namespace Xameteo
         public MainPageMaster()
         {
             InitializeComponent();
-
             BindingContext = new MainPageMasterViewModel();
             ListView = MenuItemsListView;
         }
@@ -32,13 +31,27 @@ namespace Xameteo
 
             public MainPageMasterViewModel()
             {
-                MenuItems = new ObservableCollection<MainPageMenuItem>(new[]
+                MenuItems = new ObservableCollection<MainPageMenuItem>();
+
+                var i = 0;
+                var locations = Xameteo.MyPlaces.List;
+
+                for (; i < locations.Count; i++)
                 {
-                    new MainPageMenuItem { Id = 0, Title = "Page 1",  TargetType = typeof(CurrentWeather) },
-                    new MainPageMenuItem { Id = 1, Title = "Page 2",  TargetType = typeof(OptionsPage) },
-                    new MainPageMenuItem { Id = 2, Title = "Page 3,", TargetType = typeof(PlacesPage) },
-                    new MainPageMenuItem { Id = 3, Title = "Page 4" },
-                    new MainPageMenuItem { Id = 4, Title = "Page 5" },
+                    MenuItems.Add(new MainPageMenuItem
+                    {
+                        Id = i, Title = locations[i].Parameters, TargetType = typeof(PlacePage)
+                    });
+                }
+
+                MenuItems.Add(new MainPageMenuItem
+                {
+                    Id = i++, Title = "Settings", TargetType = typeof(OptionsPage)
+                });
+
+                MenuItems.Add(new MainPageMenuItem
+                {
+                    Id = i, Title = "Home,", TargetType = typeof(PlacesPage)
                 });
             }
 
@@ -46,10 +59,7 @@ namespace Xameteo
             public event PropertyChangedEventHandler PropertyChanged;
             void OnPropertyChanged([CallerMemberName] string propertyName = "")
             {
-                if (PropertyChanged == null)
-                    return;
-
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
             #endregion
         }

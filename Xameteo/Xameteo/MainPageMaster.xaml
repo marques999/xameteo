@@ -22,20 +22,20 @@
             <RowDefinition Height="10"/>
           </Grid.RowDefinitions>
           <Label
-              Grid.Column="1"
               Grid.Row="2"
-              Text="Xameteo 💩"
+              Grid.Column="1"
+              Text="Locations"
               Style="{DynamicResource SubtitleStyle}"/>
         </Grid>
       </ListView.Header>
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
+            <StackLayout Padding="16,12" HorizontalOptions="FillAndExpand">
               <Label VerticalOptions="FillAndExpand" 
                     VerticalTextAlignment="Center" 
                     Text="{Binding Title}" 
-                    FontSize="24"/>
+                    FontSize="20"/>
             </StackLayout>
           </ViewCell>
         </DataTemplate>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:globalization="clr-namespace:Xameteo.Globalization;assembly=Xameteo"
+             x:Class="Xameteo.Views.TodayCurrentPage">
+  <ContentPage.Content>
+    <ScrollView>
+      <StackLayout Orientation="Vertical" >
+        <Label FontSize="20" Text="Current" HorizontalOptions="FillAndExpand"></Label>
+        <ListView x:Name="DataTable1"
+                  ItemsSource="{Binding Table1}"
+                  CachingStrategy="RecycleElement">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <StackLayout Padding="16, 8" Orientation="Horizontal">
+                  <Label Text="{Binding Item1}"
+                         VerticalOptions="CenterAndExpand" 
+                         HorizontalOptions="Start" />
+                  <Label Text="{Binding Item2}"
+                         VerticalOptions="CenterAndExpand" 
+                         HorizontalOptions="End" />
+                </StackLayout>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+        <Label FontSize="20" Text="Location" HorizontalOptions="FillAndExpand"></Label>
+        <ListView x:Name="DataTable2"
+                  ItemsSource="{Binding Table2}"
+                  CachingStrategy="RecycleElement">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <StackLayout Padding="16, 8" Orientation="Horizontal">
+                  <Label Text="{Binding Item1}"
+                         VerticalOptions="CenterAndExpand" 
+                         HorizontalOptions="Start" />
+                  <Label Text="{Binding Item2}"
+                         VerticalOptions="CenterAndExpand" 
+                         HorizontalOptions="End" />
+                </StackLayout>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="End">
+          <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+            <Label Text="{Binding Astrology.Sunrise}"
+                   Style="{StaticResource StyleAstroText}"/>
+            <Label Text="{globalization:Translate ASTRO_SUNRISE}"
+                   Style="{StaticResource StyleAstroLabel}" />
+            <Label Text="{Binding Astrology.Sunset}"
+                   Style="{StaticResource StyleAstroText}" />
+            <Label Text="{globalization:Translate ASTRO_SUNSET}"
+                   Style="{StaticResource StyleAstroLabel}" />
+          </StackLayout>
+          <BoxView Color="#5b5d68"
+                   WidthRequest="1" 
+                   HorizontalOptions="Center" />
+          <StackLayout Orientation="Vertical" Padding="16, 8" HorizontalOptions="FillAndExpand">
+            <Label Text="{Binding Astrology.Moonrise}"
+                   Style="{StaticResource StyleAstroText}"/>
+            <Label Text="{globalization:Translate ASTRO_MOONRISE}"
+                   Style="{StaticResource StyleAstroLabel}" />
+            <Label Text="{Binding Astrology.Moonset}"
+                   Style="{StaticResource StyleAstroText}" />
+            <Label Text="{globalization:Translate ASTRO_MOONSET}"
+                   Style="{StaticResource StyleAstroLabel}" />
+          </StackLayout>
+        </StackLayout>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

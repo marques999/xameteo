@@ -1,4 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Globalization;
+using System.Collections.Generic;
+
+using Xamarin.Forms;
+
 using Plugin.Settings.Abstractions;
 
 namespace Xameteo.Units

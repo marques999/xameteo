@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Xameteo.Views.WeekForecastPage"
+             xmlns:helpers="clr-namespace:Xameteo.Helpers;assembly=Xameteo">
+  <ContentPage.Content>
+
+    <Grid HorizontalOptions="FillAndExpand">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <BoxView BackgroundColor="Gray" Opacity="0.5" Grid.Row="0" />
+      <Label Text="Days" Grid.Row="0" VerticalTextAlignment="Center" />
+      <ScrollView Grid.Row="1" Orientation="Horizontal">
+        <helpers:HorizontalList Command="{Binding SelectedItemCommand}"
+                                      ListOrientation="Horizontal"
+                                      ItemsSource="{Binding Days}">
+          <helpers:HorizontalList.ItemTemplate>
+            <DataTemplate>
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Image Source="{Binding Day.Condition.Image}"
+                             Grid.Row="0"
+                             HeightRequest="50"
+                             WidthRequest="50" />
+                <Label Text="{Binding Day.Condition.Text}"
+                             Grid.Row="1"
+                             HorizontalTextAlignment="Center" />
+              </Grid>
+            </DataTemplate>
+          </helpers:HorizontalList.ItemTemplate>
+        </helpers:HorizontalList>
+      </ScrollView>
+    </Grid>
+  </ContentPage.Content>
+</ContentPage>

@@ -2,5 +2,101 @@
   {
     "id": "buttonDefault",
     "name": [ "Click here!", "Carrega crlh!" ]
+  },
+  {
+    "id": "FORECAST_LAST_UPDATED",
+    "name": [ "Last updated", "Última actualização" ]
+  },
+  {
+    "id": "FORECAST_CONDITION",
+    "name": [ "Condition", "Estado" ]
+  },
+  {
+    "id": "FORECAST_TEMPERATURE",
+    "name": [ "Temperature", "Temperatura" ]
+  },
+  {
+    "id": "FORECAST_FEELS_LIKE",
+    "name": [ "Feels Like", "Sensação" ]
+  },
+  {
+    "id": "FORECAST_HUMIDITY",
+    "name": [ "Humidity", "Humidade" ]
+  },
+  {
+    "id": "FORECAST_IS_DAY",
+    "name": [ "isDay", "Dia" ]
+  },
+  {
+    "id": "FORECAST_WIND_VELOCITY",
+    "name": [ "Wind velocity", "Força do vento" ]
+  },
+  {
+    "id": "FORECAST_WIND_DEGREE",
+    "name": [ "Wind degree", "Ãngulo do vento" ]
+  },
+  {
+    "id": "FORECAST_WIND_DIRECTION",
+    "name": [ "Wind direction", "Direcção do vento" ]
+  },
+  {
+    "id": "FORECAST_PRESSURE",
+    "name": [ "Pressure", "Pressão atmosférica" ]
+  },
+  {
+    "id": "FORECAST_PRECIPITATION",
+    "name": [ "Precipitation", "Precipitação" ]
+  },
+  {
+    "id": "FORECAST_CLOUD",
+    "name": [ "Cloud coverage", "Cobertura de nuvens" ]
+  },
+  {
+    "id": "FORECAST_VISIBILITY",
+    "name": [ "Visibility", "Visibilidade" ]
+  },
+  {
+    "id": "ASTRO_MOONRISE",
+    "name": [ "Moonrise", "Nascer da lua" ]
+  },
+  {
+    "id": "ASTRO_MOONSET",
+    "name": [ "Moonset", "Pôr da lua" ]
+  },
+  {
+    "id": "ASTRO_SUNRISE",
+    "name": [ "Sunrise", "Nascer do sol" ]
+  },
+  {
+    "id": "ASTRO_SUNSET",
+    "name": [ "Sunset", "Pôr do sol" ]
+  },
+  {
+    "id": "LOCATION_NAME",
+    "name": [ "Name", "Localidade" ]
+  },
+  {
+    "id": "LOCATION_REGION",
+    "name": [ "Region", "Distrito" ]
+  },
+  {
+    "id": "LOCATION_COUNTRY",
+    "name": [ "Country", "País" ]
+  },
+  {
+    "id": "LOCATION_LATITUDE",
+    "name": [ "Latitude", "Latitude" ]
+  },
+  {
+    "id": "LOCATION_LONGITUDE",
+    "name": [ "Longitude", "Longitude" ]
+  },
+  {
+    "id": "LOCATION_TIMEZONE",
+    "name": [ "Time zone", "Fuso horário" ]
+  },
+  {
+    "id": "LOCATION_LOCAL_TIME",
+    "name": [ "Local time", "Hora local" ]
   }
 ]

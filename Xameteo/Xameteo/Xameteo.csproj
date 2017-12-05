@@ -46,7 +46,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Children.cs" />
     <Compile Include="Globalization\LocalizationPair.cs" />
+    <Compile Include="Helpers\HorizontalListView.cs" />
+    <Compile Include="Helpers\HourConverter.cs" />
     <Compile Include="Units\ClockFactory.cs" />
     <Compile Include="Units\Distance.cs" />
     <Compile Include="Globalization\Locale.cs" />
@@ -74,8 +77,16 @@
     <Compile Include="Model\Location.cs" />
     <Compile Include="API\Places.cs" />
     <Compile Include="Units\Unit.cs" />
-    <Compile Include="Views\CurrentWeather.xaml.cs">
-      <DependentUpon>CurrentWeather.xaml</DependentUpon>
+    <Compile Include="ViewModel\ForecastViewModel.cs" />
+    <Compile Include="Views\HistoryPage.xaml.cs">
+      <DependentUpon>HistoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlacePage.cs" />
+    <Compile Include="Views\TodayCurrentPage.xaml.cs">
+      <DependentUpon>TodayCurrentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TodayHourlyPage.xaml.cs">
+      <DependentUpon>TodayHourlyPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -91,9 +102,12 @@
     <Compile Include="Views\OptionsPage.xaml.cs">
       <DependentUpon>OptionsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\OptionsPageViewModel.cs" />
+    <Compile Include="ViewModel\OptionsPageViewModel.cs" />
     <Compile Include="Views\PlacesPage.xaml.cs">
       <DependentUpon>PlacesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WeekForecastPage.xaml.cs">
+      <DependentUpon>WeekForecastPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Xameteo.cs" />
     <Compile Include="Helpers\Settings.cs" />
@@ -116,6 +130,9 @@
     </Reference>
     <Reference Include="Akavache.Sqlite3, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\akavache.sqlite3.5.0.0\lib\Portable-Net45+Win8+WP8+Wpa81\Akavache.Sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="Humanizer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Humanizer.Core.2.2.0\lib\netstandard1.0\Humanizer.dll</HintPath>
     </Reference>
     <Reference Include="ModernHttpClient">
       <HintPath>..\..\packages\modernhttpclient.2.4.2\lib\Portable-Net45+WinRT45+WP8+WPA81\ModernHttpClient.dll</HintPath>
@@ -211,7 +228,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\CurrentWeather.xaml">
+    <EmbeddedResource Include="Views\TodayHourlyPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -224,6 +241,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\PlacesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TodayCurrentPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\WeekForecastPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\HistoryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -16,7 +16,7 @@ namespace Xameteo.API
         /// <summary>
         /// </summary>
         /// <returns></returns>
-        [Get("/forecast.json}")]
+        [Get("/forecast.json")]
         Task<ApixuForecast> GetForecast(string key, string q, int days);
 
         /// <summary>

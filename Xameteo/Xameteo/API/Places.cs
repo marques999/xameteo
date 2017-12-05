@@ -14,7 +14,7 @@ namespace Xameteo.API
     {
         /// <summary>
         /// </summary>
-        private readonly HashSet<PlaceAdapter> _places = new HashSet<PlaceAdapter>();
+        private readonly HashSet<PlaceAdapter> _duplicates = new HashSet<PlaceAdapter>();
 
         /// <summary>
         /// </summary>
@@ -25,10 +25,22 @@ namespace Xameteo.API
 
         /// <summary>
         /// </summary>
-        /// <returns></returns>
-        public List<PlaceAdapter> Enumerate()
+        public List<PlaceAdapter> List
         {
-            return _places.ToList();
+            get;
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        public Task<ApixuCurrent> Current(int index)
+        {
+            return index < List.Count ? Xameteo.Api.Current(List[index]) : null;
+        }
+
+        public Task<ApixuForecast> Forecast(int index)
+        {
+            return index < List.Count ? Xameteo.Api.Forecast(List[index], 15) : null;
         }
 
         /// <summary>
@@ -37,7 +49,14 @@ namespace Xameteo.API
         /// <returns></returns>
         public bool Insert(PlaceAdapter adapter)
         {
-            return _places.Add(adapter);
+            var operationResult = _duplicates.Add(adapter);
+
+            if (operationResult)
+            {
+                List.Add(adapter);
+            }
+
+            return operationResult;
         }
 
         /// <summary>
@@ -46,7 +65,14 @@ namespace Xameteo.API
         /// <returns></returns>
         public bool Remove(PlaceAdapter adapter)
         {
-            return _places.Remove(adapter);
+            var operationResult = _duplicates.Remove(adapter);
+
+            if (operationResult)
+            {
+                List.Remove(adapter);
+            }
+
+            return operationResult;
         }
 
         /// <summary>
@@ -54,7 +80,7 @@ namespace Xameteo.API
         /// <returns></returns>
         public IEnumerable<Task<ApixuCurrent>> Current()
         {
-            return _places.Select(it => Xameteo.Api.Current(it));
+            return _duplicates.Select(it => Xameteo.Api.Current(it));
         }
 
         /// <summary>
@@ -62,7 +88,7 @@ namespace Xameteo.API
         /// <returns></returns>
         public void Save()
         {
-            Xameteo.Settings.Places = JsonConvert.SerializeObject(_places.ToList(), Formatting.None, _settings);
+            Xameteo.Settings.Places = JsonConvert.SerializeObject(_duplicates.ToList(), Formatting.None, _settings);
         }
 
         /// <summary>
@@ -70,7 +96,8 @@ namespace Xameteo.API
         /// <param name="jsonData"></param>
         public Places(string jsonData)
         {
-            _places.UnionWith(JsonConvert.DeserializeObject<IEnumerable<PlaceAdapter>>(jsonData, _settings));
+            _duplicates.UnionWith(JsonConvert.DeserializeObject<IEnumerable<PlaceAdapter>>(jsonData, _settings));
+            List = new List<PlaceAdapter>(_duplicates);
         }
     }
 }

@@ -50,16 +50,21 @@ namespace Xameteo.Model
         public DateTime LocalTime { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        private static string AppendNotNull(string value)
+        {
+            return value.Length > 0 ? value + ", " : string.Empty;
+        }
+
+        /// <summary>
         /// </summary>
         /// <returns></returns>
-        public override string ToString() => $@"
-  Name = {Name}
-  Region = {Region}
-  Country = {Country}
-  Latitude = {Latitude}
-  Longitude = {Longitude}
-  TimeZone = {TimeZone}
-  LocalTime = {LocalTime}
-";
+        public override string ToString()
+        {
+            return AppendNotNull(Name) + AppendNotNull(Region) + Country;
+        }
     }
 }
