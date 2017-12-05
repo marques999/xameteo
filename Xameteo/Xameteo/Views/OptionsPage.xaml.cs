@@ -1,26 +1,62 @@
 ﻿using System;
-using Xamarin.Forms;
+
+using Xameteo.Units;
 using Xamarin.Forms.Xaml;
 
 namespace Xameteo.Views
 {
+    /// <inheritdoc />
     /// <summary>
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class OptionsPage: ContentPage
+    public partial class OptionsPage
     {
         /// <summary>
         /// </summary>
         public OptionsPage()
         {
-            _viewModel = new OptionsPageViewModel();
-            BindingContext = _viewModel;
             InitializeComponent();
         }
 
         /// <summary>
         /// </summary>
-        private readonly OptionsPageViewModel _viewModel;
+        public string TemperatureUnits
+        {
+            get => Xameteo.Settings.Temperature.Name;
+            set => OnPropertyChanged(nameof(TemperatureUnits));
+        }
+
+        /// <summary>
+        /// </summary>
+        public string PressureUnits
+        {
+            get => Xameteo.Settings.Pressure.Name;
+            set => OnPropertyChanged(nameof(PressureUnits));
+        }
+
+        /// <summary>
+        /// </summary>
+        public string PrecipitationUnits
+        {
+            get => Xameteo.Settings.Precipitation.Name;
+            set => OnPropertyChanged(nameof(PrecipitationUnits));
+        }
+
+        /// <summary>
+        /// </summary>
+        public string DistanceUnits
+        {
+            get => Xameteo.Settings.Distance.Name;
+            set => OnPropertyChanged(nameof(DistanceUnits));
+        }
+
+        /// <summary>
+        /// </summary>
+        public string VelocityUnits
+        {
+            get => Xameteo.Settings.Velocity.Name;
+            set => OnPropertyChanged(nameof(VelocityUnits));
+        }
 
         /// <summary>
         /// </summary>
@@ -28,7 +64,11 @@ namespace Xameteo.Views
         /// <param name="args"></param>
         public void OnSelectTemperature(object sender, EventArgs args)
         {
-            Xameteo.Dialogs.SelectUnit(Xameteo.Settings.Temperature, _viewModel.HandleTemperature);
+            Xameteo.Dialogs.SelectUnit("temperature", Temperature.Units, temperatureChoice =>
+            {
+                TemperatureUnits = temperatureChoice.Name;
+                Xameteo.Settings.Temperature = temperatureChoice;
+            });
         }
 
         /// <summary>
@@ -37,7 +77,11 @@ namespace Xameteo.Views
         /// <param name="args"></param>
         public void OnSelectPressure(object sender, EventArgs args)
         {
-            Xameteo.Dialogs.SelectUnit(Xameteo.Settings.Pressure, _viewModel.HandlePressure);
+            Xameteo.Dialogs.SelectUnit("pressure", Pressure.Units, pressureChoice =>
+            {
+                PressureUnits = pressureChoice.Name;
+                Xameteo.Settings.Pressure = pressureChoice;
+            });
         }
 
         /// <summary>
@@ -46,7 +90,11 @@ namespace Xameteo.Views
         /// <param name="args"></param>
         public void OnSelectPrecipitation(object sender, EventArgs args)
         {
-            Xameteo.Dialogs.SelectUnit(Xameteo.Settings.Precipitation, _viewModel.HandlePrecipitation);
+            Xameteo.Dialogs.SelectUnit("precipitation", Precipitation.Units, precipitationChoice =>
+            {
+                PrecipitationUnits = precipitationChoice.Name;
+                Xameteo.Settings.Precipitation = precipitationChoice;
+            });
         }
 
         /// <summary>
@@ -55,7 +103,11 @@ namespace Xameteo.Views
         /// <param name="args"></param>
         public void OnSelectDistance(object sender, EventArgs args)
         {
-            Xameteo.Dialogs.SelectUnit(Xameteo.Settings.Distance, _viewModel.HandleDistance);
+            Xameteo.Dialogs.SelectUnit("distance", Distance.Units, distanceChoice =>
+            {
+                VelocityUnits = distanceChoice.Name;
+                Xameteo.Settings.Distance = distanceChoice;
+            });
         }
 
         /// <summary>
@@ -64,7 +116,11 @@ namespace Xameteo.Views
         /// <param name="args"></param>
         public void OnSelectVelocity(object sender, EventArgs args)
         {
-            Xameteo.Dialogs.SelectUnit(Xameteo.Settings.Velocity, _viewModel.HandleVelocity);
+            Xameteo.Dialogs.SelectUnit("velocity", Velocity.Units, velocityChoice =>
+            {
+                VelocityUnits = velocityChoice.Name;
+                Xameteo.Settings.Velocity = velocityChoice;
+            });
         }
     }
 }

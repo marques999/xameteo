@@ -45,36 +45,41 @@ namespace Xameteo.Helpers
         /// </summary>
         public Temperature Temperature
         {
-            get;
-        } = new Temperature(SettingsManager);
+            get => Temperature.From(SettingsManager.GetValueOrDefault(nameof(Temperature), 0));
+            set => SettingsManager.AddOrUpdateValue(nameof(Temperature), value.ID);
+        }
 
         /// <summary>
         /// </summary>
         public Pressure Pressure
         {
-            get;
-        } = new Pressure(SettingsManager);
+            get => Pressure.From(SettingsManager.GetValueOrDefault(nameof(Pressure), 0));
+            set => SettingsManager.AddOrUpdateValue(nameof(Pressure), value.ID);
+        }
 
         /// <summary>
         /// </summary>
         public Precipitation Precipitation
         {
-            get;
-        } = new Precipitation(SettingsManager);
+            get => Precipitation.From(SettingsManager.GetValueOrDefault(nameof(Precipitation), 0));
+            set => SettingsManager.AddOrUpdateValue(nameof(Precipitation), value.ID);
+        }
 
         /// <summary>
         /// </summary>
         public Distance Distance
         {
-            get;
-        } = new Distance(SettingsManager);
+            get => Distance.From(SettingsManager.GetValueOrDefault(nameof(Distance), 0));
+            set => SettingsManager.AddOrUpdateValue(nameof(Distance), value.ID);
+        }
 
         /// <summary>
         /// </summary>
         public Velocity Velocity
         {
-            get;
-        } = new Velocity(SettingsManager);
+            get => Velocity.From(SettingsManager.GetValueOrDefault(nameof(Velocity), 0));
+            set => SettingsManager.AddOrUpdateValue(nameof(Velocity), value.ID);
+        }
 
         /// <summary>
         /// </summary>

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Globalization;
-
+using Humanizer;
 using Xamarin.Forms;
 
 namespace Xameteo.Helpers
@@ -67,7 +67,7 @@ namespace Xameteo.Helpers
         /// <returns></returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return value is double temperature ? ConversionUtilities.Prefix(Xameteo.Settings.Temperature.Current.ToString(temperature), parameter) : "N/A";
+            return value is double temperature ? ConversionUtilities.Prefix(Xameteo.Settings.Temperature.Convert(temperature), parameter) : "N/A";
         }
 
         /// <inheritdoc />
@@ -99,7 +99,7 @@ namespace Xameteo.Helpers
         /// <returns></returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return value is double temperature ? ConversionUtilities.Prefix(Xameteo.Settings.Velocity.Current.ToString(temperature), parameter) : "N/A";
+            return value is double temperature ? ConversionUtilities.Prefix(Xameteo.Settings.Velocity.Convert(temperature), parameter) : "N/A";
         }
 
         /// <inheritdoc />

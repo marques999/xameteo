@@ -24,17 +24,17 @@ namespace Xameteo.ViewModel
 
             InsertTable1("FORECAST_LAST_UPDATED", today.LastUpdated.ToString("g"));
             InsertTable1("FORECAST_CONDITION", Xameteo.Localization.GetCondition(today.Condition.Id));
-            InsertTable1("FORECAST_TEMPERATURE", Xameteo.Settings.Temperature.Current.ToString(today.Temperature));
-            InsertTable1("FORECAST_FEELS_LIKE", Xameteo.Settings.Temperature.Current.ToString(today.FeelsLike));
+            InsertTable1("FORECAST_TEMPERATURE", Xameteo.Settings.Temperature.Convert(today.Temperature));
+            InsertTable1("FORECAST_FEELS_LIKE", Xameteo.Settings.Temperature.Convert(today.FeelsLike));
             InsertTable1("FORECAST_HUMIDITY", today.Humidity + "%");
             InsertTable1("FORECAST_IS_DAY", today.IsDay ? "true" : "false");
-            InsertTable1("FORECAST_WIND_VELOCITY", Xameteo.Settings.Velocity.Current.ToString(today.WindVelocity));
+            InsertTable1("FORECAST_WIND_VELOCITY", Xameteo.Settings.Velocity.Convert(today.WindVelocity));
             InsertTable1("FORECAST_WIND_DEGREE", today.WindDegree + " deg");
             InsertTable1("FORECAST_WIND_DIRECTION", today.WindDirection);
-            InsertTable1("FORECAST_PRESSURE", Xameteo.Settings.Pressure.Current.ToString(today.Pressure));
-            InsertTable1("FORECAST_PRECIPITATION", Xameteo.Settings.Precipitation.Current.ToString(today.Precipitation));
+            InsertTable1("FORECAST_PRESSURE", Xameteo.Settings.Pressure.Convert(today.Pressure));
+            InsertTable1("FORECAST_PRECIPITATION", Xameteo.Settings.Precipitation.Convert(today.Precipitation));
             InsertTable1("FORECAST_CLOUD", today.Cloud.ToString());
-            InsertTable1("FORECAST_VISIBILITY", Xameteo.Settings.Distance.Current.ToString(today.Visibility));
+            InsertTable1("FORECAST_VISIBILITY", Xameteo.Settings.Distance.Convert(today.Visibility));
 
             var location = _forecast.Location;
 

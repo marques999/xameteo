@@ -57,7 +57,6 @@
     <Compile Include="Units\Precipitation.cs" />
     <Compile Include="Units\Pressure.cs" />
     <Compile Include="Units\Temperature.cs" />
-    <Compile Include="Units\UnitFactory.cs" />
     <Compile Include="Units\Clock.cs" />
     <Compile Include="Units\Velocity.cs" />
     <Compile Include="Globalization\L10N.cs" />
@@ -102,7 +101,6 @@
     <Compile Include="Views\OptionsPage.xaml.cs">
       <DependentUpon>OptionsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\OptionsPageViewModel.cs" />
     <Compile Include="Views\PlacesPage.xaml.cs">
       <DependentUpon>PlacesPage.xaml</DependentUpon>
     </Compile>

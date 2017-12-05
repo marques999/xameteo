@@ -66,5 +66,22 @@
               Clicked="OnSelectVelocity"
               HorizontalOptions="Fill"/>
     </Grid>
+    <!--<ListView x:Name="MyListView"
+              ItemsSource="{Binding Units}"
+              ItemTapped="Handle_ItemTapped"
+              CachingStrategy="RecycleElement">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Horizontal">
+              <Label Text="{Binding Type}" 
+                       Style="{DynamicResource ListItemTextStyle}" />
+              <Label Text="{Binding Current.Name}" 
+                       Style="{DynamicResource ListItemDetailTextStyle}"/>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>-->
   </ContentPage.Content>
 </ContentPage>

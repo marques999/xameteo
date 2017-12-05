@@ -1,17 +1,21 @@
-﻿using Xameteo.Globalization;
-
-namespace Xameteo.Units
+﻿namespace Xameteo.Units
 {
     /// <summary>
     /// </summary>
-    internal class Unit
+    public abstract class Unit
     {
         /// <summary>
         /// </summary>
-        public string Name
+        public int ID
         {
             get;
-            set;
+        }
+
+        /// <summary>
+        /// </summary>
+        public string Symbol
+        {
+            get;
         }
 
         /// <summary>
@@ -23,42 +27,36 @@ namespace Xameteo.Units
 
         /// <summary>
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public delegate double FormulaDelegate(double value);
-
-        /// <summary>
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="formula"></param>
-        /// <param name="translations"></param>
-        public Unit(string name, FormulaDelegate formula, string[] translations)
-        {
-            Name = name;
-            Formula = formula;
-            _localizations = translations;
-        }
-
-        /// <summary>
-        /// </summary>
         private readonly string[] _localizations;
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public double Convert(double value) => Formula?.Invoke(value) ?? value;
+        public delegate double FormulaDelegate(double value);
+
+        /// <summary>
+        /// </summary>
+        public string Name => _localizations[(int)Xameteo.Settings.Locale] ?? _localizations[0];
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public string ToString(double value) => $"{Convert(value):0.###} {Name}";
+        public string Convert(double value) => $"{Formula?.Invoke(value) ?? value:0.###} {Symbol}";
 
         /// <summary>
         /// </summary>
-        /// <param name="locale"></param>
-        /// <returns></returns>
-        public string Translate(Locale locale) => _localizations[(int)locale] ?? _localizations[0];
+        /// <param name="index"></param>
+        /// <param name="symbol"></param>
+        /// <param name="formula"></param>
+        /// <param name="translations"></param>
+        protected Unit(int index, string symbol, FormulaDelegate formula, string[] translations)
+        {
+            ID = index;
+            Symbol = symbol;
+            Formula = formula;
+            _localizations = translations;
+        }
     }
 }

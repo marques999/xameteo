@@ -2,7 +2,7 @@
 {
     /// <summary>
     /// </summary>
-    internal enum Locale
+    public enum Locale
     {
         English = 0,
         Portuguese = 1

@@ -10,6 +10,12 @@ namespace Xameteo.Helpers
 {
     /// <summary>
     /// </summary>
+    /// <param name="choice"></param>
+    /// <returns></returns>
+    public delegate void SelectUnitCallback<in T>(T choice) where T : Unit;
+
+    /// <summary>
+    /// </summary>
     internal class Dialogs
     {
         /// <summary>
@@ -28,26 +34,20 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
-        /// <param name="choice"></param>
-        /// <returns></returns>
-        public delegate Action SelectUnitCallback(Unit choice);
-
-        /// <summary>
-        /// </summary>
-        /// <param name="factory"></param>
+        /// <param name="decorator"></param>
         /// <param name="generator"></param>
         /// <returns></returns>
-        public IDisposable SelectUnit(UnitFactory factory, SelectUnitCallback generator)
+        public IDisposable SelectUnit<T>(string type, T[] units, SelectUnitCallback<T> generator) where T : Unit
         {
             var locale = Xameteo.Settings.Locale;
             var configuration = new ActionSheetConfig();
 
-            foreach (var unit in factory.Units)
+            foreach (var unit in units)
             {
-                configuration.Add($"{unit.Translate(locale)} ({unit.Name})", generator(unit));
+                configuration.Add($"{unit.Name} ({unit.Symbol})", () => generator(unit));
             }
 
-            configuration.Title = $"Select {factory.Type} units";
+            configuration.Title = $"Select {type} units";
             configuration.SetCancel();
             configuration.UseBottomSheet = false;
 
