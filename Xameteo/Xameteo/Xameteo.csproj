@@ -47,9 +47,20 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Children.cs" />
+    <Compile Include="Globalization\ILocale.cs" />
     <Compile Include="Globalization\LocalizationPair.cs" />
-    <Compile Include="Helpers\HorizontalListView.cs" />
     <Compile Include="Helpers\HourConverter.cs" />
+    <Compile Include="Model\Airport.cs" />
+    <Compile Include="Resx\Application.pt1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Application.pt.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resx\Application1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Application.resx</DependentUpon>
+    </Compile>
     <Compile Include="Units\ClockFactory.cs" />
     <Compile Include="Units\Distance.cs" />
     <Compile Include="Globalization\Locale.cs" />
@@ -201,9 +212,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Assets\Airports.json" />
-    <EmbeddedResource Include="Assets\Xameteo.json" />
-    <EmbeddedResource Include="Assets\Conditions.json" />
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -226,6 +234,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resx\Application.pt.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Application.pt1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resx\Application.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Application1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\TodayHourlyPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>

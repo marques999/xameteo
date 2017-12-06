@@ -1,6 +1,5 @@
 ﻿using Foundation;
 using UIKit;
-using Xameteo;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;

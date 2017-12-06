@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Globalization;
-using Humanizer;
+
 using Xamarin.Forms;
 
 namespace Xameteo.Helpers

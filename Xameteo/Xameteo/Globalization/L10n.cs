@@ -1,71 +1,27 @@
-﻿using System.IO;
-using System.Linq;
+﻿using System.Resources;
 using System.Reflection;
-using System.Collections.Generic;
+using System.Globalization;
 
-using Newtonsoft.Json;
+using Xamarin.Forms;
 
 namespace Xameteo.Globalization
 {
-    using DictionaryL10N = Dictionary<string, Localization>;
-
     /// <summary>
     /// </summary>
     internal class L10N
     {
         /// <summary>
+        /// 
         /// </summary>
-        private readonly Locale _locale;
+        private const string ResourceId = "Xameteo.Resx.Application";
 
         /// <summary>
         /// </summary>
-        private readonly DictionaryL10N _resources;
+        private readonly CultureInfo _cultureInfo = DependencyService.Get<ILocale>().GetCurrentCultureInfo();
 
         /// <summary>
         /// </summary>
-        /// <returns></returns>
-        private readonly DictionaryL10N _conditions;
-
-        /// <summary>
-        /// </summary>
-        public DictionaryL10N Airports
-        {
-            get;
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="locale"></param>
-        public L10N(Locale locale)
-        {
-            _locale = locale;
-            Airports = ParseJson("Airports.json");
-            _resources = ParseJson("Xameteo.json");
-            _conditions = ParseJson("Conditions.json");
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="fileName"></param>
-        /// <returns></returns>
-        public static string ReadFile(string fileName)
-        {
-            var stream = typeof(L10N).GetTypeInfo().Assembly.GetManifestResourceStream("Xameteo.Assets." + fileName);
-
-            using (var reader = new StreamReader(stream))
-            {
-                return reader.ReadToEnd();
-            }
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="fileName"></param>
-        /// <returns></returns>
-        private static DictionaryL10N ParseJson(string fileName)
-        {
-            return JsonConvert.DeserializeObject<IEnumerable<Localization>>(ReadFile(fileName)).ToDictionary(it => it.Id, it => it);
-        }
+        private readonly ResourceManager _resourceManager = new ResourceManager(ResourceId, typeof(L10N).GetTypeInfo().Assembly);
 
         /// <summary>
         /// </summary>
@@ -73,7 +29,17 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public string Get(string key)
         {
-            return _resources.TryGetValue(key, out var resource) ? resource.Localize(_locale) : key;
+            return _resourceManager.GetString(key, _cultureInfo) ?? key;
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
+        public string GetOrDefault(string key, string defaultValue)
+        {
+            return _resourceManager.GetString(key, _cultureInfo) ?? defaultValue;
         }
 
         /// <summary>
@@ -82,7 +48,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public string GetCondition(int condition)
         {
-            return _conditions.TryGetValue(condition.ToString(), out var resource) ? resource.Localize(_locale) : "N/A";
+            return _resourceManager.GetString("CONDITION_" + condition, _cultureInfo) ?? condition.ToString();
         }
     }
 }

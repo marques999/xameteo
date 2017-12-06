@@ -18,6 +18,7 @@ namespace Xameteo
         /// </summary>
         public static void Initialize()
         {
+            Localization = new L10N();
             Dialogs = new Dialogs();
             Settings = new Settings();
             Geolocator = CrossGeolocator.Current;
@@ -26,7 +27,6 @@ namespace Xameteo
             MyPlaces.Insert(new AirportAdapter("OPO"));
             MyPlaces.Insert(new CoordinatesAdapter(35.6732619, 139.5703036));
             MyPlaces.Insert(new LocationAdapter("Valongo, Porto"));
-            Localization = new L10N(Settings.Locale);
         }
 
         /// <summary>

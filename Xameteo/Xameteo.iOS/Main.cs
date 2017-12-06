@@ -9,7 +9,7 @@ namespace Xameteo.iOS
         /// <summary>
         /// </summary>
         /// <param name="args"></param>
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             UIApplication.Main(args, null, "AppDelegate");
         }

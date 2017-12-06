@@ -1,5 +1,4 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Xameteo.Model
 {
@@ -30,15 +29,5 @@ namespace Xameteo.Model
         /// </summary>
         [JsonProperty("moonset")]
         public string Moonset { get; set; }
-
-        /// <summary>
-        /// </summary>
-        /// <returns></returns>
-        public override string ToString() => $@"
-  Sunrise = {Sunrise}
-  Sunset = {Sunset}
-  Moonrise = {Moonrise}
-  Moonset = {Moonset}
-";
     }
 }

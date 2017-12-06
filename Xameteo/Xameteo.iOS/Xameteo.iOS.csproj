@@ -91,6 +91,7 @@
   <ItemGroup>
     <Compile Include="AkavacheSqliteLinkerOverride.cs" />
     <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="LocaleIos.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="app.config" />
@@ -238,7 +239,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xameteo\Xameteo.csproj">
-      <Project>{297ef78a-ed0b-41b3-8f95-b73fec38e9e9}</Project>
+      <Project>{C487DA75-9B98-40A0-A91D-303FFD6E802D}</Project>
       <Name>Xameteo</Name>
     </ProjectReference>
   </ItemGroup>
