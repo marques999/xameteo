@@ -24,6 +24,15 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
+        /// <returns></returns>
+        public IProgressDialog InfiniteProgress => _instance.Progress(new ProgressDialogConfig
+        {
+            AutoShow = true,
+            IsDeterministic = false
+        });
+
+        /// <summary>
+        /// </summary>
         /// <param name="page"></param>
         /// <param name="exception"></param>
         /// <returns></returns>
@@ -34,33 +43,27 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
-        /// <param name="decorator"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="type"></param>
+        /// <param name="units"></param>
         /// <param name="generator"></param>
         /// <returns></returns>
         public IDisposable SelectUnit<T>(string type, T[] units, SelectUnitCallback<T> generator) where T : Unit
         {
-            var locale = Xameteo.Settings.Locale;
-            var configuration = new ActionSheetConfig();
+            var configuration = new ActionSheetConfig
+            {
+                Title = $"Select {type} units",
+                UseBottomSheet = false
+            };
+
+            configuration.SetCancel();
 
             foreach (var unit in units)
             {
                 configuration.Add($"{unit.Name} ({unit.Symbol})", () => generator(unit));
             }
 
-            configuration.Title = $"Select {type} units";
-            configuration.SetCancel();
-            configuration.UseBottomSheet = false;
-
             return _instance.ActionSheet(configuration);
         }
-
-        /// <summary>
-        /// </summary>
-        /// <returns></returns>
-        public IProgressDialog InfiniteProgress => _instance.Progress(new ProgressDialogConfig
-        {
-            AutoShow = true,
-            IsDeterministic = false
-        });
     }
 }

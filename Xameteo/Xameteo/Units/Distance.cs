@@ -13,10 +13,10 @@
         /// </summary>
         public static readonly Distance[] Units =
         {
-            new Distance("km", null, new[] { "Kilometers", "Quilómetros" }),
-            new Distance("m", value => value * 1000, new[] { "Meters", "Metros" }),
-            new Distance("in", value => value * 39370, new[] { "Inches", "Polegadas" }),
-            new Distance("mi", value => value * 0.62137, new[] { "Miles", "Milhas" })
+            new Distance("km", "Units_Kilometers", null),
+            new Distance("m", "Units_Meters", value => value * 1000),
+            new Distance("in", "Units_Inches", value => value * 39370),
+            new Distance("mi", "Units_Miles", value => value * 0.62137)
         };
 
         /// <summary>
@@ -28,7 +28,7 @@
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        private Distance(string symbol, FormulaDelegate formula, string[] translations) : base(_count++, symbol, formula, translations)
+        private Distance(string symbol, string translate, FormulaDelegate formula) : base(_count++, symbol, translate, formula)
         {
         }
     }

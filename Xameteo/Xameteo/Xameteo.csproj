@@ -48,8 +48,7 @@
     </Compile>
     <Compile Include="Children.cs" />
     <Compile Include="Globalization\ILocale.cs" />
-    <Compile Include="Globalization\LocalizationPair.cs" />
-    <Compile Include="Helpers\HourConverter.cs" />
+    <Compile Include="Globalization\HourConverter.cs" />
     <Compile Include="Model\Airport.cs" />
     <Compile Include="Resx\Application.pt1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -61,14 +60,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Application.resx</DependentUpon>
     </Compile>
-    <Compile Include="Units\ClockFactory.cs" />
     <Compile Include="Units\Distance.cs" />
-    <Compile Include="Globalization\Locale.cs" />
-    <Compile Include="Globalization\Localization.cs" />
     <Compile Include="Units\Precipitation.cs" />
     <Compile Include="Units\Pressure.cs" />
     <Compile Include="Units\Temperature.cs" />
-    <Compile Include="Units\Clock.cs" />
     <Compile Include="Units\Velocity.cs" />
     <Compile Include="Globalization\L10N.cs" />
     <Compile Include="Globalization\TranslateExtension.cs" />

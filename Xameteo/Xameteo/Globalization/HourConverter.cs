@@ -3,7 +3,7 @@ using System.Globalization;
 
 using Xamarin.Forms;
 
-namespace Xameteo.Helpers
+namespace Xameteo.Globalization
 {
     /// <inheritdoc />
     /// <summary>
@@ -20,7 +20,7 @@ namespace Xameteo.Helpers
         /// <returns></returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return value is DateTime dateTime ? Xameteo.Settings.Clock.Current.Format(dateTime) : "N/A";
+            return value is DateTime dateTime ? dateTime.ToString("t", culture.DateTimeFormat) : "N/A";
         }
 
         /// <inheritdoc />

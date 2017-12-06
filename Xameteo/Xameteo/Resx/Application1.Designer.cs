@@ -658,63 +658,216 @@ namespace Xameteo.Resx {
         /// <summary>
         ///   Looks up a localized string similar to Country.
         /// </summary>
-        internal static string LOCATION_COUNTRY {
+        internal static string Location_Country {
             get {
-                return ResourceManager.GetString("LOCATION_COUNTRY", resourceCulture);
+                return ResourceManager.GetString("Location_Country", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Latitude.
         /// </summary>
-        internal static string LOCATION_LATITUDE {
+        internal static string Location_Latitude {
             get {
-                return ResourceManager.GetString("LOCATION_LATITUDE", resourceCulture);
+                return ResourceManager.GetString("Location_Latitude", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Local time.
         /// </summary>
-        internal static string LOCATION_LOCAL_TIME {
+        internal static string Location_Local_Time {
             get {
-                return ResourceManager.GetString("LOCATION_LOCAL_TIME", resourceCulture);
+                return ResourceManager.GetString("Location_Local_Time", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Longitude.
         /// </summary>
-        internal static string LOCATION_LONGITUDE {
+        internal static string Location_Longitude {
             get {
-                return ResourceManager.GetString("LOCATION_LONGITUDE", resourceCulture);
+                return ResourceManager.GetString("Location_Longitude", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
-        internal static string LOCATION_NAME {
+        internal static string Location_Name {
             get {
-                return ResourceManager.GetString("LOCATION_NAME", resourceCulture);
+                return ResourceManager.GetString("Location_Name", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Region.
         /// </summary>
-        internal static string LOCATION_REGION {
+        internal static string Location_Region {
             get {
-                return ResourceManager.GetString("LOCATION_REGION", resourceCulture);
+                return ResourceManager.GetString("Location_Region", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Time zone.
         /// </summary>
-        internal static string LOCATION_TIMEZONE {
+        internal static string Location_Timezone {
             get {
-                return ResourceManager.GetString("LOCATION_TIMEZONE", resourceCulture);
+                return ResourceManager.GetString("Location_Timezone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Atmosphere.
+        /// </summary>
+        internal static string Units_Atmosphere {
+            get {
+                return ResourceManager.GetString("Units_Atmosphere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Celsius.
+        /// </summary>
+        internal static string Units_Celsius {
+            get {
+                return ResourceManager.GetString("Units_Celsius", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Centimeters.
+        /// </summary>
+        internal static string Units_Centimeters {
+            get {
+                return ResourceManager.GetString("Units_Centimeters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fahrenheit.
+        /// </summary>
+        internal static string Units_Fahrenheit {
+            get {
+                return ResourceManager.GetString("Units_Fahrenheit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inches.
+        /// </summary>
+        internal static string Units_Inches {
+            get {
+                return ResourceManager.GetString("Units_Inches", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kelvin.
+        /// </summary>
+        internal static string Units_Kelvin {
+            get {
+                return ResourceManager.GetString("Units_Kelvin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kilometers.
+        /// </summary>
+        internal static string Units_Kilometers {
+            get {
+                return ResourceManager.GetString("Units_Kilometers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kilometers per hour.
+        /// </summary>
+        internal static string Units_Kilometers_Hour {
+            get {
+                return ResourceManager.GetString("Units_Kilometers_Hour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kilopascal.
+        /// </summary>
+        internal static string Units_Kilopascal {
+            get {
+                return ResourceManager.GetString("Units_Kilopascal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Knots.
+        /// </summary>
+        internal static string Units_Knots {
+            get {
+                return ResourceManager.GetString("Units_Knots", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Meters.
+        /// </summary>
+        internal static string Units_Meters {
+            get {
+                return ResourceManager.GetString("Units_Meters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Meters per second.
+        /// </summary>
+        internal static string Units_Meters_Second {
+            get {
+                return ResourceManager.GetString("Units_Meters_Second", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Miles.
+        /// </summary>
+        internal static string Units_Miles {
+            get {
+                return ResourceManager.GetString("Units_Miles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Miles per hour.
+        /// </summary>
+        internal static string Units_Miles_Hour {
+            get {
+                return ResourceManager.GetString("Units_Miles_Hour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Millibars.
+        /// </summary>
+        internal static string Units_Millibars {
+            get {
+                return ResourceManager.GetString("Units_Millibars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Milimeters.
+        /// </summary>
+        internal static string Units_Millimeters {
+            get {
+                return ResourceManager.GetString("Units_Millimeters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Torr (mmHg).
+        /// </summary>
+        internal static string Units_Torr {
+            get {
+                return ResourceManager.GetString("Units_Torr", resourceCulture);
             }
         }
     }

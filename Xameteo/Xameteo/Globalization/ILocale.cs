@@ -7,22 +7,51 @@ namespace Xameteo.Globalization
     /// </summary>
     public interface ILocale
     {
-        ///	<summary>
-        /// This method must evaluate platform-specific locale settings
-        /// and convert them (when necessary) to a valid .NET locale.
+        /// <summary>
         /// </summary>
+        /// <returns></returns>
         CultureInfo GetCurrentCultureInfo();
     }
 
+    /// <summary>
+    /// </summary>
     public class PlatformCulture
     {
+        /// <summary>
+        /// </summary>
+        public string LocaleCode
+        {
+            get;
+        }
+
+        /// <summary>
+        /// </summary>
+        public string LanguageCode
+        {
+            get;
+        }
+
+        /// <summary>
+        /// </summary>
+        public string PlatformString
+        {
+            get;
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="platformCultureString"></param>
         public PlatformCulture(string platformCultureString)
         {
-            if (String.IsNullOrEmpty(platformCultureString))
-                throw new ArgumentException("Expected culture identifier", nameof(platformCultureString));
+            if (string.IsNullOrEmpty(platformCultureString))
+            {
+                platformCultureString = "en";
+            }
 
             PlatformString = platformCultureString.Replace("_", "-");
+
             var dashIndex = PlatformString.IndexOf("-", StringComparison.Ordinal);
+
             if (dashIndex > 0)
             {
                 var parts = PlatformString.Split('-');
@@ -36,24 +65,9 @@ namespace Xameteo.Globalization
             }
         }
 
-        public string PlatformString
-        {
-            get;
-        }
-
-        public string LanguageCode
-        {
-            get;
-        }
-
-        public string LocaleCode
-        {
-            get;
-        }
-
-        public override string ToString()
-        {
-            return PlatformString;
-        }
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString() => PlatformString;
     }
 }

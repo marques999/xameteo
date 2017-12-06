@@ -1,8 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
+
+using Humanizer;
 
 using Xameteo.API;
 using Xameteo.Helpers;
@@ -79,6 +80,6 @@ namespace Xameteo
 
         /// <summary>
         /// </summary>
-        public static Task<Position> MyLocation => Geolocator.GetPositionAsync(TimeSpan.FromSeconds(5));
+        public static Task<Position> MyLocation => Geolocator.GetPositionAsync(5.Seconds());
     }
 }

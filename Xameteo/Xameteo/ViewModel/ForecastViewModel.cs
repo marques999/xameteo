@@ -38,13 +38,13 @@ namespace Xameteo.ViewModel
 
             var location = _forecast.Location;
 
-            InsertTable2("LOCATION_NAME", location.Name);
-            InsertTable2("LOCATION_REGION", location.Region);
-            InsertTable2("LOCATION_COUNTRY", location.Country);
-            InsertTable2("LOCATION_LATITUDE", location.Latitude.ToString());
-            InsertTable2("LOCATION_LONGITUDE", location.Longitude.ToString());
-            InsertTable2("LOCATION_TIMEZONE", location.TimeZone);
-            InsertTable2("LOCATION_LOCAL_TIME", location.LocalTime.ToString("g"));
+            InsertTable2("Location_Name", location.Name);
+            InsertTable2("Location_Region", location.Region);
+            InsertTable2("Location_Country", location.Country);
+            InsertTable2("Location_Latitude", location.Latitude.ToString());
+            InsertTable2("Location_Longitude", location.Longitude.ToString());
+            InsertTable2("Location_Timezone", location.TimeZone);
+            InsertTable2("Location_Local_Time", location.LocalTime.ToString("g"));
         }
 
         public void SelectedItemCommand(object sender, EventArgs args)

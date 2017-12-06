@@ -13,10 +13,10 @@
         /// </summary>
         public static readonly Velocity[] Units =
         {
-            new Velocity("km/h", null, new[] { "Kilometers/hour", "Quilómetros/hora" }),
-            new Velocity("knot", value => value * 0.53996, new[] { "Knots", "Nós" }),
-            new Velocity("mph", value => value * 0.621388, new[] { "Miles/hour", "Milhas/hora" }),
-            new Velocity("m/s", value => value * 0.277777, new[] { "Meters/second", "Metros/segundo" })
+            new Velocity("km/h", "Units_Kilometers_Hour", null),
+            new Velocity("knot", "Units_Knots", value => value * 0.53996),
+            new Velocity("mph", "Units_Miles_Hour", value => value * 0.621388),
+            new Velocity("m/s", "Units_Meters_Second", value => value * 0.277777)
         };
 
         /// <summary>
@@ -28,7 +28,7 @@
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        private Velocity(string symbol, FormulaDelegate formula, string[] translations) : base(_count++, symbol, formula, translations)
+        private Velocity(string symbol, string translate, FormulaDelegate formula) : base(_count++, symbol, translate, formula)
         {
         }
     }

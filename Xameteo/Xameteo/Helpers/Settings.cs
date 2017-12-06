@@ -4,7 +4,6 @@ using Plugin.Settings;
 using Plugin.Settings.Abstractions;
 
 using Xameteo.Units;
-using Xameteo.Globalization;
 
 namespace Xameteo.Helpers
 {
@@ -46,7 +45,7 @@ namespace Xameteo.Helpers
         public Temperature Temperature
         {
             get => Temperature.From(SettingsManager.GetValueOrDefault(nameof(Temperature), 0));
-            set => SettingsManager.AddOrUpdateValue(nameof(Temperature), value.ID);
+            set => SettingsManager.AddOrUpdateValue(nameof(Temperature), value.Id);
         }
 
         /// <summary>
@@ -54,7 +53,7 @@ namespace Xameteo.Helpers
         public Pressure Pressure
         {
             get => Pressure.From(SettingsManager.GetValueOrDefault(nameof(Pressure), 0));
-            set => SettingsManager.AddOrUpdateValue(nameof(Pressure), value.ID);
+            set => SettingsManager.AddOrUpdateValue(nameof(Pressure), value.Id);
         }
 
         /// <summary>
@@ -62,7 +61,7 @@ namespace Xameteo.Helpers
         public Precipitation Precipitation
         {
             get => Precipitation.From(SettingsManager.GetValueOrDefault(nameof(Precipitation), 0));
-            set => SettingsManager.AddOrUpdateValue(nameof(Precipitation), value.ID);
+            set => SettingsManager.AddOrUpdateValue(nameof(Precipitation), value.Id);
         }
 
         /// <summary>
@@ -70,7 +69,7 @@ namespace Xameteo.Helpers
         public Distance Distance
         {
             get => Distance.From(SettingsManager.GetValueOrDefault(nameof(Distance), 0));
-            set => SettingsManager.AddOrUpdateValue(nameof(Distance), value.ID);
+            set => SettingsManager.AddOrUpdateValue(nameof(Distance), value.Id);
         }
 
         /// <summary>
@@ -78,22 +77,7 @@ namespace Xameteo.Helpers
         public Velocity Velocity
         {
             get => Velocity.From(SettingsManager.GetValueOrDefault(nameof(Velocity), 0));
-            set => SettingsManager.AddOrUpdateValue(nameof(Velocity), value.ID);
-        }
-
-        /// <summary>
-        /// </summary>
-        public ClockFactory Clock
-        {
-            get;
-        } = new ClockFactory(SettingsManager);
-
-        /// <summary>
-        /// </summary>
-        public Locale Locale
-        {
-            get => ReadEnum("language", Locale.English);
-            set => WriteEnum("language", value);
+            set => SettingsManager.AddOrUpdateValue(nameof(Velocity), value.Id);
         }
 
         /// <summary>

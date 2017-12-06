@@ -13,10 +13,10 @@
         /// </summary>
         public static readonly Pressure[] Units =
         {
-            new Pressure("mbar", null, new[] { "Millibars", "Milibares" }),
-            new Pressure("kPA", value => value * 0.1, new[] { "Kilopascal", "Quilopascal" }),
-            new Pressure("torr", value => value * 0.75006375541921, new[] { "Torr (mmHg)", "Torr (mmHg)" }),
-            new Pressure("atm", value => value * 0.00098692326671601, new[] { "Atmosphere", "Atmosferas" })
+            new Pressure("mbar", "Units_Millibars", null),
+            new Pressure("kPA", "Units_Kilopascal", value => value * 0.1),
+            new Pressure("torr", "Units_Torr", value => value * 0.75006375541921),
+            new Pressure("atm", "Units_Atmosphere", value => value * 0.00098692326671601)
         };
 
         /// <summary>
@@ -28,7 +28,7 @@
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        private Pressure(string symbol, FormulaDelegate formula, string[] translations) : base(_count++, symbol, formula, translations)
+        private Pressure(string symbol, string translate, FormulaDelegate formula) : base(_count++, symbol, translate, formula)
         {
         }
     }

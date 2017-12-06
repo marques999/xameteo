@@ -13,9 +13,9 @@
         /// </summary>
         public static readonly Precipitation[] Units =
         {
-            new Precipitation("mm", null, new[] { "Milimeters", "Milímetros" }),
-            new Precipitation("cm", value => value * 0.1, new[] { "Centimeters", "Centímetros" }),
-            new Precipitation("in", value => value * 0.039370, new[] { "Inches", "Polegadas" })
+            new Precipitation("mm", "Units_Millimeters", null),
+            new Precipitation("cm", "Units_Centimeters", value => value * 0.1),
+            new Precipitation("in", "Units_Inches", value => value * 0.039370)
         };
 
         /// <summary>
@@ -27,7 +27,7 @@
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        private Precipitation(string symbol, FormulaDelegate formula, string[] translations) : base(_count++, symbol, formula, translations)
+        private Precipitation(string symbol, string translate, FormulaDelegate formula) : base(_count++, symbol, translate, formula)
         {
         }
     }

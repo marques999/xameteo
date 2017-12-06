@@ -315,25 +315,76 @@
   <data name="FORECAST_WIND_VELOCITY" xml:space="preserve">
     <value>Força do vento</value>
   </data>
-  <data name="LOCATION_COUNTRY" xml:space="preserve">
+  <data name="Location_Country" xml:space="preserve">
     <value>País</value>
   </data>
-  <data name="LOCATION_LATITUDE" xml:space="preserve">
+  <data name="Location_Latitude" xml:space="preserve">
     <value>Latitude</value>
   </data>
-  <data name="LOCATION_LOCAL_TIME" xml:space="preserve">
+  <data name="Location_Local_Time" xml:space="preserve">
     <value>Hora local</value>
   </data>
-  <data name="LOCATION_LONGITUDE" xml:space="preserve">
+  <data name="Location_Longitude" xml:space="preserve">
     <value>Longitude</value>
   </data>
-  <data name="LOCATION_NAME" xml:space="preserve">
+  <data name="Location_Name" xml:space="preserve">
     <value>Localidade</value>
   </data>
-  <data name="LOCATION_REGION" xml:space="preserve">
+  <data name="Location_Region" xml:space="preserve">
     <value>Distrito</value>
   </data>
-  <data name="LOCATION_TIMEZONE" xml:space="preserve">
+  <data name="Location_Timezone" xml:space="preserve">
     <value>Fuso horário</value>
+  </data>
+  <data name="Units_Atmosphere" xml:space="preserve">
+    <value>Atmosferas</value>
+  </data>
+  <data name="Units_Celsius" xml:space="preserve">
+    <value>Celsius</value>
+  </data>
+  <data name="Units_Centimeters" xml:space="preserve">
+    <value>Centímetros</value>
+  </data>
+  <data name="Units_Fahrenheit" xml:space="preserve">
+    <value>Fahrenheit</value>
+  </data>
+  <data name="Units_Inches" xml:space="preserve">
+    <value>Polegadas</value>
+  </data>
+  <data name="Units_Kelvin" xml:space="preserve">
+    <value>Kelvin</value>
+  </data>
+  <data name="Units_Kilometers" xml:space="preserve">
+    <value>Quilómetros</value>
+  </data>
+  <data name="Units_Kilometers_Hour" xml:space="preserve">
+    <value>Quilómetros/hora</value>
+  </data>
+  <data name="Units_Kilopascal" xml:space="preserve">
+    <value>Kilopascais</value>
+  </data>
+  <data name="Units_Knots" xml:space="preserve">
+    <value>Nós</value>
+  </data>
+  <data name="Units_Meters" xml:space="preserve">
+    <value>Metros</value>
+  </data>
+  <data name="Units_Meters_Second" xml:space="preserve">
+    <value>Metros/segundo</value>
+  </data>
+  <data name="Units_Miles" xml:space="preserve">
+    <value>Milhas</value>
+  </data>
+  <data name="Units_Miles_Hour" xml:space="preserve">
+    <value>Milhas/hora</value>
+  </data>
+  <data name="Units_Millibars" xml:space="preserve">
+    <value>Milibares</value>
+  </data>
+  <data name="Units_Millimeters" xml:space="preserve">
+    <value>Milímetros</value>
+  </data>
+  <data name="Units_Torr" xml:space="preserve">
+    <value>Torr (mmHg)</value>
   </data>
 </root>

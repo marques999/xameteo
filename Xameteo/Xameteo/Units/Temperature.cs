@@ -8,27 +8,26 @@
         /// <summary>
         /// </summary>
         private static int _count;
-        
+
         /// <summary>
         /// </summary>
         public static readonly Temperature[] Units =
         {
-            new Temperature("C", null, new[] { "Celsius", "Celsius" }),
-            new Temperature("F", value => value - 273.15, new[] { "Kelvin", "Kelvin" }),
-            new Temperature("K", value => value * 1.8 + 32, new[] { "Fahrenheit", "Fahrenheit" })
+            new Temperature("C", "Units_Celsius", null),
+            new Temperature("K", "Units_Kelvin", value => value - 273.15),
+            new Temperature("F", "Units_Fahrenheit", value => value * 1.8 + 32)
         };
 
         /// <summary>
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="index"></param>
         /// <returns></returns>
-        /// 
         public static Temperature From(int index) => (index < Units.Length) ? Units[index] : Units[0];
 
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        private Temperature(string symbol, FormulaDelegate formula, string[] translations) : base(_count++, symbol, formula, translations)
+        private Temperature(string symbol, string translate, FormulaDelegate formula) : base(_count++, symbol, translate, formula)
         {
         }
     }

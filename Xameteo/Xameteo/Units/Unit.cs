@@ -6,7 +6,7 @@
     {
         /// <summary>
         /// </summary>
-        public int ID
+        public int Id
         {
             get;
         }
@@ -27,7 +27,7 @@
 
         /// <summary>
         /// </summary>
-        private readonly string[] _localizations;
+        private readonly string _translate;
 
         /// <summary>
         /// </summary>
@@ -37,7 +37,7 @@
 
         /// <summary>
         /// </summary>
-        public string Name => _localizations[(int)Xameteo.Settings.Locale] ?? _localizations[0];
+        public string Name => Xameteo.Localization.Get(_translate);
 
         /// <summary>
         /// </summary>
@@ -49,14 +49,14 @@
         /// </summary>
         /// <param name="index"></param>
         /// <param name="symbol"></param>
+        /// <param name="translate"></param>
         /// <param name="formula"></param>
-        /// <param name="translations"></param>
-        protected Unit(int index, string symbol, FormulaDelegate formula, string[] translations)
+        protected Unit(int index, string symbol, string translate, FormulaDelegate formula)
         {
-            ID = index;
+            Id = index;
             Symbol = symbol;
             Formula = formula;
-            _localizations = translations;
+            _translate = translate;
         }
     }
 }
