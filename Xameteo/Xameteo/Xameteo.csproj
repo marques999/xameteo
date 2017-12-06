@@ -46,7 +46,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Children.cs" />
     <Compile Include="Globalization\ILocale.cs" />
     <Compile Include="Globalization\HourConverter.cs" />
     <Compile Include="Model\Airport.cs" />

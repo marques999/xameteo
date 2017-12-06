@@ -20,28 +20,23 @@ namespace Xameteo.Droid
         /// <returns></returns>
         public CultureInfo GetCurrentCultureInfo()
         {
-            var androidLocale = Locale.Default;
-            var netLanguage = ToDotnetLanguage(androidLocale.ToString().Replace("_", "-"));
-
-            CultureInfo ci;
+            var netLanguage = ToDotnetLanguage(Locale.Default.ToString().Replace("_", "-"));
 
             try
             {
-                ci = new CultureInfo(netLanguage);
+                return new CultureInfo(netLanguage);
             }
             catch (CultureNotFoundException)
             {
                 try
                 {
-                    ci = new CultureInfo(ToDotnetFallbackLanguage(new PlatformCulture(netLanguage)));
+                    return new CultureInfo(ToDotnetFallbackLanguage(new PlatformCulture(netLanguage)));
                 }
                 catch (CultureNotFoundException)
                 {
-                    ci = new CultureInfo("en");
+                    return new CultureInfo("en");
                 }
             }
-
-            return ci;
         }
 
         /// <summary>
@@ -56,7 +51,9 @@ namespace Xameteo.Droid
                 return "id-ID";
             case "gsw-CH":
                 return "de-CH";
-            case "ms-BN": case "ms-MY": case "ms-SG":
+            case "ms-BN":
+            case "ms-MY":
+            case "ms-SG":
                 return "ms";
             default:
                 return androidLanguage;

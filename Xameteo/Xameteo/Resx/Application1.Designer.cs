@@ -541,117 +541,117 @@ namespace Xameteo.Resx {
         /// <summary>
         ///   Looks up a localized string similar to Cloud coverage.
         /// </summary>
-        internal static string FORECAST_CLOUD {
+        internal static string Forecast_Cloud {
             get {
-                return ResourceManager.GetString("FORECAST_CLOUD", resourceCulture);
+                return ResourceManager.GetString("Forecast_Cloud", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Condition.
         /// </summary>
-        internal static string FORECAST_CONDITION {
+        internal static string Forecast_Condition {
             get {
-                return ResourceManager.GetString("FORECAST_CONDITION", resourceCulture);
+                return ResourceManager.GetString("Forecast_Condition", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Feels Like.
         /// </summary>
-        internal static string FORECAST_FEELS_LIKE {
+        internal static string Forecast_Feels_Like {
             get {
-                return ResourceManager.GetString("FORECAST_FEELS_LIKE", resourceCulture);
+                return ResourceManager.GetString("Forecast_Feels_Like", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Humidity.
         /// </summary>
-        internal static string FORECAST_HUMIDITY {
+        internal static string Forecast_Humidity {
             get {
-                return ResourceManager.GetString("FORECAST_HUMIDITY", resourceCulture);
+                return ResourceManager.GetString("Forecast_Humidity", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Daytime.
         /// </summary>
-        internal static string FORECAST_IS_DAY {
+        internal static string Forecast_Is_Day {
             get {
-                return ResourceManager.GetString("FORECAST_IS_DAY", resourceCulture);
+                return ResourceManager.GetString("Forecast_Is_Day", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Last updated.
         /// </summary>
-        internal static string FORECAST_LAST_UPDATED {
+        internal static string Forecast_Last_Updated {
             get {
-                return ResourceManager.GetString("FORECAST_LAST_UPDATED", resourceCulture);
+                return ResourceManager.GetString("Forecast_Last_Updated", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Precipitation.
         /// </summary>
-        internal static string FORECAST_PRECIPITATION {
+        internal static string Forecast_Precipitation {
             get {
-                return ResourceManager.GetString("FORECAST_PRECIPITATION", resourceCulture);
+                return ResourceManager.GetString("Forecast_Precipitation", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Pressure.
         /// </summary>
-        internal static string FORECAST_PRESSURE {
+        internal static string Forecast_Pressure {
             get {
-                return ResourceManager.GetString("FORECAST_PRESSURE", resourceCulture);
+                return ResourceManager.GetString("Forecast_Pressure", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Temperature.
         /// </summary>
-        internal static string FORECAST_TEMPERATURE {
+        internal static string Forecast_Temperature {
             get {
-                return ResourceManager.GetString("FORECAST_TEMPERATURE", resourceCulture);
+                return ResourceManager.GetString("Forecast_Temperature", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Visibility.
         /// </summary>
-        internal static string FORECAST_VISIBILITY {
+        internal static string Forecast_Visibility {
             get {
-                return ResourceManager.GetString("FORECAST_VISIBILITY", resourceCulture);
+                return ResourceManager.GetString("Forecast_Visibility", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Wind degree.
         /// </summary>
-        internal static string FORECAST_WIND_DEGREE {
+        internal static string Forecast_Wind_Degree {
             get {
-                return ResourceManager.GetString("FORECAST_WIND_DEGREE", resourceCulture);
+                return ResourceManager.GetString("Forecast_Wind_Degree", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Wind direction.
         /// </summary>
-        internal static string FORECAST_WIND_DIRECTION {
+        internal static string Forecast_Wind_Direction {
             get {
-                return ResourceManager.GetString("FORECAST_WIND_DIRECTION", resourceCulture);
+                return ResourceManager.GetString("Forecast_Wind_Direction", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Wind velocity.
         /// </summary>
-        internal static string FORECAST_WIND_VELOCITY {
+        internal static string Forecast_Wind_Velocity {
             get {
-                return ResourceManager.GetString("FORECAST_WIND_VELOCITY", resourceCulture);
+                return ResourceManager.GetString("Forecast_Wind_Velocity", resourceCulture);
             }
         }
         

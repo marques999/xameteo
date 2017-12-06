@@ -276,43 +276,43 @@
   <data name="CONDITION_1282" xml:space="preserve">
     <value>Neve moderada ou forte com trovoada</value>
   </data>
-  <data name="FORECAST_CLOUD" xml:space="preserve">
+  <data name="Forecast_Cloud" xml:space="preserve">
     <value>Cobertura de nuvens</value>
   </data>
-  <data name="FORECAST_CONDITION" xml:space="preserve">
+  <data name="Forecast_Condition" xml:space="preserve">
     <value>Estado</value>
   </data>
-  <data name="FORECAST_FEELS_LIKE" xml:space="preserve">
+  <data name="Forecast_Feels_Like" xml:space="preserve">
     <value>Sensação</value>
   </data>
-  <data name="FORECAST_HUMIDITY" xml:space="preserve">
+  <data name="Forecast_Humidity" xml:space="preserve">
     <value>Humidade</value>
   </data>
-  <data name="FORECAST_IS_DAY" xml:space="preserve">
+  <data name="Forecast_Is_Day" xml:space="preserve">
     <value>Dia</value>
   </data>
-  <data name="FORECAST_LAST_UPDATED" xml:space="preserve">
+  <data name="Forecast_Last_Updated" xml:space="preserve">
     <value>Última actualização</value>
   </data>
-  <data name="FORECAST_PRECIPITATION" xml:space="preserve">
+  <data name="Forecast_Precipitation" xml:space="preserve">
     <value>Precipitação</value>
   </data>
-  <data name="FORECAST_PRESSURE" xml:space="preserve">
+  <data name="Forecast_Pressure" xml:space="preserve">
     <value>Pressão atmosférica</value>
   </data>
-  <data name="FORECAST_TEMPERATURE" xml:space="preserve">
+  <data name="Forecast_Temperature" xml:space="preserve">
     <value>Temperatura</value>
   </data>
-  <data name="FORECAST_VISIBILITY" xml:space="preserve">
+  <data name="Forecast_Visibility" xml:space="preserve">
     <value>Visibilidade</value>
   </data>
-  <data name="FORECAST_WIND_DEGREE" xml:space="preserve">
+  <data name="Forecast_Wind_Degree" xml:space="preserve">
     <value>Ângulo do vento</value>
   </data>
-  <data name="FORECAST_WIND_DIRECTION" xml:space="preserve">
+  <data name="Forecast_Wind_Direction" xml:space="preserve">
     <value>Direcção do vento</value>
   </data>
-  <data name="FORECAST_WIND_VELOCITY" xml:space="preserve">
+  <data name="Forecast_Wind_Velocity" xml:space="preserve">
     <value>Força do vento</value>
   </data>
   <data name="Location_Country" xml:space="preserve">
