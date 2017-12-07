@@ -50,7 +50,6 @@ namespace Xameteo.Model
         public DateTime LocalTime { get; set; }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>

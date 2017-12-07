@@ -1,4 +1,6 @@
-﻿namespace Xameteo.Model
+﻿using Xameteo.Resx;
+
+namespace Xameteo.Model
 {
     /// <summary>
     /// </summary>
@@ -8,41 +10,38 @@
         /// </summary>
         public static readonly Airport[] Airports =
         {
-            new Airport("FAO", "Aeroporto Internacional de Faro"),
-            new Airport("FNC", "Aeroporto Internacional da Madeira Cristiano Ronaldo (Funchal)"),
-            new Airport("HOR", "Aeroporto da Horta"),
-            new Airport("LIS", "Aeroporto Humberto Delgado (Lisboa)"),
-            new Airport("PDL", "Aeroporto João Paulo II (Ponta Delgada)"),
-            new Airport("OPO", "Aeroporto Francisco Sá Carneiro"),
-            new Airport("PXO", "Aeroporto do Porto Santo"),
-            new Airport("SMA", "Aeroporto de Santa Maria"),
-            new Airport("TER", "Aeroporto Internacional das Lajes (Terceira)")
+            new Airport("FAO", Application.Airport_Fao),
+            new Airport("FNC", Application.Airport_Fnc),
+            new Airport("HOR", Application.Airport_Hor),
+            new Airport("LIS", Application.Airport_Lis),
+            new Airport("PDL", Application.Airport_Pdl),
+            new Airport("OPO", Application.Airport_Opo),
+            new Airport("PXO", Application.Airport_Pxo),
+            new Airport("SMA", Application.Airport_Sma),
+            new Airport("TER", Application.Airport_Ter),
         };
 
         /// <summary>
-        /// 
         /// </summary>
-        public string IataCode
+        public string Code
         {
             get;
         }
 
         /// <summary>
         /// </summary>
-        private readonly string _defaultValue;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public string Name => Xameteo.Localization.GetOrDefault("AIRPORT_" + IataCode, _defaultValue);
+        public string Name
+        {
+            get;
+        }
 
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        private Airport(string iataCode, string defaultValue)
+        private Airport(string code, string name)
         {
-            IataCode = iataCode;
-            _defaultValue = defaultValue;
+            Code = code;
+            Name = name;
         }
     }
 }

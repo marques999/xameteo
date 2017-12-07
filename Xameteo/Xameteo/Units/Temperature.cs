@@ -1,4 +1,6 @@
-﻿namespace Xameteo.Units
+﻿using Xameteo.Resx;
+
+namespace Xameteo.Units
 {
     /// <inheritdoc />
     /// <summary>
@@ -7,15 +9,11 @@
     {
         /// <summary>
         /// </summary>
-        private static int _count;
-
-        /// <summary>
-        /// </summary>
         public static readonly Temperature[] Units =
         {
-            new Temperature("C", "Units_Celsius", null),
-            new Temperature("K", "Units_Kelvin", value => value - 273.15),
-            new Temperature("F", "Units_Fahrenheit", value => value * 1.8 + 32)
+            new Temperature(0, Application.Symbol_Celsius, Application.Units_Celsius, null),
+            new Temperature(1, Application.Symbol_Kelvin, Application.Units_Kelvin, value => value - 273.15),
+            new Temperature(2, Application.Symbol_Fahrenheit, Application.Units_Fahrenheit, value => value * 1.8 + 32)
         };
 
         /// <summary>
@@ -27,7 +25,7 @@
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        private Temperature(string symbol, string translate, FormulaDelegate formula) : base(_count++, symbol, translate, formula)
+        private Temperature(int id, string symbol, string name, FormulaDelegate formula) : base(id, symbol, name, formula)
         {
         }
     }

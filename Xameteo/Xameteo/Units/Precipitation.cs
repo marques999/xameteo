@@ -1,4 +1,6 @@
-﻿namespace Xameteo.Units
+﻿using Xameteo.Resx;
+
+namespace Xameteo.Units
 {
     /// <inheritdoc />
     /// <summary>
@@ -7,15 +9,11 @@
     {
         /// <summary>
         /// </summary>
-        private static int _count;
-
-        /// <summary>
-        /// </summary>
         public static readonly Precipitation[] Units =
         {
-            new Precipitation("mm", "Units_Millimeters", null),
-            new Precipitation("cm", "Units_Centimeters", value => value * 0.1),
-            new Precipitation("in", "Units_Inches", value => value * 0.039370)
+            new Precipitation(0, Application.Symbol_Millimeters, Application.Units_Millimeters, null),
+            new Precipitation(1, Application.Symbol_Centimeters, Application.Units_Centimeters, value => value * 0.1),
+            new Precipitation(2, Application.Symbol_Inches, Application.Units_Inches, value => value * 0.039370)
         };
 
         /// <summary>
@@ -27,7 +25,7 @@
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        private Precipitation(string symbol, string translate, FormulaDelegate formula) : base(_count++, symbol, translate, formula)
+        private Precipitation(int id, string symbol, string name, FormulaDelegate formula) : base(id, symbol, name, formula)
         {
         }
     }

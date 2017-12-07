@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Collections.Generic;
 
 using Xameteo.Model;
+using Xameteo.Resx;
 
 namespace Xameteo.ViewModel
 {
@@ -48,9 +49,9 @@ namespace Xameteo.ViewModel
         /// <param name="today"></param>
         private void FillTable1(Current today)
         {
-            InsertTable1("Forecast_Last_Updated", today.LastUpdated.ToString("g"));
-            InsertTable1("Forecast_Condition", Xameteo.Localization.GetCondition(today.Condition.Id));
-            InsertTable1("Forecast_Temperature", Xameteo.Settings.Temperature.Convert(today.Temperature));
+            InsertTable1(Application.Forecast_Last_Updated, today.LastUpdated.ToString("g"));
+            InsertTable1(Application.Forecast_Condition, Xameteo.Localization.GetCondition(today.Condition.Id));
+            InsertTable1(Application.Forecast_Temperature, Xameteo.Settings.Temperature.Convert(today.Temperature));
             InsertTable1("Forecast_Feels_Like", Xameteo.Settings.Temperature.Convert(today.FeelsLike));
             InsertTable1("Forecast_Humidity", today.Humidity + "%");
             InsertTable1("Forecast_Is_Day", today.IsDay ? "true" : "false");

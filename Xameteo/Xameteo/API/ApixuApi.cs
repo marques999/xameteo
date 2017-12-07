@@ -29,13 +29,14 @@ namespace Xameteo.API
 
         /// <summary>
         /// </summary>
-        private readonly DateTimeOffset _expires = DateTimeOffset.Now.AddHours(12);
+        private readonly DateTimeOffset _expires = Xameteo.Globals.CacheInvalidate;
 
         /// <summary>
         /// </summary>
         private readonly HttpClient _client = new HttpClient(new NativeMessageHandler())
         {
-            BaseAddress = new Uri("http://api.apixu.com/v1")
+            BaseAddress = Xameteo.Globals.BaseUrl,
+            Timeout = Xameteo.Globals.AsyncTimeout,
         };
 
         /// <summary>

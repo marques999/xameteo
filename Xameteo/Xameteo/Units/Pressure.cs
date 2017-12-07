@@ -1,4 +1,6 @@
-﻿namespace Xameteo.Units
+﻿using Xameteo.Resx;
+
+namespace Xameteo.Units
 {
     /// <inheritdoc />
     /// <summary>
@@ -7,16 +9,12 @@
     {
         /// <summary>
         /// </summary>
-        private static int _count;
-
-        /// <summary>
-        /// </summary>
         public static readonly Pressure[] Units =
         {
-            new Pressure("mbar", "Units_Millibars", null),
-            new Pressure("kPA", "Units_Kilopascal", value => value * 0.1),
-            new Pressure("torr", "Units_Torr", value => value * 0.75006375541921),
-            new Pressure("atm", "Units_Atmosphere", value => value * 0.00098692326671601)
+            new Pressure(0, Application.Symbol_Millibars, Application.Units_Millibars, null),
+            new Pressure(1, Application.Symbol_Kilopascal, Application.Units_Kilopascal, value => value * 0.1),
+            new Pressure(2, Application.Symbol_Torr, Application.Units_Torr, value => value * 0.75006375541921),
+            new Pressure(3, Application.Symbol_Atmosphere, Application.Units_Atmosphere, value => value * 0.00098692326671601)
         };
 
         /// <summary>
@@ -28,7 +26,7 @@
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        private Pressure(string symbol, string translate, FormulaDelegate formula) : base(_count++, symbol, translate, formula)
+        private Pressure(int id, string symbol, string name, FormulaDelegate formula) : base(id, symbol, name, formula)
         {
         }
     }

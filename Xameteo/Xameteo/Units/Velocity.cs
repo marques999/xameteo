@@ -1,4 +1,6 @@
-﻿namespace Xameteo.Units
+﻿using Xameteo.Resx;
+
+namespace Xameteo.Units
 {
     /// <inheritdoc />
     /// <summary>
@@ -7,16 +9,12 @@
     {
         /// <summary>
         /// </summary>
-        private static int _count;
-
-        /// <summary>
-        /// </summary>
         public static readonly Velocity[] Units =
         {
-            new Velocity("km/h", "Units_Kilometers_Hour", null),
-            new Velocity("knot", "Units_Knots", value => value * 0.53996),
-            new Velocity("mph", "Units_Miles_Hour", value => value * 0.621388),
-            new Velocity("m/s", "Units_Meters_Second", value => value * 0.277777)
+            new Velocity(0, Application.Symbol_Kilometers_Hour, Application.Units_Kilometers_Hour, null),
+            new Velocity(1, Application.Symbol_Knots, Application.Units_Knots, value => value * 0.53996),
+            new Velocity(2, Application.Symbol_Miles_Hour, Application.Units_Miles_Hour, value => value * 0.621388),
+            new Velocity(3, Application.Symbol_Meters_Second, Application.Units_Meters_Second, value => value * 0.277777)
         };
 
         /// <summary>
@@ -28,7 +26,7 @@
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        private Velocity(string symbol, string translate, FormulaDelegate formula) : base(_count++, symbol, translate, formula)
+        private Velocity(int id, string symbol, string name, FormulaDelegate formula) : base(id, symbol, name, formula)
         {
         }
     }

@@ -42,26 +42,10 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
-        public Temperature Temperature
+        public string Places
         {
-            get => Temperature.From(SettingsManager.GetValueOrDefault(nameof(Temperature), 0));
-            set => SettingsManager.AddOrUpdateValue(nameof(Temperature), value.Id);
-        }
-
-        /// <summary>
-        /// </summary>
-        public Pressure Pressure
-        {
-            get => Pressure.From(SettingsManager.GetValueOrDefault(nameof(Pressure), 0));
-            set => SettingsManager.AddOrUpdateValue(nameof(Pressure), value.Id);
-        }
-
-        /// <summary>
-        /// </summary>
-        public Precipitation Precipitation
-        {
-            get => Precipitation.From(SettingsManager.GetValueOrDefault(nameof(Precipitation), 0));
-            set => SettingsManager.AddOrUpdateValue(nameof(Precipitation), value.Id);
+            get => SettingsManager.GetValueOrDefault("places", "[]");
+            set => SettingsManager.AddOrUpdateValue("places", value);
         }
 
         /// <summary>
@@ -74,18 +58,34 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
-        public Velocity Velocity
+        public Precipitation Precipitation
         {
-            get => Velocity.From(SettingsManager.GetValueOrDefault(nameof(Velocity), 0));
-            set => SettingsManager.AddOrUpdateValue(nameof(Velocity), value.Id);
+            get => Precipitation.From(SettingsManager.GetValueOrDefault(nameof(Precipitation), 0));
+            set => SettingsManager.AddOrUpdateValue(nameof(Precipitation), value.Id);
         }
 
         /// <summary>
         /// </summary>
-        public string Places
+        public Pressure Pressure
         {
-            get => SettingsManager.GetValueOrDefault("places", "[]");
-            set => SettingsManager.AddOrUpdateValue("places", value);
+            get => Pressure.From(SettingsManager.GetValueOrDefault(nameof(Pressure), 0));
+            set => SettingsManager.AddOrUpdateValue(nameof(Pressure), value.Id);
+        }
+
+        /// <summary>
+        /// </summary>
+        public Temperature Temperature
+        {
+            get => Temperature.From(SettingsManager.GetValueOrDefault(nameof(Temperature), 0));
+            set => SettingsManager.AddOrUpdateValue(nameof(Temperature), value.Id);
+        }
+
+        /// <summary>
+        /// </summary>
+        public Velocity Velocity
+        {
+            get => Velocity.From(SettingsManager.GetValueOrDefault(nameof(Velocity), 0));
+            set => SettingsManager.AddOrUpdateValue(nameof(Velocity), value.Id);
         }
     }
 }

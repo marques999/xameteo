@@ -13,6 +13,13 @@
 
         /// <summary>
         /// </summary>
+        public string Name
+        {
+            get;
+        }
+
+        /// <summary>
+        /// </summary>
         public string Symbol
         {
             get;
@@ -27,7 +34,17 @@
 
         /// <summary>
         /// </summary>
-        private readonly string _translate;
+        /// <param name="index"></param>
+        /// <param name="symbol"></param>
+        /// <param name="name"></param>
+        /// <param name="formula"></param>
+        protected Unit(int index, string symbol, string name, FormulaDelegate formula)
+        {
+            Id = index;
+            Name = name;
+            Symbol = symbol;
+            Formula = formula;
+        }
 
         /// <summary>
         /// </summary>
@@ -37,26 +54,8 @@
 
         /// <summary>
         /// </summary>
-        public string Name => Xameteo.Localization.Get(_translate);
-
-        /// <summary>
-        /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
         public string Convert(double value) => $"{Formula?.Invoke(value) ?? value:0.###} {Symbol}";
-
-        /// <summary>
-        /// </summary>
-        /// <param name="index"></param>
-        /// <param name="symbol"></param>
-        /// <param name="translate"></param>
-        /// <param name="formula"></param>
-        protected Unit(int index, string symbol, string translate, FormulaDelegate formula)
-        {
-            Id = index;
-            Symbol = symbol;
-            Formula = formula;
-            _translate = translate;
-        }
     }
 }

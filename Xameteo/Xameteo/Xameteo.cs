@@ -32,6 +32,13 @@ namespace Xameteo
 
         /// <summary>
         /// </summary>
+        public static Globals Globals
+        {
+            get;
+        } = new Globals();
+
+        /// <summary>
+        /// </summary>
         public static ApixuApi Api
         {
             get;
@@ -80,6 +87,6 @@ namespace Xameteo
 
         /// <summary>
         /// </summary>
-        public static Task<Position> MyLocation => Geolocator.GetPositionAsync(5.Seconds());
+        public static Task<Position> MyLocation => Geolocator.GetPositionAsync(Globals.AsyncTimeout);
     }
 }

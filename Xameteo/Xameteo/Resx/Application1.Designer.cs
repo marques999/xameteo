@@ -719,6 +719,159 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to atm.
+        /// </summary>
+        internal static string Symbol_Atmosphere {
+            get {
+                return ResourceManager.GetString("Symbol_Atmosphere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ºC.
+        /// </summary>
+        internal static string Symbol_Celsius {
+            get {
+                return ResourceManager.GetString("Symbol_Celsius", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cm.
+        /// </summary>
+        internal static string Symbol_Centimeters {
+            get {
+                return ResourceManager.GetString("Symbol_Centimeters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ºF.
+        /// </summary>
+        internal static string Symbol_Fahrenheit {
+            get {
+                return ResourceManager.GetString("Symbol_Fahrenheit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to in.
+        /// </summary>
+        internal static string Symbol_Inches {
+            get {
+                return ResourceManager.GetString("Symbol_Inches", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to K.
+        /// </summary>
+        internal static string Symbol_Kelvin {
+            get {
+                return ResourceManager.GetString("Symbol_Kelvin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to km.
+        /// </summary>
+        internal static string Symbol_Kilometers {
+            get {
+                return ResourceManager.GetString("Symbol_Kilometers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to kph.
+        /// </summary>
+        internal static string Symbol_Kilometers_Hour {
+            get {
+                return ResourceManager.GetString("Symbol_Kilometers_Hour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to kPa.
+        /// </summary>
+        internal static string Symbol_Kilopascal {
+            get {
+                return ResourceManager.GetString("Symbol_Kilopascal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to knots.
+        /// </summary>
+        internal static string Symbol_Knots {
+            get {
+                return ResourceManager.GetString("Symbol_Knots", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to m.
+        /// </summary>
+        internal static string Symbol_Meters {
+            get {
+                return ResourceManager.GetString("Symbol_Meters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to m/s.
+        /// </summary>
+        internal static string Symbol_Meters_Second {
+            get {
+                return ResourceManager.GetString("Symbol_Meters_Second", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mi.
+        /// </summary>
+        internal static string Symbol_Miles {
+            get {
+                return ResourceManager.GetString("Symbol_Miles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mph.
+        /// </summary>
+        internal static string Symbol_Miles_Hour {
+            get {
+                return ResourceManager.GetString("Symbol_Miles_Hour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mb.
+        /// </summary>
+        internal static string Symbol_Millibars {
+            get {
+                return ResourceManager.GetString("Symbol_Millibars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mm.
+        /// </summary>
+        internal static string Symbol_Millimeters {
+            get {
+                return ResourceManager.GetString("Symbol_Millimeters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to torr.
+        /// </summary>
+        internal static string Symbol_Torr {
+            get {
+                return ResourceManager.GetString("Symbol_Torr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Atmosphere.
         /// </summary>
         internal static string Units_Atmosphere {

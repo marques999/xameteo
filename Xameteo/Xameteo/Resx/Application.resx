@@ -336,6 +336,57 @@
   <data name="Location_Timezone" xml:space="preserve">
     <value>Time zone</value>
   </data>
+  <data name="Symbol_Atmosphere" xml:space="preserve">
+    <value>atm</value>
+  </data>
+  <data name="Symbol_Celsius" xml:space="preserve">
+    <value>ºC</value>
+  </data>
+  <data name="Symbol_Centimeters" xml:space="preserve">
+    <value>cm</value>
+  </data>
+  <data name="Symbol_Fahrenheit" xml:space="preserve">
+    <value>ºF</value>
+  </data>
+  <data name="Symbol_Inches" xml:space="preserve">
+    <value>in</value>
+  </data>
+  <data name="Symbol_Kelvin" xml:space="preserve">
+    <value>K</value>
+  </data>
+  <data name="Symbol_Kilometers" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="Symbol_Kilometers_Hour" xml:space="preserve">
+    <value>kph</value>
+  </data>
+  <data name="Symbol_Kilopascal" xml:space="preserve">
+    <value>kPa</value>
+  </data>
+  <data name="Symbol_Knots" xml:space="preserve">
+    <value>knots</value>
+  </data>
+  <data name="Symbol_Meters" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="Symbol_Meters_Second" xml:space="preserve">
+    <value>m/s</value>
+  </data>
+  <data name="Symbol_Miles" xml:space="preserve">
+    <value>mi</value>
+  </data>
+  <data name="Symbol_Miles_Hour" xml:space="preserve">
+    <value>mph</value>
+  </data>
+  <data name="Symbol_Millibars" xml:space="preserve">
+    <value>mb</value>
+  </data>
+  <data name="Symbol_Millimeters" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="Symbol_Torr" xml:space="preserve">
+    <value>torr</value>
+  </data>
   <data name="Units_Atmosphere" xml:space="preserve">
     <value>Atmosphere</value>
   </data>
