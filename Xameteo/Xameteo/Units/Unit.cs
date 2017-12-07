@@ -6,38 +6,35 @@
     {
         /// <summary>
         /// </summary>
-        public int Id
-        {
-            get;
-        }
+        public int Id { get; }
 
         /// <summary>
         /// </summary>
-        public string Name
-        {
-            get;
-        }
+        public string Name { get; }
 
         /// <summary>
         /// </summary>
-        public string Symbol
-        {
-            get;
-        }
+        public string Symbol { get; }
 
         /// <summary>
         /// </summary>
-        public FormulaDelegate Formula
-        {
-            get;
-        }
+        public abstract string Type { get; }
 
         /// <summary>
         /// </summary>
-        public abstract string Type
-        {
-            get;
-        }
+        public FormulaDelegate Formula { get; }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public delegate double FormulaDelegate(double value);
+
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public string Convert(double value) => $"{Formula?.Invoke(value) ?? value:0.###} {Symbol}";
 
         /// <summary>
         /// </summary>
@@ -52,17 +49,5 @@
             Symbol = symbol;
             Formula = formula;
         }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public delegate double FormulaDelegate(double value);
-
-        /// <summary>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public string Convert(double value) => $"{Formula?.Invoke(value) ?? value:0.###} {Symbol}";
     }
 }

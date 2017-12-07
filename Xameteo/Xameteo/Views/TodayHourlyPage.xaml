@@ -25,13 +25,13 @@
           <DataTemplate>
             <ViewCell>
               <StackLayout Padding="16, 8" Orientation="Horizontal">
-                <Label Text="{Binding Date, Converter={StaticResource CnvHour}}"
+                <Label Text="{Binding Date, Converter={StaticResource XamlShortTimeConverter}}"
                        VerticalOptions="CenterAndExpand" 
                        HorizontalOptions="Start" />
-                <Label Text="{Binding Temperature, Converter={StaticResource CnvTemperature}}"
+                <Label Text="{Binding Temperature, Converter={StaticResource XamlTemperatureConverter}}"
                        VerticalOptions="CenterAndExpand" 
                        HorizontalOptions="CenterAndExpand" />
-                <Label Text="{Binding WindVelocity, Converter={StaticResource CnvVelocity}}"
+                <Label Text="{Binding WindVelocity, Converter={StaticResource XamlVelocityConverter}}"
                        VerticalOptions="CenterAndExpand" 
                        HorizontalOptions="End" />
               </StackLayout>

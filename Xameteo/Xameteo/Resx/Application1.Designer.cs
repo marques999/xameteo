@@ -145,36 +145,36 @@ namespace Xameteo.Resx {
         /// <summary>
         ///   Looks up a localized string similar to Moonrise.
         /// </summary>
-        internal static string ASTRO_MOONRISE {
+        internal static string Astro_Moonrise {
             get {
-                return ResourceManager.GetString("ASTRO_MOONRISE", resourceCulture);
+                return ResourceManager.GetString("Astro_Moonrise", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Moonset.
         /// </summary>
-        internal static string ASTRO_MOONSET {
+        internal static string Astro_Moonset {
             get {
-                return ResourceManager.GetString("ASTRO_MOONSET", resourceCulture);
+                return ResourceManager.GetString("Astro_Moonset", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Sunrise.
         /// </summary>
-        internal static string ASTRO_SUNRISE {
+        internal static string Astro_Sunrise {
             get {
-                return ResourceManager.GetString("ASTRO_SUNRISE", resourceCulture);
+                return ResourceManager.GetString("Astro_Sunrise", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Sunset.
         /// </summary>
-        internal static string ASTRO_SUNSET {
+        internal static string Astro_Sunset {
             get {
-                return ResourceManager.GetString("ASTRO_SUNSET", resourceCulture);
+                return ResourceManager.GetString("Astro_Sunset", resourceCulture);
             }
         }
         
@@ -190,9 +190,9 @@ namespace Xameteo.Resx {
         /// <summary>
         ///   Looks up a localized string similar to Click here!.
         /// </summary>
-        internal static string BUTTON_DEFAULT {
+        internal static string Button_Default {
             get {
-                return ResourceManager.GetString("BUTTON_DEFAULT", resourceCulture);
+                return ResourceManager.GetString("Button_Default", resourceCulture);
             }
         }
         
@@ -1030,6 +1030,42 @@ namespace Xameteo.Resx {
         internal static string Symbol_Torr {
             get {
                 return ResourceManager.GetString("Symbol_Torr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forecast.
+        /// </summary>
+        internal static string Tab_Forecast {
+            get {
+                return ResourceManager.GetString("Tab_Forecast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HIstory.
+        /// </summary>
+        internal static string Tab_History {
+            get {
+                return ResourceManager.GetString("Tab_History", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Now.
+        /// </summary>
+        internal static string Tab_Now {
+            get {
+                return ResourceManager.GetString("Tab_Now", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Today.
+        /// </summary>
+        internal static string Tab_Today {
+            get {
+                return ResourceManager.GetString("Tab_Today", resourceCulture);
             }
         }
         

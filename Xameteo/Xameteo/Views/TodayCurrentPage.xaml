@@ -48,11 +48,11 @@
           <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
             <Label Text="{Binding Astrology.Sunrise}"
                    Style="{StaticResource StyleAstroText}"/>
-            <Label Text="{globalization:Translate ASTRO_SUNRISE}"
+            <Label Text="{globalization:Translate Astro_Sunrise}"
                    Style="{StaticResource StyleAstroLabel}" />
             <Label Text="{Binding Astrology.Sunset}"
                    Style="{StaticResource StyleAstroText}" />
-            <Label Text="{globalization:Translate ASTRO_SUNSET}"
+            <Label Text="{globalization:Translate Astro_Sunset}"
                    Style="{StaticResource StyleAstroLabel}" />
           </StackLayout>
           <BoxView Color="#5b5d68"
@@ -61,11 +61,11 @@
           <StackLayout Orientation="Vertical" Padding="16, 8" HorizontalOptions="FillAndExpand">
             <Label Text="{Binding Astrology.Moonrise}"
                    Style="{StaticResource StyleAstroText}"/>
-            <Label Text="{globalization:Translate ASTRO_MOONRISE}"
+            <Label Text="{globalization:Translate Astro_Moonrise}"
                    Style="{StaticResource StyleAstroLabel}" />
             <Label Text="{Binding Astrology.Moonset}"
                    Style="{StaticResource StyleAstroText}" />
-            <Label Text="{globalization:Translate ASTRO_MOONSET}"
+            <Label Text="{globalization:Translate Astro_Moonset}"
                    Style="{StaticResource StyleAstroLabel}" />
           </StackLayout>
         </StackLayout>

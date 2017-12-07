@@ -5,7 +5,7 @@ namespace Xameteo.Units
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    internal class Precipitation : Unit
+    public class Precipitation : Unit
     {
         /// <inheritdoc />
         /// <summary>

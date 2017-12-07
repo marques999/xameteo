@@ -144,19 +144,19 @@
   <data name="Airport_Ter" xml:space="preserve">
     <value>Aeroporto Internacional das Lajes, Terceira</value>
   </data>
-  <data name="ASTRO_MOONRISE" xml:space="preserve">
+  <data name="Astro_Moonrise" xml:space="preserve">
     <value>Nascer da lua</value>
   </data>
-  <data name="ASTRO_MOONSET" xml:space="preserve">
+  <data name="Astro_Moonset" xml:space="preserve">
     <value>Pôr da lua</value>
   </data>
-  <data name="ASTRO_SUNRISE" xml:space="preserve">
+  <data name="Astro_Sunrise" xml:space="preserve">
     <value>Nascer do sol</value>
   </data>
-  <data name="ASTRO_SUNSET" xml:space="preserve">
+  <data name="Astro_Sunset" xml:space="preserve">
     <value>Pôr do sol</value>
   </data>
-  <data name="BUTTON_DEFAULT" xml:space="preserve">
+  <data name="Button_Default" xml:space="preserve">
     <value>Carrega crlh!</value>
   </data>
   <data name="CONDITION_1000" xml:space="preserve">
@@ -491,5 +491,17 @@
   </data>
   <data name="Group_Velocity" xml:space="preserve">
     <value>velocidade</value>
+  </data>
+  <data name="Tab_Forecast" xml:space="preserve">
+    <value>Previsão</value>
+  </data>
+  <data name="Tab_History" xml:space="preserve">
+    <value>HIstórico</value>
+  </data>
+  <data name="Tab_Now" xml:space="preserve">
+    <value>Agora</value>
+  </data>
+  <data name="Tab_Today" xml:space="preserve">
+    <value>Hoje</value>
   </data>
 </root>

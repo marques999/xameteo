@@ -2,8 +2,8 @@
 using System.ComponentModel;
 using System.Collections.Generic;
 
-using Xameteo.Model;
 using Xameteo.Resx;
+using Xameteo.Model;
 
 namespace Xameteo.ViewModel
 {
@@ -63,17 +63,11 @@ namespace Xameteo.ViewModel
 
         /// <summary>
         /// </summary>
-        public List<Tuple<string, string>> Table1
-        {
-            get;
-        } = new List<Tuple<string, string>>();
+        public List<Tuple<string, string>> Table1 { get; } = new List<Tuple<string, string>>();
 
         /// <summary>
         /// </summary>
-        public List<Tuple<string, string>> Table2
-        {
-            get;
-        } = new List<Tuple<string, string>>();
+        public List<Tuple<string, string>> Table2 { get; } = new List<Tuple<string, string>>();
 
         /// <summary>
         /// </summary>

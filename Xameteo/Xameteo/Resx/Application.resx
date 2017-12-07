@@ -144,19 +144,19 @@
   <data name="Airport_Ter" xml:space="preserve">
     <value>Lajes Field, Terceira</value>
   </data>
-  <data name="ASTRO_MOONRISE" xml:space="preserve">
+  <data name="Astro_Moonrise" xml:space="preserve">
     <value>Moonrise</value>
   </data>
-  <data name="ASTRO_MOONSET" xml:space="preserve">
+  <data name="Astro_Moonset" xml:space="preserve">
     <value>Moonset</value>
   </data>
-  <data name="ASTRO_SUNRISE" xml:space="preserve">
+  <data name="Astro_Sunrise" xml:space="preserve">
     <value>Sunrise</value>
   </data>
-  <data name="ASTRO_SUNSET" xml:space="preserve">
+  <data name="Astro_Sunset" xml:space="preserve">
     <value>Sunset</value>
   </data>
-  <data name="BUTTON_DEFAULT" xml:space="preserve">
+  <data name="Button_Default" xml:space="preserve">
     <value>Click here!</value>
   </data>
   <data name="CONDITION_1000" xml:space="preserve">
@@ -491,5 +491,17 @@
   </data>
   <data name="Group_Velocity" xml:space="preserve">
     <value>velocity</value>
+  </data>
+  <data name="Tab_Forecast" xml:space="preserve">
+    <value>Forecast</value>
+  </data>
+  <data name="Tab_History" xml:space="preserve">
+    <value>HIstory</value>
+  </data>
+  <data name="Tab_Now" xml:space="preserve">
+    <value>Now</value>
+  </data>
+  <data name="Tab_Today" xml:space="preserve">
+    <value>Today</value>
   </data>
 </root>

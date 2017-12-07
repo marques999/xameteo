@@ -5,7 +5,7 @@ namespace Xameteo.Units
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    internal class Temperature : Unit
+    public class Temperature : Unit
     {
         /// <inheritdoc />
         /// <summary>

@@ -15,24 +15,6 @@ namespace Xameteo.Views
         {
             InitializeComponent();
         }
-
-        /*public async void GetWeather(object sender, EventArgs e)
-        {
-            //var progressDialog = Xameteo.Dialogs.InfiniteProgress;
-
-            try
-            {
-                progressDialog.Show();
-                var position = await Xameteo.MyLocation;
-                //_viewModel.Text = (await Xameteo.Api.Current(new CoordinatesAdapter(position.Latitude, position.Longitude)).ConfigureAwait(false)).ToString();
-                progressDialog.Hide();
-            }
-            catch (Exception exception)
-            {
-                progressDialog.Hide();
-                await Xameteo.Dialogs.Alert(this, exception);
-            }
-        }*/
     }
 
     /// <inheritdoc />

@@ -9,17 +9,12 @@ using Xameteo.Model;
 
 namespace Xameteo.Views
 {
+    /// <inheritdoc />
+    /// <summary>
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PlacesPage
     {
-        /// <summary>
-        /// </summary>
-        public ObservableCollection<ApixuCurrent> Items
-        {
-            get;
-            set;
-        } = new ObservableCollection<ApixuCurrent>();
-
         /// <summary>
         /// </summary>
         public PlacesPage()
@@ -27,6 +22,10 @@ namespace Xameteo.Views
             InitializeComponent();
             MyListView.ItemsSource = Items;
         }
+
+        /// <summary>
+        /// </summary>
+        public ObservableCollection<ApixuCurrent> Items { get; } = new ObservableCollection<ApixuCurrent>();
 
         /// <inheritdoc />
         /// <summary>

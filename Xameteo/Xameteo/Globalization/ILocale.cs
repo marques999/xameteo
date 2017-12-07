@@ -19,24 +19,20 @@ namespace Xameteo.Globalization
     {
         /// <summary>
         /// </summary>
-        public string LocaleCode
-        {
-            get;
-        }
+        public string LocaleCode { get; }
 
         /// <summary>
         /// </summary>
-        public string LanguageCode
-        {
-            get;
-        }
+        public string LanguageCode { get; }
 
         /// <summary>
         /// </summary>
-        public string PlatformString
-        {
-            get;
-        }
+        public string PlatformString { get; }
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString() => PlatformString;
 
         /// <summary>
         /// </summary>
@@ -64,10 +60,5 @@ namespace Xameteo.Globalization
                 LocaleCode = "";
             }
         }
-
-        /// <summary>
-        /// </summary>
-        /// <returns></returns>
-        public override string ToString() => PlatformString;
     }
 }

@@ -4,7 +4,6 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using Xameteo.Views;
-using Xameteo.ViewModel;
 
 namespace Xameteo
 {

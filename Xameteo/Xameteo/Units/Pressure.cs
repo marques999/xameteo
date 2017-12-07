@@ -5,7 +5,7 @@ namespace Xameteo.Units
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    internal class Pressure : Unit
+    public class Pressure : Unit
     {
         /// <inheritdoc />
         /// <summary>

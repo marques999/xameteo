@@ -3,8 +3,6 @@
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 
-using Humanizer;
-
 using Xameteo.API;
 using Xameteo.Helpers;
 using Xameteo.Globalization;
@@ -26,64 +24,37 @@ namespace Xameteo
             Api = new ApixuApi(Settings.ApiKey);
             MyPlaces = new Places(Settings.Places);
             MyPlaces.Insert(new AirportAdapter("OPO"));
-            MyPlaces.Insert(new CoordinatesAdapter(35.6732619, 139.5703036));
             MyPlaces.Insert(new LocationAdapter("Valongo, Porto"));
+            MyPlaces.Insert(new CoordinatesAdapter(35.6732619, 139.5703036));
         }
 
         /// <summary>
         /// </summary>
-        public static Globals Globals
-        {
-            get;
-        } = new Globals();
+        public static ApixuApi Api { get; private set; }
 
         /// <summary>
         /// </summary>
-        public static ApixuApi Api
-        {
-            get;
-            private set;
-        }
+        public static Places MyPlaces { get; private set; }
 
         /// <summary>
         /// </summary>
-        public static Places MyPlaces
-        {
-            get;
-            private set;
-        }
+        public static Dialogs Dialogs { get; private set; }
 
         /// <summary>
         /// </summary>
-        public static Dialogs Dialogs
-        {
-            get;
-            private set;
-        }
+        public static L10N Localization { get; private set; }
 
         /// <summary>
         /// </summary>
-        public static L10N Localization
-        {
-            get;
-            private set;
-        }
+        public static Settings Settings { get; private set; }
 
         /// <summary>
         /// </summary>
-        public static Settings Settings
-        {
-            get;
-            private set;
-        }
+        public static Globals Globals { get; } = new Globals();
 
         /// <summary>
         /// </summary>
-        public static IGeolocator Geolocator
-        {
-            get;
-            private set;
-        }
+        public static IGeolocator Geolocator { get; private set; }
 
         /// <summary>
         /// </summary>

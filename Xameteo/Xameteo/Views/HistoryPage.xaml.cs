@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms.Xaml;
 
 namespace Xameteo.Views
 {
+    /// <inheritdoc />
+    /// <summary>
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HistoryPage : ContentPage
+    public partial class HistoryPage
     {
+        /// <summary>
+        /// </summary>
         public HistoryPage()
         {
             InitializeComponent();

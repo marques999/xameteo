@@ -5,7 +5,7 @@ namespace Xameteo.Units
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    internal class Distance : Unit
+    public class Distance : Unit
     {
         /// <inheritdoc />
         /// <summary>

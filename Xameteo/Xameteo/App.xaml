@@ -5,9 +5,19 @@
              x:Class="Xameteo.App">
   <Application.Resources>
     <ResourceDictionary>
-      <globalization:HourConverter x:Key="CnvHour"></globalization:HourConverter>
-      <globalization:TemperatureConverter x:Key="CnvTemperature"></globalization:TemperatureConverter>
-      <globalization:VelocityConverter x:Key="CnvVelocity"></globalization:VelocityConverter>
+      <!--DateTime Conversions -->
+      <globalization:ShortTimeConverter x:Key="XamlShortTimeConverter"></globalization:ShortTimeConverter>
+      <globalization:ShortDateConverter x:Key="XamlShortDateCOnverter"></globalization:ShortDateConverter>
+      <globalization:LongDateConverter x:Key="XamlLongDateConverter"></globalization:LongDateConverter>
+      <globalization:ShortDateTimeConverter x:Key="XamlShortDateTimeConverter"></globalization:ShortDateTimeConverter>
+      <globalization:LongDateTimeConverter x:Key="XamlLongDateTimeConverter"></globalization:LongDateTimeConverter>
+      <!-- Unit Conversions -->
+      <globalization:DistanceConverter x:Key="XamlDistanceConverter"></globalization:DistanceConverter>
+      <globalization:PrecipitationConverter x:Key="XamlPrecipitationConverter"></globalization:PrecipitationConverter>
+      <globalization:PressureConverter x:Key="XamlPressureConverter"></globalization:PressureConverter>
+      <globalization:TemperatureConverter x:Key="XamlTemperatureConverter"></globalization:TemperatureConverter>
+      <globalization:VelocityConverter x:Key="XamlVelocityConverter"></globalization:VelocityConverter>
+      <!-- Global Styles -->
       <Style x:Key="StyleAstroLabel" TargetType="Label">
         <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
         <Setter Property="VerticalOptions" Value="Center" />
