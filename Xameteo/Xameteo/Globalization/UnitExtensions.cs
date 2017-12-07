@@ -70,7 +70,6 @@ namespace Xameteo.Globalization
         /// </summary>
         public DistanceConverter() : base(Xameteo.Settings.Distance)
         {
-
         }
     }
 

@@ -34,7 +34,7 @@
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public string Convert(double value) => $"{Formula?.Invoke(value) ?? value:0.###} {Symbol}";
+        public string Convert(double value) => $"{Formula?.Invoke(value) ?? value:N2} {Symbol}";
 
         /// <summary>
         /// </summary>

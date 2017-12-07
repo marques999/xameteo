@@ -13,6 +13,11 @@ namespace Xameteo.ViewModel
         /// </summary>
         private readonly ApixuForecast _forecast;
 
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// </summary>
         private Current Now => _forecast.Current;
@@ -21,10 +26,9 @@ namespace Xameteo.ViewModel
         /// </summary>
         private Location Location => _forecast.Location;
 
-        /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        private Coordinates Coordinates => new Coordinates(Location.Latitude, Location.Longitude);
 
         /// <summary>
         /// </summary>
@@ -36,9 +40,9 @@ namespace Xameteo.ViewModel
             Table1.Add(new Tuple<string, string>(Application.Forecast_Temperature, Xameteo.Settings.Temperature.Convert(Now.Temperature)));
             Table1.Add(new Tuple<string, string>(Application.Forecast_Feels_Like, Xameteo.Settings.Temperature.Convert(Now.FeelsLike)));
             Table1.Add(new Tuple<string, string>(Application.Forecast_Humidity, Xameteo.Localization.Percentage(Now.Humidity)));
-            Table1.Add(new Tuple<string, string>(Application.Forecast_Is_Day, Now.IsDay ? "true" : "false"));
+            Table1.Add(new Tuple<string, string>(Application.Forecast_Is_Day, Xameteo.Localization.Boolean(Now.IsDay)));
             Table1.Add(new Tuple<string, string>(Application.Forecast_Wind_Velocity, Xameteo.Settings.Velocity.Convert(Now.WindVelocity)));
-            Table1.Add(new Tuple<string, string>(Application.Forecast_Wind_Degree, Now.WindDegree + " deg"));
+            Table1.Add(new Tuple<string, string>(Application.Forecast_Wind_Degree, Xameteo.Localization.Degrees(Now.WindDegree)));
             Table1.Add(new Tuple<string, string>(Application.Forecast_Wind_Direction, Now.WindDirection));
             Table1.Add(new Tuple<string, string>(Application.Forecast_Pressure, Xameteo.Settings.Pressure.Convert(Now.Pressure)));
             Table1.Add(new Tuple<string, string>(Application.Forecast_Precipitation, Xameteo.Settings.Precipitation.Convert(Now.Precipitation)));
@@ -47,8 +51,8 @@ namespace Xameteo.ViewModel
             Table2.Add(new Tuple<string, string>(Application.Location_Name, Location.Name));
             Table2.Add(new Tuple<string, string>(Application.Location_Region, Location.Region));
             Table2.Add(new Tuple<string, string>(Application.Location_Country, Location.Country));
-            Table2.Add(new Tuple<string, string>(Application.Location_Latitude, Location.Latitude.ToString()));
-            Table2.Add(new Tuple<string, string>(Application.Location_Longitude, Location.Longitude.ToString()));
+            Table2.Add(new Tuple<string, string>(Application.Location_Latitude, Coordinates.StandardizeLatitude()));
+            Table2.Add(new Tuple<string, string>(Application.Location_Longitude, Coordinates.StandardizeLongitude()));
             Table2.Add(new Tuple<string, string>(Application.Location_Timezone, Location.TimeZone));
             Table2.Add(new Tuple<string, string>(Application.Location_Local_Time, Xameteo.Localization.ShortTime(Location.LocalTime)));
         }

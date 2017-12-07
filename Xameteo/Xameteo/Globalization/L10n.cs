@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Resources;
 using System.Reflection;
 using System.Globalization;
@@ -17,6 +18,42 @@ namespace Xameteo.Globalization
         /// 
         /// </summary>
         private const string ResourceId = "Xameteo.Resx.Application";
+
+        /// <summary>
+        /// </summary>
+        private static Dictionary<string, string> _compass = new Dictionary<string, string>
+        {
+            {
+                "N", "North"
+            },
+            {
+                "N", "North"
+            },
+            {
+                "N", "North"
+            },
+            {
+                "N", "North"
+            },
+            {
+                "N", "North"
+            },
+            {
+                "N", "North"
+            },
+            {
+                "N", "North"
+            },
+            {
+                "N", "North"
+            },
+            {
+                "N", "North"
+            },
+            {
+                "N", "North"
+            },
+        };
 
         /// <summary>
         /// </summary>
@@ -53,6 +90,16 @@ namespace Xameteo.Globalization
         public string Boolean(bool value, CultureInfo cultureInfo = null)
         {
             return value ? Application.Global_Yes : Application.Global_No;
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="cultureInfo"></param>
+        /// <returns></returns>
+        public string Compass(string value, CultureInfo cultureInfo = null)
+        {
+            return string.Empty;
         }
 
         /// <summary>
@@ -112,7 +159,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public string Percentage(double value, CultureInfo cultureInfo = null)
         {
-            return value.ToString("P", (cultureInfo ?? _cultureInfo).NumberFormat);
+            return (value / 100).ToString("P0", (cultureInfo ?? _cultureInfo).NumberFormat);
         }
 
         /// <summary>
@@ -122,7 +169,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public string FixedPoint(double value, CultureInfo cultureInfo = null)
         {
-            return value.ToString("F", (cultureInfo ?? _cultureInfo).NumberFormat);
+            return value.ToString("F2", (cultureInfo ?? _cultureInfo).NumberFormat);
         }
 
         /// <summary>
@@ -132,7 +179,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public string Degrees(double value, CultureInfo cultureInfo = null)
         {
-            return FixedPoint(value, (cultureInfo ?? _cultureInfo)) + " " + Application.Symbol_Degrees;
+            return value.ToString("N0", (cultureInfo ?? _cultureInfo).NumberFormat) + " " + Application.Symbol_Degrees;
         }
 
         /// <summary>

@@ -35,7 +35,7 @@ namespace Xameteo.Model
             var minutePart = (absolute - degrees) * 60;
             var minutes = Math.Truncate(minutePart);
             var seconds = (minutePart - minutes) * 60;
-            return $@"{degrees}º {minutes}' {seconds}"" {direction}";
+            return $@"{degrees:N2}º {minutes:N2}' {seconds:N2}"" {direction}";
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Xameteo.Model
             var minutePart = (absolute - degrees) * 60;
             var minutes = Math.Truncate(minutePart);
             var seconds = (minutePart - minutes) * 60;
-            return $@"{degrees}º {minutes}' {seconds}"" {direction}";
+            return $@"{degrees:N2}º {minutes:N2}' {seconds:N2}"" {direction}";
         }
 
         /// <summary>
