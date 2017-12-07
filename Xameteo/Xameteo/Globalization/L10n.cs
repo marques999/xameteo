@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Resources;
 using System.Reflection;
 using System.Globalization;
 
 using Xamarin.Forms;
-
+using Xameteo.Model;
 using Application = Xameteo.Resx.Application;
 
 namespace Xameteo.Globalization
@@ -15,45 +14,8 @@ namespace Xameteo.Globalization
     internal class L10N
     {
         /// <summary>
-        /// 
         /// </summary>
         private const string ResourceId = "Xameteo.Resx.Application";
-
-        /// <summary>
-        /// </summary>
-        private static Dictionary<string, string> _compass = new Dictionary<string, string>
-        {
-            {
-                "N", "North"
-            },
-            {
-                "N", "North"
-            },
-            {
-                "N", "North"
-            },
-            {
-                "N", "North"
-            },
-            {
-                "N", "North"
-            },
-            {
-                "N", "North"
-            },
-            {
-                "N", "North"
-            },
-            {
-                "N", "North"
-            },
-            {
-                "N", "North"
-            },
-            {
-                "N", "North"
-            },
-        };
 
         /// <summary>
         /// </summary>
@@ -97,9 +59,19 @@ namespace Xameteo.Globalization
         /// <param name="value"></param>
         /// <param name="cultureInfo"></param>
         /// <returns></returns>
-        public string Compass(string value, CultureInfo cultureInfo = null)
+        public string ShortCompass(string value, CultureInfo cultureInfo = null)
         {
-            return string.Empty;
+            return Compass.TryGet(value, true);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="cultureInfo"></param>
+        /// <returns></returns>
+        public string LongCompass(string value, CultureInfo cultureInfo = null)
+        {
+            return Compass.TryGet(value, false);
         }
 
         /// <summary>

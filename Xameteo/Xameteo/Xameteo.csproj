@@ -48,6 +48,7 @@
     </Compile>
     <Compile Include="Globalization\AbstractConverter.cs" />
     <Compile Include="Globalization\BooleanExtensions.cs" />
+    <Compile Include="Globalization\CompassConverter.cs" />
     <Compile Include="Globalization\CoordinateExtensions.cs" />
     <Compile Include="Globalization\DateExtensions.cs" />
     <Compile Include="Globalization\ILocale.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="Globalization\UnitExtensions.cs" />
     <Compile Include="Helpers\Globals.cs" />
     <Compile Include="Model\Airport.cs" />
+    <Compile Include="Model\Compass.cs" />
     <Compile Include="Model\Coordinates.cs" />
     <Compile Include="Resx\Application.pt1.Designer.cs">
       <AutoGen>True</AutoGen>

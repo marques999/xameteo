@@ -206,434 +206,578 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to East.
+        /// </summary>
+        internal static string Compass_E {
+            get {
+                return ResourceManager.GetString("Compass_E", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to East-northeast.
+        /// </summary>
+        internal static string Compass_ENE {
+            get {
+                return ResourceManager.GetString("Compass_ENE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to East-southeast.
+        /// </summary>
+        internal static string Compass_ESE {
+            get {
+                return ResourceManager.GetString("Compass_ESE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to North.
+        /// </summary>
+        internal static string Compass_N {
+            get {
+                return ResourceManager.GetString("Compass_N", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Northeast.
+        /// </summary>
+        internal static string Compass_NE {
+            get {
+                return ResourceManager.GetString("Compass_NE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to North-northeast.
+        /// </summary>
+        internal static string Compass_NNE {
+            get {
+                return ResourceManager.GetString("Compass_NNE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to North-northwest.
+        /// </summary>
+        internal static string Compass_NNW {
+            get {
+                return ResourceManager.GetString("Compass_NNW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Northwest.
+        /// </summary>
+        internal static string Compass_NW {
+            get {
+                return ResourceManager.GetString("Compass_NW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to South.
+        /// </summary>
+        internal static string Compass_S {
+            get {
+                return ResourceManager.GetString("Compass_S", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Southeast.
+        /// </summary>
+        internal static string Compass_SE {
+            get {
+                return ResourceManager.GetString("Compass_SE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to South-southeast.
+        /// </summary>
+        internal static string Compass_SSE {
+            get {
+                return ResourceManager.GetString("Compass_SSE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to South-southwest.
+        /// </summary>
+        internal static string Compass_SSW {
+            get {
+                return ResourceManager.GetString("Compass_SSW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Southwest.
+        /// </summary>
+        internal static string Compass_SW {
+            get {
+                return ResourceManager.GetString("Compass_SW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to West.
+        /// </summary>
+        internal static string Compass_W {
+            get {
+                return ResourceManager.GetString("Compass_W", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to West-northwest.
+        /// </summary>
+        internal static string Compass_WNW {
+            get {
+                return ResourceManager.GetString("Compass_WNW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to West-southwest.
+        /// </summary>
+        internal static string Compass_WSW {
+            get {
+                return ResourceManager.GetString("Compass_WSW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clear.
         /// </summary>
-        internal static string CONDITION_1000 {
+        internal static string Condition_1000 {
             get {
-                return ResourceManager.GetString("CONDITION_1000", resourceCulture);
+                return ResourceManager.GetString("Condition_1000", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Partly Cloudy.
         /// </summary>
-        internal static string CONDITION_1003 {
+        internal static string Condition_1003 {
             get {
-                return ResourceManager.GetString("CONDITION_1003", resourceCulture);
+                return ResourceManager.GetString("Condition_1003", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Cloudy.
         /// </summary>
-        internal static string CONDITION_1006 {
+        internal static string Condition_1006 {
             get {
-                return ResourceManager.GetString("CONDITION_1006", resourceCulture);
+                return ResourceManager.GetString("Condition_1006", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Overcast.
         /// </summary>
-        internal static string CONDITION_1009 {
+        internal static string Condition_1009 {
             get {
-                return ResourceManager.GetString("CONDITION_1009", resourceCulture);
+                return ResourceManager.GetString("Condition_1009", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Mist.
         /// </summary>
-        internal static string CONDITION_1030 {
+        internal static string Condition_1030 {
             get {
-                return ResourceManager.GetString("CONDITION_1030", resourceCulture);
+                return ResourceManager.GetString("Condition_1030", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Patchy rain nearby.
         /// </summary>
-        internal static string CONDITION_1063 {
+        internal static string Condition_1063 {
             get {
-                return ResourceManager.GetString("CONDITION_1063", resourceCulture);
+                return ResourceManager.GetString("Condition_1063", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Patchy snow nearby.
         /// </summary>
-        internal static string CONDITION_1066 {
+        internal static string Condition_1066 {
             get {
-                return ResourceManager.GetString("CONDITION_1066", resourceCulture);
+                return ResourceManager.GetString("Condition_1066", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Patchy sleet nearby.
         /// </summary>
-        internal static string CONDITION_1069 {
+        internal static string Condition_1069 {
             get {
-                return ResourceManager.GetString("CONDITION_1069", resourceCulture);
+                return ResourceManager.GetString("Condition_1069", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Patchy freezing drizzle nearby.
         /// </summary>
-        internal static string CONDITION_1072 {
+        internal static string Condition_1072 {
             get {
-                return ResourceManager.GetString("CONDITION_1072", resourceCulture);
+                return ResourceManager.GetString("Condition_1072", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Thundery outbreaks in nearby.
         /// </summary>
-        internal static string CONDITION_1087 {
+        internal static string Condition_1087 {
             get {
-                return ResourceManager.GetString("CONDITION_1087", resourceCulture);
+                return ResourceManager.GetString("Condition_1087", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Blowing snow.
         /// </summary>
-        internal static string CONDITION_1114 {
+        internal static string Condition_1114 {
             get {
-                return ResourceManager.GetString("CONDITION_1114", resourceCulture);
+                return ResourceManager.GetString("Condition_1114", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Blizzard.
         /// </summary>
-        internal static string CONDITION_1117 {
+        internal static string Condition_1117 {
             get {
-                return ResourceManager.GetString("CONDITION_1117", resourceCulture);
+                return ResourceManager.GetString("Condition_1117", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Fog.
         /// </summary>
-        internal static string CONDITION_1135 {
+        internal static string Condition_1135 {
             get {
-                return ResourceManager.GetString("CONDITION_1135", resourceCulture);
+                return ResourceManager.GetString("Condition_1135", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Freezing fog.
         /// </summary>
-        internal static string CONDITION_1147 {
+        internal static string Condition_1147 {
             get {
-                return ResourceManager.GetString("CONDITION_1147", resourceCulture);
+                return ResourceManager.GetString("Condition_1147", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Patchy light drizzle.
         /// </summary>
-        internal static string CONDITION_1150 {
+        internal static string Condition_1150 {
             get {
-                return ResourceManager.GetString("CONDITION_1150", resourceCulture);
+                return ResourceManager.GetString("Condition_1150", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Light drizzle.
         /// </summary>
-        internal static string CONDITION_1153 {
+        internal static string Condition_1153 {
             get {
-                return ResourceManager.GetString("CONDITION_1153", resourceCulture);
+                return ResourceManager.GetString("Condition_1153", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Freezing drizzle.
         /// </summary>
-        internal static string CONDITION_1168 {
+        internal static string Condition_1168 {
             get {
-                return ResourceManager.GetString("CONDITION_1168", resourceCulture);
+                return ResourceManager.GetString("Condition_1168", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Heavy freezing drizzle.
         /// </summary>
-        internal static string CONDITION_1171 {
+        internal static string Condition_1171 {
             get {
-                return ResourceManager.GetString("CONDITION_1171", resourceCulture);
+                return ResourceManager.GetString("Condition_1171", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Patchy light rain.
         /// </summary>
-        internal static string CONDITION_1180 {
+        internal static string Condition_1180 {
             get {
-                return ResourceManager.GetString("CONDITION_1180", resourceCulture);
+                return ResourceManager.GetString("Condition_1180", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Light rain.
         /// </summary>
-        internal static string CONDITION_1183 {
+        internal static string Condition_1183 {
             get {
-                return ResourceManager.GetString("CONDITION_1183", resourceCulture);
+                return ResourceManager.GetString("Condition_1183", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Moderate rain at times.
         /// </summary>
-        internal static string CONDITION_1186 {
+        internal static string Condition_1185 {
             get {
-                return ResourceManager.GetString("CONDITION_1186", resourceCulture);
+                return ResourceManager.GetString("Condition_1185", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Moderate rain.
         /// </summary>
-        internal static string CONDITION_1189 {
+        internal static string Condition_1189 {
             get {
-                return ResourceManager.GetString("CONDITION_1189", resourceCulture);
+                return ResourceManager.GetString("Condition_1189", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Heavy rain at times.
         /// </summary>
-        internal static string CONDITION_1192 {
+        internal static string Condition_1192 {
             get {
-                return ResourceManager.GetString("CONDITION_1192", resourceCulture);
+                return ResourceManager.GetString("Condition_1192", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Heavy rain.
         /// </summary>
-        internal static string CONDITION_1195 {
+        internal static string Condition_1195 {
             get {
-                return ResourceManager.GetString("CONDITION_1195", resourceCulture);
+                return ResourceManager.GetString("Condition_1195", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Light freezing rain.
         /// </summary>
-        internal static string CONDITION_1198 {
+        internal static string Condition_1198 {
             get {
-                return ResourceManager.GetString("CONDITION_1198", resourceCulture);
+                return ResourceManager.GetString("Condition_1198", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Moderate or heavy freezing rain.
         /// </summary>
-        internal static string CONDITION_1201 {
+        internal static string Condition_1201 {
             get {
-                return ResourceManager.GetString("CONDITION_1201", resourceCulture);
+                return ResourceManager.GetString("Condition_1201", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Light sleet.
         /// </summary>
-        internal static string CONDITION_1204 {
+        internal static string Condition_1204 {
             get {
-                return ResourceManager.GetString("CONDITION_1204", resourceCulture);
+                return ResourceManager.GetString("Condition_1204", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Moderate or heavy sleet.
         /// </summary>
-        internal static string CONDITION_1207 {
+        internal static string Condition_1207 {
             get {
-                return ResourceManager.GetString("CONDITION_1207", resourceCulture);
+                return ResourceManager.GetString("Condition_1207", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Patchy light snow.
         /// </summary>
-        internal static string CONDITION_1210 {
+        internal static string Condition_1210 {
             get {
-                return ResourceManager.GetString("CONDITION_1210", resourceCulture);
+                return ResourceManager.GetString("Condition_1210", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Light snow.
         /// </summary>
-        internal static string CONDITION_1213 {
+        internal static string Condition_1213 {
             get {
-                return ResourceManager.GetString("CONDITION_1213", resourceCulture);
+                return ResourceManager.GetString("Condition_1213", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Patchy moderate snow.
         /// </summary>
-        internal static string CONDITION_1216 {
+        internal static string Condition_1216 {
             get {
-                return ResourceManager.GetString("CONDITION_1216", resourceCulture);
+                return ResourceManager.GetString("Condition_1216", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Moderate snow.
         /// </summary>
-        internal static string CONDITION_1219 {
+        internal static string Condition_1219 {
             get {
-                return ResourceManager.GetString("CONDITION_1219", resourceCulture);
+                return ResourceManager.GetString("Condition_1219", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Patchy heavy snow.
         /// </summary>
-        internal static string CONDITION_1222 {
+        internal static string Condition_1222 {
             get {
-                return ResourceManager.GetString("CONDITION_1222", resourceCulture);
+                return ResourceManager.GetString("Condition_1222", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Heavy snow.
         /// </summary>
-        internal static string CONDITION_1225 {
+        internal static string Condition_1225 {
             get {
-                return ResourceManager.GetString("CONDITION_1225", resourceCulture);
+                return ResourceManager.GetString("Condition_1225", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Ice pellets.
         /// </summary>
-        internal static string CONDITION_1237 {
+        internal static string Condition_1237 {
             get {
-                return ResourceManager.GetString("CONDITION_1237", resourceCulture);
+                return ResourceManager.GetString("Condition_1237", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Light rain shower.
         /// </summary>
-        internal static string CONDITION_1240 {
+        internal static string Condition_1240 {
             get {
-                return ResourceManager.GetString("CONDITION_1240", resourceCulture);
+                return ResourceManager.GetString("Condition_1240", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Moderate or heavy rain shower.
         /// </summary>
-        internal static string CONDITION_1243 {
+        internal static string Condition_1243 {
             get {
-                return ResourceManager.GetString("CONDITION_1243", resourceCulture);
+                return ResourceManager.GetString("Condition_1243", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Torrential rain shower.
         /// </summary>
-        internal static string CONDITION_1246 {
+        internal static string Condition_1246 {
             get {
-                return ResourceManager.GetString("CONDITION_1246", resourceCulture);
+                return ResourceManager.GetString("Condition_1246", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Light sleet showers.
         /// </summary>
-        internal static string CONDITION_1249 {
+        internal static string Condition_1249 {
             get {
-                return ResourceManager.GetString("CONDITION_1249", resourceCulture);
+                return ResourceManager.GetString("Condition_1249", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Moderate or heavy sleet showers.
         /// </summary>
-        internal static string CONDITION_1252 {
+        internal static string Condition_1252 {
             get {
-                return ResourceManager.GetString("CONDITION_1252", resourceCulture);
+                return ResourceManager.GetString("Condition_1252", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Light snow showers.
         /// </summary>
-        internal static string CONDITION_1255 {
+        internal static string Condition_1255 {
             get {
-                return ResourceManager.GetString("CONDITION_1255", resourceCulture);
+                return ResourceManager.GetString("Condition_1255", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Moderate or heavy snow showers.
         /// </summary>
-        internal static string CONDITION_1258 {
+        internal static string Condition_1258 {
             get {
-                return ResourceManager.GetString("CONDITION_1258", resourceCulture);
+                return ResourceManager.GetString("Condition_1258", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Light showers of ice pellets.
         /// </summary>
-        internal static string CONDITION_1261 {
+        internal static string Condition_1261 {
             get {
-                return ResourceManager.GetString("CONDITION_1261", resourceCulture);
+                return ResourceManager.GetString("Condition_1261", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Moderate or heavy showers of ice pellets.
         /// </summary>
-        internal static string CONDITION_1264 {
+        internal static string Condition_1264 {
             get {
-                return ResourceManager.GetString("CONDITION_1264", resourceCulture);
+                return ResourceManager.GetString("Condition_1264", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Patchy light rain in area with thunder.
         /// </summary>
-        internal static string CONDITION_1273 {
+        internal static string Condition_1273 {
             get {
-                return ResourceManager.GetString("CONDITION_1273", resourceCulture);
+                return ResourceManager.GetString("Condition_1273", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Moderate or heavy rain in area with thunder.
         /// </summary>
-        internal static string CONDITION_1276 {
+        internal static string Condition_1276 {
             get {
-                return ResourceManager.GetString("CONDITION_1276", resourceCulture);
+                return ResourceManager.GetString("Condition_1276", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Patchy light snow in area with thunder.
         /// </summary>
-        internal static string CONDITION_1279 {
+        internal static string Condition_1279 {
             get {
-                return ResourceManager.GetString("CONDITION_1279", resourceCulture);
+                return ResourceManager.GetString("Condition_1279", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Moderate or heavy snow in area with thunder.
         /// </summary>
-        internal static string CONDITION_1282 {
+        internal static string Condition_1282 {
             get {
-                return ResourceManager.GetString("CONDITION_1282", resourceCulture);
+                return ResourceManager.GetString("Condition_1282", resourceCulture);
             }
         }
         
@@ -935,6 +1079,33 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to E.
+        /// </summary>
+        internal static string Symbol_E {
+            get {
+                return ResourceManager.GetString("Symbol_E", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ENE.
+        /// </summary>
+        internal static string Symbol_ENE {
+            get {
+                return ResourceManager.GetString("Symbol_ENE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ESE.
+        /// </summary>
+        internal static string Symbol_ESE {
+            get {
+                return ResourceManager.GetString("Symbol_ESE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to °F.
         /// </summary>
         internal static string Symbol_Fahrenheit {
@@ -1052,11 +1223,128 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to N.
+        /// </summary>
+        internal static string Symbol_N {
+            get {
+                return ResourceManager.GetString("Symbol_N", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NE.
+        /// </summary>
+        internal static string Symbol_NE {
+            get {
+                return ResourceManager.GetString("Symbol_NE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NNE.
+        /// </summary>
+        internal static string Symbol_NNE {
+            get {
+                return ResourceManager.GetString("Symbol_NNE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NNW.
+        /// </summary>
+        internal static string Symbol_NNW {
+            get {
+                return ResourceManager.GetString("Symbol_NNW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NW.
+        /// </summary>
+        internal static string Symbol_NW {
+            get {
+                return ResourceManager.GetString("Symbol_NW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to S.
+        /// </summary>
+        internal static string Symbol_S {
+            get {
+                return ResourceManager.GetString("Symbol_S", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SE.
+        /// </summary>
+        internal static string Symbol_SE {
+            get {
+                return ResourceManager.GetString("Symbol_SE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SSE.
+        /// </summary>
+        internal static string Symbol_SSE {
+            get {
+                return ResourceManager.GetString("Symbol_SSE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SSW.
+        /// </summary>
+        internal static string Symbol_SSW {
+            get {
+                return ResourceManager.GetString("Symbol_SSW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SW.
+        /// </summary>
+        internal static string Symbol_SW {
+            get {
+                return ResourceManager.GetString("Symbol_SW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to torr.
         /// </summary>
         internal static string Symbol_Torr {
             get {
                 return ResourceManager.GetString("Symbol_Torr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to W.
+        /// </summary>
+        internal static string Symbol_W {
+            get {
+                return ResourceManager.GetString("Symbol_W", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WNW.
+        /// </summary>
+        internal static string Symbol_WNW {
+            get {
+                return ResourceManager.GetString("Symbol_WNW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WSW.
+        /// </summary>
+        internal static string Symbol_WSW {
+            get {
+                return ResourceManager.GetString("Symbol_WSW", resourceCulture);
             }
         }
         

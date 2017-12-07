@@ -159,148 +159,148 @@
   <data name="Button_Default" xml:space="preserve">
     <value>Click here!</value>
   </data>
-  <data name="CONDITION_1000" xml:space="preserve">
+  <data name="Condition_1000" xml:space="preserve">
     <value>Clear</value>
   </data>
-  <data name="CONDITION_1003" xml:space="preserve">
+  <data name="Condition_1003" xml:space="preserve">
     <value>Partly Cloudy</value>
   </data>
-  <data name="CONDITION_1006" xml:space="preserve">
+  <data name="Condition_1006" xml:space="preserve">
     <value>Cloudy</value>
   </data>
-  <data name="CONDITION_1009" xml:space="preserve">
+  <data name="Condition_1009" xml:space="preserve">
     <value>Overcast</value>
   </data>
-  <data name="CONDITION_1030" xml:space="preserve">
+  <data name="Condition_1030" xml:space="preserve">
     <value>Mist</value>
   </data>
-  <data name="CONDITION_1063" xml:space="preserve">
+  <data name="Condition_1063" xml:space="preserve">
     <value>Patchy rain nearby</value>
   </data>
-  <data name="CONDITION_1066" xml:space="preserve">
+  <data name="Condition_1066" xml:space="preserve">
     <value>Patchy snow nearby</value>
   </data>
-  <data name="CONDITION_1069" xml:space="preserve">
+  <data name="Condition_1069" xml:space="preserve">
     <value>Patchy sleet nearby</value>
   </data>
-  <data name="CONDITION_1072" xml:space="preserve">
+  <data name="Condition_1072" xml:space="preserve">
     <value>Patchy freezing drizzle nearby</value>
   </data>
-  <data name="CONDITION_1087" xml:space="preserve">
+  <data name="Condition_1087" xml:space="preserve">
     <value>Thundery outbreaks in nearby</value>
   </data>
-  <data name="CONDITION_1114" xml:space="preserve">
+  <data name="Condition_1114" xml:space="preserve">
     <value>Blowing snow</value>
   </data>
-  <data name="CONDITION_1117" xml:space="preserve">
+  <data name="Condition_1117" xml:space="preserve">
     <value>Blizzard</value>
   </data>
-  <data name="CONDITION_1135" xml:space="preserve">
+  <data name="Condition_1135" xml:space="preserve">
     <value>Fog</value>
   </data>
-  <data name="CONDITION_1147" xml:space="preserve">
+  <data name="Condition_1147" xml:space="preserve">
     <value>Freezing fog</value>
   </data>
-  <data name="CONDITION_1150" xml:space="preserve">
+  <data name="Condition_1150" xml:space="preserve">
     <value>Patchy light drizzle</value>
   </data>
-  <data name="CONDITION_1153" xml:space="preserve">
+  <data name="Condition_1153" xml:space="preserve">
     <value>Light drizzle</value>
   </data>
-  <data name="CONDITION_1168" xml:space="preserve">
+  <data name="Condition_1168" xml:space="preserve">
     <value>Freezing drizzle</value>
   </data>
-  <data name="CONDITION_1171" xml:space="preserve">
+  <data name="Condition_1171" xml:space="preserve">
     <value>Heavy freezing drizzle</value>
   </data>
-  <data name="CONDITION_1180" xml:space="preserve">
+  <data name="Condition_1180" xml:space="preserve">
     <value>Patchy light rain</value>
   </data>
-  <data name="CONDITION_1183" xml:space="preserve">
+  <data name="Condition_1183" xml:space="preserve">
     <value>Light rain</value>
   </data>
-  <data name="CONDITION_1186" xml:space="preserve">
+  <data name="Condition_1185" xml:space="preserve">
     <value>Moderate rain at times</value>
   </data>
-  <data name="CONDITION_1189" xml:space="preserve">
+  <data name="Condition_1189" xml:space="preserve">
     <value>Moderate rain</value>
   </data>
-  <data name="CONDITION_1192" xml:space="preserve">
+  <data name="Condition_1192" xml:space="preserve">
     <value>Heavy rain at times</value>
   </data>
-  <data name="CONDITION_1195" xml:space="preserve">
+  <data name="Condition_1195" xml:space="preserve">
     <value>Heavy rain</value>
   </data>
-  <data name="CONDITION_1198" xml:space="preserve">
+  <data name="Condition_1198" xml:space="preserve">
     <value>Light freezing rain</value>
   </data>
-  <data name="CONDITION_1201" xml:space="preserve">
+  <data name="Condition_1201" xml:space="preserve">
     <value>Moderate or heavy freezing rain</value>
   </data>
-  <data name="CONDITION_1204" xml:space="preserve">
+  <data name="Condition_1204" xml:space="preserve">
     <value>Light sleet</value>
   </data>
-  <data name="CONDITION_1207" xml:space="preserve">
+  <data name="Condition_1207" xml:space="preserve">
     <value>Moderate or heavy sleet</value>
   </data>
-  <data name="CONDITION_1210" xml:space="preserve">
+  <data name="Condition_1210" xml:space="preserve">
     <value>Patchy light snow</value>
   </data>
-  <data name="CONDITION_1213" xml:space="preserve">
+  <data name="Condition_1213" xml:space="preserve">
     <value>Light snow</value>
   </data>
-  <data name="CONDITION_1216" xml:space="preserve">
+  <data name="Condition_1216" xml:space="preserve">
     <value>Patchy moderate snow</value>
   </data>
-  <data name="CONDITION_1219" xml:space="preserve">
+  <data name="Condition_1219" xml:space="preserve">
     <value>Moderate snow</value>
   </data>
-  <data name="CONDITION_1222" xml:space="preserve">
+  <data name="Condition_1222" xml:space="preserve">
     <value>Patchy heavy snow</value>
   </data>
-  <data name="CONDITION_1225" xml:space="preserve">
+  <data name="Condition_1225" xml:space="preserve">
     <value>Heavy snow</value>
   </data>
-  <data name="CONDITION_1237" xml:space="preserve">
+  <data name="Condition_1237" xml:space="preserve">
     <value>Ice pellets</value>
   </data>
-  <data name="CONDITION_1240" xml:space="preserve">
+  <data name="Condition_1240" xml:space="preserve">
     <value>Light rain shower</value>
   </data>
-  <data name="CONDITION_1243" xml:space="preserve">
+  <data name="Condition_1243" xml:space="preserve">
     <value>Moderate or heavy rain shower</value>
   </data>
-  <data name="CONDITION_1246" xml:space="preserve">
+  <data name="Condition_1246" xml:space="preserve">
     <value>Torrential rain shower</value>
   </data>
-  <data name="CONDITION_1249" xml:space="preserve">
+  <data name="Condition_1249" xml:space="preserve">
     <value>Light sleet showers</value>
   </data>
-  <data name="CONDITION_1252" xml:space="preserve">
+  <data name="Condition_1252" xml:space="preserve">
     <value>Moderate or heavy sleet showers</value>
   </data>
-  <data name="CONDITION_1255" xml:space="preserve">
+  <data name="Condition_1255" xml:space="preserve">
     <value>Light snow showers</value>
   </data>
-  <data name="CONDITION_1258" xml:space="preserve">
+  <data name="Condition_1258" xml:space="preserve">
     <value>Moderate or heavy snow showers</value>
   </data>
-  <data name="CONDITION_1261" xml:space="preserve">
+  <data name="Condition_1261" xml:space="preserve">
     <value>Light showers of ice pellets</value>
   </data>
-  <data name="CONDITION_1264" xml:space="preserve">
+  <data name="Condition_1264" xml:space="preserve">
     <value>Moderate or heavy showers of ice pellets</value>
   </data>
-  <data name="CONDITION_1273" xml:space="preserve">
+  <data name="Condition_1273" xml:space="preserve">
     <value>Patchy light rain in area with thunder</value>
   </data>
-  <data name="CONDITION_1276" xml:space="preserve">
+  <data name="Condition_1276" xml:space="preserve">
     <value>Moderate or heavy rain in area with thunder</value>
   </data>
-  <data name="CONDITION_1279" xml:space="preserve">
+  <data name="Condition_1279" xml:space="preserve">
     <value>Patchy light snow in area with thunder</value>
   </data>
-  <data name="CONDITION_1282" xml:space="preserve">
+  <data name="Condition_1282" xml:space="preserve">
     <value>Moderate or heavy snow in area with thunder</value>
   </data>
   <data name="Forecast_Cloud" xml:space="preserve">
@@ -492,6 +492,54 @@
   <data name="Group_Velocity" xml:space="preserve">
     <value>velocity</value>
   </data>
+  <data name="Compass_E" xml:space="preserve">
+    <value>East</value>
+  </data>
+  <data name="Compass_ENE" xml:space="preserve">
+    <value>East-northeast</value>
+  </data>
+  <data name="Compass_ESE" xml:space="preserve">
+    <value>East-southeast</value>
+  </data>
+  <data name="Compass_N" xml:space="preserve">
+    <value>North</value>
+  </data>
+  <data name="Compass_NE" xml:space="preserve">
+    <value>Northeast</value>
+  </data>
+  <data name="Compass_NNE" xml:space="preserve">
+    <value>North-northeast</value>
+  </data>
+  <data name="Compass_NNW" xml:space="preserve">
+    <value>North-northwest</value>
+  </data>
+  <data name="Compass_NW" xml:space="preserve">
+    <value>Northwest</value>
+  </data>
+  <data name="Compass_S" xml:space="preserve">
+    <value>South</value>
+  </data>
+  <data name="Compass_SE" xml:space="preserve">
+    <value>Southeast</value>
+  </data>
+  <data name="Compass_SSE" xml:space="preserve">
+    <value>South-southeast</value>
+  </data>
+  <data name="Compass_SSW" xml:space="preserve">
+    <value>South-southwest</value>
+  </data>
+  <data name="Compass_SW" xml:space="preserve">
+    <value>Southwest</value>
+  </data>
+  <data name="Compass_W" xml:space="preserve">
+    <value>West</value>
+  </data>
+  <data name="Compass_WNW" xml:space="preserve">
+    <value>West-northwest</value>
+  </data>
+  <data name="Compass_WSW" xml:space="preserve">
+    <value>West-southwest</value>
+  </data>
   <data name="Global_No" xml:space="preserve">
     <value>No</value>
   </data>
@@ -500,6 +548,54 @@
   </data>
   <data name="Symbol_Degrees" xml:space="preserve">
     <value>deg</value>
+  </data>
+  <data name="Symbol_E" xml:space="preserve">
+    <value>E</value>
+  </data>
+  <data name="Symbol_ENE" xml:space="preserve">
+    <value>ENE</value>
+  </data>
+  <data name="Symbol_ESE" xml:space="preserve">
+    <value>ESE</value>
+  </data>
+  <data name="Symbol_N" xml:space="preserve">
+    <value>N</value>
+  </data>
+  <data name="Symbol_NE" xml:space="preserve">
+    <value>NE</value>
+  </data>
+  <data name="Symbol_NNE" xml:space="preserve">
+    <value>NNE</value>
+  </data>
+  <data name="Symbol_NNW" xml:space="preserve">
+    <value>NNW</value>
+  </data>
+  <data name="Symbol_NW" xml:space="preserve">
+    <value>NW</value>
+  </data>
+  <data name="Symbol_S" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="Symbol_SE" xml:space="preserve">
+    <value>SE</value>
+  </data>
+  <data name="Symbol_SSE" xml:space="preserve">
+    <value>SSE</value>
+  </data>
+  <data name="Symbol_SSW" xml:space="preserve">
+    <value>SSW</value>
+  </data>
+  <data name="Symbol_SW" xml:space="preserve">
+    <value>SW</value>
+  </data>
+  <data name="Symbol_W" xml:space="preserve">
+    <value>W</value>
+  </data>
+  <data name="Symbol_WNW" xml:space="preserve">
+    <value>WNW</value>
+  </data>
+  <data name="Symbol_WSW" xml:space="preserve">
+    <value>WSW</value>
   </data>
   <data name="Tab_Forecast" xml:space="preserve">
     <value>Forecast</value>

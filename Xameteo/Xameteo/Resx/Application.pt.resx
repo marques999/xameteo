@@ -504,6 +504,54 @@
   <data name="Tab_Today" xml:space="preserve">
     <value>Hoje</value>
   </data>
+  <data name="Compass_E" xml:space="preserve">
+    <value>Este</value>
+  </data>
+  <data name="Compass_ENE" xml:space="preserve">
+    <value>És-nordeste</value>
+  </data>
+  <data name="Compass_ESE" xml:space="preserve">
+    <value>És-sudeste</value>
+  </data>
+  <data name="Compass_N" xml:space="preserve">
+    <value>Norte</value>
+  </data>
+  <data name="Compass_NE" xml:space="preserve">
+    <value>Nordeste</value>
+  </data>
+  <data name="Compass_NNE" xml:space="preserve">
+    <value>Nor-nordeste</value>
+  </data>
+  <data name="Compass_NNW" xml:space="preserve">
+    <value>Nor-noroeste</value>
+  </data>
+  <data name="Compass_NW" xml:space="preserve">
+    <value>Noroeste</value>
+  </data>
+  <data name="Compass_S" xml:space="preserve">
+    <value>Sul</value>
+  </data>
+  <data name="Compass_SE" xml:space="preserve">
+    <value>Sudeste</value>
+  </data>
+  <data name="Compass_SSE" xml:space="preserve">
+    <value>Su-sudeste</value>
+  </data>
+  <data name="Compass_SSW" xml:space="preserve">
+    <value>Su-sudoeste</value>
+  </data>
+  <data name="Compass_SW" xml:space="preserve">
+    <value>Sudoeste</value>
+  </data>
+  <data name="Compass_W" xml:space="preserve">
+    <value>Oeste</value>
+  </data>
+  <data name="Compass_WNW" xml:space="preserve">
+    <value>Oés-noroeste</value>
+  </data>
+  <data name="Compass_WSW" xml:space="preserve">
+    <value>Oés-sudoeste</value>
+  </data>
   <data name="Global_No" xml:space="preserve">
     <value>Não</value>
   </data>
@@ -512,5 +560,53 @@
   </data>
   <data name="Symbol_Degrees" xml:space="preserve">
     <value>°</value>
+  </data>
+  <data name="Symbol_E" xml:space="preserve">
+    <value>E</value>
+  </data>
+  <data name="Symbol_ENE" xml:space="preserve">
+    <value>ENE</value>
+  </data>
+  <data name="Symbol_ESE" xml:space="preserve">
+    <value>ESE</value>
+  </data>
+  <data name="Symbol_N" xml:space="preserve">
+    <value>N</value>
+  </data>
+  <data name="Symbol_NE" xml:space="preserve">
+    <value>NE</value>
+  </data>
+  <data name="Symbol_NNE" xml:space="preserve">
+    <value>NNE</value>
+  </data>
+  <data name="Symbol_NNW" xml:space="preserve">
+    <value>NNO</value>
+  </data>
+  <data name="Symbol_NW" xml:space="preserve">
+    <value>NO</value>
+  </data>
+  <data name="Symbol_S" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="Symbol_SE" xml:space="preserve">
+    <value>SE</value>
+  </data>
+  <data name="Symbol_SSE" xml:space="preserve">
+    <value>SSE</value>
+  </data>
+  <data name="Symbol_SSW" xml:space="preserve">
+    <value>SSO</value>
+  </data>
+  <data name="Symbol_SW" xml:space="preserve">
+    <value>So</value>
+  </data>
+  <data name="Symbol_W" xml:space="preserve">
+    <value>O</value>
+  </data>
+  <data name="Symbol_WNW" xml:space="preserve">
+    <value>ONO</value>
+  </data>
+  <data name="Symbol_WSW" xml:space="preserve">
+    <value>OSO</value>
   </data>
 </root>

@@ -7,10 +7,13 @@
     <ResourceDictionary>
       <!-- Boolean Conversions -->
       <globalization:BooleanConverter x:Key="XamlBooleanConverter"/>
-      <!-- Coodinates Conversions -->
+      <!-- Compass Conversions -->
+      <globalization:LongCompassConverter x:Key="XamlLongCompassConverter"/>
+      <globalization:ShortCompassConverter x:Key="XamlShortCompassConverter" />
+      <!-- Coordinates Conversions -->
       <globalization:LatitudeConverter x:Key="XamlLatitudeConverter"/>
       <globalization:LongitudeConverter x:Key="XamlLongitudeConverter"/>
-      <!--DateTime Conversions -->
+      <!-- DateTime Conversions -->
       <globalization:LongDateConverter x:Key="XamlLongDateConverter"/>
       <globalization:ShortDateConverter x:Key="XamlShortDateConverter"/>
       <globalization:ShortTimeConverter x:Key="XamlShortTimeConverter"/>
