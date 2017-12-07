@@ -117,6 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Airport_Fao" xml:space="preserve">
+    <value>Faro Airport</value>
+  </data>
+  <data name="Airport_Fnc" xml:space="preserve">
+    <value>Cristiano Ronaldo International Airport, Funchal</value>
+  </data>
+  <data name="Airport_Hor" xml:space="preserve">
+    <value>Horta Airport</value>
+  </data>
+  <data name="Airport_Lis" xml:space="preserve">
+    <value>Humberto Delgado Airport, Lisbon</value>
+  </data>
+  <data name="Airport_Opo" xml:space="preserve">
+    <value>Francisco Sá Carneiro Airport, Porto</value>
+  </data>
+  <data name="Airport_Pdl" xml:space="preserve">
+    <value>João Paulo II Airport, Ponta Delgada</value>
+  </data>
+  <data name="Airport_Pxo" xml:space="preserve">
+    <value>Porto Santo Airport</value>
+  </data>
+  <data name="Airport_Sma" xml:space="preserve">
+    <value>Santa Maria Airport</value>
+  </data>
+  <data name="Airport_Ter" xml:space="preserve">
+    <value>Lajes Field, Terceira</value>
+  </data>
   <data name="ASTRO_MOONRISE" xml:space="preserve">
     <value>Moonrise</value>
   </data>

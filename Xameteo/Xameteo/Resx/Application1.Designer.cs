@@ -62,6 +62,87 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Faro Airport.
+        /// </summary>
+        internal static string Airport_Fao {
+            get {
+                return ResourceManager.GetString("Airport_Fao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cristiano Ronaldo International Airport, Funchal.
+        /// </summary>
+        internal static string Airport_Fnc {
+            get {
+                return ResourceManager.GetString("Airport_Fnc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Horta Airport.
+        /// </summary>
+        internal static string Airport_Hor {
+            get {
+                return ResourceManager.GetString("Airport_Hor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Humberto Delgado Airport, Lisbon.
+        /// </summary>
+        internal static string Airport_Lis {
+            get {
+                return ResourceManager.GetString("Airport_Lis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Francisco Sá Carneiro Airport, Porto.
+        /// </summary>
+        internal static string Airport_Opo {
+            get {
+                return ResourceManager.GetString("Airport_Opo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to João Paulo II Airport, Ponta Delgada.
+        /// </summary>
+        internal static string Airport_Pdl {
+            get {
+                return ResourceManager.GetString("Airport_Pdl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Porto Santo Airport.
+        /// </summary>
+        internal static string Airport_Pxo {
+            get {
+                return ResourceManager.GetString("Airport_Pxo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Santa Maria Airport.
+        /// </summary>
+        internal static string Airport_Sma {
+            get {
+                return ResourceManager.GetString("Airport_Sma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lajes Field, Terceira.
+        /// </summary>
+        internal static string Airport_Ter {
+            get {
+                return ResourceManager.GetString("Airport_Ter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Moonrise.
         /// </summary>
         internal static string ASTRO_MOONRISE {
