@@ -20,7 +20,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return value is DateTime dateTime ? dateTime.ToString("t", culture.DateTimeFormat) : "N/A";
+            return value is DateTime dateTime ? Xameteo.Localization.ShortTime(dateTime, culture) : "N/A";
         }
 
         /// <inheritdoc />

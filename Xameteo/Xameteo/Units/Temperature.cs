@@ -7,6 +7,11 @@ namespace Xameteo.Units
     /// </summary>
     internal class Temperature : Unit
     {
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        public override string Type => Application.Group_Temperature;
+
         /// <summary>
         /// </summary>
         public static readonly Temperature[] Units =

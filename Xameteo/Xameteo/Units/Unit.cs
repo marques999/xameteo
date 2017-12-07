@@ -34,6 +34,13 @@
 
         /// <summary>
         /// </summary>
+        public abstract string Type
+        {
+            get;
+        }
+
+        /// <summary>
+        /// </summary>
         /// <param name="index"></param>
         /// <param name="symbol"></param>
         /// <param name="name"></param>

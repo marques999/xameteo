@@ -6,6 +6,8 @@ using Acr.UserDialogs;
 using Xamarin.Forms;
 using Xameteo.Units;
 
+using Application = Xameteo.Resx.Application;
+
 namespace Xameteo.Helpers
 {
     /// <summary>
@@ -28,7 +30,8 @@ namespace Xameteo.Helpers
         public IProgressDialog InfiniteProgress => _instance.Progress(new ProgressDialogConfig
         {
             AutoShow = true,
-            IsDeterministic = false
+            IsDeterministic = false,
+            Title = Application.Loading_Title
         });
 
         /// <summary>
@@ -43,17 +46,21 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
+        private readonly ActionSheetOption _actionSheetCancel = new ActionSheetOption(Application.Button_Cancel);
+
+        /// <summary>
+        /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="type"></param>
         /// <param name="units"></param>
         /// <param name="generator"></param>
         /// <returns></returns>
-        public IDisposable SelectUnit<T>(string type, T[] units, SelectUnitCallback<T> generator) where T : Unit
+        public IDisposable SelectUnit<T>(T[] units, SelectUnitCallback<T> generator) where T : Unit
         {
             var configuration = new ActionSheetConfig
             {
-                Title = $"Select {type} units",
-                UseBottomSheet = false
+                UseBottomSheet = false,
+                Cancel = _actionSheetCancel,
+                Title = string.Format(Application.Dialogs_SelectUnit, units[0].Type)
             };
 
             configuration.SetCancel();

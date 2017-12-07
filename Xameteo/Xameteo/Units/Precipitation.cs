@@ -7,6 +7,11 @@ namespace Xameteo.Units
     /// </summary>
     internal class Precipitation : Unit
     {
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        public override string Type => Application.Group_Precipitation;
+
         /// <summary>
         /// </summary>
         public static readonly Precipitation[] Units =

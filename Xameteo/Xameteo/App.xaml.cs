@@ -14,19 +14,21 @@
             MainPage = new MainPage();
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// </summary>
         protected override void OnStart()
         {
-            
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// </summary>
         protected override void OnSleep()
         {
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// </summary>
         protected override void OnResume()

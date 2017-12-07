@@ -7,6 +7,11 @@ namespace Xameteo.Units
     /// </summary>
     internal class Distance : Unit
     {
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        public override string Type => Application.Group_Distance;
+
         /// <summary>
         /// </summary>
         public static readonly Distance[] Units =

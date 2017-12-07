@@ -47,7 +47,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Globalization\ILocale.cs" />
-    <Compile Include="Globalization\HourConverter.cs" />
+    <Compile Include="Globalization\ConverterExtensions.cs" />
     <Compile Include="Helpers\Globals.cs" />
     <Compile Include="Model\Airport.cs" />
     <Compile Include="Resx\Application.pt1.Designer.cs">
@@ -207,7 +207,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -236,6 +238,7 @@
     <EmbeddedResource Include="Resx\Application.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Application1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TodayHourlyPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

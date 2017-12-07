@@ -7,6 +7,11 @@ namespace Xameteo.Units
     /// </summary>
     internal class Pressure : Unit
     {
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        public override string Type => Application.Group_Pressure;
+
         /// <summary>
         /// </summary>
         public static readonly Pressure[] Units =

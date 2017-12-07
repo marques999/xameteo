@@ -465,4 +465,31 @@
   <data name="Units_Torr" xml:space="preserve">
     <value>Torr (mmHg)</value>
   </data>
+  <data name="Dialogs_SelectUnit" xml:space="preserve">
+    <value>Unidades de {0}</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Button_OK" xml:space="preserve">
+    <value>Confirmar</value>
+  </data>
+  <data name="Loading_Title" xml:space="preserve">
+    <value>Aguarde um momento...</value>
+  </data>
+  <data name="Group_Distance" xml:space="preserve">
+    <value>distância</value>
+  </data>
+  <data name="Group_Precipitation" xml:space="preserve">
+    <value>precipitação</value>
+  </data>
+  <data name="Group_Pressure" xml:space="preserve">
+    <value>pressão atmosférica</value>
+  </data>
+  <data name="Group_Temperature" xml:space="preserve">
+    <value>temperatura</value>
+  </data>
+  <data name="Group_Velocity" xml:space="preserve">
+    <value>velocidade</value>
+  </data>
 </root>

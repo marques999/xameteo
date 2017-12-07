@@ -179,11 +179,29 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string Button_Cancel {
+            get {
+                return ResourceManager.GetString("Button_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Click here!.
         /// </summary>
         internal static string BUTTON_DEFAULT {
             get {
                 return ResourceManager.GetString("BUTTON_DEFAULT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        internal static string Button_OK {
+            get {
+                return ResourceManager.GetString("Button_OK", resourceCulture);
             }
         }
         
@@ -620,6 +638,15 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select {0} units.
+        /// </summary>
+        internal static string Dialogs_SelectUnit {
+            get {
+                return ResourceManager.GetString("Dialogs_SelectUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cloud coverage.
         /// </summary>
         internal static string Forecast_Cloud {
@@ -733,6 +760,60 @@ namespace Xameteo.Resx {
         internal static string Forecast_Wind_Velocity {
             get {
                 return ResourceManager.GetString("Forecast_Wind_Velocity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to distance.
+        /// </summary>
+        internal static string Group_Distance {
+            get {
+                return ResourceManager.GetString("Group_Distance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to precipitation.
+        /// </summary>
+        internal static string Group_Precipitation {
+            get {
+                return ResourceManager.GetString("Group_Precipitation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pressure.
+        /// </summary>
+        internal static string Group_Pressure {
+            get {
+                return ResourceManager.GetString("Group_Pressure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to temperature.
+        /// </summary>
+        internal static string Group_Temperature {
+            get {
+                return ResourceManager.GetString("Group_Temperature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to velocity.
+        /// </summary>
+        internal static string Group_Velocity {
+            get {
+                return ResourceManager.GetString("Group_Velocity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please wait....
+        /// </summary>
+        internal static string Loading_Title {
+            get {
+                return ResourceManager.GetString("Loading_Title", resourceCulture);
             }
         }
         

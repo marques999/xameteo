@@ -36,7 +36,7 @@ namespace Xameteo.Views
             using (var progressDialog = Xameteo.Dialogs.InfiniteProgress)
             {
                 progressDialog.Show();
-                (await Task.WhenAll(Xameteo.MyPlaces.Current())).ForEach(it => Items.Add(it));         
+                (await Task.WhenAll(Xameteo.MyPlaces.Current())).ForEach(it => Items.Add(it));
                 progressDialog.Hide();
             }
         }

@@ -7,6 +7,11 @@ namespace Xameteo.Units
     /// </summary>
     internal class Velocity : Unit
     {
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        public override string Type => Application.Group_Velocity;
+
         /// <summary>
         /// </summary>
         public static readonly Velocity[] Units =

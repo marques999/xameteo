@@ -13,6 +13,14 @@ namespace Xameteo.ViewModel
         /// </summary>
         private readonly ApixuForecast _forecast;
 
+        /// <summary>
+        /// </summary>
+        private Current Now => _forecast.Current;
+
+        /// <summary>
+        /// </summary>
+        private Location Location => _forecast.Location;
+
         /// <inheritdoc />
         /// <summary>
         /// </summary>
@@ -23,8 +31,26 @@ namespace Xameteo.ViewModel
         public ForecastViewModel(ApixuForecast forecast)
         {
             _forecast = forecast;
-            FillTable1(_forecast.Current);
-            FillTable2(_forecast.Location);
+            Table1.Add(new Tuple<string, string>(Application.Forecast_Last_Updated, Xameteo.Localization.LongDateTime(Now.LastUpdated)));
+            Table1.Add(new Tuple<string, string>(Application.Forecast_Condition, Xameteo.Localization.GetCondition(Now.Condition.Id)));
+            Table1.Add(new Tuple<string, string>(Application.Forecast_Temperature, Xameteo.Settings.Temperature.Convert(Now.Temperature)));
+            Table1.Add(new Tuple<string, string>(Application.Forecast_Feels_Like, Xameteo.Settings.Temperature.Convert(Now.FeelsLike)));
+            Table1.Add(new Tuple<string, string>(Application.Forecast_Humidity, Now.Humidity + "%"));
+            Table1.Add(new Tuple<string, string>(Application.Forecast_Is_Day, Now.IsDay ? "true" : "false"));
+            Table1.Add(new Tuple<string, string>(Application.Forecast_Wind_Velocity, Xameteo.Settings.Velocity.Convert(Now.WindVelocity)));
+            Table1.Add(new Tuple<string, string>(Application.Forecast_Wind_Degree, Now.WindDegree + " deg"));
+            Table1.Add(new Tuple<string, string>(Application.Forecast_Wind_Direction, Now.WindDirection));
+            Table1.Add(new Tuple<string, string>(Application.Forecast_Pressure, Xameteo.Settings.Pressure.Convert(Now.Pressure)));
+            Table1.Add(new Tuple<string, string>(Application.Forecast_Precipitation, Xameteo.Settings.Precipitation.Convert(Now.Precipitation)));
+            Table1.Add(new Tuple<string, string>(Application.Forecast_Cloud, Now.Cloud.ToString()));
+            Table1.Add(new Tuple<string, string>(Application.Forecast_Visibility, Xameteo.Settings.Distance.Convert(Now.Visibility)));
+            Table2.Add(new Tuple<string, string>(Application.Location_Name, Location.Name));
+            Table2.Add(new Tuple<string, string>(Application.Location_Region, Location.Region));
+            Table2.Add(new Tuple<string, string>(Application.Location_Country, Location.Country));
+            Table2.Add(new Tuple<string, string>(Application.Location_Latitude, Location.Latitude.ToString()));
+            Table2.Add(new Tuple<string, string>(Application.Location_Longitude, Location.Longitude.ToString()));
+            Table2.Add(new Tuple<string, string>(Application.Location_Timezone, Location.TimeZone));
+            Table2.Add(new Tuple<string, string>(Application.Location_Local_Time, Xameteo.Localization.ShortTime(Location.LocalTime)));
         }
 
         /// <summary>
@@ -33,58 +59,6 @@ namespace Xameteo.ViewModel
         /// <param name="args"></param>
         public void SelectedItemCommand(object sender, EventArgs args)
         {
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="localeKey"></param>
-        /// <param name="value"></param>
-        private void InsertTable1(string localeKey, string value)
-        {
-            Table1.Add(new Tuple<string, string>(Xameteo.Localization.Get(localeKey), value));
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="today"></param>
-        private void FillTable1(Current today)
-        {
-            InsertTable1(Application.Forecast_Last_Updated, today.LastUpdated.ToString("g"));
-            InsertTable1(Application.Forecast_Condition, Xameteo.Localization.GetCondition(today.Condition.Id));
-            InsertTable1(Application.Forecast_Temperature, Xameteo.Settings.Temperature.Convert(today.Temperature));
-            InsertTable1("Forecast_Feels_Like", Xameteo.Settings.Temperature.Convert(today.FeelsLike));
-            InsertTable1("Forecast_Humidity", today.Humidity + "%");
-            InsertTable1("Forecast_Is_Day", today.IsDay ? "true" : "false");
-            InsertTable1("Forecast_Wind_Velocity", Xameteo.Settings.Velocity.Convert(today.WindVelocity));
-            InsertTable1("Forecast_Wind_Degree", today.WindDegree + " deg");
-            InsertTable1("Forecast_Wind_Direction", today.WindDirection);
-            InsertTable1("Forecast_Pressure", Xameteo.Settings.Pressure.Convert(today.Pressure));
-            InsertTable1("Forecast_Precipitation", Xameteo.Settings.Precipitation.Convert(today.Precipitation));
-            InsertTable1("Forecast_Cloud", today.Cloud.ToString());
-            InsertTable1("Forecast_Visibility", Xameteo.Settings.Distance.Convert(today.Visibility));
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="location"></param>
-        private void FillTable2(Location location)
-        {
-            InsertTable2("Location_Name", location.Name);
-            InsertTable2("Location_Region", location.Region);
-            InsertTable2("Location_Country", location.Country);
-            InsertTable2("Location_Latitude", location.Latitude.ToString());
-            InsertTable2("Location_Longitude", location.Longitude.ToString());
-            InsertTable2("Location_Timezone", location.TimeZone);
-            InsertTable2("Location_Local_Time", location.LocalTime.ToString("g"));
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="localeKey"></param>
-        /// <param name="value"></param>
-        private void InsertTable2(string localeKey, string value)
-        {
-            Table2.Add(new Tuple<string, string>(Xameteo.Localization.Get(localeKey), value));
         }
 
         /// <summary>

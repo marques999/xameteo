@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -40,28 +35,38 @@ namespace Xameteo
                 {
                     MenuItems.Add(new MainPageMenuItem
                     {
-                        Id = i, Title = locations[i].Parameters, TargetType = typeof(PlacePage)
+                        Id = i,
+                        Title = locations[i].Parameters,
+                        TargetType = typeof(PlacePage)
                     });
                 }
 
                 MenuItems.Add(new MainPageMenuItem
                 {
-                    Id = i++, Title = "Settings", TargetType = typeof(OptionsPage)
+                    Id = i++,
+                    Title = "Settings",
+                    TargetType = typeof(OptionsPage)
                 });
 
                 MenuItems.Add(new MainPageMenuItem
                 {
-                    Id = i, Title = "Home,", TargetType = typeof(PlacesPage)
+                    Id = i,
+                    Title = "Home,",
+                    TargetType = typeof(PlacesPage)
                 });
             }
 
-            #region INotifyPropertyChanged Implementation
+            /// <summary>
+            /// </summary>
             public event PropertyChangedEventHandler PropertyChanged;
-            void OnPropertyChanged([CallerMemberName] string propertyName = "")
+
+            /// <summary>
+            /// </summary>
+            /// <param name="propertyName"></param>
+            public void OnPropertyChanged([CallerMemberName] string propertyName = "")
             {
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
-            #endregion
         }
     }
 }
