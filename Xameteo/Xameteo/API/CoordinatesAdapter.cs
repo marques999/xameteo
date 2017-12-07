@@ -1,4 +1,6 @@
-﻿namespace Xameteo.API
+﻿using Xameteo.Model;
+
+namespace Xameteo.API
 {
     /// <inheritdoc />
     /// <summary>
@@ -8,9 +10,8 @@
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        /// <param name="latitude"></param>
-        /// <param name="longitude"></param>
-        public CoordinatesAdapter(double latitude, double longitude) : base(latitude + "," + longitude)
+        /// <param name="coordinates"></param>
+        public CoordinatesAdapter(Coordinates coordinates) : base(coordinates.Latitude + "," + coordinates.Longitude)
         {
         }
     }

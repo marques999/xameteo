@@ -5,6 +5,8 @@ using System.Globalization;
 
 using Xamarin.Forms;
 
+using Application = Xameteo.Resx.Application;
+
 namespace Xameteo.Globalization
 {
     /// <summary>
@@ -36,61 +38,101 @@ namespace Xameteo.Globalization
         /// <summary>
         /// </summary>
         /// <param name="key"></param>
-        /// <param name="defaultValue"></param>
+        /// <param name="fallback"></param>
         /// <returns></returns>
-        public string GetOrDefault(string key, string defaultValue)
+        public string GetOrDefault(string key, string fallback)
         {
-            return _resourceManager.GetString(key, _cultureInfo) ?? defaultValue;
+            return _resourceManager.GetString(key, _cultureInfo) ?? fallback;
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="cultureInfo"></param>
+        /// <returns></returns>
+        public string Boolean(bool value, CultureInfo cultureInfo = null)
+        {
+            return value ? Application.Global_Yes : Application.Global_No;
         }
 
         /// <summary>
         /// </summary>
         /// <param name="dateTime"></param>
-        /// <param name="culture"></param>
+        /// <param name="cultureInfo"></param>
         /// <returns></returns>
-        public string ShortTime(DateTime dateTime, CultureInfo culture = null)
+        public string ShortTime(DateTime dateTime, CultureInfo cultureInfo = null)
         {
-            return dateTime.ToString("t", (culture ?? _cultureInfo).DateTimeFormat);
+            return dateTime.ToString("t", (cultureInfo ?? _cultureInfo).DateTimeFormat);
         }
 
         /// <summary>
         /// </summary>
         /// <param name="dateTime"></param>
-        /// <param name="culture"></param>
+        /// <param name="cultureInfo"></param>
         /// <returns></returns>
-        public string ShortDate(DateTime dateTime, CultureInfo culture = null)
+        public string ShortDate(DateTime dateTime, CultureInfo cultureInfo = null)
         {
-            return dateTime.ToString("d", (culture ?? _cultureInfo).DateTimeFormat);
+            return dateTime.ToString("d", (cultureInfo ?? _cultureInfo).DateTimeFormat);
         }
 
         /// <summary>
         /// </summary>
         /// <param name="dateTime"></param>
-        /// <param name="culture"></param>
+        /// <param name="cultureInfo"></param>
         /// <returns></returns>
-        public string LongDate(DateTime dateTime, CultureInfo culture = null)
+        public string LongDate(DateTime dateTime, CultureInfo cultureInfo = null)
         {
-            return dateTime.ToString("D", (culture ?? _cultureInfo).DateTimeFormat);
+            return dateTime.ToString("D", (cultureInfo ?? _cultureInfo).DateTimeFormat);
         }
 
         /// <summary>
         /// </summary>
         /// <param name="dateTime"></param>
-        /// <param name="culture"></param>
+        /// <param name="cultureInfo"></param>
         /// <returns></returns>
-        public string ShortDateTime(DateTime dateTime, CultureInfo culture = null)
+        public string ShortDateTime(DateTime dateTime, CultureInfo cultureInfo = null)
         {
-            return dateTime.ToString("g", (culture ?? _cultureInfo).DateTimeFormat);
+            return dateTime.ToString("g", (cultureInfo ?? _cultureInfo).DateTimeFormat);
         }
 
         /// <summary>
         /// </summary>
-        /// <param name="dateTime"></param>
-        /// <param name="culture"></param>
+        /// <param name="value"></param>
+        /// <param name="cultureInfo"></param>
         /// <returns></returns>
-        public string LongDateTime(DateTime dateTime, CultureInfo culture = null)
+        public string LongDateTime(DateTime value, CultureInfo cultureInfo = null)
         {
-            return dateTime.ToString("f", (culture ?? _cultureInfo).DateTimeFormat);
+            return value.ToString("f", (cultureInfo ?? _cultureInfo).DateTimeFormat);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="cultureInfo"></param>
+        /// <returns></returns>
+        public string Percentage(double value, CultureInfo cultureInfo = null)
+        {
+            return value.ToString("P", (cultureInfo ?? _cultureInfo).NumberFormat);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="cultureInfo"></param>
+        /// <returns></returns>
+        public string FixedPoint(double value, CultureInfo cultureInfo = null)
+        {
+            return value.ToString("F", (cultureInfo ?? _cultureInfo).NumberFormat);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="cultureInfo"></param>
+        /// <returns></returns>
+        public string Degrees(double value, CultureInfo cultureInfo = null)
+        {
+            return FixedPoint(value, (cultureInfo ?? _cultureInfo)) + " " + Application.Symbol_Degrees;
         }
 
         /// <summary>

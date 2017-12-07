@@ -764,6 +764,24 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        internal static string Global_No {
+            get {
+                return ResourceManager.GetString("Global_No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        internal static string Global_Yes {
+            get {
+                return ResourceManager.GetString("Global_Yes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to distance.
         /// </summary>
         internal static string Group_Distance {
@@ -890,7 +908,7 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ºC.
+        ///   Looks up a localized string similar to °C.
         /// </summary>
         internal static string Symbol_Celsius {
             get {
@@ -908,7 +926,16 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ºF.
+        ///   Looks up a localized string similar to deg.
+        /// </summary>
+        internal static string Symbol_Degrees {
+            get {
+                return ResourceManager.GetString("Symbol_Degrees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to °F.
         /// </summary>
         internal static string Symbol_Fahrenheit {
             get {

@@ -35,7 +35,7 @@ namespace Xameteo.ViewModel
             Table1.Add(new Tuple<string, string>(Application.Forecast_Condition, Xameteo.Localization.GetCondition(Now.Condition.Id)));
             Table1.Add(new Tuple<string, string>(Application.Forecast_Temperature, Xameteo.Settings.Temperature.Convert(Now.Temperature)));
             Table1.Add(new Tuple<string, string>(Application.Forecast_Feels_Like, Xameteo.Settings.Temperature.Convert(Now.FeelsLike)));
-            Table1.Add(new Tuple<string, string>(Application.Forecast_Humidity, Now.Humidity + "%"));
+            Table1.Add(new Tuple<string, string>(Application.Forecast_Humidity, Xameteo.Localization.Percentage(Now.Humidity)));
             Table1.Add(new Tuple<string, string>(Application.Forecast_Is_Day, Now.IsDay ? "true" : "false"));
             Table1.Add(new Tuple<string, string>(Application.Forecast_Wind_Velocity, Xameteo.Settings.Velocity.Convert(Now.WindVelocity)));
             Table1.Add(new Tuple<string, string>(Application.Forecast_Wind_Degree, Now.WindDegree + " deg"));

@@ -8,6 +8,14 @@ namespace Xameteo.Model
     {
         /// <summary>
         /// </summary>
+        public string Code { get; }
+
+        /// <summary>
+        /// </summary>
+        public string Name { get; }
+
+        /// <summary>
+        /// </summary>
         public static readonly Airport[] Airports =
         {
             new Airport("FAO", Application.Airport_Fao),
@@ -20,20 +28,6 @@ namespace Xameteo.Model
             new Airport("SMA", Application.Airport_Sma),
             new Airport("TER", Application.Airport_Ter),
         };
-
-        /// <summary>
-        /// </summary>
-        public string Code
-        {
-            get;
-        }
-
-        /// <summary>
-        /// </summary>
-        public string Name
-        {
-            get;
-        }
 
         /// <inheritdoc />
         /// <summary>

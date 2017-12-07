@@ -14,6 +14,10 @@ namespace Xameteo.API
     {
         /// <summary>
         /// </summary>
+        public List<PlaceAdapter> List { get; }
+
+        /// <summary>
+        /// </summary>
         private readonly HashSet<PlaceAdapter> _duplicates = new HashSet<PlaceAdapter>();
 
         /// <summary>
@@ -22,13 +26,6 @@ namespace Xameteo.API
         {
             TypeNameHandling = TypeNameHandling.Auto
         };
-
-        /// <summary>
-        /// </summary>
-        public List<PlaceAdapter> List
-        {
-            get;
-        }
 
         /// <summary>
         /// </summary>

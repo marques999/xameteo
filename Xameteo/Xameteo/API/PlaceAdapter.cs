@@ -9,11 +9,7 @@ namespace Xameteo.API
         /// <summary>
         /// </summary>
         [JsonProperty("parameters")]
-        public string Parameters
-        {
-            get;
-            private set;
-        }
+        public string Parameters { get; set; }
 
         /// <summary>
         /// </summary>

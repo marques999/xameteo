@@ -367,13 +367,13 @@
     <value>atm</value>
   </data>
   <data name="Symbol_Celsius" xml:space="preserve">
-    <value>ºC</value>
+    <value>°C</value>
   </data>
   <data name="Symbol_Centimeters" xml:space="preserve">
     <value>cm</value>
   </data>
   <data name="Symbol_Fahrenheit" xml:space="preserve">
-    <value>ºF</value>
+    <value>°F</value>
   </data>
   <data name="Symbol_Inches" xml:space="preserve">
     <value>pol</value>
@@ -503,5 +503,14 @@
   </data>
   <data name="Tab_Today" xml:space="preserve">
     <value>Hoje</value>
+  </data>
+  <data name="Global_No" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Global_Yes" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Symbol_Degrees" xml:space="preserve">
+    <value>°</value>
   </data>
 </root>

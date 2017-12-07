@@ -1,4 +1,6 @@
-﻿namespace Xameteo.API
+﻿using Xameteo.Model;
+
+namespace Xameteo.API
 {
     /// <inheritdoc />
     /// <summary>
@@ -8,8 +10,8 @@
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        /// <param name="iataCode"></param>
-        public AirportAdapter(string iataCode) : base("iata:" + iataCode)
+        /// <param name="airport"></param>
+        public AirportAdapter(Airport airport) : base("iata:" + airport.Code)
         {
         }
     }

@@ -5,7 +5,7 @@ namespace Xameteo.Units
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    internal class Velocity : Unit
+    public class Velocity : Unit
     {
         /// <inheritdoc />
         /// <summary>
