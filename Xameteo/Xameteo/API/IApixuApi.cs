@@ -1,9 +1,12 @@
-﻿using Refit;
-using Xameteo.Model;
+﻿using System;
 using System.Threading.Tasks;
+
+using Refit;
 
 namespace Xameteo.API
 {
+    /// <summary>
+    /// </summary>
     [Headers("Accept: application/json")]
     public interface IApuxApi
     {
@@ -23,6 +26,6 @@ namespace Xameteo.API
         /// </summary>
         /// <returns></returns>
         [Get("/history.json")]
-        Task<ApixuHistory> GetHistory(string key, string q, HistoryParameters parameters);
+        Task<ApixuHistory> GetHistory(string key, string q, [AliasAs("dt")] DateTime start, [AliasAs("dt_end")] DateTime? end);
     }
 }

@@ -4,21 +4,19 @@ using System.Collections.Generic;
 
 using Newtonsoft.Json;
 
-using Xameteo.Model;
-
 namespace Xameteo.API
 {
     /// <summary>
     /// </summary>
-    internal class Places
+    public class Places
     {
         /// <summary>
         /// </summary>
-        public List<PlaceAdapter> List { get; }
+        public List<ApixuAdapter> List { get; }
 
         /// <summary>
         /// </summary>
-        private readonly HashSet<PlaceAdapter> _duplicates = new HashSet<PlaceAdapter>();
+        private readonly HashSet<ApixuAdapter> _duplicates = new HashSet<ApixuAdapter>();
 
         /// <summary>
         /// </summary>
@@ -44,7 +42,7 @@ namespace Xameteo.API
         /// </summary>
         /// <param name="adapter"></param>
         /// <returns></returns>
-        public bool Insert(PlaceAdapter adapter)
+        public bool Insert(ApixuAdapter adapter)
         {
             var operationResult = _duplicates.Add(adapter);
 
@@ -60,7 +58,7 @@ namespace Xameteo.API
         /// </summary>
         /// <param name="adapter"></param>
         /// <returns></returns>
-        public bool Remove(PlaceAdapter adapter)
+        public bool Remove(ApixuAdapter adapter)
         {
             var operationResult = _duplicates.Remove(adapter);
 
@@ -93,8 +91,8 @@ namespace Xameteo.API
         /// <param name="jsonData"></param>
         public Places(string jsonData)
         {
-            _duplicates.UnionWith(JsonConvert.DeserializeObject<IEnumerable<PlaceAdapter>>(jsonData, _settings));
-            List = new List<PlaceAdapter>(_duplicates);
+            _duplicates.UnionWith(JsonConvert.DeserializeObject<IEnumerable<ApixuAdapter>>(jsonData, _settings));
+            List = new List<ApixuAdapter>(_duplicates);
         }
     }
 }

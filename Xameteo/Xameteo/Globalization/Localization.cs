@@ -5,17 +5,25 @@ using System.Globalization;
 
 using Xamarin.Forms;
 using Xameteo.Model;
-using Application = Xameteo.Resx.Application;
+using Xameteo.Resx;
 
 namespace Xameteo.Globalization
 {
     /// <summary>
     /// </summary>
-    internal class L10N
+    internal class Localization
     {
         /// <summary>
         /// </summary>
-        private const string ResourceId = "Xameteo.Resx.Application";
+        private const string ResourceId = "Xameteo.Resx.Resources";
+
+        /// <summary>
+        /// </summary>
+        private static readonly Assembly Assembly = typeof(Localization).GetTypeInfo().Assembly;
+
+        /// <summary>
+        /// </summary>
+        private readonly ResourceManager _resources = new ResourceManager(ResourceId, Assembly);
 
         /// <summary>
         /// </summary>
@@ -23,15 +31,11 @@ namespace Xameteo.Globalization
 
         /// <summary>
         /// </summary>
-        private readonly ResourceManager _resourceManager = new ResourceManager(ResourceId, typeof(L10N).GetTypeInfo().Assembly);
-
-        /// <summary>
-        /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
         public string Get(string key)
         {
-            return _resourceManager.GetString(key, _cultureInfo) ?? key;
+            return _resources.GetString(key, _cultureInfo) ?? key;
         }
 
         /// <summary>
@@ -41,7 +45,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public string GetOrDefault(string key, string fallback)
         {
-            return _resourceManager.GetString(key, _cultureInfo) ?? fallback;
+            return _resources.GetString(key, _cultureInfo) ?? fallback;
         }
 
         /// <summary>
@@ -51,7 +55,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public string Boolean(bool value, CultureInfo cultureInfo = null)
         {
-            return value ? Application.Global_Yes : Application.Global_No;
+            return value ? Resources.Global_Yes : Resources.Global_No;
         }
 
         /// <summary>
@@ -59,9 +63,9 @@ namespace Xameteo.Globalization
         /// <param name="value"></param>
         /// <param name="cultureInfo"></param>
         /// <returns></returns>
-        public string ShortCompass(string value, CultureInfo cultureInfo = null)
+        public string ShortCompass(Compass value, CultureInfo cultureInfo = null)
         {
-            return Compass.TryGet(value, true);
+            return value?.Symbol ?? "N/A";
         }
 
         /// <summary>
@@ -69,9 +73,9 @@ namespace Xameteo.Globalization
         /// <param name="value"></param>
         /// <param name="cultureInfo"></param>
         /// <returns></returns>
-        public string LongCompass(string value, CultureInfo cultureInfo = null)
+        public string LongCompass(Compass value, CultureInfo cultureInfo = null)
         {
-            return Compass.TryGet(value, false);
+            return value?.Name ?? "N/A";
         }
 
         /// <summary>
@@ -141,7 +145,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public string FixedPoint(double value, CultureInfo cultureInfo = null)
         {
-            return value.ToString("F2", (cultureInfo ?? _cultureInfo).NumberFormat);
+            return value.ToString("N2", (cultureInfo ?? _cultureInfo).NumberFormat);
         }
 
         /// <summary>
@@ -151,7 +155,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public string Degrees(double value, CultureInfo cultureInfo = null)
         {
-            return value.ToString("N0", (cultureInfo ?? _cultureInfo).NumberFormat) + " " + Application.Symbol_Degrees;
+            return value.ToString("N0", (cultureInfo ?? _cultureInfo).NumberFormat) + " " + Resources.Symbol_Degrees;
         }
 
         /// <summary>
@@ -160,7 +164,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public string GetCondition(int condition)
         {
-            return _resourceManager.GetString("CONDITION_" + condition, _cultureInfo) ?? condition.ToString();
+            return _resources.GetString("Condition_" + condition, _cultureInfo) ?? condition.ToString();
         }
     }
 }

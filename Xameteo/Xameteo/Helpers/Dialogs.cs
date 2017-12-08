@@ -4,9 +4,8 @@ using System.Threading.Tasks;
 using Acr.UserDialogs;
 
 using Xamarin.Forms;
+using Xameteo.Resx;
 using Xameteo.Units;
-
-using Application = Xameteo.Resx.Application;
 
 namespace Xameteo.Helpers
 {
@@ -31,7 +30,7 @@ namespace Xameteo.Helpers
         {
             AutoShow = true,
             IsDeterministic = false,
-            Title = Application.Loading_Title
+            Title = Resources.Loading_Title
         });
 
         /// <summary>
@@ -46,7 +45,7 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
-        private readonly ActionSheetOption _actionSheetCancel = new ActionSheetOption(Application.Button_Cancel);
+        private readonly ActionSheetOption _actionSheetCancel = new ActionSheetOption(Resources.Button_Cancel);
 
         /// <summary>
         /// </summary>
@@ -60,7 +59,7 @@ namespace Xameteo.Helpers
             {
                 UseBottomSheet = false,
                 Cancel = _actionSheetCancel,
-                Title = string.Format(Application.Dialogs_SelectUnit, units[0].Type)
+                Title = string.Format(Resources.Dialogs_SelectUnit, units[0].Type)
             };
 
             configuration.SetCancel();

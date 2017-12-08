@@ -10,16 +10,16 @@ namespace Xameteo.Units
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public override string Type => Application.Group_Distance;
+        public override string Type => Resources.Group_Distance;
 
         /// <summary>
         /// </summary>
         public static readonly Distance[] Units =
         {
-            new Distance(0, Application.Symbol_Kilometers, Application.Units_Kilometers, null),
-            new Distance(1, Application.Symbol_Meters, Application.Units_Meters, value => value * 1000),
-            new Distance(2, Application.Symbol_Inches, Application.Units_Inches, value => value * 39370),
-            new Distance(3, Application.Symbol_Miles, Application.Units_Miles, value => value * 0.62137)
+            new Distance(0, Resources.Symbol_Kilometers, Resources.Units_Kilometers, null),
+            new Distance(1, Resources.Symbol_Meters, Resources.Units_Meters, value => value * 1000),
+            new Distance(2, Resources.Symbol_Inches, Resources.Units_Inches, value => value * 39370),
+            new Distance(3, Resources.Symbol_Miles, Resources.Units_Miles, value => value * 0.62137)
         };
 
         /// <summary>

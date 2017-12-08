@@ -36,7 +36,7 @@ namespace Xameteo.Helpers
         /// </summary>
         public string ApiKey
         {
-            get => SettingsManager.GetValueOrDefault("apikey", "7e4b1cf5c63a4a2e876183000173011");
+            get => SettingsManager.GetValueOrDefault("apikey", Xameteo.Globals.ApixuKey);
             set => SettingsManager.AddOrUpdateValue("apikey", value);
         }
 

@@ -1,9 +1,11 @@
-﻿namespace Xameteo.Globalization
+﻿using Xameteo.Model;
+
+namespace Xameteo.Globalization
 {
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    public class ShortCompassConverter : AbstractConverter<string>
+    public class ShortCompassConverter : AbstractConverter<Compass>
     {
         /// <inheritdoc />
         /// <summary>
@@ -16,7 +18,7 @@
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    public class LongCompassConverter : AbstractConverter<string>
+    public class LongCompassConverter : AbstractConverter<Compass>
     {
         /// <inheritdoc />
         /// <summary>

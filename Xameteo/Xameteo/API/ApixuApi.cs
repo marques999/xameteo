@@ -7,13 +7,11 @@ using Refit;
 using Akavache;
 using ModernHttpClient;
 
-using Xameteo.Model;
-
 namespace Xameteo.API
 {
     /// <summary>
     /// </summary>
-    internal class ApixuApi
+    public class ApixuApi
     {
         /// <summary>
         /// </summary>
@@ -50,32 +48,33 @@ namespace Xameteo.API
 
         /// <summary>
         /// </summary>
-        /// <param name="place"></param>
+        /// <param name="apixu"></param>
         /// <returns></returns>
-        public async Task<ApixuCurrent> Current(PlaceAdapter place)
+        public async Task<ApixuCurrent> Current(ApixuAdapter apixu)
         {
-            return await _cache.GetOrFetchObject("current_" + place.Parameters, () => _api.GetCurrent(_apiKey, place.Parameters), _expires);
+            return await _cache.GetOrFetchObject("current_" + apixu.Parameters, () => _api.GetCurrent(_apiKey, apixu.Parameters), _expires);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="place"></param>
+        /// <param name="apixu"></param>
         /// <param name="days"></param>
         /// <returns></returns>
-        public async Task<ApixuForecast> Forecast(PlaceAdapter place, int days)
+        public async Task<ApixuForecast> Forecast(ApixuAdapter apixu, int days)
         {
-            return await _cache.GetOrFetchObject("forecast_" + place.Parameters, () => _api.GetForecast(_apiKey, place.Parameters, days), _expires);
+            return await _cache.GetOrFetchObject("forecast_" + apixu.Parameters, () => _api.GetForecast(_apiKey, apixu.Parameters, days), _expires);
         }
 
         /// <summary>
         /// </summary>
-        /// <param name="place"></param>
-        /// <param name="parameters"></param>
+        /// <param name="apixu"></param>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
         /// <returns></returns>
-        public async Task<ApixuHistory> History(PlaceAdapter place, HistoryParameters parameters)
+        public async Task<ApixuHistory> History(ApixuAdapter apixu, DateTime start, DateTime? end)
         {
-            return await _cache.GetOrFetchObject("history_" + place.Parameters, () => _api.GetHistory(_apiKey, place.Parameters, parameters), _expires);
+            return await _cache.GetOrFetchObject("history_" + apixu.Parameters, () => _api.GetHistory(_apiKey, apixu.Parameters, start, end), _expires);
         }
     }
 }

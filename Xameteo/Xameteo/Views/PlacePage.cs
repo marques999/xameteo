@@ -3,8 +3,6 @@
 using Xameteo.Model;
 using Xameteo.ViewModel;
 
-using Application = Xameteo.Resx.Application;
-
 namespace Xameteo.Views
 {
     /// <inheritdoc />
@@ -17,10 +15,10 @@ namespace Xameteo.Views
         public void Initialize(ApixuForecast forecast)
         {
             BindingContext = new ForecastViewModel(forecast);
-            Children.Add(new TodayCurrentPage { Title = Application.Tab_Now });
-            Children.Add(new TodayHourlyPage { Title = Application.Tab_Today });
-            Children.Add(new WeekForecastPage { Title = Application.Tab_Forecast });
-            Children.Add(new WeekForecastPage { Title = Application.Tab_History });
+            Children.Add(new TodayCurrentPage { Title = Resx.Resources.Tab_Now });
+            Children.Add(new TodayHourlyPage { Title = Resx.Resources.Tab_Today });
+            Children.Add(new WeekForecastPage { Title = Resx.Resources.Tab_Forecast });
+            Children.Add(new WeekForecastPage { Title = Resx.Resources.Tab_History });
         }
     }
 }

@@ -17,7 +17,7 @@
       </Grid.ColumnDefinitions>
       <Label Grid.Row="0"
              Grid.Column="0"
-             Text="{Binding Temperature}"
+             x:Name="TemperatureUnits"
              VerticalOptions="CenterAndExpand" 
              HorizontalOptions="CenterAndExpand"/>
       <Button Grid.Row="0"
@@ -25,9 +25,9 @@
               Text="Change"
               Clicked="OnSelectTemperature"
               HorizontalOptions="Fill"/>
-      <Label Text="{Binding Pressure}"
-             Grid.Row="1"
+      <Label Grid.Row="1"
              Grid.Column="0"
+             x:Name="PressureUnits"
              VerticalOptions="CenterAndExpand" 
              HorizontalOptions="CenterAndExpand" />
       <Button Grid.Row="1"
@@ -37,7 +37,7 @@
               HorizontalOptions="Fill"/>
       <Label Grid.Row="2"
              Grid.Column="0"
-             Text="{Binding Precipitation}"         
+             x:Name="PrecipitationUnits"      
              VerticalOptions="CenterAndExpand" 
              HorizontalOptions="CenterAndExpand" />
       <Button Grid.Row="2"
@@ -47,7 +47,7 @@
               HorizontalOptions="Fill"/>
       <Label Grid.Row="3"
              Grid.Column="0"
-             Text="{Binding Distance}"     
+             x:Name="DistanceUnits"      
              VerticalOptions="CenterAndExpand" 
              HorizontalOptions="CenterAndExpand" />
       <Button Grid.Row="3"
@@ -57,7 +57,7 @@
               HorizontalOptions="Fill"/>
       <Label Grid.Row="4"
              Grid.Column="0"
-             Text="{Binding Velocity}"       
+             x:Name="VelocityUnits"         
              VerticalOptions="CenterAndExpand" 
              HorizontalOptions="CenterAndExpand"/>
       <Button Grid.Row="4"
@@ -66,22 +66,5 @@
               Clicked="OnSelectVelocity"
               HorizontalOptions="Fill"/>
     </Grid>
-    <!--<ListView x:Name="MyListView"
-              ItemsSource="{Binding Units}"
-              ItemTapped="Handle_ItemTapped"
-              CachingStrategy="RecycleElement">
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell>
-            <StackLayout Orientation="Horizontal">
-              <Label Text="{Binding Type}" 
-                       Style="{DynamicResource ListItemTextStyle}" />
-              <Label Text="{Binding Current.Name}" 
-                       Style="{DynamicResource ListItemDetailTextStyle}"/>
-            </StackLayout>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>-->
   </ContentPage.Content>
 </ContentPage>

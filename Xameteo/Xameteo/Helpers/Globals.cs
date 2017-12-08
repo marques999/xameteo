@@ -17,6 +17,10 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
+        public readonly string ApixuKey = "7e4b1cf5c63a4a2e876183000173011";
+
+        /// <summary>
+        /// </summary>
         public DateTimeOffset CacheInvalidate { get; } = DateTimeOffset.Now.AddHours(12);
     }
 }

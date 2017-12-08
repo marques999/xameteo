@@ -37,43 +37,40 @@
   <ItemGroup>
     <Compile Include="AkavacheSqliteLinkerOverride.cs" />
     <Compile Include="API\ApixuApi.cs" />
-    <Compile Include="API\HistoryParameters.cs" />
     <Compile Include="API\IApixuApi.cs" />
-    <Compile Include="API\PlaceAdapter.cs" />
-    <Compile Include="API\AirportAdapter.cs" />
-    <Compile Include="API\LocationAdapter.cs" />
-    <Compile Include="API\CoordinatesAdapter.cs" />
+    <Compile Include="API\ApixuAdapter.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Globalization\AbstractConverter.cs" />
     <Compile Include="Globalization\BooleanExtensions.cs" />
-    <Compile Include="Globalization\CompassConverter.cs" />
+    <Compile Include="Globalization\CompassExtensions.cs" />
     <Compile Include="Globalization\CoordinateExtensions.cs" />
     <Compile Include="Globalization\DateExtensions.cs" />
     <Compile Include="Globalization\ILocale.cs" />
     <Compile Include="Globalization\DoubleExtensions.cs" />
+    <Compile Include="Globalization\PlatformCulture.cs" />
     <Compile Include="Globalization\UnitExtensions.cs" />
     <Compile Include="Helpers\Globals.cs" />
     <Compile Include="Model\Airport.cs" />
     <Compile Include="Model\Compass.cs" />
     <Compile Include="Model\Coordinates.cs" />
-    <Compile Include="Resx\Application.pt1.Designer.cs">
+    <Compile Include="Resx\Resources.pt.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Application.pt.resx</DependentUpon>
+      <DependentUpon>Resources.pt.resx</DependentUpon>
     </Compile>
-    <Compile Include="Resx\Application1.Designer.cs">
+    <Compile Include="Resx\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Application.resx</DependentUpon>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Units\Distance.cs" />
     <Compile Include="Units\Precipitation.cs" />
     <Compile Include="Units\Pressure.cs" />
     <Compile Include="Units\Temperature.cs" />
     <Compile Include="Units\Velocity.cs" />
-    <Compile Include="Globalization\L10N.cs" />
+    <Compile Include="Globalization\Localization.cs" />
     <Compile Include="Globalization\TranslateExtension.cs" />
     <Compile Include="Model\ApixuCurrent.cs" />
     <Compile Include="Model\ApixuForecast.cs" />
@@ -239,13 +236,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resx\Application.pt.resx">
+    <EmbeddedResource Include="Resx\Resources.pt.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Application.pt1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources.pt.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resx\Application.resx">
+    <EmbeddedResource Include="Resx\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Application1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TodayHourlyPage.xaml">

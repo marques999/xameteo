@@ -10,15 +10,15 @@ namespace Xameteo.Units
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public override string Type => Application.Group_Temperature;
+        public override string Type => Resources.Group_Temperature;
 
         /// <summary>
         /// </summary>
         public static readonly Temperature[] Units =
         {
-            new Temperature(0, Application.Symbol_Celsius, Application.Units_Celsius, null),
-            new Temperature(1, Application.Symbol_Kelvin, Application.Units_Kelvin, value => value - 273.15),
-            new Temperature(2, Application.Symbol_Fahrenheit, Application.Units_Fahrenheit, value => value * 1.8 + 32)
+            new Temperature(0, Resources.Symbol_Celsius, Resources.Units_Celsius, null),
+            new Temperature(1, Resources.Symbol_Kelvin, Resources.Units_Kelvin, value => value - 273.15),
+            new Temperature(2, Resources.Symbol_Fahrenheit, Resources.Units_Fahrenheit, value => value * 1.8 + 32)
         };
 
         /// <summary>

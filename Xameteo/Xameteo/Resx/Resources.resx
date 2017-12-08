@@ -117,31 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Airport_Fao" xml:space="preserve">
+  <data name="Airport_FAO" xml:space="preserve">
     <value>Faro Airport</value>
   </data>
-  <data name="Airport_Fnc" xml:space="preserve">
+  <data name="Airport_FNC" xml:space="preserve">
     <value>Cristiano Ronaldo International Airport, Funchal</value>
   </data>
-  <data name="Airport_Hor" xml:space="preserve">
+  <data name="Airport_HOR" xml:space="preserve">
     <value>Horta Airport</value>
   </data>
-  <data name="Airport_Lis" xml:space="preserve">
+  <data name="Airport_LIS" xml:space="preserve">
     <value>Humberto Delgado Airport, Lisbon</value>
   </data>
-  <data name="Airport_Opo" xml:space="preserve">
+  <data name="Airport_OPO" xml:space="preserve">
     <value>Francisco Sá Carneiro Airport, Porto</value>
   </data>
-  <data name="Airport_Pdl" xml:space="preserve">
+  <data name="Airport_PDL" xml:space="preserve">
     <value>João Paulo II Airport, Ponta Delgada</value>
   </data>
-  <data name="Airport_Pxo" xml:space="preserve">
+  <data name="Airport_PXO" xml:space="preserve">
     <value>Porto Santo Airport</value>
   </data>
-  <data name="Airport_Sma" xml:space="preserve">
+  <data name="Airport_SMA" xml:space="preserve">
     <value>Santa Maria Airport</value>
   </data>
-  <data name="Airport_Ter" xml:space="preserve">
+  <data name="Airport_TER" xml:space="preserve">
     <value>Lajes Field, Terceira</value>
   </data>
   <data name="Astro_Moonrise" xml:space="preserve">

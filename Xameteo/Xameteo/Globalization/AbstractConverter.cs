@@ -19,7 +19,7 @@ namespace Xameteo.Globalization
         /// <param name="type"></param>
         /// <param name="culture"></param>
         /// <returns></returns>
-        public delegate string ConverterDelegate(T type, CultureInfo culture);
+        protected delegate string ConverterDelegate(T type, CultureInfo culture);
 
         /// <summary>
         /// </summary>
@@ -49,7 +49,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return default(T);
+            return value;
         }
 
         /// <inheritdoc />
@@ -62,7 +62,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return Prefix(value is T dateTime ? _converterDelegate(dateTime, culture) : "N/A", parameter);
+            return Prefix(value is T tvalue ? _converterDelegate(tvalue, culture) : "N/A", parameter);
         }
     }
 }

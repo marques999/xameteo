@@ -1,6 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using Xameteo.Model;
+using Newtonsoft.Json;
 
-namespace Xameteo.Model
+namespace Xameteo.API
 {
     /// <summary>
     /// </summary>

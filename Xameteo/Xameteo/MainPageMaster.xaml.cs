@@ -4,15 +4,22 @@ using System.Runtime.CompilerServices;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
 using Xameteo.Views;
 
 namespace Xameteo
 {
+    /// <summary>
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPageMaster : ContentPage
+    public partial class MainPageMaster
     {
+        /// <summary>
+        /// </summary>
         public ListView ListView;
 
+        /// <summary>
+        /// </summary>
         public MainPageMaster()
         {
             InitializeComponent();
@@ -20,16 +27,23 @@ namespace Xameteo
             ListView = MenuItemsListView;
         }
 
-        class MainPageMasterViewModel : INotifyPropertyChanged
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        private class MainPageMasterViewModel : INotifyPropertyChanged
         {
+            /// <summary>
+            /// </summary>
             public ObservableCollection<MainPageMenuItem> MenuItems { get; set; }
 
+            /// <summary>
+            /// </summary>
             public MainPageMasterViewModel()
             {
-                MenuItems = new ObservableCollection<MainPageMenuItem>();
-
                 var i = 0;
                 var locations = Xameteo.MyPlaces.List;
+
+                MenuItems = new ObservableCollection<MainPageMenuItem>();
 
                 for (; i < locations.Count; i++)
                 {

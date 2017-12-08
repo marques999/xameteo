@@ -117,31 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Airport_Fao" xml:space="preserve">
+  <data name="Airport_FAO" xml:space="preserve">
     <value>Aeroporto Internacional de Faro</value>
   </data>
-  <data name="Airport_Fnc" xml:space="preserve">
+  <data name="Airport_FNC" xml:space="preserve">
     <value>Aeroporto Internacional da Madeira Cristiano Ronaldo, Funchal</value>
   </data>
-  <data name="Airport_Hor" xml:space="preserve">
+  <data name="Airport_HOR" xml:space="preserve">
     <value>Aeroporto da Horta</value>
   </data>
-  <data name="Airport_Lis" xml:space="preserve">
+  <data name="Airport_LIS" xml:space="preserve">
     <value>Aeroporto Humberto Delgado, Lisbon</value>
   </data>
-  <data name="Airport_Opo" xml:space="preserve">
+  <data name="Airport_OPO" xml:space="preserve">
     <value>Aeroporto Francisco Sá Carneiro, Porto</value>
   </data>
-  <data name="Airport_Pdl" xml:space="preserve">
+  <data name="Airport_PDL" xml:space="preserve">
     <value>Aeroporto João Paulo II, Ponta Delgada</value>
   </data>
-  <data name="Airport_Pxo" xml:space="preserve">
+  <data name="Airport_PXO" xml:space="preserve">
     <value>Aeroporto do Porto Santo</value>
   </data>
-  <data name="Airport_Sma" xml:space="preserve">
+  <data name="Airport_SMA" xml:space="preserve">
     <value>Aeroporto de Santa Maria</value>
   </data>
-  <data name="Airport_Ter" xml:space="preserve">
+  <data name="Airport_TER" xml:space="preserve">
     <value>Aeroporto Internacional das Lajes, Terceira</value>
   </data>
   <data name="Astro_Moonrise" xml:space="preserve">
@@ -159,148 +159,148 @@
   <data name="Button_Default" xml:space="preserve">
     <value>Carrega crlh!</value>
   </data>
-  <data name="CONDITION_1000" xml:space="preserve">
+  <data name="Condition_1000" xml:space="preserve">
     <value>Céu limpo</value>
   </data>
-  <data name="CONDITION_1003" xml:space="preserve">
+  <data name="Condition_1003" xml:space="preserve">
     <value>Parcialmente nublado</value>
   </data>
-  <data name="CONDITION_1006" xml:space="preserve">
+  <data name="Condition_1006" xml:space="preserve">
     <value>Nublado</value>
   </data>
-  <data name="CONDITION_1009" xml:space="preserve">
+  <data name="Condition_1009" xml:space="preserve">
     <value>Encoberto</value>
   </data>
-  <data name="CONDITION_1030" xml:space="preserve">
+  <data name="Condition_1030" xml:space="preserve">
     <value>Neblina</value>
   </data>
-  <data name="CONDITION_1063" xml:space="preserve">
+  <data name="Condition_1063" xml:space="preserve">
     <value>Possibilidade de chuva irregular</value>
   </data>
-  <data name="CONDITION_1066" xml:space="preserve">
+  <data name="Condition_1066" xml:space="preserve">
     <value>Possibilidade de neve irregular</value>
   </data>
-  <data name="CONDITION_1069" xml:space="preserve">
+  <data name="Condition_1069" xml:space="preserve">
     <value>Possibilidade de neve molhada irregular</value>
   </data>
-  <data name="CONDITION_1072" xml:space="preserve">
+  <data name="Condition_1072" xml:space="preserve">
     <value>Possibilidade de chuvisco gelado irregular</value>
   </data>
-  <data name="CONDITION_1087" xml:space="preserve">
+  <data name="Condition_1087" xml:space="preserve">
     <value>Possibilidade de trovoada</value>
   </data>
-  <data name="CONDITION_1114" xml:space="preserve">
+  <data name="Condition_1114" xml:space="preserve">
     <value>Rajadas de vento com neve</value>
   </data>
-  <data name="CONDITION_1117" xml:space="preserve">
+  <data name="Condition_1117" xml:space="preserve">
     <value>Nevasca</value>
   </data>
-  <data name="CONDITION_1135" xml:space="preserve">
+  <data name="Condition_1135" xml:space="preserve">
     <value>Nevoeiro</value>
   </data>
-  <data name="CONDITION_1147" xml:space="preserve">
+  <data name="Condition_1147" xml:space="preserve">
     <value>Nevoeiro gelado</value>
   </data>
-  <data name="CONDITION_1150" xml:space="preserve">
+  <data name="Condition_1150" xml:space="preserve">
     <value>Chuvisco irregular</value>
   </data>
-  <data name="CONDITION_1153" xml:space="preserve">
+  <data name="Condition_1153" xml:space="preserve">
     <value>Chuvisco</value>
   </data>
-  <data name="CONDITION_1168" xml:space="preserve">
+  <data name="Condition_1168" xml:space="preserve">
     <value>Chuvisco gelado</value>
   </data>
-  <data name="CONDITION_1171" xml:space="preserve">
+  <data name="Condition_1171" xml:space="preserve">
     <value>Chuvisco forte gelado</value>
   </data>
-  <data name="CONDITION_1180" xml:space="preserve">
+  <data name="Condition_1180" xml:space="preserve">
     <value>Chuva fraca irregular</value>
   </data>
-  <data name="CONDITION_1183" xml:space="preserve">
+  <data name="Condition_1183" xml:space="preserve">
     <value>Chuva fraca</value>
   </data>
-  <data name="CONDITION_1186" xml:space="preserve">
+  <data name="Condition_1186" xml:space="preserve">
     <value>Períodos de chuva moderada</value>
   </data>
-  <data name="CONDITION_1189" xml:space="preserve">
+  <data name="Condition_1189" xml:space="preserve">
     <value>Chuva moderada</value>
   </data>
-  <data name="CONDITION_1192" xml:space="preserve">
+  <data name="Condition_1192" xml:space="preserve">
     <value>Períodos de chuva forte</value>
   </data>
-  <data name="CONDITION_1195" xml:space="preserve">
+  <data name="Condition_1195" xml:space="preserve">
     <value>Chuva forte</value>
   </data>
-  <data name="CONDITION_1198" xml:space="preserve">
+  <data name="Condition_1198" xml:space="preserve">
     <value>Chuva gelada fraca</value>
   </data>
-  <data name="CONDITION_1201" xml:space="preserve">
+  <data name="Condition_1201" xml:space="preserve">
     <value>Chuva gelada moderada ou forte</value>
   </data>
-  <data name="CONDITION_1204" xml:space="preserve">
+  <data name="Condition_1204" xml:space="preserve">
     <value>Chuva fraca com neve</value>
   </data>
-  <data name="CONDITION_1207" xml:space="preserve">
+  <data name="Condition_1207" xml:space="preserve">
     <value>Chuva forte ou moderada com neve</value>
   </data>
-  <data name="CONDITION_1210" xml:space="preserve">
+  <data name="Condition_1210" xml:space="preserve">
     <value>Queda de neve irregular fraca</value>
   </data>
-  <data name="CONDITION_1213" xml:space="preserve">
+  <data name="Condition_1213" xml:space="preserve">
     <value>Queda de neve fraca</value>
   </data>
-  <data name="CONDITION_1216" xml:space="preserve">
+  <data name="Condition_1216" xml:space="preserve">
     <value>Queda de neve irregular moderada</value>
   </data>
-  <data name="CONDITION_1219" xml:space="preserve">
+  <data name="Condition_1219" xml:space="preserve">
     <value>Queda de neve moderada</value>
   </data>
-  <data name="CONDITION_1222" xml:space="preserve">
+  <data name="Condition_1222" xml:space="preserve">
     <value>Queda de neve irregular forte</value>
   </data>
-  <data name="CONDITION_1225" xml:space="preserve">
+  <data name="Condition_1225" xml:space="preserve">
     <value>Neve intensa</value>
   </data>
-  <data name="CONDITION_1237" xml:space="preserve">
+  <data name="Condition_1237" xml:space="preserve">
     <value>Granizo</value>
   </data>
-  <data name="CONDITION_1240" xml:space="preserve">
+  <data name="Condition_1240" xml:space="preserve">
     <value>Aguaceiros fracos</value>
   </data>
-  <data name="CONDITION_1243" xml:space="preserve">
+  <data name="Condition_1243" xml:space="preserve">
     <value>Aguaceiros moderados ou fortes</value>
   </data>
-  <data name="CONDITION_1246" xml:space="preserve">
+  <data name="Condition_1246" xml:space="preserve">
     <value>Chuva torrencial</value>
   </data>
-  <data name="CONDITION_1249" xml:space="preserve">
+  <data name="Condition_1249" xml:space="preserve">
     <value>Aguaceiros fracos com neve</value>
   </data>
-  <data name="CONDITION_1252" xml:space="preserve">
+  <data name="Condition_1252" xml:space="preserve">
     <value>Aguaceiros moderados ou fortes com neve</value>
   </data>
-  <data name="CONDITION_1255" xml:space="preserve">
+  <data name="Condition_1255" xml:space="preserve">
     <value>Chuva fraca com neve</value>
   </data>
-  <data name="CONDITION_1258" xml:space="preserve">
+  <data name="Condition_1258" xml:space="preserve">
     <value>Chuva moderada ou forte com neve</value>
   </data>
-  <data name="CONDITION_1261" xml:space="preserve">
+  <data name="Condition_1261" xml:space="preserve">
     <value>Aguaceiros fracos com granizo</value>
   </data>
-  <data name="CONDITION_1264" xml:space="preserve">
+  <data name="Condition_1264" xml:space="preserve">
     <value>Aguaceiros moderados ou fortes com granizo</value>
   </data>
-  <data name="CONDITION_1273" xml:space="preserve">
+  <data name="Condition_1273" xml:space="preserve">
     <value>Chuva fraca irregular com trovoada</value>
   </data>
-  <data name="CONDITION_1276" xml:space="preserve">
+  <data name="Condition_1276" xml:space="preserve">
     <value>Chuva moderada ou forte com trovoada</value>
   </data>
-  <data name="CONDITION_1279" xml:space="preserve">
+  <data name="Condition_1279" xml:space="preserve">
     <value>Neve fraca irregular com trovoada</value>
   </data>
-  <data name="CONDITION_1282" xml:space="preserve">
+  <data name="Condition_1282" xml:space="preserve">
     <value>Neve moderada ou forte com trovoada</value>
   </data>
   <data name="Forecast_Cloud" xml:space="preserve">

@@ -16,17 +16,17 @@ namespace Xameteo.Model
 
         /// <summary>
         /// </summary>
-        public static readonly Airport[] Airports =
+        public static readonly Airport[] Instances =
         {
-            new Airport("FAO", Application.Airport_Fao),
-            new Airport("FNC", Application.Airport_Fnc),
-            new Airport("HOR", Application.Airport_Hor),
-            new Airport("LIS", Application.Airport_Lis),
-            new Airport("PDL", Application.Airport_Pdl),
-            new Airport("OPO", Application.Airport_Opo),
-            new Airport("PXO", Application.Airport_Pxo),
-            new Airport("SMA", Application.Airport_Sma),
-            new Airport("TER", Application.Airport_Ter),
+            new Airport("FAO", Resources.Airport_FAO),
+            new Airport("FNC", Resources.Airport_FNC),
+            new Airport("HOR", Resources.Airport_HOR),
+            new Airport("LIS", Resources.Airport_LIS),
+            new Airport("PDL", Resources.Airport_PDL),
+            new Airport("OPO", Resources.Airport_OPO),
+            new Airport("PXO", Resources.Airport_PXO),
+            new Airport("SMA", Resources.Airport_SMA),
+            new Airport("TER", Resources.Airport_TER),
         };
 
         /// <inheritdoc />

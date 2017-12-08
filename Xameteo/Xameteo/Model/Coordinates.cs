@@ -4,7 +4,7 @@ namespace Xameteo.Model
 {
     /// <summary>
     /// </summary>
-    internal class Coordinates
+    public class Coordinates
     {
         /// <summary>
         /// </summary>
