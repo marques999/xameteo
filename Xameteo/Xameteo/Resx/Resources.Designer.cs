@@ -1043,6 +1043,69 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Apixu Key.
+        /// </summary>
+        internal static string Settings_ApixuKey {
+            get {
+                return ResourceManager.GetString("Settings_ApixuKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Distance Units.
+        /// </summary>
+        internal static string Settings_Distance {
+            get {
+                return ResourceManager.GetString("Settings_Distance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geocoding Key.
+        /// </summary>
+        internal static string Settings_GoogleKey {
+            get {
+                return ResourceManager.GetString("Settings_GoogleKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Precipitation Units.
+        /// </summary>
+        internal static string Settings_Precipitation {
+            get {
+                return ResourceManager.GetString("Settings_Precipitation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pressure Units.
+        /// </summary>
+        internal static string Settings_Pressure {
+            get {
+                return ResourceManager.GetString("Settings_Pressure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temperature Units.
+        /// </summary>
+        internal static string Settings_Temperature {
+            get {
+                return ResourceManager.GetString("Settings_Temperature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Velocity Units.
+        /// </summary>
+        internal static string Settings_Velocity {
+            get {
+                return ResourceManager.GetString("Settings_Velocity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to atm.
         /// </summary>
         internal static string Symbol_Atmosphere {

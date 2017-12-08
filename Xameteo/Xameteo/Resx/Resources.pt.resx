@@ -609,4 +609,25 @@
   <data name="Symbol_WSW" xml:space="preserve">
     <value>OSO</value>
   </data>
+  <data name="Settings_ApixuKey" xml:space="preserve">
+    <value>Chave Apixu</value>
+  </data>
+  <data name="Settings_Distance" xml:space="preserve">
+    <value>Unidades de distância</value>
+  </data>
+  <data name="Settings_GoogleKey" xml:space="preserve">
+    <value>Chave Geocoding</value>
+  </data>
+  <data name="Settings_Precipitation" xml:space="preserve">
+    <value>Unidades de precipitação</value>
+  </data>
+  <data name="Settings_Pressure" xml:space="preserve">
+    <value>Unidades de pressão</value>
+  </data>
+  <data name="Settings_Temperature" xml:space="preserve">
+    <value>Unidades de temperature</value>
+  </data>
+  <data name="Settings_Velocity" xml:space="preserve">
+    <value>Unidades de velocidade</value>
+  </data>
 </root>

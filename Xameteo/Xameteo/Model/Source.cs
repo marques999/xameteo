@@ -4,9 +4,6 @@
     /// </summary>
     internal enum Source
     {
-        Airport,
-        Device,
-        Coordinates,
-        Geolocation
+        Airport, Device, Geolocation
     }
 }

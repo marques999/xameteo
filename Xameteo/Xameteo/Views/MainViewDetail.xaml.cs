@@ -1,23 +1,23 @@
-﻿using System.Collections.ObjectModel;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Internals;
-using Xamarin.Forms.Xaml;
+﻿using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 using Xameteo.API;
 
-namespace Xameteo
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+using Xamarin.Forms.Internals;
+
+namespace Xameteo.Views
 {
     /// <inheritdoc />
     /// <summary>
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPageDetail
+    public partial class MainViewDetail
     {
         /// <summary>
         /// </summary>
-        public MainPageDetail()
+        public MainViewDetail()
         {
             InitializeComponent();
             MyListView.ItemsSource = Items;

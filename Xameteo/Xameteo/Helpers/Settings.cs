@@ -15,6 +15,14 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
+        public string Places
+        {
+            get => _settingsManager.GetValueOrDefault("places", "[]");
+            set => _settingsManager.AddOrUpdateValue("places", value);
+        }
+
+        /// <summary>
+        /// </summary>
         public string ApixuKey
         {
             get => _settingsManager.GetValueOrDefault("apixu", Xameteo.Globals.ApixuKey);
@@ -27,14 +35,6 @@ namespace Xameteo.Helpers
         {
             get => _settingsManager.GetValueOrDefault("google", Xameteo.Globals.GoogleKey);
             set => _settingsManager.AddOrUpdateValue("google", value);
-        }
-
-        /// <summary>
-        /// </summary>
-        public string Places
-        {
-            get => _settingsManager.GetValueOrDefault("places", "[]");
-            set => _settingsManager.AddOrUpdateValue("places", value);
         }
 
         /// <summary>

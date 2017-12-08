@@ -1,16 +1,16 @@
 ﻿using Xamarin.Forms.Xaml;
 
-namespace Xameteo.Views
+namespace Xameteo.Views.Location
 {
     /// <inheritdoc />
     /// <summary>
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LocationForecastPage
+    public partial class ForecastPage
     {
         /// <summary>
         /// </summary>
-        public LocationForecastPage()
+        public ForecastPage()
         {
             InitializeComponent();
         }

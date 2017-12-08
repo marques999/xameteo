@@ -14,6 +14,11 @@ namespace Xameteo.Google
 
         /// <summary>
         /// </summary>
+        [JsonProperty("location")]
+        public Coordinates Location { get; set; }
+
+        /// <summary>
+        /// </summary>
         [JsonProperty("bounds")]
         public GeocodingBounds Bounds { get; set; }
 
@@ -21,10 +26,5 @@ namespace Xameteo.Google
         /// </summary>
         [JsonProperty("viewport")]
         public GeocodingBounds Viewport { get; set; }
-
-        /// <summary>
-        /// </summary>
-        [JsonProperty("location")]
-        public Coordinates Location { get; set; }
     }
 }

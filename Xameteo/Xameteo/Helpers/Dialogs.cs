@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-using Acr.UserDialogs;
-using Plugin.Geolocator.Abstractions;
-
 using Xameteo.API;
-using Xameteo.Model;
 using Xameteo.Resx;
+using Xameteo.Model;
 using Xameteo.Units;
+using Xameteo.Google;
+
+using Acr.UserDialogs;
+
+using Plugin.Geolocator.Abstractions;
 
 namespace Xameteo.Helpers
 {
@@ -42,6 +44,11 @@ namespace Xameteo.Helpers
         /// </summary>
         private readonly ActionSheetOption _actionSheetCancel = new ActionSheetOption(Resources.Button_Cancel);
 
+        /// <summary>
+        /// </summary>
+        /// <param name="sources"></param>
+        /// <param name="generator"></param>
+        /// <returns></returns>
         public IDisposable InsertLocation(string[] sources, Action<Source> generator)
         {
             var configuration = new ActionSheetConfig
@@ -55,10 +62,50 @@ namespace Xameteo.Helpers
             configuration.Add("Airports", () => generator(Source.Airport));
             configuration.Add("Device", () => generator(Source.Device));
             configuration.Add("Geolocation", () => generator(Source.Geolocation));
-            configuration.Add("Coordinates", () => generator(Source.Coordinates));
 
             return _userDialogs.ActionSheet(configuration);
         }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="message"></param>
+        /// <param name="placeholder"></param>
+        /// <param name="callback"></param>
+        private void GenericPrompt(string title, string message, string placeholder, Action<PromptResult> callback)
+        {
+            _userDialogs.Prompt(new PromptConfig
+            {
+                Title = title,
+                Message = message,
+                OnAction = callback,
+                IsCancellable = true,
+                Placeholder = placeholder,
+                OkText = Resources.Button_OK,
+                InputType = InputType.Default,
+                CancelText = Resources.Button_Cancel
+            });
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="callback"></param>
+        public void PromptApixuKey(Action<PromptResult> callback) => GenericPrompt(
+            "Apixu API",
+            "Please enter the assigned Apixu Weather API key. You can generate your by signing up for an account in the official website (https://www.apixu.com/signup.aspx)",
+            string.Empty,
+            callback
+        );
+
+        /// <summary>
+        /// </summary>
+        /// <param name="callback"></param>
+        public void PromptGoogleKey(Action<PromptResult> callback) => GenericPrompt(
+            "Geocoding API",
+            "Please enter the assigned Google Geocoding API key. You can generate your own using the Google Developer Console (https://console.developers.google.com/apis/credentials)",
+            string.Empty,
+            callback
+        );
 
         /// <summary>
         /// </summary>
@@ -104,28 +151,78 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
-        /// <param name="promptResult"></param>
-        private static void SaveGeolocation(PromptResult promptResult)
+        /// <param name="result"></param>
+        private async void GeolocationHandler(PromptResult result)
         {
-            Xameteo.MyPlaces.Insert(new GeolocationAdapter(promptResult.Text));
+            using (var progressDialog = InfiniteProgress)
+            {
+                progressDialog.Show();
+
+                try
+                {
+                    var response = await Xameteo.Geocoding.Get(result.Text);
+
+                    if (response.Status != "OK")
+                    {
+                        throw new InvalidOperationException(response.Status);
+                    }
+
+                    var geocodingResults = response.Results;
+
+                    if (geocodingResults.Count < 1)
+                    {
+                        throw new InvalidOperationException("no results found!");
+                    }
+
+                    if (geocodingResults.Count == 1)
+                    {
+                        SaveGeolocation(response.Results[0])();
+                    }
+                    else
+                    {
+                        var configuration = new ActionSheetConfig
+                        {
+                            UseBottomSheet = false,
+                            Title = "Multiple locations found"
+                        };
+
+                        configuration.SetCancel(Resources.Button_Cancel);
+
+                        foreach (var location in geocodingResults)
+                        {
+                            configuration.Add(location.Address, SaveGeolocation(location));
+                        }
+
+                        _userDialogs.ActionSheet(configuration);
+                    }
+                }
+                catch (Exception exception)
+                {
+                    await Xameteo.Dialogs.Alert(exception);
+                }
+                finally
+                {
+                    progressDialog.Hide();
+                }
+            }
         }
 
         /// <summary>
         /// </summary>
-        private void LocationByGeocoding()
+        /// <param name="result"></param>
+        private static Action SaveGeolocation(GeocodingResult result)
         {
-            _userDialogs.Prompt(new PromptConfig
-            {
-                OkText = Resources.Button_OK,
-                CancelText = Resources.Button_Cancel,
-                InputType = InputType.Default,
-                IsCancellable = true,
-                OnAction = SaveGeolocation,
-                Placeholder = "e.g. Valongo, Porto",
-                Title = "Geolocation",
-                Message = "Please enter your address and/or city on the input box below.",
-            });
+            return () => Xameteo.MyPlaces.Insert(new CoordinatesAdapter(result.GeocodingGeometry.Location));
         }
+
+        /// <summary>
+        /// </summary>
+        private void LocationByGeocoding() => GenericPrompt(
+            "Geolocation",
+            "Please enter your address and/or city on the input box below.",
+            "e.g. Valongo, Porto",
+            GeolocationHandler
+        );
 
         /// <summary>
         /// </summary>
@@ -137,15 +234,24 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
-        private static async void LocationByDevice()
+        private async void LocationByDevice()
         {
-            try
+            using (var progressDialog = InfiniteProgress)
             {
-                SaveDevice(await Xameteo.Geolocator.GetPositionAsync(Xameteo.Globals.AsyncTimeout));
-            }
-            catch (Exception exception)
-            {
-                await Xameteo.Dialogs.Alert(exception);
+                progressDialog.Show();
+
+                try
+                {
+                    SaveDevice(await Xameteo.Geolocator.GetPositionAsync(Xameteo.Globals.AsyncTimeout));
+                }
+                catch (Exception exception)
+                {
+                    await Xameteo.Dialogs.Alert(exception);
+                }
+                finally
+                {
+                    progressDialog.Hide();
+                }
             }
         }
 

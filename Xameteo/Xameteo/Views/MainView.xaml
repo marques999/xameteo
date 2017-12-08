@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Xameteo.MainPage"
-             xmlns:pages="clr-namespace:Xameteo">
+             xmlns:views="clr-namespace:Xameteo.Views;assembly=Xameteo"
+             x:Class="Xameteo.Views.MainView">
   <MasterDetailPage.Master>
-    <pages:MainPageMaster x:Name="MasterPage" />
+    <views:MainViewMaster x:Name="MasterPage" />
   </MasterDetailPage.Master>
   <MasterDetailPage.Detail>
     <NavigationPage>
       <x:Arguments>
-        <pages:MainPageDetail />
+        <views:MainViewDetail />
       </x:Arguments>
     </NavigationPage>
   </MasterDetailPage.Detail>

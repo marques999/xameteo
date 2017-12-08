@@ -12,13 +12,9 @@ namespace Xameteo.Google
     {
         /// <summary>
         /// </summary>
-        private readonly string _apiKey;
-
-        /// <summary>
-        /// </summary>
         /// <param name="address"></param>
         /// <returns></returns>
-        public Task<GoogleGeocoding> Get(string address) => _api.Get(_apiKey, address);
+        public Task<GoogleGeocoding> Get(string address) => _api.Get(Xameteo.Settings.GoogleKey, address);
 
         /// <summary>
         /// </summary>
@@ -27,13 +23,5 @@ namespace Xameteo.Google
             Timeout = Xameteo.Globals.AsyncTimeout,
             BaseAddress = Xameteo.Globals.GoogleBaseUrl
         });
-
-        /// <summary>
-        /// </summary>
-        /// <param name="apiKey"></param>
-        public GoogleApi(string apiKey)
-        {
-            _apiKey = apiKey;
-        }
     }
 }

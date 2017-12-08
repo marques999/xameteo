@@ -19,12 +19,12 @@ namespace Xameteo.Google
 
         /// <summary>
         /// </summary>
-        [JsonProperty("geometry")]
-        public GeocodingGeometry GeocodingGeometry { get; set; }
+        [JsonProperty("types")]
+        public List<string> Types { get; set; }
 
         /// <summary>
         /// </summary>
-        [JsonProperty("types")]
-        public List<string> Types { get; set; }
+        [JsonProperty("geometry")]
+        public GeocodingGeometry GeocodingGeometry { get; set; }
     }
 }

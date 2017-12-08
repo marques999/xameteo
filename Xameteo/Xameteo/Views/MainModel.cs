@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace Xameteo
+namespace Xameteo.Views
 {
     /// <summary>
     /// </summary>
-    public class MainPageMenuItem
+    public class MainModel
     {
         /// <summary>
         /// </summary>
@@ -20,9 +20,9 @@ namespace Xameteo
 
         /// <summary>
         /// </summary>
-        public MainPageMenuItem()
+        public MainModel()
         {
-            TargetType = typeof(MainPageDetail);
+            TargetType = typeof(MainViewDetail);
         }
     }
 }

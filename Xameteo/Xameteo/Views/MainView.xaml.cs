@@ -3,19 +3,19 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using Xameteo.Views;
+using Xameteo.Views.Location;
 
-namespace Xameteo
+namespace Xameteo.Views
 {
     /// <inheritdoc />
     /// <summary>
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage
+    public partial class MainView
     {
         /// <summary>
         /// </summary>
-        public MainPage()
+        public MainView()
         {
             InitializeComponent();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
@@ -27,7 +27,7 @@ namespace Xameteo
         /// <param name="e"></param>
         private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            if (!(e.SelectedItem is MainPageMenuItem item))
+            if (!(e.SelectedItem is MainModel item))
             {
                 return;
             }
@@ -35,7 +35,7 @@ namespace Xameteo
             var changePage = true;
             var page = (Page)Activator.CreateInstance(item.TargetType);
 
-            if (page is LocationTabsPage placePage)
+            if (page is LocationView placePage)
             {
                 try
                 {

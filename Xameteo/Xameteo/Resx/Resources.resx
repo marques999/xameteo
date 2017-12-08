@@ -609,4 +609,25 @@
   <data name="Tab_Today" xml:space="preserve">
     <value>Today</value>
   </data>
+  <data name="Settings_ApixuKey" xml:space="preserve">
+    <value>Apixu Key</value>
+  </data>
+  <data name="Settings_Distance" xml:space="preserve">
+    <value>Distance Units</value>
+  </data>
+  <data name="Settings_GoogleKey" xml:space="preserve">
+    <value>Geocoding Key</value>
+  </data>
+  <data name="Settings_Precipitation" xml:space="preserve">
+    <value>Precipitation Units</value>
+  </data>
+  <data name="Settings_Pressure" xml:space="preserve">
+    <value>Pressure Units</value>
+  </data>
+  <data name="Settings_Temperature" xml:space="preserve">
+    <value>Temperature Units</value>
+  </data>
+  <data name="Settings_Velocity" xml:space="preserve">
+    <value>Velocity Units</value>
+  </data>
 </root>

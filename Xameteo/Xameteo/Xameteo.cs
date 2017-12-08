@@ -19,7 +19,6 @@ namespace Xameteo
         {
             Api = new ApixuApi(Settings.ApixuKey);
             MyPlaces = new Places(Settings.Places);
-            Geocoding = new GoogleApi(Settings.GoogleKey);
             MyPlaces.Insert(new AirportAdapter(Airport.Instances[5]));
             MyPlaces.Insert(new GeolocationAdapter("Valongo, Porto"));
             MyPlaces.Insert(new CoordinatesAdapter(new Coordinates(35.6732619, 139.5703036)));
@@ -35,10 +34,6 @@ namespace Xameteo
 
         /// <summary>
         /// </summary>
-        public static GoogleApi Geocoding { get; private set; }
-
-        /// <summary>
-        /// </summary>
         public static Dialogs Dialogs { get; } = new Dialogs();
 
         /// <summary>
@@ -48,6 +43,10 @@ namespace Xameteo
         /// <summary>
         /// </summary>
         public static Settings Settings { get; } = new Settings();
+
+        /// <summary>
+        /// </summary>
+        public static GoogleApi Geocoding { get; } = new GoogleApi();
 
         /// <summary>
         /// </summary>

@@ -1,26 +1,11 @@
 ﻿using System.ComponentModel;
-using Xamarin.Forms.Xaml;
 
-namespace Xameteo.Views
+namespace Xameteo.Views.Location
 {
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LocationTodayPage
-    {
-        /// <summary>
-        /// </summary>
-        public LocationTodayPage()
-        {
-            InitializeComponent();
-        }
-    }
-
-    /// <inheritdoc />
-    /// <summary>
-    /// </summary>
-    public class CurrentWeatherViewModel : INotifyPropertyChanged
+    public class TodayViewModel : INotifyPropertyChanged
     {
         /// <summary>
         /// </summary>
@@ -40,15 +25,12 @@ namespace Xameteo.Views
                 _text = value;
                 OnPropertyChanged("Text");
             }
-            get
-            {
-                return _text;
-            }
+            get => _text;
         }
 
         /// <summary>
         /// </summary>
-        public CurrentWeatherViewModel()
+        public TodayViewModel()
         {
             _text = "Ola Kira!";
         }

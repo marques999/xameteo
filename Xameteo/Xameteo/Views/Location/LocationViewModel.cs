@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 using Xameteo.API;
-using Xameteo.Resx;
 using Xameteo.Model;
+using Xameteo.Resx;
 
-namespace Xameteo.ViewModel
+namespace Xameteo.Views.Location
 {
     internal class LocationViewModel
     {
@@ -19,7 +19,7 @@ namespace Xameteo.ViewModel
 
         /// <summary>
         /// </summary>
-        private Location Location => _forecast.Location;
+        private Model.Location Location => _forecast.Location;
 
         /// <summary>
         /// </summary>
@@ -50,14 +50,6 @@ namespace Xameteo.ViewModel
             Table2.Add(new Tuple<string, string>(Resources.Location_Longitude, Coordinates.StandardizeLongitude()));
             Table2.Add(new Tuple<string, string>(Resources.Location_Timezone, Location.TimeZone));
             Table2.Add(new Tuple<string, string>(Resources.Location_Local_Time, Xameteo.Localization.ShortTime(Location.LocalTime)));
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        public void SelectedItemCommand(object sender, EventArgs args)
-        {
         }
 
         /// <summary>

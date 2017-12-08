@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Settings"
+             x:Class="Xameteo.Views.Settings.SettingsView">
+  <ContentPage.Content>
+    <ListView x:Name="MyListView"
+              ItemTapped="HandleClick"
+              ItemsSource="{Binding Items}"
+              CachingStrategy="RecycleElement">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Vertical">
+              <Label Text="{Binding Name}" Style="{DynamicResource ListItemTextStyle}" />
+              <Label Text="{Binding Value}" Style="{DynamicResource ListItemDetailTextStyle}"/>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </ContentPage.Content>
+</ContentPage>

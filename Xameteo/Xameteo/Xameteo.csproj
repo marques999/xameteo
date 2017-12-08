@@ -94,34 +94,38 @@
     <Compile Include="Model\Location.cs" />
     <Compile Include="API\Places.cs" />
     <Compile Include="Units\Unit.cs" />
-    <Compile Include="ViewModel\LocationViewModel.cs" />
-    <Compile Include="Views\LocationHistoryPage.xaml.cs">
-      <DependentUpon>LocationHistoryPage.xaml</DependentUpon>
+    <Compile Include="Views\Location\LocationViewModel.cs" />
+    <Compile Include="Views\Location\HistoryPage.xaml.cs">
+      <DependentUpon>HistoryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\LocationTabsPage.cs" />
-    <Compile Include="Views\LocationCurrentPage.xaml.cs">
-      <DependentUpon>LocationCurrentPage.xaml</DependentUpon>
+    <Compile Include="Views\Location\LocationView.cs" />
+    <Compile Include="Views\Location\CurrentlyPage.xaml.cs">
+      <DependentUpon>CurrentlyPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\LocationTodayPage.xaml.cs">
-      <DependentUpon>LocationTodayPage.xaml</DependentUpon>
+    <Compile Include="Views\Location\TodayPage.xaml.cs">
+      <DependentUpon>TodayPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPageDetail.xaml.cs">
-      <DependentUpon>MainPageDetail.xaml</DependentUpon>
+    <Compile Include="Views\MainViewDetail.xaml.cs">
+      <DependentUpon>MainViewDetail.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPageMaster.xaml.cs">
-      <DependentUpon>MainPageMaster.xaml</DependentUpon>
+    <Compile Include="Views\MainViewMaster.xaml.cs">
+      <DependentUpon>MainViewMaster.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPageMenuItem.cs" />
+    <Compile Include="Views\MainModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\OptionsPage.xaml.cs">
-      <DependentUpon>OptionsPage.xaml</DependentUpon>
+    <Compile Include="Views\Location\TodayViewModel.cs" />
+    <Compile Include="Views\MainViewModel.cs" />
+    <Compile Include="Views\Settings\SettingsModel.cs" />
+    <Compile Include="Views\Settings\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\LocationForecastPage.xaml.cs">
-      <DependentUpon>LocationForecastPage.xaml</DependentUpon>
+    <Compile Include="Views\Location\ForecastPage.xaml.cs">
+      <DependentUpon>ForecastPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Settings\SettingsViewModel.cs" />
     <Compile Include="Xameteo.cs" />
     <Compile Include="Helpers\Settings.cs" />
   </ItemGroup>
@@ -219,19 +223,19 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MainPage.xaml">
+    <EmbeddedResource Include="Views\MainView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MainPageMaster.xaml">
+    <EmbeddedResource Include="Views\MainViewMaster.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MainPageDetail.xaml">
+    <EmbeddedResource Include="Views\MainViewDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -246,31 +250,31 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\LocationTodayPage.xaml">
+    <EmbeddedResource Include="Views\Location\TodayPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\OptionsPage.xaml">
+    <EmbeddedResource Include="Views\Settings\SettingsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\LocationCurrentPage.xaml">
+    <EmbeddedResource Include="Views\Location\CurrentlyPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\LocationForecastPage.xaml">
+    <EmbeddedResource Include="Views\Location\ForecastPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\LocationHistoryPage.xaml">
+    <EmbeddedResource Include="Views\Location\HistoryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -11,25 +11,21 @@ namespace Xameteo.Model
     public class ForecastDaily
     {
         /// <summary>
-        /// Contains the forecast date
         /// </summary>
         [JsonProperty("date")]
         public DateTime Date { get; set; }
 
         /// <summary>
-        /// Contains temperatures, wind speed and precipitation
         /// </summary>
         [JsonProperty("day")]
         public Day Day { get; set; }
 
         /// <summary>
-        /// Contains sunrise, sunset, moonrise and moonset data
         /// </summary>
         [JsonProperty("astro")]
         public Astrology Astro { get; set; }
 
         /// <summary>
-        /// Contains hour by hour weather forecast information
         /// </summary>
         [JsonProperty("hour")]
         public List<Hour> Hours { get; set; }

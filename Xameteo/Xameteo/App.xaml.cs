@@ -1,4 +1,6 @@
-﻿namespace Xameteo
+﻿using Xameteo.Views;
+
+namespace Xameteo
 {
     /// <inheritdoc />
     /// <summary>
@@ -11,7 +13,7 @@
         {
             InitializeComponent();
             Xameteo.Initialize();
-            MainPage = new MainPage();
+            MainPage = new MainView();
         }
 
         /// <inheritdoc />

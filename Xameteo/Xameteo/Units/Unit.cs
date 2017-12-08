@@ -32,6 +32,11 @@
 
         /// <summary>
         /// </summary>
+        /// <returns></returns>
+        public override string ToString() => $"{Name} ({Symbol})";
+
+        /// <summary>
+        /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
         public string Convert(double value) => $"{_formula?.Invoke(value) ?? value:N2} {Symbol}";
