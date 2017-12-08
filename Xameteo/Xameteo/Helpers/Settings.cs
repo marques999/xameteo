@@ -15,10 +15,18 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
-        public string ApiKey
+        public string ApixuKey
         {
-            get => _settingsManager.GetValueOrDefault("apikey", Xameteo.Globals.ApixuKey);
-            set => _settingsManager.AddOrUpdateValue("apikey", value);
+            get => _settingsManager.GetValueOrDefault("apixu", Xameteo.Globals.ApixuKey);
+            set => _settingsManager.AddOrUpdateValue("apixu", value);
+        }
+
+        /// <summary>
+        /// </summary>
+        public string GoogleKey
+        {
+            get => _settingsManager.GetValueOrDefault("google", Xameteo.Globals.GoogleKey);
+            set => _settingsManager.AddOrUpdateValue("google", value);
         }
 
         /// <summary>

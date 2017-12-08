@@ -42,7 +42,7 @@ namespace Xameteo.Helpers
         /// </summary>
         private readonly ActionSheetOption _actionSheetCancel = new ActionSheetOption(Resources.Button_Cancel);
 
-        public IDisposable InsertLocation(string[] sources, Action<WeatherSource> generator)
+        public IDisposable InsertLocation(string[] sources, Action<Source> generator)
         {
             var configuration = new ActionSheetConfig
             {
@@ -52,10 +52,10 @@ namespace Xameteo.Helpers
             };
 
             configuration.SetCancel();
-            configuration.Add("Airports", () => generator(WeatherSource.Airport));
-            configuration.Add("Device", () => generator(WeatherSource.Device));
-            configuration.Add("Geolocation", () => generator(WeatherSource.Geolocation));
-            configuration.Add("Coordinates", () => generator(WeatherSource.Coordinates));
+            configuration.Add("Airports", () => generator(Source.Airport));
+            configuration.Add("Device", () => generator(Source.Device));
+            configuration.Add("Geolocation", () => generator(Source.Geolocation));
+            configuration.Add("Coordinates", () => generator(Source.Coordinates));
 
             return _userDialogs.ActionSheet(configuration);
         }

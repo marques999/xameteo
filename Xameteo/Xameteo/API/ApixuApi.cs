@@ -29,8 +29,8 @@ namespace Xameteo.API
         /// </summary>
         private readonly IApuxApi _api = RestService.For<IApuxApi>(new HttpClient(new NativeMessageHandler())
         {
-            BaseAddress = Xameteo.Globals.BaseUrl,
             Timeout = Xameteo.Globals.AsyncTimeout,
+            BaseAddress = Xameteo.Globals.ApixuBaseUrl
         });
 
         /// <summary>

@@ -12,11 +12,19 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
-        public Uri BaseUrl { get; } = new Uri("http://api.apixu.com/v1");
+        public readonly string ApixuKey = "7e4b1cf5c63a4a2e876183000173011";
 
         /// <summary>
         /// </summary>
-        public readonly string ApixuKey = "7e4b1cf5c63a4a2e876183000173011";
+        public readonly string GoogleKey = "AIzaSyC7BMV163HG2n8_Wo4Esn5VEjCxLkaSbmc";
+
+        /// <summary>
+        /// </summary>
+        public Uri ApixuBaseUrl { get; } = new Uri("http://api.apixu.com/v1");
+
+        /// <summary>
+        /// </summary>
+        public Uri GoogleBaseUrl { get; } = new Uri("https://maps.googleapis.com/maps/api");
 
         /// <summary>
         /// </summary>

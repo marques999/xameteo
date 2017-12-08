@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 
 namespace Xameteo.Model
 {
@@ -8,11 +9,13 @@ namespace Xameteo.Model
     {
         /// <summary>
         /// </summary>
-        public double Latitude { get; }
+        [JsonProperty("lat")]
+        public double Latitude { get; set; }
 
         /// <summary>
         /// </summary>
-        public double Longitude { get; }
+        [JsonProperty("lng")]
+        public double Longitude { get; set; }
 
         /// <summary>
         /// </summary>

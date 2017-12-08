@@ -9,6 +9,7 @@ using Xameteo.Views;
 
 namespace Xameteo
 {
+    /// <inheritdoc />
     /// <summary>
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]

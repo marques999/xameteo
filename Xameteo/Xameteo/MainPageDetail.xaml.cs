@@ -1,8 +1,10 @@
 ﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
+
 using Xameteo.API;
 
 namespace Xameteo
