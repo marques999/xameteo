@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
-
+using Xameteo.API;
 using Xameteo.Model;
 
 namespace Xameteo.Views

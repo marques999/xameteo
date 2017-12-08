@@ -1,5 +1,4 @@
 ﻿using System;
-using Humanizer;
 
 namespace Xameteo.Helpers
 {
@@ -9,7 +8,7 @@ namespace Xameteo.Helpers
     {
         /// <summary>
         /// </summary>
-        public TimeSpan AsyncTimeout { get; } = 10.Seconds();
+        public TimeSpan AsyncTimeout { get; } = TimeSpan.FromSeconds(10);
 
         /// <summary>
         /// </summary>
