@@ -1,5 +1,8 @@
 ﻿using System.Net;
+using System.Globalization;
+
 using Xameteo.Model;
+
 using Newtonsoft.Json;
 
 namespace Xameteo.API
@@ -50,7 +53,7 @@ namespace Xameteo.API
         /// <summary>
         /// </summary>
         /// <param name="coordinates"></param>
-        public CoordinatesAdapter(Coordinates coordinates) : base(coordinates.Latitude + "," + coordinates.Longitude)
+        public CoordinatesAdapter(Coordinates coordinates) : base(coordinates.Latitude.ToString(CultureInfo.InvariantCulture) + "," + coordinates.Longitude.ToString(CultureInfo.InvariantCulture))
         {
         }
     }
