@@ -11,12 +11,6 @@ namespace Xameteo.Helpers
 {
     /// <summary>
     /// </summary>
-    /// <param name="choice"></param>
-    /// <returns></returns>
-    public delegate void SelectUnitCallback<in T>(T choice) where T : Unit;
-
-    /// <summary>
-    /// </summary>
     internal class Dialogs
     {
         /// <summary>
@@ -35,10 +29,9 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
-        /// <param name="page"></param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public Task Alert(Page page, Exception exception)
+        public Task Alert(Exception exception)
         {
             return _instance.AlertAsync(exception.Message, exception.GetType().Name);
         }
@@ -53,7 +46,7 @@ namespace Xameteo.Helpers
         /// <param name="units"></param>
         /// <param name="generator"></param>
         /// <returns></returns>
-        public IDisposable SelectUnit<T>(T[] units, SelectUnitCallback<T> generator) where T : Unit
+        public IDisposable SelectUnit<T>(T[] units, Action<T> generator) where T : Unit
         {
             var configuration = new ActionSheetConfig
             {

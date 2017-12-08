@@ -51,111 +51,70 @@ namespace Xameteo.Globalization
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
-        /// <param name="cultureInfo"></param>
         /// <returns></returns>
-        public string Boolean(bool value, CultureInfo cultureInfo = null)
-        {
-            return value ? Resources.Global_Yes : Resources.Global_No;
-        }
+        public string LongCompass(Compass value) => value?.Name ?? "N/A";
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
-        /// <param name="cultureInfo"></param>
         /// <returns></returns>
-        public string ShortCompass(Compass value, CultureInfo cultureInfo = null)
-        {
-            return value?.Symbol ?? "N/A";
-        }
+        public string ShortCompass(Compass value) => value?.Symbol ?? "N/A";
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
-        /// <param name="cultureInfo"></param>
         /// <returns></returns>
-        public string LongCompass(Compass value, CultureInfo cultureInfo = null)
-        {
-            return value?.Name ?? "N/A";
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="dateTime"></param>
-        /// <param name="cultureInfo"></param>
-        /// <returns></returns>
-        public string ShortTime(DateTime dateTime, CultureInfo cultureInfo = null)
-        {
-            return dateTime.ToString("t", (cultureInfo ?? _cultureInfo).DateTimeFormat);
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="dateTime"></param>
-        /// <param name="cultureInfo"></param>
-        /// <returns></returns>
-        public string ShortDate(DateTime dateTime, CultureInfo cultureInfo = null)
-        {
-            return dateTime.ToString("d", (cultureInfo ?? _cultureInfo).DateTimeFormat);
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="dateTime"></param>
-        /// <param name="cultureInfo"></param>
-        /// <returns></returns>
-        public string LongDate(DateTime dateTime, CultureInfo cultureInfo = null)
-        {
-            return dateTime.ToString("D", (cultureInfo ?? _cultureInfo).DateTimeFormat);
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="dateTime"></param>
-        /// <param name="cultureInfo"></param>
-        /// <returns></returns>
-        public string ShortDateTime(DateTime dateTime, CultureInfo cultureInfo = null)
-        {
-            return dateTime.ToString("g", (cultureInfo ?? _cultureInfo).DateTimeFormat);
-        }
+        public string Boolean(bool value) => value ? Resources.Global_Yes : Resources.Global_No;
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
-        /// <param name="cultureInfo"></param>
         /// <returns></returns>
-        public string LongDateTime(DateTime value, CultureInfo cultureInfo = null)
-        {
-            return value.ToString("f", (cultureInfo ?? _cultureInfo).DateTimeFormat);
-        }
+        public string ShortTime(DateTime value) => value.ToString("t", _cultureInfo.DateTimeFormat);
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
-        /// <param name="cultureInfo"></param>
         /// <returns></returns>
-        public string Percentage(double value, CultureInfo cultureInfo = null)
-        {
-            return (value / 100).ToString("P0", (cultureInfo ?? _cultureInfo).NumberFormat);
-        }
+        public string ShortDate(DateTime value) => value.ToString("d", _cultureInfo.DateTimeFormat);
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
-        /// <param name="cultureInfo"></param>
         /// <returns></returns>
-        public string FixedPoint(double value, CultureInfo cultureInfo = null)
-        {
-            return value.ToString("N2", (cultureInfo ?? _cultureInfo).NumberFormat);
-        }
+        public string LongDate(DateTime value) => value.ToString("D", _cultureInfo.DateTimeFormat);
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
-        /// <param name="cultureInfo"></param>
         /// <returns></returns>
-        public string Degrees(double value, CultureInfo cultureInfo = null)
+        public string ShortDateTime(DateTime value) => value.ToString("g", _cultureInfo.DateTimeFormat);
+
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public string LongDateTime(DateTime value) => value.ToString("f", _cultureInfo.DateTimeFormat);
+
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public string Percentage(double value) => (value / 100).ToString("P0", _cultureInfo.NumberFormat);
+
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public string FixedPoint(double value) => value.ToString("N2", _cultureInfo.NumberFormat);
+
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public string Degrees(double value)
         {
-            return value.ToString("N0", (cultureInfo ?? _cultureInfo).NumberFormat) + " " + Resources.Symbol_Degrees;
+            return value.ToString("N0", _cultureInfo.NumberFormat) + " " + Resources.Symbol_Degrees;
         }
 
         /// <summary>

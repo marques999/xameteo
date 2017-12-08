@@ -27,12 +27,17 @@ namespace Xameteo.API
 
         /// <summary>
         /// </summary>
+        /// <param name="index"></param>
         /// <returns></returns>
         public Task<ApixuCurrent> Current(int index)
         {
             return index < List.Count ? Xameteo.Api.Current(List[index]) : null;
         }
 
+        /// <summary>
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public Task<ApixuForecast> Forecast(int index)
         {
             return index < List.Count ? Xameteo.Api.Forecast(List[index], 15) : null;

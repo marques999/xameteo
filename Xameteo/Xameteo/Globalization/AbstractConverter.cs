@@ -12,21 +12,14 @@ namespace Xameteo.Globalization
     {
         /// <summary>
         /// </summary>
-        private readonly ConverterDelegate _converterDelegate;
+        private readonly Func<T, string> _converterFunction;
 
         /// <summary>
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="culture"></param>
-        /// <returns></returns>
-        protected delegate string ConverterDelegate(T type, CultureInfo culture);
-
-        /// <summary>
-        /// </summary>
-        /// <param name="converterDelegate"></param>
-        protected AbstractConverter(ConverterDelegate converterDelegate)
+        /// <param name="converterFunction"></param>
+        protected AbstractConverter(Func<T, string> converterFunction)
         {
-            _converterDelegate = converterDelegate;
+            _converterFunction = converterFunction;
         }
 
         /// <summary>
@@ -62,7 +55,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return Prefix(value is T tvalue ? _converterDelegate(tvalue, culture) : "N/A", parameter);
+            return Prefix(value is T tvalue ? _converterFunction(tvalue) : "N/A", parameter);
         }
     }
 }

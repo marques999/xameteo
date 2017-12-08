@@ -54,7 +54,7 @@ namespace Xameteo
                 catch (Exception exception)
                 {
                     changePage = false;
-                    await Xameteo.Dialogs.Alert(this, exception);
+                    await Xameteo.Dialogs.Alert(exception);
                 }
             }
 

@@ -22,19 +22,19 @@
 
         /// <summary>
         /// </summary>
-        public FormulaDelegate Formula { get; }
+        private readonly FormulaDelegate _formula;
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public delegate double FormulaDelegate(double value);
+        protected delegate double FormulaDelegate(double value);
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public string Convert(double value) => $"{Formula?.Invoke(value) ?? value:N2} {Symbol}";
+        public string Convert(double value) => $"{_formula?.Invoke(value) ?? value:N2} {Symbol}";
 
         /// <summary>
         /// </summary>
@@ -47,7 +47,7 @@
             Id = index;
             Name = name;
             Symbol = symbol;
-            Formula = formula;
+            _formula = formula;
         }
     }
 }
