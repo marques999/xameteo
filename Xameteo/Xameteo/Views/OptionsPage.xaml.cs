@@ -1,5 +1,4 @@
 ﻿using System;
-
 using Xameteo.Units;
 using Xamarin.Forms.Xaml;
 

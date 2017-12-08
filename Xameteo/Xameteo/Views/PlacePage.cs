@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
+
 using Xameteo.API;
-using Xameteo.Model;
 using Xameteo.ViewModel;
 
 namespace Xameteo.Views

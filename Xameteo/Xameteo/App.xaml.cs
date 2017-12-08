@@ -9,8 +9,8 @@
         /// </summary>
         public App()
         {
-            Xameteo.Initialize();
             InitializeComponent();
+            Xameteo.Initialize();
             MainPage = new MainPage();
         }
 
