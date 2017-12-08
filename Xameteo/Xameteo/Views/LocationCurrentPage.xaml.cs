@@ -6,11 +6,11 @@ namespace Xameteo.Views
     /// <summary>
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TodayCurrentPage
+    public partial class LocationCurrentPage
     {
         /// <summary>
         /// </summary>
-        public TodayCurrentPage()
+        public LocationCurrentPage()
         {
             InitializeComponent();
         }

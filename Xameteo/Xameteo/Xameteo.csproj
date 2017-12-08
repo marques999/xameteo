@@ -52,6 +52,7 @@
     <Compile Include="Globalization\PlatformCulture.cs" />
     <Compile Include="Globalization\UnitExtensions.cs" />
     <Compile Include="Helpers\Globals.cs" />
+    <Compile Include="Helpers\WeatherSource.cs" />
     <Compile Include="Model\Airport.cs" />
     <Compile Include="Model\Compass.cs" />
     <Compile Include="Model\Coordinates.cs" />
@@ -86,16 +87,16 @@
     <Compile Include="Model\Location.cs" />
     <Compile Include="API\Places.cs" />
     <Compile Include="Units\Unit.cs" />
-    <Compile Include="ViewModel\ForecastViewModel.cs" />
-    <Compile Include="Views\HistoryPage.xaml.cs">
-      <DependentUpon>HistoryPage.xaml</DependentUpon>
+    <Compile Include="ViewModel\LocationViewModel.cs" />
+    <Compile Include="Views\LocationHistoryPage.xaml.cs">
+      <DependentUpon>LocationHistoryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PlacePage.cs" />
-    <Compile Include="Views\TodayCurrentPage.xaml.cs">
-      <DependentUpon>TodayCurrentPage.xaml</DependentUpon>
+    <Compile Include="Views\LocationTabsPage.cs" />
+    <Compile Include="Views\LocationCurrentPage.xaml.cs">
+      <DependentUpon>LocationCurrentPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TodayHourlyPage.xaml.cs">
-      <DependentUpon>TodayHourlyPage.xaml</DependentUpon>
+    <Compile Include="Views\LocationTodayPage.xaml.cs">
+      <DependentUpon>LocationTodayPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -111,11 +112,8 @@
     <Compile Include="Views\OptionsPage.xaml.cs">
       <DependentUpon>OptionsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PlacesPage.xaml.cs">
-      <DependentUpon>PlacesPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\WeekForecastPage.xaml.cs">
-      <DependentUpon>WeekForecastPage.xaml</DependentUpon>
+    <Compile Include="Views\LocationForecastPage.xaml.cs">
+      <DependentUpon>LocationForecastPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Xameteo.cs" />
     <Compile Include="Helpers\Settings.cs" />
@@ -241,7 +239,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\TodayHourlyPage.xaml">
+    <EmbeddedResource Include="Views\LocationTodayPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -253,25 +251,19 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\PlacesPage.xaml">
+    <EmbeddedResource Include="Views\LocationCurrentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\TodayCurrentPage.xaml">
+    <EmbeddedResource Include="Views\LocationForecastPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\WeekForecastPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Views\HistoryPage.xaml">
+    <EmbeddedResource Include="Views\LocationHistoryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

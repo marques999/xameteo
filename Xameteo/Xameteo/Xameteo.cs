@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-using Plugin.Geolocator;
+﻿using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 
 using Xameteo.API;
@@ -52,9 +50,5 @@ namespace Xameteo
         /// <summary>
         /// </summary>
         public static IGeolocator Geolocator { get; } = CrossGeolocator.Current;
-
-        /// <summary>
-        /// </summary>
-        public static Task<Position> MyLocation => Geolocator.GetPositionAsync(Globals.AsyncTimeout);
     }
 }

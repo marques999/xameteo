@@ -6,11 +6,11 @@ namespace Xameteo.Views
     /// <summary>
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class WeekForecastPage
+    public partial class LocationForecastPage
     {
         /// <summary>
         /// </summary>
-        public WeekForecastPage()
+        public LocationForecastPage()
         {
             InitializeComponent();
         }

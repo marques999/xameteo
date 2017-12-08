@@ -35,7 +35,7 @@ namespace Xameteo
             var changePage = true;
             var page = (Page)Activator.CreateInstance(item.TargetType);
 
-            if (page is PlacePage placePage)
+            if (page is LocationTabsPage placePage)
             {
                 try
                 {

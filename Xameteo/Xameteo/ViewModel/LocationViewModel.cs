@@ -7,7 +7,7 @@ using Xameteo.Model;
 
 namespace Xameteo.ViewModel
 {
-    internal class ForecastViewModel
+    internal class LocationViewModel
     {
         /// <summary>
         /// </summary>
@@ -27,7 +27,7 @@ namespace Xameteo.ViewModel
 
         /// <summary>
         /// </summary>
-        public ForecastViewModel(ApixuForecast forecast)
+        public LocationViewModel(ApixuForecast forecast)
         {
             _forecast = forecast;
             Table1.Add(new Tuple<string, string>(Resources.Forecast_Last_Updated, Xameteo.Localization.LongDateTime(Now.LastUpdated)));

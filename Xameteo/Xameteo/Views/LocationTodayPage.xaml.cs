@@ -7,11 +7,11 @@ namespace Xameteo.Views
     /// <summary>
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TodayHourlyPage
+    public partial class LocationTodayPage
     {
         /// <summary>
         /// </summary>
-        public TodayHourlyPage()
+        public LocationTodayPage()
         {
             InitializeComponent();
         }

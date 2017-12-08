@@ -6,11 +6,11 @@ namespace Xameteo.Views
     /// <summary>
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HistoryPage
+    public partial class LocationHistoryPage
     {
         /// <summary>
         /// </summary>
-        public HistoryPage()
+        public LocationHistoryPage()
         {
             InitializeComponent();
         }

@@ -51,7 +51,7 @@ namespace Xameteo
                     {
                         Id = i,
                         Title = locations[i].Parameters,
-                        TargetType = typeof(PlacePage)
+                        TargetType = typeof(LocationTabsPage)
                     });
                 }
 
@@ -66,7 +66,7 @@ namespace Xameteo
                 {
                     Id = i,
                     Title = "Home,",
-                    TargetType = typeof(PlacesPage)
+                    TargetType = typeof(MainPageDetail)
                 });
             }
 
