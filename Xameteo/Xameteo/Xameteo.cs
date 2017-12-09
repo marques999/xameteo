@@ -16,21 +16,30 @@ namespace Xameteo
         /// </summary>
         public static void Initialize()
         {
-            Api = new ApixuApi(Settings.ApixuKey);
-            MyPlaces = new Places(Settings.Places);
+            Apixu = new ApixuApi();
+            Geocoding = new GoogleApi();
+            Places = new Places(Settings.Places);
         }
 
         /// <summary>
         /// </summary>
-        public static ApixuApi Api { get; private set; }
+        public static Places Places { get; private set; }
 
         /// <summary>
         /// </summary>
-        public static Places MyPlaces { get; private set; }
+        public static ApixuApi Apixu { get; private set; }
+
+        /// <summary>
+        /// </summary>
+        public static GoogleApi Geocoding { get; private set; }
 
         /// <summary>
         /// </summary>
         public static Events Events { get; } = new Events();
+
+        /// <summary>
+        /// </summary>
+        public static L10N Localization { get; } = new L10N();
 
         /// <summary>
         /// </summary>
@@ -43,14 +52,6 @@ namespace Xameteo
         /// <summary>
         /// </summary>
         public static Settings Settings { get; } = new Settings();
-
-        /// <summary>
-        /// </summary>
-        public static GoogleApi Geocoding { get; } = new GoogleApi();
-
-        /// <summary>
-        /// </summary>
-        public static Localization Localization { get; } = new Localization();
 
         /// <summary>
         /// </summary>

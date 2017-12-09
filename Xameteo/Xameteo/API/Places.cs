@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Collections.Generic;
 
 using Newtonsoft.Json;
@@ -14,15 +13,6 @@ namespace Xameteo.API
         /// <summary>
         /// </summary>
         public List<ApixuAdapter> List { get; } = new List<ApixuAdapter>();
-
-        /// <summary>
-        /// </summary>
-        /// <param name="index"></param>
-        /// <returns></returns>
-        public Task<ApixuForecast> Forecast(int index)
-        {
-            return index < List.Count ? Xameteo.Api.Forecast(List[index], 15) : null;
-        }
 
         /// <summary>
         /// </summary>
@@ -57,14 +47,6 @@ namespace Xameteo.API
             }
 
             return true;
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<Task<ApixuCurrent>> Current()
-        {
-            return List.Select(it => Xameteo.Api.Current(it));
         }
 
         /// <summary>

@@ -15,18 +15,6 @@ namespace Xameteo.API
     {
         /// <summary>
         /// </summary>
-        private readonly string _apiKey;
-
-        /// <summary>
-        /// </summary>
-        private readonly IBlobCache _cache = BlobCache.LocalMachine;
-
-        /// <summary>
-        /// </summary>
-        private readonly DateTimeOffset _expires = Xameteo.Globals.CacheInvalidate;
-
-        /// <summary>
-        /// </summary>
         private readonly IApuxApi _api = RestService.For<IApuxApi>(new HttpClient(new NativeMessageHandler())
         {
             Timeout = Xameteo.Globals.AsyncTimeout,
@@ -35,31 +23,27 @@ namespace Xameteo.API
 
         /// <summary>
         /// </summary>
-        /// <param name="apiKey"></param>
-        public ApixuApi(string apiKey)
-        {
-            _apiKey = apiKey;
-        }
+        private readonly IBlobCache _cache = BlobCache.LocalMachine;
 
         /// <summary>
         /// </summary>
         /// <param name="adapter"></param>
         /// <returns></returns>
-        public async Task<ApixuCurrent> Current(ApixuAdapter adapter)
-        {
-            return await _cache.GetOrFetchObject("current_" + adapter.Parameters, () => _api.GetCurrent(_apiKey, adapter.Parameters), _expires);
-        }
+        public async Task<ApixuCurrent> Current(ApixuAdapter adapter) => await _cache.GetOrFetchObject(
+            "current_" + adapter.Parameters,
+            () => _api.GetCurrent(Xameteo.Settings.ApixuKey, adapter.Parameters),
+            Xameteo.Globals.CacheInvalidate
+        );
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="adapter"></param>
-        /// <param name="days"></param>
         /// <returns></returns>
-        public async Task<ApixuForecast> Forecast(ApixuAdapter adapter, int days)
-        {
-            return await _cache.GetOrFetchObject("forecast_" + adapter.Parameters, () => _api.GetForecast(_apiKey, adapter.Parameters, days), _expires);
-        }
+        public async Task<ApixuForecast> Forecast(ApixuAdapter adapter) => await _cache.GetOrFetchObject(
+            "forecast_" + adapter.Parameters,
+            () => _api.GetForecast(Xameteo.Settings.ApixuKey, adapter.Parameters, Xameteo.Globals.ForecastDays),
+            Xameteo.Globals.CacheInvalidate
+        );
 
         /// <summary>
         /// </summary>
@@ -67,9 +51,10 @@ namespace Xameteo.API
         /// <param name="start"></param>
         /// <param name="end"></param>
         /// <returns></returns>
-        public async Task<ApixuHistory> History(ApixuAdapter adapter, DateTime start, DateTime? end)
-        {
-            return await _cache.GetOrFetchObject("history_" + adapter.Parameters, () => _api.GetHistory(_apiKey, adapter.Parameters, start, end), _expires);
-        }
+        public async Task<ApixuHistory> History(ApixuAdapter adapter, DateTime start, DateTime? end) => await _cache.GetOrFetchObject(
+            "history_" + adapter.Parameters,
+            () => _api.GetHistory(Xameteo.Settings.ApixuKey, adapter.Parameters, start, end),
+            Xameteo.Globals.CacheInvalidate
+        );
     }
 }

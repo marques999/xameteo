@@ -22,7 +22,7 @@ namespace Xameteo.Views
 
             Xameteo.Events.SubscribeView(this, async (sender, args) =>
             {
-                var forecast = await Xameteo.Api.Forecast(args, 15);
+                var forecast = await Xameteo.Apixu.Forecast(args);
 
                 if (forecast != null)
                 {
@@ -51,7 +51,7 @@ namespace Xameteo.Views
                 }
                 else
                 {
-                    var forecast = await Xameteo.Api.Forecast(item.Location, 15);
+                    var forecast = await Xameteo.Apixu.Forecast(item.Location);
 
                     if (forecast != null)
                     {

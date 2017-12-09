@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 using Xameteo.Resx;
-using Xameteo.Units;
 
 using Acr.UserDialogs;
 

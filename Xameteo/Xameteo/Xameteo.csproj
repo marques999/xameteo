@@ -60,7 +60,6 @@
     <Compile Include="Google\GeocodingResult.cs" />
     <Compile Include="Helpers\Events.cs" />
     <Compile Include="Helpers\Globals.cs" />
-    <Compile Include="Model\Source.cs" />
     <Compile Include="Model\Airport.cs" />
     <Compile Include="Model\Compass.cs" />
     <Compile Include="Model\Coordinates.cs" />
@@ -79,7 +78,7 @@
     <Compile Include="Units\Pressure.cs" />
     <Compile Include="Units\Temperature.cs" />
     <Compile Include="Units\Velocity.cs" />
-    <Compile Include="Globalization\Localization.cs" />
+    <Compile Include="Globalization\L10N.cs" />
     <Compile Include="Globalization\TranslateExtension.cs" />
     <Compile Include="API\ApixuCurrent.cs" />
     <Compile Include="API\ApixuForecast.cs" />

@@ -12,7 +12,7 @@ namespace Xameteo.Globalization
 {
     /// <summary>
     /// </summary>
-    internal class Localization
+    internal class L10N
     {
         /// <summary>
         /// </summary>
@@ -24,7 +24,7 @@ namespace Xameteo.Globalization
 
         /// <summary>
         /// </summary>
-        private readonly ResourceManager _resources = new ResourceManager(ResourceId, typeof(Localization).GetTypeInfo().Assembly);
+        private readonly ResourceManager _resources = new ResourceManager(ResourceId, typeof(L10N).GetTypeInfo().Assembly);
 
         /// <summary>
         /// </summary>

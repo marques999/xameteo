@@ -70,7 +70,7 @@ namespace Xameteo.Views
                 TargetType = typeof(SettingsView)
             });
 
-            Xameteo.MyPlaces.List.ForEach(InsertLocation);
+            Xameteo.Places.List.ForEach(InsertLocation);
         }
 
         /// <summary>

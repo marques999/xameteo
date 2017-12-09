@@ -53,9 +53,9 @@ namespace Xameteo.Views
         /// </summary>
         public async void InitializeList()
         {
-            foreach (var adapter in Xameteo.MyPlaces.List)
+            foreach (var adapter in Xameteo.Places.List)
             {
-                Items.Add(new MainDetailModel(await Xameteo.Api.Current(adapter), adapter));
+                Items.Add(new MainDetailModel(await Xameteo.Apixu.Current(adapter), adapter));
             }
         }
 
@@ -123,10 +123,10 @@ namespace Xameteo.Views
                 {
                     progressDialog.Show();
 
-                    if (Xameteo.MyPlaces.Insert(apixuAdapter))
+                    if (Xameteo.Places.Insert(apixuAdapter))
                     {
                         Xameteo.Events.Insert(this, apixuAdapter);
-                        Items.Add(new MainDetailModel(await Xameteo.Api.Current(apixuAdapter), apixuAdapter));
+                        Items.Add(new MainDetailModel(await Xameteo.Apixu.Current(apixuAdapter), apixuAdapter));
                     }
                 }
                 catch (Exception exception)
@@ -147,7 +147,7 @@ namespace Xameteo.Views
         {
             if (await Xameteo.Dialogs.PromptYesNo(Resources.Remove_Title, string.Format(Resources.Remove_Message, model.Weather.Location)))
             {
-                if (Xameteo.MyPlaces.Remove(model.Adapter))
+                if (Xameteo.Places.Remove(model.Adapter))
                 {
                     Items.Remove(model);
                     Xameteo.Events.Remove(this, model.Adapter);
