@@ -10,6 +10,7 @@ using Locale = Java.Util.Locale;
 
 namespace Xameteo.Droid
 {
+    /// <inheritdoc />
     /// <summary>
     /// </summary>
     public class LocaleAndroid : ILocale

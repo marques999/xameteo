@@ -3,28 +3,22 @@ using System.Runtime.InteropServices;
 
 using Android.App;
 
-// Assembly
-[assembly: AssemblyTitle("Xameteo.Android")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Xameteo.Android")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
-
-// AssemblyVersion
+[assembly: AssemblyCulture("")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("FEUP")]
+[assembly: AssemblyConfiguration("")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyTitle("Xameteo.Android")]
+[assembly: AssemblyProduct("Xameteo.Android")]
+[assembly: AssemblyDescription("Xameteo.Android")]
 
-// UsesPermission
 [assembly: UsesPermission(Android.Manifest.Permission.Internet)]
-[assembly: UsesPermission(Android.Manifest.Permission.WriteExternalStorage)]
-[assembly: UsesPermission(Android.Manifest.Permission.AccessCoarseLocation)]
 [assembly: UsesPermission(Android.Manifest.Permission.AccessFineLocation)]
+[assembly: UsesPermission(Android.Manifest.Permission.AccessCoarseLocation)]
+[assembly: UsesPermission(Android.Manifest.Permission.WriteExternalStorage)]
 
-// UsesFeature
 [assembly: UsesFeature("android.hardware.location", Required = false)]
 [assembly: UsesFeature("android.hardware.location.gps", Required = false)]
 [assembly: UsesFeature("android.hardware.location.network", Required = false)]

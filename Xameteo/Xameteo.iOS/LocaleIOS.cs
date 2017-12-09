@@ -10,6 +10,7 @@ using Xameteo.Globalization;
 
 namespace Xameteo.iOS
 {
+    /// <inheritdoc />
     /// <summary>
     /// </summary>
     public class LocaleIos : ILocale
@@ -56,7 +57,8 @@ namespace Xameteo.iOS
         {
             switch (systemLanguage)
             {
-            case "ms-MY": case "ms-SG":
+            case "ms-MY":
+            case "ms-SG":
                 return "ms";
             case "gsw-CH":
                 return "de-CH";

@@ -19,9 +19,6 @@ namespace Xameteo
         {
             Api = new ApixuApi(Settings.ApixuKey);
             MyPlaces = new Places(Settings.Places);
-            MyPlaces.Insert(new AirportAdapter(Airport.Instances[5]));
-            MyPlaces.Insert(new GeolocationAdapter("Valongo, Porto"));
-            MyPlaces.Insert(new CoordinatesAdapter(new Coordinates(35.6732619, 139.5703036)));
         }
 
         /// <summary>

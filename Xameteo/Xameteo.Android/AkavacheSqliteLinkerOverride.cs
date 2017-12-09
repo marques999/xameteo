@@ -17,7 +17,6 @@ namespace Xameteo.Droid
     }
 
     /// <summary>
-    /// 
     /// </summary>
     public class PreserveAttribute : Attribute
     {

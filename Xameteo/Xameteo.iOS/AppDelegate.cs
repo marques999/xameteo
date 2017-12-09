@@ -1,5 +1,5 @@
-﻿using Foundation;
-using UIKit;
+﻿using UIKit;
+using Foundation;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -7,13 +7,11 @@ using Xamarin.Forms.Platform.iOS;
 namespace Xameteo.iOS
 {
     /// <summary>
-    /// 
     /// </summary>
     [Register("AppDelegate")]
     public class AppDelegate : FormsApplicationDelegate
     {
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="app"></param>
         /// <param name="options"></param>

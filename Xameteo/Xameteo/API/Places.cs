@@ -5,6 +5,8 @@ using System.Collections.Generic;
 
 using Newtonsoft.Json;
 
+using Xameteo.Model;
+
 namespace Xameteo.API
 {
     /// <summary>
@@ -87,6 +89,9 @@ namespace Xameteo.API
         {
             try
             {
+                Insert(new AirportAdapter(Airport.Instances[5]));
+                Insert(new GeolocationAdapter("Valongo, Porto"));
+                Insert(new CoordinatesAdapter(new Coordinates(35.6732619, 139.5703036)));
                 List.AddRange(JsonConvert.DeserializeObject<IEnumerable<ApixuAdapter>>(jsonData, _settings));
             }
             catch (Exception exception)

@@ -35,7 +35,7 @@ namespace Xameteo.Views
             try
             {
                 var changePage = true;
-                var page = (Page) Activator.CreateInstance(item.TargetType);
+                var page = (Page)Activator.CreateInstance(item.TargetType);
 
                 if (page is LocationView placePage)
                 {
