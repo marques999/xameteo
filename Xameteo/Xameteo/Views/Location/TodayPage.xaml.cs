@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms.Xaml;
+﻿using Xameteo.Model;
+using Xamarin.Forms.Xaml;
+using System.Collections.Generic;
 
 namespace Xameteo.Views.Location
 {
@@ -10,9 +12,15 @@ namespace Xameteo.Views.Location
     {
         /// <summary>
         /// </summary>
-        public TodayPage()
+        public List<Hour> Hours { get; }
+
+        /// <summary>
+        /// </summary>
+        public TodayPage(ForecastDaily forecast)
         {
+            Hours = forecast.Hours;
             InitializeComponent();
+            BindingContext = this;
         }
     }
 }

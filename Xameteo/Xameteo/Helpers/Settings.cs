@@ -11,70 +11,70 @@ namespace Xameteo.Helpers
     {
         /// <summary>
         /// </summary>
-        private readonly ISettings _settingsManager = CrossSettings.Current;
+        private readonly ISettings _instance = CrossSettings.Current;
 
         /// <summary>
         /// </summary>
         public string Places
         {
-            get => _settingsManager.GetValueOrDefault("places", "[]");
-            set => _settingsManager.AddOrUpdateValue("places", value);
+            get => _instance.GetValueOrDefault("places", "[]");
+            set => _instance.AddOrUpdateValue("places", value);
         }
 
         /// <summary>
         /// </summary>
         public string ApixuKey
         {
-            get => _settingsManager.GetValueOrDefault("apixu", Xameteo.Globals.ApixuKey);
-            set => _settingsManager.AddOrUpdateValue("apixu", value);
+            get => _instance.GetValueOrDefault("apixu", Xameteo.Globals.ApixuKey);
+            set => _instance.AddOrUpdateValue("apixu", value);
         }
 
         /// <summary>
         /// </summary>
         public string GoogleKey
         {
-            get => _settingsManager.GetValueOrDefault("google", Xameteo.Globals.GoogleKey);
-            set => _settingsManager.AddOrUpdateValue("google", value);
+            get => _instance.GetValueOrDefault("google", Xameteo.Globals.GoogleKey);
+            set => _instance.AddOrUpdateValue("google", value);
         }
 
         /// <summary>
         /// </summary>
         public Distance Distance
         {
-            get => Distance.From(_settingsManager.GetValueOrDefault(nameof(Distance), 0));
-            set => _settingsManager.AddOrUpdateValue(nameof(Distance), value.Id);
+            get => Distance.From(_instance.GetValueOrDefault("distance", 0));
+            set => _instance.AddOrUpdateValue("distance", value.Id);
         }
 
         /// <summary>
         /// </summary>
         public Precipitation Precipitation
         {
-            get => Precipitation.From(_settingsManager.GetValueOrDefault(nameof(Precipitation), 0));
-            set => _settingsManager.AddOrUpdateValue(nameof(Precipitation), value.Id);
+            get => Precipitation.From(_instance.GetValueOrDefault("precipitation", 0));
+            set => _instance.AddOrUpdateValue("precipitation", value.Id);
         }
 
         /// <summary>
         /// </summary>
         public Pressure Pressure
         {
-            get => Pressure.From(_settingsManager.GetValueOrDefault(nameof(Pressure), 0));
-            set => _settingsManager.AddOrUpdateValue(nameof(Pressure), value.Id);
+            get => Pressure.From(_instance.GetValueOrDefault("pressure", 0));
+            set => _instance.AddOrUpdateValue("pressure", value.Id);
         }
 
         /// <summary>
         /// </summary>
         public Temperature Temperature
         {
-            get => Temperature.From(_settingsManager.GetValueOrDefault(nameof(Temperature), 0));
-            set => _settingsManager.AddOrUpdateValue(nameof(Temperature), value.Id);
+            get => Temperature.From(_instance.GetValueOrDefault("temperature", 0));
+            set => _instance.AddOrUpdateValue("temperature", value.Id);
         }
 
         /// <summary>
         /// </summary>
         public Velocity Velocity
         {
-            get => Velocity.From(_settingsManager.GetValueOrDefault(nameof(Velocity), 0));
-            set => _settingsManager.AddOrUpdateValue(nameof(Velocity), value.Id);
+            get => Velocity.From(_instance.GetValueOrDefault("velocity", 0));
+            set => _instance.AddOrUpdateValue("velocity", value.Id);
         }
     }
 }

@@ -119,7 +119,7 @@ namespace Xameteo.Helpers
             {
                 UseBottomSheet = false,
                 Cancel = _actionSheetCancel,
-                Title = string.Format(Resources.Dialogs_SelectUnit, units[0].Type)
+                Title = string.Format(Resources.Settings_Units, units[0].Type)
             };
 
             configuration.SetCancel();

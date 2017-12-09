@@ -782,15 +782,6 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select {0} units.
-        /// </summary>
-        internal static string Dialogs_SelectUnit {
-            get {
-                return ResourceManager.GetString("Dialogs_SelectUnit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Cloud coverage.
         /// </summary>
         internal static string Forecast_Cloud {
@@ -926,7 +917,7 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to distance.
+        ///   Looks up a localized string similar to Distance.
         /// </summary>
         internal static string Group_Distance {
             get {
@@ -935,7 +926,7 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to precipitation.
+        ///   Looks up a localized string similar to Precipitation.
         /// </summary>
         internal static string Group_Precipitation {
             get {
@@ -944,7 +935,7 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to pressure.
+        ///   Looks up a localized string similar to Pressure.
         /// </summary>
         internal static string Group_Pressure {
             get {
@@ -953,7 +944,7 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to temperature.
+        ///   Looks up a localized string similar to Temperature.
         /// </summary>
         internal static string Group_Temperature {
             get {
@@ -962,7 +953,7 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to velocity.
+        ///   Looks up a localized string similar to Velocity.
         /// </summary>
         internal static string Group_Velocity {
             get {
@@ -1052,15 +1043,6 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Distance Units.
-        /// </summary>
-        internal static string Settings_Distance {
-            get {
-                return ResourceManager.GetString("Settings_Distance", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Geocoding Key.
         /// </summary>
         internal static string Settings_GoogleKey {
@@ -1070,38 +1052,11 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Precipitation Units.
+        ///   Looks up a localized string similar to {0} units.
         /// </summary>
-        internal static string Settings_Precipitation {
+        internal static string Settings_Units {
             get {
-                return ResourceManager.GetString("Settings_Precipitation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Pressure Units.
-        /// </summary>
-        internal static string Settings_Pressure {
-            get {
-                return ResourceManager.GetString("Settings_Pressure", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Temperature Units.
-        /// </summary>
-        internal static string Settings_Temperature {
-            get {
-                return ResourceManager.GetString("Settings_Temperature", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Velocity Units.
-        /// </summary>
-        internal static string Settings_Velocity {
-            get {
-                return ResourceManager.GetString("Settings_Velocity", resourceCulture);
+                return ResourceManager.GetString("Settings_Units", resourceCulture);
             }
         }
         
@@ -1444,6 +1399,24 @@ namespace Xameteo.Resx {
         internal static string Tab_Today {
             get {
                 return ResourceManager.GetString("Tab_Today", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Locations.
+        /// </summary>
+        internal static string Title_Locations {
+            get {
+                return ResourceManager.GetString("Title_Locations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preferences.
+        /// </summary>
+        internal static string Title_Preferences {
+            get {
+                return ResourceManager.GetString("Title_Preferences", resourceCulture);
             }
         }
         

@@ -25,7 +25,7 @@ namespace Xameteo.Views.Settings
         {
             if (args.Item is SettingsModel item)
             {
-                item.Handler?.Invoke(item);
+                item.Handler(item);
             }
 
             ((ListView)sender).SelectedItem = null;

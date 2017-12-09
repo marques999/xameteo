@@ -465,9 +465,6 @@
   <data name="Units_Torr" xml:space="preserve">
     <value>Torr (mmHg)</value>
   </data>
-  <data name="Dialogs_SelectUnit" xml:space="preserve">
-    <value>Select {0} units</value>
-  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
@@ -478,19 +475,19 @@
     <value>Please wait...</value>
   </data>
   <data name="Group_Distance" xml:space="preserve">
-    <value>distance</value>
+    <value>Distance</value>
   </data>
   <data name="Group_Precipitation" xml:space="preserve">
-    <value>precipitation</value>
+    <value>Precipitation</value>
   </data>
   <data name="Group_Pressure" xml:space="preserve">
-    <value>pressure</value>
+    <value>Pressure</value>
   </data>
   <data name="Group_Temperature" xml:space="preserve">
-    <value>temperature</value>
+    <value>Temperature</value>
   </data>
   <data name="Group_Velocity" xml:space="preserve">
-    <value>velocity</value>
+    <value>Velocity</value>
   </data>
   <data name="Compass_E" xml:space="preserve">
     <value>East</value>
@@ -612,22 +609,16 @@
   <data name="Settings_ApixuKey" xml:space="preserve">
     <value>Apixu Key</value>
   </data>
-  <data name="Settings_Distance" xml:space="preserve">
-    <value>Distance Units</value>
+  <data name="Settings_Units" xml:space="preserve">
+    <value>{0} units</value>
   </data>
   <data name="Settings_GoogleKey" xml:space="preserve">
     <value>Geocoding Key</value>
   </data>
-  <data name="Settings_Precipitation" xml:space="preserve">
-    <value>Precipitation Units</value>
+  <data name="Title_Preferences" xml:space="preserve">
+    <value>Preferences</value>
   </data>
-  <data name="Settings_Pressure" xml:space="preserve">
-    <value>Pressure Units</value>
-  </data>
-  <data name="Settings_Temperature" xml:space="preserve">
-    <value>Temperature Units</value>
-  </data>
-  <data name="Settings_Velocity" xml:space="preserve">
-    <value>Velocity Units</value>
+  <data name="Title_Locations" xml:space="preserve">
+    <value>My Locations</value>
   </data>
 </root>

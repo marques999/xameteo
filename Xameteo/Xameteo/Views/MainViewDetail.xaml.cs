@@ -20,7 +20,7 @@ namespace Xameteo.Views
         public MainViewDetail()
         {
             InitializeComponent();
-            MyListView.ItemsSource = Items;
+            BindingContext = this;
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace Xameteo.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
+        private async void HandleClick(object sender, ItemTappedEventArgs e)
         {
             if (e.Item is ApixuCurrent weather)
             {

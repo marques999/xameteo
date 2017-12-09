@@ -13,6 +13,7 @@ namespace Xameteo.Views.Location
         public HistoryPage()
         {
             InitializeComponent();
+            BindingContext = this;
         }
     }
 }

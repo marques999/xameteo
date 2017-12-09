@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Globalization;
 
 using Xamarin.Forms;
+
 using Xameteo.Model;
 using Xameteo.Resx;
 
@@ -27,7 +28,7 @@ namespace Xameteo.Globalization
 
         /// <summary>
         /// </summary>
-        private readonly CultureInfo _cultureInfo = DependencyService.Get<ILocale>().GetCurrentCultureInfo();
+        private readonly CultureInfo _culture = DependencyService.Get<ILocale>().GetCurrentCultureInfo();
 
         /// <summary>
         /// </summary>
@@ -35,7 +36,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public string Get(string key)
         {
-            return _resources.GetString(key, _cultureInfo) ?? key;
+            return _resources.GetString(key, _culture) ?? key;
         }
 
         /// <summary>
@@ -45,7 +46,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public string GetOrDefault(string key, string fallback)
         {
-            return _resources.GetString(key, _cultureInfo) ?? fallback;
+            return _resources.GetString(key, _culture) ?? fallback;
         }
 
         /// <summary>
@@ -70,43 +71,43 @@ namespace Xameteo.Globalization
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public string ShortTime(DateTime value) => value.ToString("t", _cultureInfo.DateTimeFormat);
+        public string ShortTime(DateTime value) => value.ToString("t", _culture.DateTimeFormat);
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public string ShortDate(DateTime value) => value.ToString("d", _cultureInfo.DateTimeFormat);
+        public string ShortDate(DateTime value) => value.ToString("d", _culture.DateTimeFormat);
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public string LongDate(DateTime value) => value.ToString("D", _cultureInfo.DateTimeFormat);
+        public string LongDate(DateTime value) => value.ToString("D", _culture.DateTimeFormat);
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public string ShortDateTime(DateTime value) => value.ToString("g", _cultureInfo.DateTimeFormat);
+        public string ShortDateTime(DateTime value) => value.ToString("g", _culture.DateTimeFormat);
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public string LongDateTime(DateTime value) => value.ToString("f", _cultureInfo.DateTimeFormat);
+        public string LongDateTime(DateTime value) => value.ToString("f", _culture.DateTimeFormat);
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public string Percentage(double value) => (value / 100).ToString("P0", _cultureInfo.NumberFormat);
+        public string Percentage(double value) => (value / 100).ToString("P0", _culture.NumberFormat);
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public string FixedPoint(double value) => value.ToString("N2", _cultureInfo.NumberFormat);
+        public string FixedPoint(double value) => value.ToString("N2", _culture.NumberFormat);
 
         /// <summary>
         /// </summary>
@@ -114,7 +115,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public string Degrees(double value)
         {
-            return value.ToString("N0", _cultureInfo.NumberFormat) + " " + Resources.Symbol_Degrees;
+            return value.ToString("N0", _culture.NumberFormat) + " " + Resources.Symbol_Degrees;
         }
 
         /// <summary>
@@ -123,7 +124,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public string GetCondition(int condition)
         {
-            return _resources.GetString("Condition_" + condition, _cultureInfo) ?? condition.ToString();
+            return _resources.GetString("Condition_" + condition, _culture) ?? condition.ToString();
         }
     }
 }

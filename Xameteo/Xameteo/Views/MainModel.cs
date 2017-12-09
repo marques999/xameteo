@@ -16,13 +16,6 @@ namespace Xameteo.Views
 
         /// <summary>
         /// </summary>
-        public Type TargetType { get; set; }
-
-        /// <summary>
-        /// </summary>
-        public MainModel()
-        {
-            TargetType = typeof(MainViewDetail);
-        }
+        public Type TargetType { get; set; } = typeof(MainViewDetail);
     }
 }

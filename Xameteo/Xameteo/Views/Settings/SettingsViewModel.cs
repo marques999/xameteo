@@ -1,6 +1,8 @@
-﻿using Xameteo.Units;
-using Acr.UserDialogs;
+﻿using System;
 using System.Collections.ObjectModel;
+
+using Xameteo.Units;
+using Acr.UserDialogs;
 
 namespace Xameteo.Views.Settings
 {
@@ -10,31 +12,34 @@ namespace Xameteo.Views.Settings
     {
         /// <summary>
         /// </summary>
-        public SettingsViewModel()
-        {
-            Items.Add(new SettingsModel(Resx.Resources.Settings_ApixuKey, Xameteo.Settings.ApixuKey, UpdateApixuKey));
-            Items.Add(new SettingsModel(Resx.Resources.Settings_GoogleKey, Xameteo.Settings.GoogleKey, UpdateGoogleKey));
-            Items.Add(new SettingsModel(Resx.Resources.Settings_Distance, Xameteo.Settings.Distance.ToString(), UpdateDistance));
-            Items.Add(new SettingsModel(Resx.Resources.Settings_Precipitation, Xameteo.Settings.Precipitation.ToString(), UpdatePrecipitation));
-            Items.Add(new SettingsModel(Resx.Resources.Settings_Pressure, Xameteo.Settings.Pressure.ToString(), UpdatePressure));
-            Items.Add(new SettingsModel(Resx.Resources.Settings_Temperature, Xameteo.Settings.Temperature.ToString(), UpdateTemperature));
-            Items.Add(new SettingsModel(Resx.Resources.Settings_Velocity, Xameteo.Settings.Velocity.ToString(), UpdateVelocity));
-        }
-
-        /// <summary>
-        /// </summary>
-        public ObservableCollection<SettingsModel> Items
-        {
-            get;
-        } = new ObservableCollection<SettingsModel>();
+        public ObservableCollection<SettingsModel> Items { get; } = new ObservableCollection<SettingsModel>();
 
         /// <summary>
         /// </summary>
         /// <param name="result"></param>
         /// <returns></returns>
-        private static bool ValidateResult(PromptResult result)
+        private static bool ValidateResult(PromptResult result) => result.Ok && result.Text.Trim().Length > 0;
+
+        /// <summary>
+        /// </summary>
+        /// <param name="unit"></param>
+        /// <param name="callback"></param>
+        private void InsertUnit(Unit unit, Action<SettingsModel> callback)
         {
-            return result.Ok && result.Text.Trim().Length > 0;
+            Items.Add(new SettingsModel(string.Format(Resx.Resources.Settings_Units, unit.Type), unit.ToString(), callback));
+        }
+
+        /// <summary>
+        /// </summary>
+        public SettingsViewModel()
+        {
+            Items.Add(new SettingsModel(Resx.Resources.Settings_ApixuKey, Xameteo.Settings.ApixuKey, UpdateApixuKey));
+            Items.Add(new SettingsModel(Resx.Resources.Settings_GoogleKey, Xameteo.Settings.GoogleKey, UpdateGoogleKey));
+            InsertUnit(Xameteo.Settings.Distance, UpdateDistance);
+            InsertUnit(Xameteo.Settings.Precipitation, UpdatePrecipitation);
+            InsertUnit(Xameteo.Settings.Pressure, UpdatePressure);
+            InsertUnit(Xameteo.Settings.Temperature, UpdateTemperature);
+            InsertUnit(Xameteo.Settings.Velocity, UpdateVelocity);
         }
 
         /// <summary>

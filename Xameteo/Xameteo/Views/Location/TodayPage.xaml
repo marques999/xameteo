@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Xameteo.Views.Location.TodayPage">
+             xmlns:globalization="clr-namespace:Xameteo.Globalization;assembly=Xameteo"
+             x:Class="Xameteo.Views.Location.TodayPage"
+             Title="{globalization:Translate Tab_Today}">
   <ContentPage.Content>
     <ScrollView>
       <Label Text="HOURLY DETAILS"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+             VerticalOptions="CenterAndExpand"
+             HorizontalOptions="CenterAndExpand" />
       <StackLayout Orientation="Horizontal">
         <Label Text="Time"
                VerticalOptions="CenterAndExpand" 
@@ -18,8 +20,7 @@
                VerticalOptions="CenterAndExpand" 
                HorizontalOptions="CenterAndExpand" />
       </StackLayout>
-      <ListView x:Name="HourlyForecast"
-                ItemsSource="{Binding Hourly}"
+      <ListView ItemsSource="{Binding Hours}"
                 CachingStrategy="RecycleElement">
         <ListView.ItemTemplate>
           <DataTemplate>

@@ -14,10 +14,6 @@ namespace Xameteo.Views
     {
         /// <summary>
         /// </summary>
-        public ObservableCollection<MainModel> MenuItems { get; set; }
-
-        /// <summary>
-        /// </summary>
         public MainViewModel()
         {
             var i = 0;
@@ -50,6 +46,11 @@ namespace Xameteo.Views
             });
         }
 
+        /// <summary>
+        /// </summary>
+        public ObservableCollection<MainModel> MenuItems { get; set; }
+
+        /// <inheritdoc />
         /// <summary>
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;

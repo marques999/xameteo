@@ -94,7 +94,6 @@
     <Compile Include="Model\Location.cs" />
     <Compile Include="API\Places.cs" />
     <Compile Include="Units\Unit.cs" />
-    <Compile Include="Views\Location\LocationViewModel.cs" />
     <Compile Include="Views\Location\HistoryPage.xaml.cs">
       <DependentUpon>HistoryPage.xaml</DependentUpon>
     </Compile>
@@ -116,7 +115,6 @@
     </Compile>
     <Compile Include="Views\MainModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Location\TodayViewModel.cs" />
     <Compile Include="Views\MainViewModel.cs" />
     <Compile Include="Views\Settings\SettingsModel.cs" />
     <Compile Include="Views\Settings\SettingsView.xaml.cs">

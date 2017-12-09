@@ -32,38 +32,44 @@ namespace Xameteo.Views
                 return;
             }
 
-            var changePage = true;
-            var page = (Page)Activator.CreateInstance(item.TargetType);
-
-            if (page is LocationView placePage)
+            try
             {
-                try
-                {
-                    var forecast = await Xameteo.MyPlaces.Forecast(item.Id);
+                var changePage = true;
+                var page = (Page) Activator.CreateInstance(item.TargetType);
 
-                    if (forecast == null)
+                if (page is LocationView placePage)
+                {
+                    try
+                    {
+                        var forecast = await Xameteo.MyPlaces.Forecast(item.Id);
+
+                        if (forecast == null)
+                        {
+                            changePage = false;
+                        }
+                        else
+                        {
+                            placePage.Initialize(forecast);
+                        }
+                    }
+                    catch (Exception exception)
                     {
                         changePage = false;
-                    }
-                    else
-                    {
-                        placePage.Title = forecast.Location.ToString();
-                        placePage.Initialize(forecast);
+                        await Xameteo.Dialogs.Alert(exception);
                     }
                 }
-                catch (Exception exception)
+
+                IsPresented = false;
+                MasterPage.ListView.SelectedItem = null;
+
+                if (changePage)
                 {
-                    changePage = false;
-                    await Xameteo.Dialogs.Alert(exception);
+                    Detail = new NavigationPage(page);
                 }
             }
-
-            IsPresented = false;
-            MasterPage.ListView.SelectedItem = null;
-
-            if (changePage)
+            catch (Exception exception)
             {
-                Detail = new NavigationPage(page);
+                await Xameteo.Dialogs.Alert(exception);
             }
         }
     }

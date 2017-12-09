@@ -1,4 +1,7 @@
-﻿using Xamarin.Forms.Xaml;
+﻿using System.Collections.Generic;
+
+using Xameteo.Model;
+using Xamarin.Forms.Xaml;
 
 namespace Xameteo.Views.Location
 {
@@ -10,9 +13,15 @@ namespace Xameteo.Views.Location
     {
         /// <summary>
         /// </summary>
-        public ForecastPage()
+        public List<ForecastDaily> Days { get; }
+
+        /// <summary>
+        /// </summary>
+        public ForecastPage(Forecast forecast)
         {
             InitializeComponent();
+            Days = forecast.Days;
+            BindingContext = this;
         }
     }
 }

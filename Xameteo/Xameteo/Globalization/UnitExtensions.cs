@@ -13,14 +13,14 @@ namespace Xameteo.Globalization
     {
         /// <summary>
         /// </summary>
-        private readonly Unit _unitInstance;
+        private readonly Unit _instance;
 
         /// <summary>
         /// </summary>
-        /// <param name="unitInstance"></param>
-        protected AbstractUnitConverter(T unitInstance)
+        /// <param name="instance"></param>
+        protected AbstractUnitConverter(T instance)
         {
-            _unitInstance = unitInstance;
+            _instance = instance;
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return value is double temperature ? Prefix(_unitInstance.Convert(temperature), parameter) : "N/A";
+            return value is double temperature ? Prefix(_instance.Convert(temperature), parameter) : "N/A";
         }
 
         /// <inheritdoc />

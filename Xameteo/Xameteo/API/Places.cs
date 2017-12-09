@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
@@ -12,11 +13,7 @@ namespace Xameteo.API
     {
         /// <summary>
         /// </summary>
-        public List<ApixuAdapter> List { get; }
-
-        /// <summary>
-        /// </summary>
-        private readonly HashSet<ApixuAdapter> _duplicates = new HashSet<ApixuAdapter>();
+        public List<ApixuAdapter> List { get; } = new List<ApixuAdapter>();
 
         /// <summary>
         /// </summary>
@@ -24,15 +21,6 @@ namespace Xameteo.API
         {
             TypeNameHandling = TypeNameHandling.Auto
         };
-
-        /// <summary>
-        /// </summary>
-        /// <param name="index"></param>
-        /// <returns></returns>
-        public Task<ApixuCurrent> Current(int index)
-        {
-            return index < List.Count ? Xameteo.Api.Current(List[index]) : null;
-        }
 
         /// <summary>
         /// </summary>
@@ -49,14 +37,15 @@ namespace Xameteo.API
         /// <returns></returns>
         public bool Insert(ApixuAdapter adapter)
         {
-            var operationResult = _duplicates.Add(adapter);
+            var notFound = List.FirstOrDefault(it => it.Parameters == adapter.Parameters) == null;
 
-            if (operationResult)
+            if (notFound)
             {
                 List.Add(adapter);
+                SerializePlaces();
             }
 
-            return operationResult;
+            return notFound;
         }
 
         /// <summary>
@@ -65,14 +54,14 @@ namespace Xameteo.API
         /// <returns></returns>
         public bool Remove(ApixuAdapter adapter)
         {
-            var operationResult = _duplicates.Remove(adapter);
+            var itemFound = List.Remove(adapter);
 
-            if (operationResult)
+            if (itemFound)
             {
-                List.Remove(adapter);
+                SerializePlaces();
             }
 
-            return operationResult;
+            return itemFound;
         }
 
         /// <summary>
@@ -80,15 +69,15 @@ namespace Xameteo.API
         /// <returns></returns>
         public IEnumerable<Task<ApixuCurrent>> Current()
         {
-            return _duplicates.Select(it => Xameteo.Api.Current(it));
+            return List.Select(it => Xameteo.Api.Current(it));
         }
 
         /// <summary>
         /// </summary>
         /// <returns></returns>
-        public void Save()
+        private void SerializePlaces()
         {
-            Xameteo.Settings.Places = JsonConvert.SerializeObject(_duplicates.ToList(), Formatting.None, _settings);
+            Xameteo.Settings.Places = JsonConvert.SerializeObject(List, Formatting.None, _settings);
         }
 
         /// <summary>
@@ -96,8 +85,14 @@ namespace Xameteo.API
         /// <param name="jsonData"></param>
         public Places(string jsonData)
         {
-            _duplicates.UnionWith(JsonConvert.DeserializeObject<IEnumerable<ApixuAdapter>>(jsonData, _settings));
-            List = new List<ApixuAdapter>(_duplicates);
+            try
+            {
+                List.AddRange(JsonConvert.DeserializeObject<IEnumerable<ApixuAdapter>>(jsonData, _settings));
+            }
+            catch (Exception exception)
+            {
+                Xameteo.Dialogs.Alert(exception);
+            }
         }
     }
 }

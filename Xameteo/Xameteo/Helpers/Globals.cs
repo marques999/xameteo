@@ -8,7 +8,7 @@ namespace Xameteo.Helpers
     {
         /// <summary>
         /// </summary>
-        public TimeSpan AsyncTimeout { get; } = TimeSpan.FromSeconds(10);
+        public TimeSpan AsyncTimeout { get; } = TimeSpan.FromSeconds(5);
 
         /// <summary>
         /// </summary>
