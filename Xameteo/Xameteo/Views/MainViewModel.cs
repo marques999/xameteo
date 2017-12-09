@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Collections.ObjectModel;
 using System.Runtime.CompilerServices;
-
+using Xamarin.Forms.Internals;
+using Xameteo.API;
 using Xameteo.Views.Location;
 using Xameteo.Views.Settings;
 
@@ -12,48 +13,52 @@ namespace Xameteo.Views
     /// </summary>
     internal class MainViewModel : INotifyPropertyChanged
     {
-        /// <summary>
-        /// </summary>
-        public MainViewModel()
-        {
-            var i = 0;
-            var locations = Xameteo.MyPlaces.List;
-
-            MenuItems = new ObservableCollection<MainModel>();
-
-            for (; i < locations.Count; i++)
-            {
-                MenuItems.Add(new MainModel
-                {
-                    Id = i,
-                    Title = locations[i].Parameters,
-                    TargetType = typeof(LocationView)
-                });
-            }
-
-            MenuItems.Add(new MainModel
-            {
-                Id = i++,
-                Title = "Settings",
-                TargetType = typeof(SettingsView)
-            });
-
-            MenuItems.Add(new MainModel
-            {
-                Id = i,
-                Title = "Home,",
-                TargetType = typeof(MainViewDetail)
-            });
-        }
-
-        /// <summary>
-        /// </summary>
-        public ObservableCollection<MainModel> MenuItems { get; set; }
-
         /// <inheritdoc />
         /// <summary>
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// </summary>
+        public ObservableCollection<MainModel> MenuItems
+        {
+            get;
+            set;
+        } = new ObservableCollection<MainModel>();
+
+        /// <summary>
+        /// </summary>
+        /// <param name="adapter"></param>
+        public void InsertLocation(ApixuAdapter adapter)
+        {
+            MenuItems.Add(new MainModel
+            {
+                Location = adapter,
+                Title = adapter.Parameters,
+                TargetType = typeof(LocationView)
+            });
+        }
+        
+        /// <summary>
+        /// </summary>
+        public MainViewModel()
+        {
+            MenuItems.Add(new MainModel
+            {
+                Location = null,
+                Title = "Home",
+                TargetType = typeof(MainViewDetail)
+            });
+
+            MenuItems.Add(new MainModel
+            {
+                Location = null,
+                Title = "Settings",
+                TargetType = typeof(SettingsView)
+            });
+
+            Xameteo.MyPlaces.List.ForEach(InsertLocation);
+        }
 
         /// <summary>
         /// </summary>

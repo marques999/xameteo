@@ -1,4 +1,5 @@
 ﻿using System;
+using Xameteo.API;
 
 namespace Xameteo.Views
 {
@@ -8,7 +9,7 @@ namespace Xameteo.Views
     {
         /// <summary>
         /// </summary>
-        public int Id { get; set; }
+        public ApixuAdapter Location { get; set; }
 
         /// <summary>
         /// </summary>

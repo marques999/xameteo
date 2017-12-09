@@ -30,6 +30,10 @@ namespace Xameteo
 
         /// <summary>
         /// </summary>
+        public static Events Events { get; } = new Events();
+
+        /// <summary>
+        /// </summary>
         public static Dialogs Dialogs { get; } = new Dialogs();
 
         /// <summary>

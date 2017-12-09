@@ -1,13 +1,14 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using Xameteo.Helpers;
+
 namespace Xameteo.Views
 {
-    /// <inheritdoc />
     /// <summary>
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainViewMaster
+    public partial class MainViewMaster : IEventObject
     {
         /// <summary>
         /// </summary>
@@ -18,8 +19,17 @@ namespace Xameteo.Views
         public MainViewMaster()
         {
             InitializeComponent();
-            BindingContext = new MainViewModel();
+            InitializeView(new MainViewModel());
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="viewModel"></param>
+        private void InitializeView(MainViewModel viewModel)
+        {
+            BindingContext = viewModel;
             ListView = MenuItemsListView;
+            Xameteo.Events.SubscribeInsertLocation(this, (sender, args) => viewModel.InsertLocation(args));
         }
     }
 }

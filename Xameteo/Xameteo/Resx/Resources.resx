@@ -621,16 +621,16 @@
   <data name="Title_Locations" xml:space="preserve">
     <value>My Locations</value>
   </data>
-  <data name="Prompt_Remove_Message" xml:space="preserve">
+  <data name="Remove_Message" xml:space="preserve">
     <value>Are you sure you want to remove "{0}" from your locations?</value>
   </data>
-  <data name="Prompt_Remove_Title" xml:space="preserve">
+  <data name="Remove_Title" xml:space="preserve">
     <value>Remove location</value>
   </data>
-  <data name="Prompt_Geolocation_Message" xml:space="preserve">
+  <data name="Geolocation_Message" xml:space="preserve">
     <value>Please enter your address and/or city on the input box below.</value>
   </data>
-  <data name="Prompt_Geolocation_Title" xml:space="preserve">
+  <data name="Geolocation_Title" xml:space="preserve">
     <value>Geolocation</value>
   </data>
   <data name="Source_Airport" xml:space="preserve">
@@ -642,7 +642,19 @@
   <data name="Source_Geolocation" xml:space="preserve">
     <value>Geolocation</value>
   </data>
-  <data name="Source_Prompt" xml:space="preserve">
+  <data name="Prompt_Source" xml:space="preserve">
     <value>Choose location source</value>
+  </data>
+  <data name="Geolocation_Error" xml:space="preserve">
+    <value>The remote server returned an unexpected response "{0}", expected "OK"...</value>
+  </data>
+  <data name="Geolocation_Multiple" xml:space="preserve">
+    <value>Multiple locations found</value>
+  </data>
+  <data name="Geolocation_Zero" xml:space="preserve">
+    <value>Geolocation query returned zero results!</value>
+  </data>
+  <data name="Prompt_Airport" xml:space="preserve">
+    <value>Select an airport</value>
   </data>
 </root>

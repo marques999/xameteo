@@ -7,13 +7,13 @@
   <StackLayout Orientation="Vertical">
     <Button Text="Insert Location" HorizontalOptions="CenterAndExpand" Clicked="InsertLocation"></Button>
     <ListView ItemsSource="{Binding Items}"
-            ItemTapped="HandleClick"
+            ItemTapped="ListItemClicked"
             CachingStrategy="RecycleElement">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
             <StackLayout Orientation="Horizontal">
-              <Button Text="Delete" Clicked="Button_OnClicked" CommandParameter="{Binding .}"></Button>
+              <Button Text="Delete" Clicked="ButtonClicked" CommandParameter="{Binding .}"></Button>
               <StackLayout Orientation="Vertical">
                 <Label Text="{Binding Weather.Location.Name}"
                        Style="{DynamicResource ListItemTextStyle}" />

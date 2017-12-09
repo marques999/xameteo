@@ -27,7 +27,7 @@ namespace Xameteo.Units
         /// </summary>
         /// <param name="settings"></param>
         public bool Save(ISettings settings) => settings.AddOrUpdateValue("velocity", Id);
-        
+
         /// <summary>
         /// </summary>
         /// <param name="settings"></param>
