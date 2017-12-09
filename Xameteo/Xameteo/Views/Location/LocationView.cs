@@ -1,4 +1,5 @@
-﻿using Xameteo.API;
+﻿using System;
+using Xameteo.API;
 using Xamarin.Forms;
 
 namespace Xameteo.Views.Location
@@ -8,26 +9,42 @@ namespace Xameteo.Views.Location
     /// </summary>
     public class LocationView : TabbedPage
     {
+        public LocationView()
+        {
+            
+        }
+
+        public LocationView(ApixuForecast apixuForecast)
+        {
+            Initialize(apixuForecast);
+        }
         /// <summary>
         /// </summary>
-        public void Initialize(ApixuForecast apixuForecast)
+        public async void Initialize(ApixuForecast apixuForecast)
         {
-            Title = apixuForecast.Location.ToString();
-            Children.Add(new CurrentlyPage(apixuForecast));
-
-            var days = apixuForecast.Forecast.Days;
-
-            if (days.Count > 0)
+            try
             {
-                Children.Add(new TodayPage(apixuForecast.Forecast.Days[0]));
+                Title = apixuForecast.Location.ToString();
+                Children.Add(new CurrentlyPage(apixuForecast));
 
-                if (days.Count > 1)
+                var days = apixuForecast.Forecast.Days;
+
+                if (days.Count > 0)
                 {
-                    Children.Add(new ForecastPage(apixuForecast.Forecast));
-                }
-            }
+                    Children.Add(new TodayPage(apixuForecast.Forecast.Days[0]));
 
-            Children.Add(new HistoryPage());
+                    if (days.Count > 1)
+                    {
+                        Children.Add(new ForecastPage(apixuForecast.Forecast));
+                    }
+                }
+
+                Children.Add(new HistoryPage());
+            }
+            catch (Exception exception)
+            {
+                await Xameteo.Dialogs.Alert(exception);
+            }
         }
     }
 }

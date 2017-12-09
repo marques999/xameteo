@@ -1034,6 +1034,42 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please enter your address and/or city on the input box below..
+        /// </summary>
+        internal static string Prompt_Geolocation_Message {
+            get {
+                return ResourceManager.GetString("Prompt_Geolocation_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geolocation.
+        /// </summary>
+        internal static string Prompt_Geolocation_Title {
+            get {
+                return ResourceManager.GetString("Prompt_Geolocation_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to remove &quot;{0}&quot; from your locations?.
+        /// </summary>
+        internal static string Prompt_Remove_Message {
+            get {
+                return ResourceManager.GetString("Prompt_Remove_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove location.
+        /// </summary>
+        internal static string Prompt_Remove_Title {
+            get {
+                return ResourceManager.GetString("Prompt_Remove_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apixu Key.
         /// </summary>
         internal static string Settings_ApixuKey {
@@ -1057,6 +1093,42 @@ namespace Xameteo.Resx {
         internal static string Settings_Units {
             get {
                 return ResourceManager.GetString("Settings_Units", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Airports.
+        /// </summary>
+        internal static string Source_Airport {
+            get {
+                return ResourceManager.GetString("Source_Airport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Device.
+        /// </summary>
+        internal static string Source_Device {
+            get {
+                return ResourceManager.GetString("Source_Device", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geolocation.
+        /// </summary>
+        internal static string Source_Geolocation {
+            get {
+                return ResourceManager.GetString("Source_Geolocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose location source.
+        /// </summary>
+        internal static string Source_Prompt {
+            get {
+                return ResourceManager.GetString("Source_Prompt", resourceCulture);
             }
         }
         

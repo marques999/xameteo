@@ -621,4 +621,28 @@
   <data name="Title_Preferences" xml:space="preserve">
     <value>Preferences</value>
   </data>
+  <data name="Prompt_Remove_Message" xml:space="preserve">
+    <value>Tem a certeza que pretende apagar "{0}" das suas localizações?</value>
+  </data>
+  <data name="Prompt_Remove_Title" xml:space="preserve">
+    <value>Apagar localização</value>
+  </data>
+  <data name="Prompt_Geolocation_Message" xml:space="preserve">
+    <value>Por favor introduza a sua morada e/ou localidade na caixa de entrada de texto abaixo.</value>
+  </data>
+  <data name="Prompt_Geolocation_Title" xml:space="preserve">
+    <value>Geolocalização</value>
+  </data>
+  <data name="Source_Airport" xml:space="preserve">
+    <value>Aeroportos</value>
+  </data>
+  <data name="Source_Device" xml:space="preserve">
+    <value>Dispositivo</value>
+  </data>
+  <data name="Source_Geolocation" xml:space="preserve">
+    <value>Geolocalização</value>
+  </data>
+  <data name="Source_Prompt" xml:space="preserve">
+    <value>Escolha uma fonte de localização</value>
+  </data>
 </root>

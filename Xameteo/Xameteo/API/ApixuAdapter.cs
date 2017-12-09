@@ -9,20 +9,12 @@ namespace Xameteo.API
 {
     /// <summary>
     /// </summary>
-    public abstract class ApixuAdapter
+    public class ApixuAdapter
     {
         /// <summary>
         /// </summary>
         [JsonProperty("parameters")]
         public string Parameters { get; set; }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="parameters"></param>
-        protected ApixuAdapter(string parameters)
-        {
-            Parameters = parameters;
-        }
 
         /// <summary>
         /// </summary>
@@ -39,8 +31,9 @@ namespace Xameteo.API
         /// <summary>
         /// </summary>
         /// <param name="airport"></param>
-        public AirportAdapter(Airport airport) : base("iata:" + airport.Code)
+        public AirportAdapter(Airport airport)
         {
+            Parameters = "iata:" + airport.Code;
         }
     }
 
@@ -53,8 +46,9 @@ namespace Xameteo.API
         /// <summary>
         /// </summary>
         /// <param name="coordinates"></param>
-        public CoordinatesAdapter(Coordinates coordinates) : base(coordinates.Latitude.ToString(CultureInfo.InvariantCulture) + "," + coordinates.Longitude.ToString(CultureInfo.InvariantCulture))
+        public CoordinatesAdapter(Coordinates coordinates)
         {
+            Parameters = coordinates.Latitude.ToString(CultureInfo.InvariantCulture) + "," + coordinates.Longitude.ToString(CultureInfo.InvariantCulture);
         }
     }
 
@@ -67,8 +61,9 @@ namespace Xameteo.API
         /// <summary>
         /// </summary>
         /// <param name="query"></param>
-        public GeolocationAdapter(string query) : base(WebUtility.UrlEncode(query))
+        public GeolocationAdapter(string query)
         {
+            Parameters = WebUtility.UrlEncode(query);
         }
     }
 }

@@ -1,8 +1,7 @@
 ﻿using System;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+using Xameteo.API;
 using Xameteo.Views.Location;
 
 namespace Xameteo.Views
@@ -19,6 +18,28 @@ namespace Xameteo.Views
         {
             InitializeComponent();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
+
+            MessagingCenter.Subscribe<ContentPage, ApixuAdapter>(this, "insert_location", async (sender, args) =>
+            {          
+                var forecast = await Xameteo.Api.Forecast(args, 15);
+
+                if (forecast != null)
+                {
+                    Detail = new NavigationPage(new LocationView(forecast));
+                }
+
+                Xameteo.MyPlaces.Insert(args);
+            });
+
+            MessagingCenter.Subscribe<ContentPage, ApixuAdapter>(this, "view_location", async(sender, args) =>
+            {
+                var forecast = await Xameteo.Api.Forecast(args, 15);
+
+                if (forecast != null)
+                {
+                    Detail = new NavigationPage(new LocationView(forecast));
+                }
+            });
         }
 
         /// <summary>
@@ -32,44 +53,37 @@ namespace Xameteo.Views
                 return;
             }
 
-            try
+            var changePage = false;
+            var page = (Page) Activator.CreateInstance(item.TargetType);
+
+            if (page is LocationView placePage)
             {
-                var changePage = true;
-                var page = (Page)Activator.CreateInstance(item.TargetType);
-
-                if (page is LocationView placePage)
+                try
                 {
-                    try
-                    {
-                        var forecast = await Xameteo.MyPlaces.Forecast(item.Id);
+                    var forecast = await Xameteo.MyPlaces.Forecast(item.Id);
 
-                        if (forecast == null)
-                        {
-                            changePage = false;
-                        }
-                        else
-                        {
-                            placePage.Initialize(forecast);
-                        }
-                    }
-                    catch (Exception exception)
+                    if (forecast != null)
                     {
-                        changePage = false;
-                        await Xameteo.Dialogs.Alert(exception);
+                        changePage = true;
+                        placePage.Initialize(forecast);
                     }
                 }
-
-                IsPresented = false;
-                MasterPage.ListView.SelectedItem = null;
-
-                if (changePage)
+                catch (Exception exception)
                 {
-                    Detail = new NavigationPage(page);
+                    await Xameteo.Dialogs.Alert(exception);
                 }
             }
-            catch (Exception exception)
+            else
             {
-                await Xameteo.Dialogs.Alert(exception);
+                changePage = true;
+            }
+
+            IsPresented = false;
+            MasterPage.ListView.SelectedItem = null;
+
+            if (changePage)
+            {
+                Detail = new NavigationPage(page);
             }
         }
     }

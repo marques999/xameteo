@@ -5,8 +5,6 @@ using System.Collections.Generic;
 
 using Newtonsoft.Json;
 
-using Xameteo.Model;
-
 namespace Xameteo.API
 {
     /// <summary>
@@ -16,13 +14,6 @@ namespace Xameteo.API
         /// <summary>
         /// </summary>
         public List<ApixuAdapter> List { get; } = new List<ApixuAdapter>();
-
-        /// <summary>
-        /// </summary>
-        private readonly JsonSerializerSettings _settings = new JsonSerializerSettings
-        {
-            TypeNameHandling = TypeNameHandling.Auto
-        };
 
         /// <summary>
         /// </summary>
@@ -39,15 +30,15 @@ namespace Xameteo.API
         /// <returns></returns>
         public bool Insert(ApixuAdapter adapter)
         {
-            var notFound = List.FirstOrDefault(it => it.Parameters == adapter.Parameters) == null;
-
-            if (notFound)
+            if (List.FirstOrDefault(it => it.Parameters == adapter.Parameters) != null)
             {
-                List.Add(adapter);
-                SerializePlaces();
+                return false;
             }
 
-            return notFound;
+            List.Add(adapter);
+            Xameteo.Settings.Places = JsonConvert.SerializeObject(List, Formatting.None);
+
+            return true;
         }
 
         /// <summary>
@@ -56,14 +47,16 @@ namespace Xameteo.API
         /// <returns></returns>
         public bool Remove(ApixuAdapter adapter)
         {
-            var itemFound = List.Remove(adapter);
-
-            if (itemFound)
+            if (List.Remove(adapter))
             {
-                SerializePlaces();
+                Xameteo.Settings.Places = JsonConvert.SerializeObject(List, Formatting.None);
+            }
+            else
+            {
+                return false;
             }
 
-            return itemFound;
+            return true;
         }
 
         /// <summary>
@@ -76,23 +69,12 @@ namespace Xameteo.API
 
         /// <summary>
         /// </summary>
-        /// <returns></returns>
-        private void SerializePlaces()
-        {
-            Xameteo.Settings.Places = JsonConvert.SerializeObject(List, Formatting.None, _settings);
-        }
-
-        /// <summary>
-        /// </summary>
         /// <param name="jsonData"></param>
         public Places(string jsonData)
         {
             try
             {
-                Insert(new AirportAdapter(Airport.Instances[5]));
-                Insert(new GeolocationAdapter("Valongo, Porto"));
-                Insert(new CoordinatesAdapter(new Coordinates(35.6732619, 139.5703036)));
-                List.AddRange(JsonConvert.DeserializeObject<IEnumerable<ApixuAdapter>>(jsonData, _settings));
+                List.AddRange(JsonConvert.DeserializeObject<IEnumerable<ApixuAdapter>>(jsonData));
             }
             catch (Exception exception)
             {

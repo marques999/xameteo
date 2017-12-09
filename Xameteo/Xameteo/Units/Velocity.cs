@@ -1,4 +1,5 @@
 ﻿using Xameteo.Resx;
+using Plugin.Settings.Abstractions;
 
 namespace Xameteo.Units
 {
@@ -24,9 +25,14 @@ namespace Xameteo.Units
 
         /// <summary>
         /// </summary>
-        /// <param name="index"></param>
+        /// <param name="settings"></param>
+        public bool Save(ISettings settings) => settings.AddOrUpdateValue("velocity", Id);
+        
+        /// <summary>
+        /// </summary>
+        /// <param name="settings"></param>
         /// <returns></returns>
-        public static Velocity From(int index) => index < Units.Length ? Units[index] : Units[0];
+        public static Velocity Load(ISettings settings) => Units[settings.GetValueOrDefault("velocity", 0)];
 
         /// <inheritdoc />
         /// <summary>

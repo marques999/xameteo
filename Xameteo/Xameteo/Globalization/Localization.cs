@@ -20,15 +20,11 @@ namespace Xameteo.Globalization
 
         /// <summary>
         /// </summary>
-        private static readonly Assembly Assembly = typeof(Localization).GetTypeInfo().Assembly;
-
-        /// <summary>
-        /// </summary>
-        private readonly ResourceManager _resources = new ResourceManager(ResourceId, Assembly);
-
-        /// <summary>
-        /// </summary>
         private readonly CultureInfo _culture = DependencyService.Get<ILocale>().GetCurrentCultureInfo();
+
+        /// <summary>
+        /// </summary>
+        private readonly ResourceManager _resources = new ResourceManager(ResourceId, typeof(Localization).GetTypeInfo().Assembly);
 
         /// <summary>
         /// </summary>

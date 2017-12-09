@@ -16,6 +16,11 @@ namespace Xameteo.Model
 
         /// <summary>
         /// </summary>
+        /// <returns></returns>
+        public override string ToString() => $"[{Code}] {Name}";
+
+        /// <summary>
+        /// </summary>
         public static readonly Airport[] Instances =
         {
             new Airport("FAO", Resources.Airport_FAO),

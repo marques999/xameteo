@@ -11,70 +11,76 @@ namespace Xameteo.Helpers
     {
         /// <summary>
         /// </summary>
-        private readonly ISettings _instance = CrossSettings.Current;
+        private const string PropertyPlaces = "places";
+        private const string PropertyApixuKey = "apixu";
+        private const string PropertyGoogleKey = "google";
+
+        /// <summary>
+        /// </summary>
+        private readonly ISettings _settingsManager = CrossSettings.Current;
 
         /// <summary>
         /// </summary>
         public string Places
         {
-            get => _instance.GetValueOrDefault("places", "[]");
-            set => _instance.AddOrUpdateValue("places", value);
+            get => _settingsManager.GetValueOrDefault(PropertyPlaces, "[]");
+            set => _settingsManager.AddOrUpdateValue(PropertyPlaces, value);
         }
 
         /// <summary>
         /// </summary>
         public string ApixuKey
         {
-            get => _instance.GetValueOrDefault("apixu", Xameteo.Globals.ApixuKey);
-            set => _instance.AddOrUpdateValue("apixu", value);
+            get => _settingsManager.GetValueOrDefault(PropertyApixuKey, Xameteo.Globals.ApixuKey);
+            set => _settingsManager.AddOrUpdateValue(PropertyApixuKey, value);
         }
 
         /// <summary>
         /// </summary>
         public string GoogleKey
         {
-            get => _instance.GetValueOrDefault("google", Xameteo.Globals.GoogleKey);
-            set => _instance.AddOrUpdateValue("google", value);
+            get => _settingsManager.GetValueOrDefault(PropertyGoogleKey, Xameteo.Globals.GoogleKey);
+            set => _settingsManager.AddOrUpdateValue(PropertyGoogleKey, value);
         }
 
         /// <summary>
         /// </summary>
         public Distance Distance
         {
-            get => Distance.From(_instance.GetValueOrDefault("distance", 0));
-            set => _instance.AddOrUpdateValue("distance", value.Id);
+            get => Distance.Load(_settingsManager);
+            set => value.Save(_settingsManager);
         }
 
         /// <summary>
         /// </summary>
         public Precipitation Precipitation
         {
-            get => Precipitation.From(_instance.GetValueOrDefault("precipitation", 0));
-            set => _instance.AddOrUpdateValue("precipitation", value.Id);
+            get => Precipitation.Load(_settingsManager);
+            set => value.Save(_settingsManager);
         }
 
         /// <summary>
         /// </summary>
         public Pressure Pressure
         {
-            get => Pressure.From(_instance.GetValueOrDefault("pressure", 0));
-            set => _instance.AddOrUpdateValue("pressure", value.Id);
+            get => Pressure.Load(_settingsManager);
+            set => value.Save(_settingsManager);
         }
 
         /// <summary>
         /// </summary>
         public Temperature Temperature
         {
-            get => Temperature.From(_instance.GetValueOrDefault("temperature", 0));
-            set => _instance.AddOrUpdateValue("temperature", value.Id);
+            get => Temperature.Load(_settingsManager);
+            set => value.Save(_settingsManager);
         }
 
         /// <summary>
         /// </summary>
         public Velocity Velocity
         {
-            get => Velocity.From(_instance.GetValueOrDefault("velocity", 0));
-            set => _instance.AddOrUpdateValue("velocity", value.Id);
+            get => Velocity.Load(_settingsManager);
+            set => value.Save(_settingsManager);
         }
     }
 }

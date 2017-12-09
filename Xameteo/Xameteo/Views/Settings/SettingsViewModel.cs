@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.ObjectModel;
 
-using Xameteo.Units;
 using Acr.UserDialogs;
+
+using Xameteo.Resx;
+using Xameteo.Units;
 
 namespace Xameteo.Views.Settings
 {
@@ -12,29 +15,38 @@ namespace Xameteo.Views.Settings
     {
         /// <summary>
         /// </summary>
-        public ObservableCollection<SettingsModel> Items { get; } = new ObservableCollection<SettingsModel>();
-
-        /// <summary>
-        /// </summary>
-        /// <param name="result"></param>
-        /// <returns></returns>
-        private static bool ValidateResult(PromptResult result) => result.Ok && result.Text.Trim().Length > 0;
+        public ObservableCollection<SettingsModel> Items
+        {
+            get;
+        } = new ObservableCollection<SettingsModel>();
 
         /// <summary>
         /// </summary>
         /// <param name="unit"></param>
         /// <param name="callback"></param>
-        private void InsertUnit(Unit unit, Action<SettingsModel> callback)
+        private void InsertUnit(Unit unit, Action<SettingsModel> callback) => Items.Add(
+            new SettingsModel(string.Format(Resources.Settings_Units, unit.Type), unit.ToString(), callback)
+        );
+
+        /// <summary>
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="units"></param>
+        /// <param name="generator"></param>
+        /// <returns></returns>
+        public static IDisposable SelectUnit<T>(T[] units, Action<T> generator) where T : Unit
         {
-            Items.Add(new SettingsModel(string.Format(Resx.Resources.Settings_Units, unit.Type), unit.ToString(), callback));
+            return Xameteo.Dialogs.ActionSheet(units.Select(unit =>
+                new ActionSheetOption(unit.ToString(), () => generator(unit))
+            ).ToList(), string.Format(Resources.Settings_Units, units[0].Type));
         }
 
         /// <summary>
         /// </summary>
         public SettingsViewModel()
         {
-            Items.Add(new SettingsModel(Resx.Resources.Settings_ApixuKey, Xameteo.Settings.ApixuKey, UpdateApixuKey));
-            Items.Add(new SettingsModel(Resx.Resources.Settings_GoogleKey, Xameteo.Settings.GoogleKey, UpdateGoogleKey));
+            Items.Add(new SettingsModel(Resources.Settings_ApixuKey, Xameteo.Settings.ApixuKey, UpdateApixuKey));
+            Items.Add(new SettingsModel(Resources.Settings_GoogleKey, Xameteo.Settings.GoogleKey, UpdateGoogleKey));
             InsertUnit(Xameteo.Settings.Distance, UpdateDistance);
             InsertUnit(Xameteo.Settings.Precipitation, UpdatePrecipitation);
             InsertUnit(Xameteo.Settings.Pressure, UpdatePressure);
@@ -44,11 +56,12 @@ namespace Xameteo.Views.Settings
 
         /// <summary>
         /// </summary>
+        /// <param name="source"></param>
         private static void UpdateApixuKey(SettingsModel source) => Xameteo.Dialogs.PromptApixuKey(result =>
         {
             var userChoice = result.Text.Trim();
 
-            if (ValidateResult(result))
+            if (Xameteo.Dialogs.ValidatePrompt(result))
             {
                 source.Value = userChoice;
                 Xameteo.Settings.ApixuKey = userChoice;
@@ -57,11 +70,12 @@ namespace Xameteo.Views.Settings
 
         /// <summary>
         /// </summary>
+        /// <param name="source"></param>
         public static void UpdateGoogleKey(SettingsModel source) => Xameteo.Dialogs.PromptGoogleKey(result =>
         {
             var userChoice = result.Text.Trim();
 
-            if (ValidateResult(result))
+            if (Xameteo.Dialogs.ValidatePrompt(result))
             {
                 source.Value = userChoice;
                 Xameteo.Settings.GoogleKey = userChoice;
@@ -70,7 +84,8 @@ namespace Xameteo.Views.Settings
 
         /// <summary>
         /// </summary>
-        private static void UpdateTemperature(SettingsModel source) => Xameteo.Dialogs.SelectUnit(Temperature.Units, result =>
+        /// <param name="source"></param>
+        private static void UpdateTemperature(SettingsModel source) => SelectUnit(Temperature.Units, result =>
         {
             source.Value = result.ToString();
             Xameteo.Settings.Temperature = result;
@@ -78,7 +93,8 @@ namespace Xameteo.Views.Settings
 
         /// <summary>
         /// </summary>
-        private static void UpdatePressure(SettingsModel source) => Xameteo.Dialogs.SelectUnit(Pressure.Units, result =>
+        /// <param name="source"></param>
+        private static void UpdatePressure(SettingsModel source) => SelectUnit(Pressure.Units, result =>
         {
             source.Value = result.ToString();
             Xameteo.Settings.Pressure = result;
@@ -86,7 +102,8 @@ namespace Xameteo.Views.Settings
 
         /// <summary>
         /// </summary>
-        private static void UpdatePrecipitation(SettingsModel source) => Xameteo.Dialogs.SelectUnit(Precipitation.Units, result =>
+        /// <param name="source"></param>
+        private static void UpdatePrecipitation(SettingsModel source) => SelectUnit(Precipitation.Units, result =>
         {
             source.Value = result.ToString();
             Xameteo.Settings.Precipitation = result;
@@ -94,7 +111,8 @@ namespace Xameteo.Views.Settings
 
         /// <summary>
         /// </summary>
-        private static void UpdateDistance(SettingsModel source) => Xameteo.Dialogs.SelectUnit(Distance.Units, result =>
+        /// <param name="source"></param>
+        private static void UpdateDistance(SettingsModel source) => SelectUnit(Distance.Units, result =>
         {
             source.Value = result.ToString();
             Xameteo.Settings.Distance = result;
@@ -102,7 +120,8 @@ namespace Xameteo.Views.Settings
 
         /// <summary>
         /// </summary>
-        private static void UpdateVelocity(SettingsModel source) => Xameteo.Dialogs.SelectUnit(Velocity.Units, result =>
+        /// <param name="source"></param>
+        private static void UpdateVelocity(SettingsModel source) => SelectUnit(Velocity.Units, result =>
         {
             source.Value = result.ToString();
             Xameteo.Settings.Velocity = result;

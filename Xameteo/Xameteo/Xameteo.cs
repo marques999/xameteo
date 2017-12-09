@@ -2,7 +2,6 @@
 using Plugin.Geolocator.Abstractions;
 
 using Xameteo.API;
-using Xameteo.Model;
 using Xameteo.Google;
 using Xameteo.Helpers;
 using Xameteo.Globalization;
