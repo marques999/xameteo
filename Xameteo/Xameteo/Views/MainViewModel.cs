@@ -1,8 +1,12 @@
-﻿using System.ComponentModel;
+﻿using System.Linq;
+using System.ComponentModel;
 using System.Collections.ObjectModel;
 using System.Runtime.CompilerServices;
+
 using Xamarin.Forms.Internals;
+
 using Xameteo.API;
+using Xameteo.Helpers;
 using Xameteo.Views.Location;
 using Xameteo.Views.Settings;
 
@@ -28,6 +32,15 @@ namespace Xameteo.Views
 
         /// <summary>
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="adapter"></param>
+        public void InsertLocation(IEventObject sender, ApixuAdapter adapter)
+        {
+            InsertLocation(adapter);
+        }
+
+        /// <summary>
+        /// </summary>
         /// <param name="adapter"></param>
         public void InsertLocation(ApixuAdapter adapter)
         {
@@ -38,7 +51,7 @@ namespace Xameteo.Views
                 TargetType = typeof(LocationView)
             });
         }
-        
+
         /// <summary>
         /// </summary>
         public MainViewModel()
@@ -66,6 +79,20 @@ namespace Xameteo.Views
         public void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="adapter"></param>
+        public void RemoveLocation(IEventObject source, ApixuAdapter adapter)
+        {
+            var previous = MenuItems.FirstOrDefault(it => it.Location == adapter);
+
+            if (previous != null)
+            {
+                MenuItems.Remove(previous);
+            }
         }
     }
 }

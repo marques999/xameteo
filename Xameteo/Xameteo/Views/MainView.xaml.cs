@@ -20,7 +20,7 @@ namespace Xameteo.Views
             InitializeComponent();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
 
-            Xameteo.Events.SubscribeViewLocation(this, async (sender, args) =>
+            Xameteo.Events.SubscribeView(this, async (sender, args) =>
             {
                 var forecast = await Xameteo.Api.Forecast(args, 15);
 

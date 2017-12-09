@@ -14,7 +14,7 @@ namespace Xameteo.Views
 {
     /// <summary>
     /// </summary>
-    internal class MainDetailViewModel: IEventObject
+    internal class MainDetailViewModel : IEventObject
     {
         /// <summary>
         /// </summary>
@@ -125,7 +125,7 @@ namespace Xameteo.Views
 
                     if (Xameteo.MyPlaces.Insert(apixuAdapter))
                     {
-                        Xameteo.Events.InsertLocation(this, apixuAdapter);
+                        Xameteo.Events.Insert(this, apixuAdapter);
                         Items.Add(new MainDetailModel(await Xameteo.Api.Current(apixuAdapter), apixuAdapter));
                     }
                 }
@@ -147,8 +147,11 @@ namespace Xameteo.Views
         {
             if (await Xameteo.Dialogs.PromptYesNo(Resources.Remove_Title, string.Format(Resources.Remove_Message, model.Weather.Location)))
             {
-                Items.Remove(model);
-                Xameteo.MyPlaces.Remove(model.Adapter);
+                if (Xameteo.MyPlaces.Remove(model.Adapter))
+                {
+                    Items.Remove(model);
+                    Xameteo.Events.Remove(this, model.Adapter);
+                }
             }
         }
 

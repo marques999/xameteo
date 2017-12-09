@@ -51,7 +51,7 @@ namespace Xameteo.Views
         {
             if (args.Item is MainDetailModel model)
             {
-                Xameteo.Events.ViewLocation(this, model.Adapter);
+                Xameteo.Events.View(this, model.Adapter);
             }
 
             ((ListView)sender).SelectedItem = null;
