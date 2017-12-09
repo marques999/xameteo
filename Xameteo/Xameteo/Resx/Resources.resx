@@ -669,4 +669,10 @@
   <data name="GoogleKey_Message" xml:space="preserve">
     <value>Please enter the assigned Google Geocoding API key. You can generate your own using the Google Developer Console (https://console.developers.google.com/apis/credentials).</value>
   </data>
+  <data name="ForecastDays_Error" xml:space="preserve">
+    <value>You have entered an invalid number. Forecast days must be between 1 and 30, including the latter.</value>
+  </data>
+  <data name="Prompt_Error" xml:space="preserve">
+    <value>Field is required (text input box must not be empty).</value>
+  </data>
 </root>

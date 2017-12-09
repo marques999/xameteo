@@ -68,6 +68,10 @@ namespace Xameteo.Views.Settings
                 source.Value = userChoice;
                 Xameteo.Settings.ApixuKey = userChoice;
             }
+            else
+            {
+                await Xameteo.Dialogs.Alert(Resources.ApixuKey_Title, Resources.Prompt_Error);
+            }
         }
 
         /// <summary>
@@ -83,6 +87,10 @@ namespace Xameteo.Views.Settings
                 source.Value = userChoice;
                 Xameteo.Settings.GoogleKey = userChoice;
             }
+            else
+            {
+                await Xameteo.Dialogs.Alert(Resources.GoogleKey_Title, Resources.Prompt_Error);
+            }
         }
 
         /// <summary>
@@ -95,8 +103,28 @@ namespace Xameteo.Views.Settings
 
             if (Xameteo.Dialogs.ValidatePrompt(dialogResult))
             {
-                source.Value = userChoice;
-                Xameteo.Settings.ForecastDays = int.Parse(userChoice);
+                try
+                {
+                    var numberDays = int.Parse(userChoice);
+
+                    if (numberDays > 0 && numberDays <= 30)
+                    {
+                        source.Value = userChoice;
+                        Xameteo.Settings.ForecastDays = int.Parse(userChoice);
+                    }
+                    else
+                    {
+                        await Xameteo.Dialogs.Alert(Resources.ForecastDays_Title, Resources.ForecastDays_Error);
+                    }
+                }
+                catch (Exception exception)
+                {
+                    await Xameteo.Dialogs.Alert(exception);
+                }
+            }
+            else
+            {
+                await Xameteo.Dialogs.Alert(Resources.ForecastDays_Title, Resources.Prompt_Error);
             }
         }
 

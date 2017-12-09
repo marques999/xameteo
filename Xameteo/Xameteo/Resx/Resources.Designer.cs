@@ -917,6 +917,15 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have entered an invalid number. Forecast days must be between 1 and 30, including the latter..
+        /// </summary>
+        internal static string ForecastDays_Error {
+            get {
+                return ResourceManager.GetString("ForecastDays_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please enter the maximum number of days to retrieve the forecast from..
         /// </summary>
         internal static string ForecastDays_Message {
@@ -1138,6 +1147,15 @@ namespace Xameteo.Resx {
         internal static string Prompt_Airport {
             get {
                 return ResourceManager.GetString("Prompt_Airport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Field is required (text input box must not be empty)..
+        /// </summary>
+        internal static string Prompt_Error {
+            get {
+                return ResourceManager.GetString("Prompt_Error", resourceCulture);
             }
         }
         

@@ -24,6 +24,13 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
+        /// <param name="title"></param>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        public Task Alert(string title, string message) => _userDialogs.AlertAsync(message, title);
+
+        /// <summary>
+        /// </summary>
         private readonly ActionSheetOption _cancelButton = new ActionSheetOption(Resources.Button_Cancel);
 
         /// <summary>

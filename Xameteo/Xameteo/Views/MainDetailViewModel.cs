@@ -43,49 +43,48 @@ namespace Xameteo.Views
 
             if (Xameteo.Dialogs.ValidatePrompt(dialogResult))
             {
-                return;
+                using (var progressDialog = Xameteo.Dialogs.InfiniteProgress)
+                {
+                    progressDialog.Show();
+
+                    try
+                    {
+                        var response = await Xameteo.Geocoding.Get(dialogResult.Text.Trim());
+
+                        if (response.Status != "OK")
+                        {
+                            throw new InvalidOperationException(string.Format(Resources.Geolocation_Error, response.Status));
+                        }
+
+                        var geocodingResults = response.Results;
+
+                        if (geocodingResults.Count < 1)
+                        {
+                            throw new InvalidOperationException(Resources.Geolocation_Zero);
+                        }
+
+                        if (geocodingResults.Count == 1)
+                        {
+                            SaveLocation(new CoordinatesAdapter(response.Results[0].GeocodingGeometry.Location));
+                        }
+                        else
+                        {
+                            Xameteo.Dialogs.ActionSheet(geocodingResults.Select(it => new ActionSheetOption(it.Address, () => SaveLocation(new CoordinatesAdapter(it.GeocodingGeometry.Location)))).ToList(), Resources.Geolocation_Multiple);
+                        }
+                    }
+                    catch (Exception exception)
+                    {
+                        await Xameteo.Dialogs.Alert(exception);
+                    }
+                    finally
+                    {
+                        progressDialog.Hide();
+                    }
+                }
             }
-
-            using (var progressDialog = Xameteo.Dialogs.InfiniteProgress)
+            else
             {
-                progressDialog.Show();
-
-                try
-                {
-                    var response = await Xameteo.Geocoding.Get(dialogResult.Text);
-
-                    if (response.Status != "OK")
-                    {
-                        throw new InvalidOperationException(string.Format(Resources.Geolocation_Error, response.Status));
-                    }
-
-                    var geocodingResults = response.Results;
-
-                    if (geocodingResults.Count < 1)
-                    {
-                        throw new InvalidOperationException(Resources.Geolocation_Zero);
-                    }
-
-                    if (geocodingResults.Count == 1)
-                    {
-                        SaveLocation(new CoordinatesAdapter(response.Results[0].GeocodingGeometry.Location));
-                    }
-                    else
-                    {
-                        Xameteo.Dialogs.ActionSheet(geocodingResults.Select(it => new ActionSheetOption(
-                            it.Address,
-                            () => SaveLocation(new CoordinatesAdapter(it.GeocodingGeometry.Location)))
-                        ).ToList(), Resources.Geolocation_Multiple);
-                    }
-                }
-                catch (Exception exception)
-                {
-                    await Xameteo.Dialogs.Alert(exception);
-                }
-                finally
-                {
-                    progressDialog.Hide();
-                }
+                await Xameteo.Dialogs.Alert(Resources.Geolocation_Title, Resources.Prompt_Error);
             }
         }
 

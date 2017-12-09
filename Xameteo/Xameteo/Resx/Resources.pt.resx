@@ -669,4 +669,10 @@
   <data name="GoogleKey_Message" xml:space="preserve">
     <value>Por favor introduza a chave de API Google Geocoding que lhe foi atribuída. Poderá criar uma recorrendo à Google Developer Console (https://console.developers.google.com/apis/credentials).</value>
   </data>
+  <data name="ForecastDays_Error" xml:space="preserve">
+    <value>Introduziu um número inválido. Os dias de previsão devem estar compreendidos entre 1 e 30, inclusive.</value>
+  </data>
+  <data name="Prompt_Error" xml:space="preserve">
+    <value>Campo obrigatório (a caixa de entrada de texto não deve estar vazia).</value>
+  </data>
 </root>
