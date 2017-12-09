@@ -1,15 +1,10 @@
-﻿using System;
+﻿using Xameteo.API;
 using Xamarin.Forms;
-using Xameteo.API;
+
+using XameteoEvent = System.Action<Xameteo.Helpers.IEventObject, Xameteo.API.ApixuAdapter>;
 
 namespace Xameteo.Helpers
 {
-    /// <summary>
-    /// </summary>
-    public interface IEventObject
-    {
-    }
-
     /// <summary>
     /// </summary>
     public class Events
@@ -42,7 +37,7 @@ namespace Xameteo.Helpers
         /// </summary>
         /// <param name="source"></param>
         /// <param name="callback"></param>
-        public void SubscribeView(IEventObject source, Action<IEventObject, ApixuAdapter> callback)
+        public void SubscribeView(IEventObject source, XameteoEvent callback)
         {
             MessagingCenter.Subscribe(this, ViewTag, callback);
         }
@@ -52,10 +47,7 @@ namespace Xameteo.Helpers
         /// <param name="source"></param>
         /// <param name="insertHandler"></param>
         /// <param name="removeHandler"></param>
-        public void SubscribeUpdates(IEventObject source,
-            Action<IEventObject, ApixuAdapter> insertHandler,
-            Action<IEventObject, ApixuAdapter> removeHandler
-        )
+        public void SubscribeUpdates(IEventObject source, XameteoEvent insertHandler, XameteoEvent removeHandler)
         {
             MessagingCenter.Subscribe(this, InsertTag, insertHandler);
             MessagingCenter.Subscribe(this, RemoveTag, removeHandler);

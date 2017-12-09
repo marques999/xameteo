@@ -60,6 +60,7 @@
     <Compile Include="Google\GeocodingResult.cs" />
     <Compile Include="Helpers\Events.cs" />
     <Compile Include="Helpers\Globals.cs" />
+    <Compile Include="Helpers\IEventObject.cs" />
     <Compile Include="Model\Airport.cs" />
     <Compile Include="Model\Compass.cs" />
     <Compile Include="Model\Coordinates.cs" />

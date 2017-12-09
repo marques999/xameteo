@@ -18,11 +18,14 @@ namespace Xameteo.Views
     {
         /// <summary>
         /// </summary>
-        private readonly List<ActionSheetOption> _options = new List<ActionSheetOption>();
+        public ObservableCollection<MainDetailModel> Items
+        {
+            get;
+        } = new ObservableCollection<MainDetailModel>();
 
         /// <summary>
         /// </summary>
-        public ObservableCollection<MainDetailModel> Items { get; } = new ObservableCollection<MainDetailModel>();
+        private readonly List<ActionSheetOption> _options = new List<ActionSheetOption>();
 
         /// <summary>
         /// </summary>

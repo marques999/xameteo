@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Xameteo.Resx;
 
@@ -18,6 +18,22 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        public Task Alert(Exception ex) => _userDialogs.AlertAsync(ex.Message, ex.GetType().Name);
+
+        /// <summary>
+        /// </summary>
+        private readonly ActionSheetOption _cancelButton = new ActionSheetOption(Resources.Button_Cancel);
+
+        /// <summary>
+        /// </summary>
+        /// <param name="result"></param>
+        /// <returns></returns>
+        public bool ValidatePrompt(PromptResult result) => result.Ok && result.Text.Trim().Length > 0;
+
+        /// <summary>
+        /// </summary>
         /// <returns></returns>
         public IProgressDialog InfiniteProgress => _userDialogs.Progress(new ProgressDialogConfig
         {
@@ -28,39 +44,15 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
-        /// <param name="exception"></param>
-        /// <returns></returns>
-        public Task Alert(Exception exception)
-        {
-            return _userDialogs.AlertAsync(exception.Message, exception.GetType().Name);
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="result"></param>
-        /// <returns></returns>
-        public bool ValidatePrompt(PromptResult result) => result.Ok && result.Text.Trim().Length > 0;
-
-        /// <summary>
-        /// </summary>
-        private readonly ActionSheetOption _actionSheetCancel = new ActionSheetOption(Resources.Button_Cancel);
-
-        /// <summary>
-        /// </summary>
+        /// <param name="options"></param>
         /// <param name="title"></param>
-        /// <param name="message"></param>
-        /// <param name="placeholder"></param>
-        /// <param name="callback"></param>
-        public void Prompt(string title, string message, string placeholder, Action<PromptResult> callback) => _userDialogs.Prompt(new PromptConfig
+        /// <returns></returns>
+        public IDisposable ActionSheet(List<ActionSheetOption> options, string title) => _userDialogs.ActionSheet(new ActionSheetConfig
         {
             Title = title,
-            Message = message,
-            OnAction = callback,
-            IsCancellable = true,
-            Text = placeholder,
-            OkText = Resources.Button_OK,
-            InputType = InputType.Default,
-            CancelText = Resources.Button_Cancel
+            Options = options,
+            Cancel = _cancelButton,
+            UseBottomSheet = false
         });
 
         /// <summary>
@@ -78,35 +70,20 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
-        /// <param name="options"></param>
         /// <param name="title"></param>
-        /// <returns></returns>
-        public IDisposable ActionSheet(List<ActionSheetOption> options, string title) => _userDialogs.ActionSheet(new ActionSheetConfig
+        /// <param name="message"></param>
+        /// <param name="placeholder"></param>
+        /// <param name="callback"></param>
+        public void Prompt(string title, string message, string placeholder, Action<PromptResult> callback) => _userDialogs.Prompt(new PromptConfig
         {
             Title = title,
-            Options = options,
-            UseBottomSheet = false,
-            Cancel = _actionSheetCancel,
+            Message = message,
+            Text = placeholder,
+            OnAction = callback,
+            IsCancellable = true,
+            OkText = Resources.Button_OK,
+            InputType = InputType.Default,
+            CancelText = Resources.Button_Cancel
         });
-
-        /// <summary>
-        /// </summary>
-        /// <param name="callback"></param>
-        public void PromptApixuKey(Action<PromptResult> callback) => Prompt(
-            "Apixu API",
-            "Please enter the assigned Apixu Weather API key. You can generate your by signing up for an account in the official website (https://www.apixu.com/signup.aspx)",
-            Xameteo.Settings.ApixuKey,
-            callback
-        );
-
-        /// <summary>
-        /// </summary>
-        /// <param name="callback"></param>
-        public void PromptGoogleKey(Action<PromptResult> callback) => Prompt(
-            "Geocoding API",
-            "Please enter the assigned Google Geocoding API key. You can generate your own using the Google Developer Console (https://console.developers.google.com/apis/credentials)",
-            Xameteo.Settings.GoogleKey,
-            callback
-        );
     }
 }

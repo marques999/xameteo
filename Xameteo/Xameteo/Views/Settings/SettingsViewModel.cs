@@ -30,6 +30,24 @@ namespace Xameteo.Views.Settings
 
         /// <summary>
         /// </summary>
+        /// <param name="callback"></param>
+        public static void PromptApixuKey(Action<PromptResult> callback) => Xameteo.Dialogs.Prompt(
+            "Apixu API",
+            "Please enter the assigned Apixu Weather API key. You can generate your by signing up for an account in the official website (https://www.apixu.com/signup.aspx)",
+            Xameteo.Settings.ApixuKey, callback
+        );
+
+        /// <summary>
+        /// </summary>
+        /// <param name="callback"></param>
+        public static void PromptGoogleKey(Action<PromptResult> callback) => Xameteo.Dialogs.Prompt(
+            "Geocoding API",
+            "Please enter the assigned Google Geocoding API key. You can generate your own using the Google Developer Console (https://console.developers.google.com/apis/credentials)",
+            Xameteo.Settings.GoogleKey, callback
+        );
+
+        /// <summary>
+        /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="units"></param>
         /// <param name="generator"></param>
@@ -57,7 +75,7 @@ namespace Xameteo.Views.Settings
         /// <summary>
         /// </summary>
         /// <param name="source"></param>
-        private static void UpdateApixuKey(SettingsModel source) => Xameteo.Dialogs.PromptApixuKey(result =>
+        private void UpdateApixuKey(SettingsModel source) => PromptApixuKey(result =>
         {
             var userChoice = result.Text.Trim();
 
@@ -71,7 +89,7 @@ namespace Xameteo.Views.Settings
         /// <summary>
         /// </summary>
         /// <param name="source"></param>
-        public static void UpdateGoogleKey(SettingsModel source) => Xameteo.Dialogs.PromptGoogleKey(result =>
+        public void UpdateGoogleKey(SettingsModel source) => PromptGoogleKey(result =>
         {
             var userChoice = result.Text.Trim();
 
