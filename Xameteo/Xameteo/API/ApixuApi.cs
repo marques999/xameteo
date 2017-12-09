@@ -41,7 +41,7 @@ namespace Xameteo.API
         /// <returns></returns>
         public async Task<ApixuForecast> Forecast(ApixuAdapter adapter) => await _cache.GetOrFetchObject(
             "forecast_" + adapter.Parameters,
-            () => _api.GetForecast(Xameteo.Settings.ApixuKey, adapter.Parameters, Xameteo.Globals.ForecastDays),
+            () => _api.GetForecast(Xameteo.Settings.ApixuKey, adapter.Parameters, Xameteo.Settings.ForecastDays),
             Xameteo.Globals.CacheInvalidate
         );
 

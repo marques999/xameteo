@@ -11,6 +11,7 @@ namespace Xameteo.Helpers
     {
         /// <summary>
         /// </summary>
+        private const string PropertyDays = "days";
         private const string PropertyPlaces = "places";
         private const string PropertyApixuKey = "apixu";
         private const string PropertyGoogleKey = "google";
@@ -18,6 +19,14 @@ namespace Xameteo.Helpers
         /// <summary>
         /// </summary>
         private readonly ISettings _settingsManager = CrossSettings.Current;
+
+        /// <summary>
+        /// </summary>
+        public int ForecastDays
+        {
+            get => _settingsManager.GetValueOrDefault(PropertyDays, 15);
+            set => _settingsManager.AddOrUpdateValue(PropertyDays, value);
+        }
 
         /// <summary>
         /// </summary>

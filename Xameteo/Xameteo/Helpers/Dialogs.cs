@@ -68,18 +68,27 @@ namespace Xameteo.Helpers
             CancelText = Resources.Global_No
         });
 
+        public Task<PromptResult> PromptNumber(string title, string message, int value) => _userDialogs.PromptAsync(new PromptConfig
+        {
+            Title = title,
+            Message = message,
+            IsCancellable = true,
+            Text = value.ToString("D"),
+            InputType = InputType.Number,
+            OkText = Resources.Button_OK,
+            CancelText = Resources.Button_Cancel
+        });
+
         /// <summary>
         /// </summary>
         /// <param name="title"></param>
         /// <param name="message"></param>
         /// <param name="placeholder"></param>
-        /// <param name="callback"></param>
-        public void Prompt(string title, string message, string placeholder, Action<PromptResult> callback) => _userDialogs.Prompt(new PromptConfig
+        public Task<PromptResult> Prompt(string title, string message, string placeholder) => _userDialogs.PromptAsync(new PromptConfig
         {
             Title = title,
             Message = message,
             Text = placeholder,
-            OnAction = callback,
             IsCancellable = true,
             OkText = Resources.Button_OK,
             InputType = InputType.Default,

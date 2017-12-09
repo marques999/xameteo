@@ -8,10 +8,6 @@ namespace Xameteo.Helpers
     {
         /// <summary>
         /// </summary>
-        public readonly int ForecastDays = 15;
-
-        /// <summary>
-        /// </summary>
         public TimeSpan AsyncTimeout { get; } = TimeSpan.FromSeconds(5);
 
         /// <summary>

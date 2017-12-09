@@ -606,14 +606,14 @@
   <data name="Tab_Today" xml:space="preserve">
     <value>Today</value>
   </data>
-  <data name="Settings_ApixuKey" xml:space="preserve">
-    <value>Apixu Key</value>
+  <data name="ApixuKey_Title" xml:space="preserve">
+    <value>Apixu key</value>
   </data>
   <data name="Settings_Units" xml:space="preserve">
     <value>{0} units</value>
   </data>
-  <data name="Settings_GoogleKey" xml:space="preserve">
-    <value>Geocoding Key</value>
+  <data name="GoogleKey_Title" xml:space="preserve">
+    <value>Geocoding key</value>
   </data>
   <data name="Title_Preferences" xml:space="preserve">
     <value>Preferences</value>
@@ -656,5 +656,17 @@
   </data>
   <data name="Prompt_Airport" xml:space="preserve">
     <value>Select an airport</value>
+  </data>
+  <data name="ForecastDays_Title" xml:space="preserve">
+    <value>Forecast days</value>
+  </data>
+  <data name="ApixuKey_Message" xml:space="preserve">
+    <value>Please enter the assigned Apixu Weather API key. You can generate your by signing up for an account in the official website (https://www.apixu.com/signup.aspx).</value>
+  </data>
+  <data name="ForecastDays_Message" xml:space="preserve">
+    <value>Please enter the maximum number of days to retrieve the forecast from.</value>
+  </data>
+  <data name="GoogleKey_Message" xml:space="preserve">
+    <value>Please enter the assigned Google Geocoding API key. You can generate your own using the Google Developer Console (https://console.developers.google.com/apis/credentials).</value>
   </data>
 </root>

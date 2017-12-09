@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-
 using Acr.UserDialogs;
 
 using Xameteo.API;
@@ -38,36 +37,11 @@ namespace Xameteo.Views
 
         /// <summary>
         /// </summary>
-        private void LocationByGeocoding() => Xameteo.Dialogs.Prompt(
-            Resources.Geolocation_Title, Resources.Geolocation_Message, string.Empty, GeolocationHandler
-        );
-
-        /// <summary>
-        /// </summary>
-        private void LocationByAirport() => Xameteo.Dialogs.ActionSheet(Airport.Instances.Select(
-            airport => new ActionSheetOption(airport.ToString(), () => SaveLocation(new AirportAdapter(airport)))
-        ).ToList(), Resources.Prompt_Airport);
-
-        /// <summary>
-        /// </summary>
-        public void InsertLocation() => Xameteo.Dialogs.ActionSheet(_options, Resources.Prompt_Source);
-
-        /// <summary>
-        /// </summary>
-        public async void InitializeList()
+        private async void LocationByGeocoding()
         {
-            foreach (var adapter in Xameteo.Places.List)
-            {
-                Items.Add(new MainDetailModel(await Xameteo.Apixu.Current(adapter), adapter));
-            }
-        }
+            var dialogResult = await Xameteo.Dialogs.Prompt(Resources.Geolocation_Title, Resources.Geolocation_Message, string.Empty);
 
-        /// <summary>
-        /// </summary>
-        /// <param name="result"></param>
-        private async void GeolocationHandler(PromptResult result)
-        {
-            if (Xameteo.Dialogs.ValidatePrompt(result) == false)
+            if (Xameteo.Dialogs.ValidatePrompt(dialogResult))
             {
                 return;
             }
@@ -78,7 +52,7 @@ namespace Xameteo.Views
 
                 try
                 {
-                    var response = await Xameteo.Geocoding.Get(result.Text);
+                    var response = await Xameteo.Geocoding.Get(dialogResult.Text);
 
                     if (response.Status != "OK")
                     {
@@ -112,6 +86,26 @@ namespace Xameteo.Views
                 {
                     progressDialog.Hide();
                 }
+            }
+        }
+
+        /// <summary>
+        /// </summary>
+        private void LocationByAirport() => Xameteo.Dialogs.ActionSheet(Airport.Instances.Select(
+            airport => new ActionSheetOption(airport.ToString(), () => SaveLocation(new AirportAdapter(airport)))
+        ).ToList(), Resources.Prompt_Airport);
+
+        /// <summary>
+        /// </summary>
+        public void InsertLocation() => Xameteo.Dialogs.ActionSheet(_options, Resources.Prompt_Source);
+
+        /// <summary>
+        /// </summary>
+        public async void InitializeList()
+        {
+            foreach (var adapter in Xameteo.Places.List)
+            {
+                Items.Add(new MainDetailModel(await Xameteo.Apixu.Current(adapter), adapter));
             }
         }
 

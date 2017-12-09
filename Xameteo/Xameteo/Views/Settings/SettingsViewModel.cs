@@ -30,24 +30,6 @@ namespace Xameteo.Views.Settings
 
         /// <summary>
         /// </summary>
-        /// <param name="callback"></param>
-        public static void PromptApixuKey(Action<PromptResult> callback) => Xameteo.Dialogs.Prompt(
-            "Apixu API",
-            "Please enter the assigned Apixu Weather API key. You can generate your by signing up for an account in the official website (https://www.apixu.com/signup.aspx)",
-            Xameteo.Settings.ApixuKey, callback
-        );
-
-        /// <summary>
-        /// </summary>
-        /// <param name="callback"></param>
-        public static void PromptGoogleKey(Action<PromptResult> callback) => Xameteo.Dialogs.Prompt(
-            "Geocoding API",
-            "Please enter the assigned Google Geocoding API key. You can generate your own using the Google Developer Console (https://console.developers.google.com/apis/credentials)",
-            Xameteo.Settings.GoogleKey, callback
-        );
-
-        /// <summary>
-        /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="units"></param>
         /// <param name="generator"></param>
@@ -63,8 +45,9 @@ namespace Xameteo.Views.Settings
         /// </summary>
         public SettingsViewModel()
         {
-            Items.Add(new SettingsModel(Resources.Settings_ApixuKey, Xameteo.Settings.ApixuKey, UpdateApixuKey));
-            Items.Add(new SettingsModel(Resources.Settings_GoogleKey, Xameteo.Settings.GoogleKey, UpdateGoogleKey));
+            Items.Add(new SettingsModel(Resources.ApixuKey_Title, Xameteo.Settings.ApixuKey, UpdateApixuKey));
+            Items.Add(new SettingsModel(Resources.GoogleKey_Title, Xameteo.Settings.GoogleKey, UpdateGoogleKey));
+            Items.Add(new SettingsModel(Resources.ForecastDays_Title, Xameteo.Settings.ForecastDays.ToString(), UpdateForecastDays));
             InsertUnit(Xameteo.Settings.Distance, UpdateDistance);
             InsertUnit(Xameteo.Settings.Precipitation, UpdatePrecipitation);
             InsertUnit(Xameteo.Settings.Pressure, UpdatePressure);
@@ -75,30 +58,47 @@ namespace Xameteo.Views.Settings
         /// <summary>
         /// </summary>
         /// <param name="source"></param>
-        private void UpdateApixuKey(SettingsModel source) => PromptApixuKey(result =>
+        private static async void UpdateApixuKey(SettingsModel source)
         {
-            var userChoice = result.Text.Trim();
+            var dialogResult = await Xameteo.Dialogs.Prompt(Resources.ApixuKey_Title, Resources.ApixuKey_Message, Xameteo.Settings.ApixuKey);
+            var userChoice = dialogResult.Text.Trim();
 
-            if (Xameteo.Dialogs.ValidatePrompt(result))
+            if (Xameteo.Dialogs.ValidatePrompt(dialogResult))
             {
                 source.Value = userChoice;
                 Xameteo.Settings.ApixuKey = userChoice;
             }
-        });
+        }
 
         /// <summary>
         /// </summary>
         /// <param name="source"></param>
-        public void UpdateGoogleKey(SettingsModel source) => PromptGoogleKey(result =>
+        public static async void UpdateGoogleKey(SettingsModel source)
         {
-            var userChoice = result.Text.Trim();
+            var dialogResult = await Xameteo.Dialogs.Prompt(Resources.GoogleKey_Title, Resources.GoogleKey_Message, Xameteo.Settings.GoogleKey);
+            var userChoice = dialogResult.Text.Trim();
 
-            if (Xameteo.Dialogs.ValidatePrompt(result))
+            if (Xameteo.Dialogs.ValidatePrompt(dialogResult))
             {
                 source.Value = userChoice;
                 Xameteo.Settings.GoogleKey = userChoice;
             }
-        });
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="source"></param>
+        public static async void UpdateForecastDays(SettingsModel source)
+        {
+            var dialogResult = await Xameteo.Dialogs.PromptNumber(Resources.ForecastDays_Title, Resources.ForecastDays_Message, Xameteo.Settings.ForecastDays);
+            var userChoice = dialogResult.Text.Trim();
+
+            if (Xameteo.Dialogs.ValidatePrompt(dialogResult))
+            {
+                source.Value = userChoice;
+                Xameteo.Settings.ForecastDays = int.Parse(userChoice);
+            }
+        }
 
         /// <summary>
         /// </summary>
