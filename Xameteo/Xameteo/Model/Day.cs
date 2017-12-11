@@ -1,10 +1,12 @@
 ﻿using Newtonsoft.Json;
+using Xameteo.Resx;
 
 namespace Xameteo.Model
 {
+    /// <inheritdoc />
     /// <summary>
     /// </summary>
-    public class Day
+    public class Day : ITableProvider
     {
         /// <summary>
         /// Maximum temperature in celsius for the day.
@@ -60,19 +62,21 @@ namespace Xameteo.Model
         [JsonProperty("uv")]
         public double Ultraviolet { get; set; }
 
+        /// <inheritdoc />
         /// <summary>
         /// </summary>
         /// <returns></returns>
-        public override string ToString() => $@"
-  Maximum = {Maximum}
-  Minimum = {Minimum}
-  Average = {Average}
-  WindVelocity = {WindVelocity}
-  Precipitation = {Precipitation}
-  Visibility = {Visibility}
-  Humidity = {Humidity}
-  Ultraviolet = {Ultraviolet}
-  Condition = {Condition}
-";
+        public TableGroup GenerateTable() => new TableGroup(Resources.Group_Temperature)
+        {
+            new TableItem(Resources.Forecast_Precipitation, Xameteo.Settings.Precipitation.Convert(Precipitation)),
+            new TableItem(Resources.Forecast_Wind_Velocity, Xameteo.Settings.Velocity.Convert(WindVelocity)),
+            new TableItem(Resources.Forecast_Humidity, Xameteo.Localization.Percentage(Humidity)),
+            new TableItem(Resources.Forecast_Visibility, Xameteo.Settings.Distance.Convert(Visibility)),
+            new TableItem(Resources.Forecast_Ultraviolet, Xameteo.Localization.FixedPoint(Ultraviolet)),
+            Condition.GenerateTable(),
+            new TableItem(Resources.Forecast_Average, Xameteo.Settings.Temperature.Convert(Average)),
+            new TableItem(Resources.Forecast_Minimum, Xameteo.Settings.Temperature.Convert(Minimum)),
+            new TableItem(Resources.Forecast_Maxmum, Xameteo.Settings.Temperature.Convert(Maximum))
+        };
     }
 }

@@ -52,6 +52,7 @@
     <Compile Include="Globalization\DateExtensions.cs" />
     <Compile Include="Globalization\ILocale.cs" />
     <Compile Include="Globalization\DoubleExtensions.cs" />
+    <Compile Include="Globalization\ImageExtensions.cs" />
     <Compile Include="Globalization\PlatformCulture.cs" />
     <Compile Include="Globalization\UnitExtensions.cs" />
     <Compile Include="Google\GoogleApi.cs" />
@@ -301,6 +302,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.4.0.280\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.4.0.280\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

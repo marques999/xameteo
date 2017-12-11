@@ -239,6 +239,297 @@
       <Name>Xameteo</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_230.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_248.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_260.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_263.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_266.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_281.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_284.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_293.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_296.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_299.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_302.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_305.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_308.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_311.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_314.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_317.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_320.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_323.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_326.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_329.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_332.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_335.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_338.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_350.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_353.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_356.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_359.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_362.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_365.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_368.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_371.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_374.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_377.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_386.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_389.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_392.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_395.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_1000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_1003.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_1006.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_1009.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_1030.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_1063.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_1066.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_1069.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\luffy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_113.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_116.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_119.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_122.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_143.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_176.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_179.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_182.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_185.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_227.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_230.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_248.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_260.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_263.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_266.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_281.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_284.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_293.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_296.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_299.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_302.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_305.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_308.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_311.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_314.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_317.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_320.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_323.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_326.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_329.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_332.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_335.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_338.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_350.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_353.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_356.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_359.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_362.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_365.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_368.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_371.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_374.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_377.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_386.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_389.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_392.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\night_395.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_185.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\day_227.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

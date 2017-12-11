@@ -17,41 +17,6 @@ namespace Xameteo.Views
     /// </summary>
     internal class MainViewModel : INotifyPropertyChanged
     {
-        /// <inheritdoc />
-        /// <summary>
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
-        /// </summary>
-        public ObservableCollection<MainModel> MenuItems
-        {
-            get;
-            set;
-        } = new ObservableCollection<MainModel>();
-
-        /// <summary>
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="adapter"></param>
-        public void InsertLocation(IEventObject sender, ApixuAdapter adapter)
-        {
-            InsertLocation(adapter);
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="adapter"></param>
-        public void InsertLocation(ApixuAdapter adapter)
-        {
-            MenuItems.Add(new MainModel
-            {
-                Location = adapter,
-                Title = adapter.Parameters,
-                TargetType = typeof(LocationView)
-            });
-        }
-
         /// <summary>
         /// </summary>
         public MainViewModel()
@@ -71,6 +36,37 @@ namespace Xameteo.Views
             });
 
             Xameteo.Places.List.ForEach(InsertLocation);
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// </summary>
+        public ObservableCollection<MainModel> MenuItems { get; set; } = new ObservableCollection<MainModel>();
+
+        /// <summary>
+        /// </summary>
+        /// <param name="adapter"></param>
+        public void InsertLocation(ApixuAdapter adapter)
+        {
+            MenuItems.Add(new MainModel
+            {
+                Location = adapter,
+                Title = adapter.Parameters,
+                TargetType = typeof(LocationView)
+            });
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="adapter"></param>
+        public void InsertLocation(IEventObject sender, ApixuAdapter adapter)
+        {
+            InsertLocation(adapter);
         }
 
         /// <summary>

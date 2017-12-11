@@ -687,4 +687,16 @@
   <data name="Forecast_Snow" xml:space="preserve">
     <value>Probabilidade de neve</value>
   </data>
+  <data name="Forecast_Average" xml:space="preserve">
+    <value>Temperatura média</value>
+  </data>
+  <data name="Forecast_Maxmum" xml:space="preserve">
+    <value>Temperatura máxima</value>
+  </data>
+  <data name="Forecast_Minimum" xml:space="preserve">
+    <value>Temperatura mínima</value>
+  </data>
+  <data name="Forecast_Ultraviolet" xml:space="preserve">
+    <value>Índice ultravioleta</value>
+  </data>
 </root>

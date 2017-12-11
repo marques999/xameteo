@@ -687,4 +687,16 @@
   <data name="Forecast_Snow" xml:space="preserve">
     <value>Snow probability</value>
   </data>
+  <data name="Forecast_Average" xml:space="preserve">
+    <value>Average Temperature</value>
+  </data>
+  <data name="Forecast_Maxmum" xml:space="preserve">
+    <value>Maximum Temperature</value>
+  </data>
+  <data name="Forecast_Minimum" xml:space="preserve">
+    <value>Minimum Temperature</value>
+  </data>
+  <data name="Forecast_Ultraviolet" xml:space="preserve">
+    <value>Ultraviolet Index</value>
+  </data>
 </root>

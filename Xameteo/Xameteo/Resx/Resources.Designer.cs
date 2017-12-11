@@ -818,6 +818,15 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Average Temperature.
+        /// </summary>
+        internal static string Forecast_Average {
+            get {
+                return ResourceManager.GetString("Forecast_Average", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cloud coverage.
         /// </summary>
         internal static string Forecast_Cloud {
@@ -872,6 +881,24 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Maximum Temperature.
+        /// </summary>
+        internal static string Forecast_Maxmum {
+            get {
+                return ResourceManager.GetString("Forecast_Maxmum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimum Temperature.
+        /// </summary>
+        internal static string Forecast_Minimum {
+            get {
+                return ResourceManager.GetString("Forecast_Minimum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Precipitation.
         /// </summary>
         internal static string Forecast_Precipitation {
@@ -913,6 +940,15 @@ namespace Xameteo.Resx {
         internal static string Forecast_Temperature {
             get {
                 return ResourceManager.GetString("Forecast_Temperature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ultraviolet Index.
+        /// </summary>
+        internal static string Forecast_Ultraviolet {
+            get {
+                return ResourceManager.GetString("Forecast_Ultraviolet", resourceCulture);
             }
         }
         
