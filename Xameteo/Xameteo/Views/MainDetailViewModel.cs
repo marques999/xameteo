@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+
 using Acr.UserDialogs;
 
 using Xameteo.API;
@@ -100,11 +102,28 @@ namespace Xameteo.Views
 
         /// <summary>
         /// </summary>
-        public async void InitializeList()
+        public async Task InitializeList()
         {
-            foreach (var adapter in Xameteo.Places.List)
+            using (var progressDialog = Xameteo.Dialogs.InfiniteProgress)
             {
-                Items.Add(new MainDetailModel(await Xameteo.Apixu.Current(adapter), adapter));
+                try
+                {
+                    Items.Clear();
+                    progressDialog.Show();
+
+                    foreach (var adapter in Xameteo.Places.List)
+                    {
+                        Items.Add(new MainDetailModel(await Xameteo.Apixu.Current(adapter), adapter));
+                    }
+                }
+                catch (Exception exception)
+                {
+                    await Xameteo.Dialogs.Alert(exception);
+                }
+                finally
+                {
+                    progressDialog.Hide();
+                }
             }
         }
 

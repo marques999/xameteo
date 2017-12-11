@@ -1,6 +1,5 @@
 ﻿using Xameteo.Model;
 using Xamarin.Forms.Xaml;
-using System.Collections.Generic;
 
 namespace Xameteo.Views.Location
 {
@@ -8,23 +7,18 @@ namespace Xameteo.Views.Location
     /// <summary>
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TodayPage
+    public partial class DetailsView
     {
         /// <summary>
         /// </summary>
-        public List<TableGroup> Items { get; } = new List<TableGroup>();
+        public TableGroup Items { get; }
 
         /// <summary>
         /// </summary>
-        public TodayPage(ForecastDaily forecast)
+        /// <param name="location"></param>
+        public DetailsView(ITableProvider location)
         {
-            Items.Add(forecast.Astro.GenerateTable());
-
-            foreach (var hour in forecast.Hours)
-            {
-                Items.Add(hour.GenerateTable());
-            }
-
+            Items = location.GenerateTable();
             InitializeComponent();
             BindingContext = this;
         }

@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Diagnostics;
+
+using Xameteo.Helpers;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
-using Xameteo.Helpers;
 
 namespace Xameteo.Views
 {
@@ -14,7 +15,59 @@ namespace Xameteo.Views
     {
         /// <summary>
         /// </summary>
+        private bool _isRefreshing;
+
+        /// <summary>
+        /// </summary>
+        private Command _refreshComand;
+
+        /// <summary>
+        /// </summary>
         private readonly MainDetailViewModel _viewModel;
+
+        /// <summary>
+        /// </summary>
+        public bool IsRefreshing
+        {
+            get
+            {
+                return _isRefreshing;
+            }
+            set
+            {
+                if (_isRefreshing == value)
+                {
+                    return;
+                }
+
+                _isRefreshing = value;
+                OnPropertyChanged(nameof(IsRefreshing));
+            }
+        }
+
+        /// <summary>
+        /// </summary>
+        private void InsertLocation(object sender, EventArgs eventArgs) => _viewModel.InsertLocation();
+
+        /// <summary>
+        /// </summary>
+        public Command RefreshCommand => _refreshComand ?? (_refreshComand = new Command(ExecuteRefresh, () => IsRefreshing == false));
+
+        /// <summary>
+        /// </summary>
+        private async void ExecuteRefresh()
+        {
+            if (IsRefreshing)
+            {
+                return;
+            }
+
+            IsRefreshing = true;
+            RefreshCommand.ChangeCanExecute();
+            await _viewModel.InitializeList();
+            IsRefreshing = false;
+            RefreshCommand.ChangeCanExecute();
+        }
 
         /// <summary>
         /// </summary>
@@ -29,13 +82,7 @@ namespace Xameteo.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void InsertLocation(object sender, EventArgs args) => _viewModel.InsertLocation();
-
-        /// <summary>
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        private void ButtonClicked(object sender, EventArgs args)
+        private void DeleteClicked(object sender, EventArgs args)
         {
             if (sender is Button button && button.CommandParameter is MainDetailModel model)
             {
@@ -47,10 +94,23 @@ namespace Xameteo.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void ListItemClicked(object sender, ItemTappedEventArgs args)
+        private void ViewClicked(object sender, EventArgs args)
+        {
+            if (sender is MenuItem menuItem && menuItem.CommandParameter is MainDetailModel model)
+            {
+                Xameteo.Events.View(this, model.Adapter);
+            }
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void ItemClicked(object sender, ItemTappedEventArgs args)
         {
             if (args.Item is MainDetailModel model)
             {
+                Debug.WriteLine(model.Adapter.Parameters);
                 Xameteo.Events.View(this, model.Adapter);
             }
 
@@ -62,21 +122,13 @@ namespace Xameteo.Views
         /// </summary>
         protected override async void OnAppearing()
         {
-            using (var progressDialog = Xameteo.Dialogs.InfiniteProgress)
+            try
             {
-                try
-                {
-                    progressDialog.Show();
-                    _viewModel.InitializeList();
-                }
-                catch (Exception exception)
-                {
-                    await Xameteo.Dialogs.Alert(exception);
-                }
-                finally
-                {
-                    progressDialog.Hide();
-                }
+                await _viewModel.InitializeList();
+            }
+            catch (Exception exception)
+            {
+                await Xameteo.Dialogs.Alert(exception);
             }
         }
     }

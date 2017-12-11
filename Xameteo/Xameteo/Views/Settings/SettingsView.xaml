@@ -2,13 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:globalization="clr-namespace:Xameteo.Globalization;assembly=Xameteo"
-             Title="{globalization:Translate Title_Preferences}"
-             x:Class="Xameteo.Views.Settings.SettingsView">
+             x:Class="Xameteo.Views.Settings.SettingsView"
+             Title="{globalization:Translate Title_Preferences}">
   <ContentPage.Content>
-    <ListView HasUnevenRows="True" 
-              ItemTapped="HandleClick"
-              ItemsSource="{Binding Items}"
-              CachingStrategy="RecycleElement">
+    <ListView HasUnevenRows="True" ItemTapped="HandleClick" ItemsSource="{Binding Items}" CachingStrategy="RecycleElement">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>

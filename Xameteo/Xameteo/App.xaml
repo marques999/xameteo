@@ -41,6 +41,33 @@
         <Setter Property="VerticalOptions" Value="Center"></Setter>
         <Setter Property="FontAttributes" Value="Bold"></Setter>
       </Style>
+      <Style x:Key="GridItemDescription" TargetType="Label">
+        <Setter Property="HorizontalTextAlignment" Value="End" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+      </Style>
+      <Style x:Key="GridItem" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold"></Setter>
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HorizontalOptions" Value="Fill"/>
+      </Style>
+      <Style x:Key="HorizontalSeparator" TargetType="BoxView">
+        <Setter Property="Color" Value="#5b5d68" />
+        <Setter Property="HeightRequest" Value="1" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+      </Style>
+      <Style x:Key="VerticalSeparator" TargetType="BoxView">
+        <Setter Property="Color" Value="#5b5d68" />
+        <Setter Property="WidthRequest" Value="1" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+      </Style>
+      <Style x:Key="LabelCenter" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold"></Setter>
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+      </Style>
     </ResourceDictionary>
   </Application.Resources>
 </Application>

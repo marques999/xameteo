@@ -5,7 +5,7 @@ namespace Xameteo.Model
 {
     /// <summary>
     /// </summary>
-    public class Hour
+    public class Hour : ITableProvider
     {
         /// <summary>
         /// Cloud cover as percentage
@@ -74,46 +74,10 @@ namespace Xameteo.Model
         public double WindVelocity { get; set; }
 
         /// <summary>
-        /// Wind direction as sixteen point compass
-        /// </summary>
-        [JsonProperty("wind_dir")]
-        public string WindDirection { get; set; }
-
-        /// <summary>
         ///
         /// </summary>
         [JsonProperty("time")]
         public DateTime Date { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [JsonProperty("will_it_rain")]
-        public bool Rain { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [JsonProperty("will_it_snow")]
-        public bool Snow { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [JsonProperty("windchill_c")]
-        public double Windchill { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [JsonProperty("heatindex_c")]
-        public double HeatIndex { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [JsonProperty("dewpoint_c")]
-        public double DewPoint { get; set; }
 
         /// <summary>
         ///
@@ -127,29 +91,22 @@ namespace Xameteo.Model
         [JsonProperty("chance_of_snow")]
         public double SnowProbability { get; set; }
 
+        /// <inheritdoc />
         /// <summary>
         /// </summary>
         /// <returns></returns>
-        public override string ToString() => $@"
-  Temperature = {Temperature}
-  IsDay = {IsDay}
-  Condition = {Condition}
-  WindVelocity = {WindVelocity}
-  WindDegree = {WindDegree}
-  WindDirection = {WindDirection}
-  Pressure = {Pressure}
-  Precipitation = {Precipitation}
-  Humidity = {Humidity}
-  Cloud = {Cloud}
-  FeelsLike = {FeelsLike}
-  Windchill = {Windchill}
-  HeatIndex = {HeatIndex}
-  DewPoint = {DewPoint}
-  Rain = {Rain}
-  RainProbability = {RainProbability}
-  Snow = {Snow}
-  SnowProbability = {SnowProbability}
-  Visibility = {Visibility}
-";
+        public TableGroup GenerateTable() => new TableGroup(Xameteo.Localization.ShortTime(Date))
+        {
+            TableItem.Temperature(Temperature),
+            TableItem.FeelsLike(FeelsLike),
+            TableItem.Humidity(Humidity),
+            TableItem.Pressure(Pressure),
+            TableItem.Visibility(Visibility),
+            TableItem.Precipitation(Precipitation),
+            TableItem.RainProbability(RainProbability),
+            TableItem.SnowProbability(SnowProbability),
+            TableItem.WindVelocity(WindVelocity),
+            TableItem.WindDegree(WindDegree)
+        };
     }
 }

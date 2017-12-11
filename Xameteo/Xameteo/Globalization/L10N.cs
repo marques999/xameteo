@@ -47,15 +47,37 @@ namespace Xameteo.Globalization
 
         /// <summary>
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="degrees"></param>
         /// <returns></returns>
-        public string LongCompass(Compass value) => value?.Name ?? "N/A";
+        public string LongCompass(int degrees)
+        {
+            return $"{Compass.Get(degrees).Name} ({Degrees(degrees)})";
+        }
+        
+        /// <summary>
+        /// </summary>
+        /// <param name="degrees"></param>
+        /// <returns></returns>
+        public string ShortCompass(int degrees)
+        {
+            return $"{Compass.Get(degrees).Symbol} ({Degrees(degrees)})";
+        }
 
         /// <summary>
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="dateTime"></param>
         /// <returns></returns>
-        public string ShortCompass(Compass value) => value?.Symbol ?? "N/A";
+        public DateTime ParseTime(string dateTime)
+        {
+            try
+            {
+                return DateTime.ParseExact(dateTime, "hh:mm tt", _culture.DateTimeFormat);
+            }
+            catch (FormatException)
+            {
+                return DateTime.Now;
+            }
+        }
 
         /// <summary>
         /// </summary>
@@ -109,7 +131,7 @@ namespace Xameteo.Globalization
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public string Degrees(double value)
+        public string Degrees(int value)
         {
             return value.ToString("N0", _culture.NumberFormat) + " " + Resources.Symbol_Degrees;
         }

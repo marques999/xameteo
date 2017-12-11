@@ -17,24 +17,24 @@ namespace Xameteo.Model
 
         /// <summary>
         /// </summary>
-        private static readonly Dictionary<string, Compass> Instances = new Dictionary<string, Compass>
+        private static readonly List<Compass> Instances = new List<Compass>
         {
-            { "N",  new Compass(Resources.Symbol_N, Resources.Compass_N) },
-            { "S",  new Compass(Resources.Symbol_S, Resources.Compass_S) },
-            { "E",  new Compass(Resources.Symbol_E, Resources.Compass_E) },
-            { "W",  new Compass(Resources.Symbol_W, Resources.Compass_W) },
-            { "NW",  new Compass(Resources.Symbol_NW, Resources.Compass_NW) },
-            { "SW",  new Compass(Resources.Symbol_SW, Resources.Compass_SW) },
-            { "NE",  new Compass(Resources.Symbol_NE, Resources.Compass_NE) },
-            { "SE",  new Compass(Resources.Symbol_SE, Resources.Compass_SE) },
-            { "NNW",  new Compass(Resources.Symbol_NNW, Resources.Compass_NNW) },
-            { "WNW",  new Compass(Resources.Symbol_WNW, Resources.Compass_WNW) },
-            { "SSW",  new Compass(Resources.Symbol_SSW, Resources.Compass_SSW) },
-            { "WSW",  new Compass(Resources.Symbol_WSW, Resources.Compass_WSW) },
-            { "NNE",  new Compass(Resources.Symbol_NNE, Resources.Compass_NNE) },
-            { "ENE",  new Compass(Resources.Symbol_ENE, Resources.Compass_ENE) },
-            { "SSE",  new Compass(Resources.Symbol_SSE, Resources.Compass_SSE) },
-            { "ESE",  new Compass(Resources.Symbol_ESE, Resources.Compass_ESE) },
+            new Compass(Resources.Symbol_N, Resources.Compass_N),
+            new Compass(Resources.Symbol_NNE, Resources.Compass_NNE),
+            new Compass(Resources.Symbol_NE, Resources.Compass_NE),
+            new Compass(Resources.Symbol_ENE, Resources.Compass_ENE),
+            new Compass(Resources.Symbol_E, Resources.Compass_E),
+            new Compass(Resources.Symbol_ESE, Resources.Compass_ESE),
+            new Compass(Resources.Symbol_SE, Resources.Compass_SE),
+            new Compass(Resources.Symbol_SSE, Resources.Compass_SSE),
+            new Compass(Resources.Symbol_S, Resources.Compass_S),
+            new Compass(Resources.Symbol_SSW, Resources.Compass_SSW),
+            new Compass(Resources.Symbol_SW, Resources.Compass_SW),
+            new Compass(Resources.Symbol_WSW, Resources.Compass_WSW),
+            new Compass(Resources.Symbol_W, Resources.Compass_W),
+            new Compass(Resources.Symbol_WNW, Resources.Compass_WNW),
+            new Compass(Resources.Symbol_NW, Resources.Compass_NW) ,
+            new Compass(Resources.Symbol_NNW, Resources.Compass_NNW)
         };
 
         /// <summary>
@@ -49,11 +49,8 @@ namespace Xameteo.Model
 
         /// <summary>
         /// </summary>
-        /// <param name="key"></param>
+        /// <param name="degrees"></param>
         /// <returns></returns>
-        public static Compass Get(string key)
-        {
-            return Instances.TryGetValue(key, out var compass) ? compass : null;
-        }
+        public static Compass Get(int degrees) => Instances[(int)((degrees + 11.25) / 22.5) % 16];
     }
 }

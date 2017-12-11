@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          x:Class="Xameteo.Fragments.GenericCell">
+  <ViewCell.View>
+    <StackLayout Padding="0, 4" Orientation="Horizontal">
+      <Label Text="{Binding Title}"
+             HorizontalOptions="Fill"
+             HorizontalTextAlignment="Start"
+             VerticalOptions="CenterAndExpand" 
+             Style="{DynamicResource ListItemTextStyle}"/>
+      <Label Text="{Binding Description}"
+             HorizontalTextAlignment="End"
+             HorizontalOptions="FillAndExpand"
+             VerticalOptions="CenterAndExpand"
+             Style="{DynamicResource ListItemDetailTextStyle}"/>
+    </StackLayout>
+  </ViewCell.View>
+</ViewCell>

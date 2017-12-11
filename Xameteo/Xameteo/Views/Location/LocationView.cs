@@ -9,29 +9,30 @@ namespace Xameteo.Views.Location
     /// </summary>
     public class LocationView : TabbedPage
     {
-        public LocationView()
-        {
-            
-        }
-
-        public LocationView(ApixuForecast apixuForecast)
-        {
-            Initialize(apixuForecast);
-        }
         /// <summary>
         /// </summary>
-        public async void Initialize(ApixuForecast apixuForecast)
+        /// <param name="apixuForecast"></param>
+        public LocationView(ApixuForecast apixuForecast)
+        {
+            InitializeView(apixuForecast);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="apixuForecast"></param>
+        public async void InitializeView(ApixuForecast apixuForecast)
         {
             try
             {
                 Title = apixuForecast.Location.ToString();
-                Children.Add(new CurrentlyPage(apixuForecast));
+                Children.Add(new CurrentlyPage(apixuForecast.Current));
+                Children.Add(new DetailsView(apixuForecast.Location));
 
                 var days = apixuForecast.Forecast.Days;
 
                 if (days.Count > 0)
                 {
-                    Children.Add(new TodayPage(apixuForecast.Forecast.Days[0]));
+                    Children.Add(new TodayPage(days[0]));
 
                     if (days.Count > 1)
                     {

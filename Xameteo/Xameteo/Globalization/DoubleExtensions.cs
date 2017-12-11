@@ -3,7 +3,7 @@
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    public class DegreesConverter : AbstractConverter<double>
+    public class DegreesConverter : AbstractConverter<int>
     {
         /// <inheritdoc />
         /// <summary>

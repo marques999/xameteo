@@ -21,21 +21,14 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="10"/>
           </Grid.RowDefinitions>
-          <Label
-              Grid.Row="2"
-              Grid.Column="1"
-              Text="Locations"
-              Style="{DynamicResource SubtitleStyle}"/>
+          <Label Grid.Row="2" Grid.Column="1" Text="Locations" Style="{DynamicResource SubtitleStyle}"/>
         </Grid>
       </ListView.Header>
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
             <StackLayout Padding="16,12" HorizontalOptions="FillAndExpand">
-              <Label VerticalOptions="FillAndExpand" 
-                    VerticalTextAlignment="Center" 
-                    Text="{Binding Title}" 
-                    FontSize="20"/>
+              <Label VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" Text="{Binding Title}" FontSize="20"/>
             </StackLayout>
           </ViewCell>
         </DataTemplate>

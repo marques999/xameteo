@@ -5,10 +5,19 @@
              x:Class="Xameteo.Views.Location.HistoryPage"
              Title="{globalization:Translate Tab_History}">
   <ContentPage.Content>
-    <StackLayout>
-      <Label Text="Welcome to Xamarin.Forms!"
-             VerticalOptions="CenterAndExpand"
-             HorizontalOptions="CenterAndExpand" />
+    <StackLayout Orientation="Vertical">
+      <StackLayout Padding="16, 8" Orientation="Horizontal">
+        <Label Text="{Binding Item1}"
+                 HorizontalOptions="Fill"
+                 HorizontalTextAlignment="Start"
+                 VerticalOptions="CenterAndExpand" 
+                 Style="{DynamicResource ListItemTextStyle}"/>
+        <Label Text="{Binding Item2}"
+                 HorizontalTextAlignment="End"
+                 VerticalOptions="CenterAndExpand" 
+                 HorizontalOptions="FillAndExpand"
+                 Style="{DynamicResource ListItemDetailTextStyle}"/>
+      </StackLayout>
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>

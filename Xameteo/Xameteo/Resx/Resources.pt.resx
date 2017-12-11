@@ -675,4 +675,16 @@
   <data name="Prompt_Error" xml:space="preserve">
     <value>Campo obrigatório (a caixa de entrada de texto não deve estar vazia).</value>
   </data>
+  <data name="Button_Delete" xml:space="preserve">
+    <value>Apagar</value>
+  </data>
+  <data name="Button_View" xml:space="preserve">
+    <value>Visualizar</value>
+  </data>
+  <data name="Forecast_Rain" xml:space="preserve">
+    <value>Probabilidade de chuva</value>
+  </data>
+  <data name="Forecast_Snow" xml:space="preserve">
+    <value>Probabilidade de neve</value>
+  </data>
 </root>

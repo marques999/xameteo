@@ -215,11 +215,29 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string Button_Delete {
+            get {
+                return ResourceManager.GetString("Button_Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
         internal static string Button_OK {
             get {
                 return ResourceManager.GetString("Button_OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View.
+        /// </summary>
+        internal static string Button_View {
+            get {
+                return ResourceManager.GetString("Button_View", resourceCulture);
             }
         }
         
@@ -868,6 +886,24 @@ namespace Xameteo.Resx {
         internal static string Forecast_Pressure {
             get {
                 return ResourceManager.GetString("Forecast_Pressure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rain probability.
+        /// </summary>
+        internal static string Forecast_Rain {
+            get {
+                return ResourceManager.GetString("Forecast_Rain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Snow probability.
+        /// </summary>
+        internal static string Forecast_Snow {
+            get {
+                return ResourceManager.GetString("Forecast_Snow", resourceCulture);
             }
         }
         

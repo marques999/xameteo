@@ -2,8 +2,6 @@
   "dependencies": {
     "Acr.UserDialogs": "6.5.1",
     "akavache": "5.0.0",
-    "akavache.core": "5.0.0",
-    "akavache.sqlite3": "5.0.0",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
     "modernhttpclient": "2.4.2",
     "Newtonsoft.Json": "10.0.3",

@@ -13,14 +13,14 @@ namespace Xameteo.Views.Location
     {
         /// <summary>
         /// </summary>
-        public List<ForecastDaily> Days { get; }
+        public List<ForecastDaily> Items { get; }
 
         /// <summary>
         /// </summary>
         public ForecastPage(Forecast forecast)
         {
             InitializeComponent();
-            Days = forecast.Days;
+            Items = forecast.Days;
             BindingContext = this;
         }
     }

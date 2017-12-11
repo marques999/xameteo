@@ -1,11 +1,13 @@
 ﻿using System;
+using Xameteo.Resx;
 using Newtonsoft.Json;
 
 namespace Xameteo.Model
 {
+    /// <inheritdoc />
     /// <summary>
     /// </summary>
-    public class Location
+    public class Location : ITableProvider
     {
         /// <summary>
         /// Location name
@@ -65,5 +67,24 @@ namespace Xameteo.Model
         {
             return AppendNotNull(Name) + AppendNotNull(Region) + Country;
         }
+
+        /// <summary>
+        /// </summary>
+        private Coordinates Coordinates => new Coordinates(Latitude, Longitude);
+
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        public TableGroup GenerateTable() => new TableGroup("Location")
+        {
+            new TableItem(Resources.Location_Name, Name),
+            new TableItem(Resources.Location_Region, Region),
+            new TableItem(Resources.Location_Country, Country),
+            new TableItem(Resources.Location_Timezone, TimeZone),
+            new TableItem(Resources.Location_Latitude, Coordinates.StandardizeLatitude()),
+            new TableItem(Resources.Location_Longitude, Coordinates.StandardizeLongitude()),
+            new TableItem(Resources.Location_Local_Time, Xameteo.Localization.ShortTime(LocalTime))
+        };
     }
 }

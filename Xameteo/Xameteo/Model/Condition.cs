@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Xameteo.Resx;
+using Newtonsoft.Json;
 
 namespace Xameteo.Model
 {
@@ -15,5 +16,13 @@ namespace Xameteo.Model
         /// </summary>
         [JsonProperty("icon")]
         public string Icon { get; set; }
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        public TableItem GenerateTable() => new TableItem(
+            Resources.Forecast_Condition,
+            Xameteo.Localization.GetCondition(Id)
+        );
     }
 }

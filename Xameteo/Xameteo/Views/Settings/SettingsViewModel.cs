@@ -45,6 +45,14 @@ namespace Xameteo.Views.Settings
         /// </summary>
         public SettingsViewModel()
         {
+            RefreshView();
+        }
+
+        /// <summary>
+        /// </summary>
+        private void RefreshView()
+        {
+            Items.Add(new SettingsModel("Reset settings", "Reverts application settings to their defaults", ResetSettings));
             Items.Add(new SettingsModel(Resources.ApixuKey_Title, Xameteo.Settings.ApixuKey, UpdateApixuKey));
             Items.Add(new SettingsModel(Resources.GoogleKey_Title, Xameteo.Settings.GoogleKey, UpdateGoogleKey));
             Items.Add(new SettingsModel(Resources.ForecastDays_Title, Xameteo.Settings.ForecastDays.ToString(), UpdateForecastDays));
@@ -53,6 +61,17 @@ namespace Xameteo.Views.Settings
             InsertUnit(Xameteo.Settings.Pressure, UpdatePressure);
             InsertUnit(Xameteo.Settings.Temperature, UpdateTemperature);
             InsertUnit(Xameteo.Settings.Velocity, UpdateVelocity);
+        }
+
+        /// <summary>
+        /// </summary>
+        private async void ResetSettings(SettingsModel source)
+        {
+            if (await Xameteo.Dialogs.PromptYesNo("Reset settings", "Are you sure you want to revert the application settings to their defaults?"))
+            {
+                Items.Clear();
+                RefreshView();
+            }
         }
 
         /// <summary>

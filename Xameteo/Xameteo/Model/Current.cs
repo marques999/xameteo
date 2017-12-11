@@ -1,11 +1,13 @@
 ﻿using System;
+using Xameteo.Resx;
 using Newtonsoft.Json;
 
 namespace Xameteo.Model
 {
+    /// <inheritdoc />
     /// <summary>
     /// </summary>
-    public class Current
+    public class Current : ITableProvider
     {
         /// <summary>
         /// Cloud cover as percentage
@@ -74,15 +76,27 @@ namespace Xameteo.Model
         public double WindVelocity { get; set; }
 
         /// <summary>
-        /// Wind direction as sixteen point compass
-        /// </summary>
-        [JsonProperty("wind_dir")]
-        public string WindDirection { get; set; }
-
-        /// <summary>
         /// Local time when the real time data was updated.
         /// </summary>
         [JsonProperty("last_updated")]
         public DateTime LastUpdated { get; set; }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        public TableGroup GenerateTable() => new TableGroup("Current")
+        {
+            new TableItem(Resources.Forecast_Last_Updated, Xameteo.Localization.LongDateTime(LastUpdated)),
+            Condition.GenerateTable(),
+            new TableItem(Resources.Forecast_Temperature, Xameteo.Settings.Temperature.Convert(Temperature)),
+            new TableItem(Resources.Forecast_Feels_Like, Xameteo.Settings.Temperature.Convert(FeelsLike)),
+            new TableItem(Resources.Forecast_Humidity, Xameteo.Localization.Percentage(Humidity)),
+            new TableItem(Resources.Forecast_Wind_Velocity, Xameteo.Settings.Velocity.Convert(WindVelocity)),
+            new TableItem(Resources.Forecast_Wind_Direction, Xameteo.Localization.LongCompass(WindDegree)),
+            new TableItem(Resources.Forecast_Pressure, Xameteo.Settings.Pressure.Convert(Pressure)),
+            new TableItem(Resources.Forecast_Precipitation,Xameteo.Settings.Precipitation.Convert(Precipitation)),
+            new TableItem(Resources.Forecast_Visibility,Xameteo.Settings.Distance.Convert(Visibility))
+        };
     }
 }

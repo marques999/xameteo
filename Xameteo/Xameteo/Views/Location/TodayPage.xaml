@@ -2,44 +2,45 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:globalization="clr-namespace:Xameteo.Globalization;assembly=Xameteo"
+             xmlns:fragments="clr-namespace:Xameteo.Fragments;assembly=Xameteo"
              x:Class="Xameteo.Views.Location.TodayPage"
              Title="{globalization:Translate Tab_Today}">
   <ContentPage.Content>
-    <ScrollView>
-      <Label Text="HOURLY DETAILS"
-             VerticalOptions="CenterAndExpand"
-             HorizontalOptions="CenterAndExpand" />
-      <StackLayout Orientation="Horizontal">
-        <Label Text="Time"
-               VerticalOptions="CenterAndExpand" 
-               HorizontalOptions="CenterAndExpand" />
-        <Label Text="Weather"
-               VerticalOptions="CenterAndExpand" 
-               HorizontalOptions="CenterAndExpand" />
-        <Label Text="Wind"
-               VerticalOptions="CenterAndExpand" 
-               HorizontalOptions="CenterAndExpand" />
-      </StackLayout>
-      <ListView ItemsSource="{Binding Hours}"
-                CachingStrategy="RecycleElement">
-        <ListView.ItemTemplate>
-          <DataTemplate>
-            <ViewCell>
-              <StackLayout Padding="16, 8" Orientation="Horizontal">
-                <Label Text="{Binding Date, Converter={StaticResource XamlShortTimeConverter}}"
-                       VerticalOptions="CenterAndExpand" 
-                       HorizontalOptions="Start" />
-                <Label Text="{Binding Temperature, Converter={StaticResource XamlTemperatureConverter}}"
-                       VerticalOptions="CenterAndExpand" 
-                       HorizontalOptions="CenterAndExpand" />
-                <Label Text="{Binding WindVelocity, Converter={StaticResource XamlVelocityConverter}}"
-                       VerticalOptions="CenterAndExpand" 
-                       HorizontalOptions="End" />
-              </StackLayout>
-            </ViewCell>
-          </DataTemplate>
-        </ListView.ItemTemplate>
-      </ListView>
-    </ScrollView>
+    <!--StackLayout Orientation="Horizontal" VerticalOptions="End">
+        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+          <Label Text="{Binding Astrology.Sunrise}"
+                 Style="{StaticResource StyleAstroText}"/>
+          <Label Text="{globalization:Translate Astro_Sunrise}"
+                 Style="{StaticResource StyleAstroLabel}" />
+          <Label Text="{Binding Astrology.Sunset}"
+                 Style="{StaticResource StyleAstroText}" />
+          <Label Text="{globalization:Translate Astro_Sunset}"
+                 Style="{StaticResource StyleAstroLabel}" />
+        </StackLayout>
+        <BoxView Color="#5b5d68"
+                 WidthRequest="1" 
+                 HorizontalOptions="Center" />
+        <StackLayout Orientation="Vertical" Padding="16, 8" HorizontalOptions="FillAndExpand">
+          <Label Text="{Binding Astrology.Moonrise}"
+                 Style="{StaticResource StyleAstroText}"/>
+          <Label Text="{globalization:Translate Astro_Moonrise}"
+                 Style="{StaticResource StyleAstroLabel}" />
+          <Label Text="{Binding Astrology.Moonset}"
+                 Style="{StaticResource StyleAstroText}" />
+          <Label Text="{globalization:Translate Astro_Moonset}"
+                 Style="{StaticResource StyleAstroLabel}" />
+        </StackLayout>
+      </>-->
+    <ListView IsGroupingEnabled="true"
+              ItemsSource="{Binding Items}"
+              CachingStrategy="RecycleElement"
+              GroupDisplayBinding="{Binding Name}"
+              GroupShortNameBinding="{Binding Name}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <fragments:GenericCell/>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
   </ContentPage.Content>
 </ContentPage>
