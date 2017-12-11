@@ -114,7 +114,6 @@
     <Compile Include="Views\Location\TodayPage.xaml.cs">
       <DependentUpon>TodayPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Location\TodayViewModel.cs" />
     <Compile Include="Views\MainDetailModel.cs" />
     <Compile Include="Views\MainDetailViewModel.cs" />
     <Compile Include="Views\MainView.xaml.cs">
