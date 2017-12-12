@@ -157,6 +157,10 @@
     <Content Include="day_1276.png" />
     <Content Include="day_1279.png" />
     <Content Include="day_1282.png" />
+    <Content Include="icon_compass.png" />
+    <Content Include="icon_home.png" />
+    <Content Include="icon_plane.png" />
+    <Content Include="icon_settings.png" />
     <Content Include="luffy.png" />
     <Content Include="night_1000.png" />
     <Content Include="night_1003.png" />
