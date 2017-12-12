@@ -46,30 +46,21 @@
       <DependentUpon>GenericCell.xaml</DependentUpon>
     </Compile>
     <Compile Include="Globalization\AbstractConverter.cs" />
-    <Compile Include="Globalization\BooleanExtensions.cs" />
-    <Compile Include="Globalization\CompassExtensions.cs" />
+    <Compile Include="Globalization\IntegerExtensions.cs" />
     <Compile Include="Globalization\CoordinateExtensions.cs" />
     <Compile Include="Globalization\DateExtensions.cs" />
-    <Compile Include="Globalization\ILocale.cs" />
     <Compile Include="Globalization\DoubleExtensions.cs" />
     <Compile Include="Globalization\ImageExtensions.cs" />
     <Compile Include="Globalization\PlatformCulture.cs" />
-    <Compile Include="Globalization\UnitExtensions.cs" />
-    <Compile Include="Google\GoogleApi.cs" />
-    <Compile Include="Google\GeocodingBounds.cs" />
-    <Compile Include="Google\GeocodingComponent.cs" />
-    <Compile Include="Google\GoogleGeocoding.cs" />
-    <Compile Include="Google\GeocodingGeometry.cs" />
-    <Compile Include="Google\IGoogleApi.cs" />
-    <Compile Include="Google\GeocodingResult.cs" />
+    <Compile Include="API\GoogleApi.cs" />
+    <Compile Include="API\GoogleModel.cs" />
+    <Compile Include="API\IGoogleApi.cs" />
     <Compile Include="Helpers\Events.cs" />
     <Compile Include="Helpers\Globals.cs" />
-    <Compile Include="Helpers\IEventObject.cs" />
     <Compile Include="Model\Airport.cs" />
     <Compile Include="Model\Compass.cs" />
     <Compile Include="Model\Coordinates.cs" />
     <Compile Include="Model\ITableProvider.cs" />
-    <Compile Include="Model\TableGroup.cs" />
     <Compile Include="Model\TableItem.cs" />
     <Compile Include="Resx\Resources.pt.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -86,11 +77,9 @@
     <Compile Include="Units\Pressure.cs" />
     <Compile Include="Units\Temperature.cs" />
     <Compile Include="Units\Velocity.cs" />
-    <Compile Include="Globalization\L10N.cs" />
+    <Compile Include="Globalization\Localization.cs" />
     <Compile Include="Globalization\TranslateExtension.cs" />
-    <Compile Include="API\ApixuCurrent.cs" />
-    <Compile Include="API\ApixuForecast.cs" />
-    <Compile Include="API\ApixuHistory.cs" />
+    <Compile Include="API\ApixuModel.cs" />
     <Compile Include="Helpers\Dialogs.cs" />
     <Compile Include="Model\Astrology.cs" />
     <Compile Include="Model\Condition.cs" />
@@ -100,7 +89,6 @@
     <Compile Include="Model\ForecastDaily.cs" />
     <Compile Include="Model\Hourly.cs" />
     <Compile Include="Model\Location.cs" />
-    <Compile Include="API\Places.cs" />
     <Compile Include="Units\Unit.cs" />
     <Compile Include="Views\Location\DetailsView.xaml.cs">
       <DependentUpon>DetailsView.xaml</DependentUpon>
@@ -181,6 +169,12 @@
     <Reference Include="Refit">
       <HintPath>..\..\packages\Refit.3.1.0\lib\netstandard1.1\Refit.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Rg.Plugins.Popup, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rg.Plugins.Popup.1.0.4\lib\portable-win+net45+wp8+win8+wpa81\Rg.Plugins.Popup.dll</HintPath>
+    </Reference>
+    <Reference Include="Rg.Plugins.Popup.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Rg.Plugins.Popup.1.0.4\lib\portable-win+net45+wp8+win8+wpa81\Rg.Plugins.Popup.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Splat, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Splat.2.0.0\lib\netstandard1.1\Splat.dll</HintPath>
