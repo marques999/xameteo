@@ -1,7 +1,7 @@
 ﻿using Refit;
 using System.Threading.Tasks;
 
-namespace Xameteo.Google
+namespace Xameteo.API
 {
     /// <summary>
     /// </summary>
