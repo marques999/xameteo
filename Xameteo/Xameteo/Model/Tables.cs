@@ -12,6 +12,29 @@ namespace Xameteo.Model
         TableGroup GenerateTable();
     }
 
+    /// <summary>
+    /// </summary>
+    public class TableItem
+    {
+        /// <summary>
+        /// </summary>
+        public string Title { get; }
+
+        /// <summary>
+        /// </summary>
+        public string Description { get; }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        public TableItem(string title, string description)
+        {
+            Title = title;
+            Description = description.Trim().Length > 0 ? description : "N/A";
+        }
+    }
+
     /// <inheritdoc />
     /// <summary>
     /// </summary>

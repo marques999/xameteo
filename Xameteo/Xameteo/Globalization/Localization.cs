@@ -57,6 +57,14 @@ namespace Xameteo.Globalization
 
         /// <summary>
         /// </summary>
+        /// <param name="imageUri"></param>
+        /// <returns></returns>
+        public ImageSource GetDrawable(string imageUri) => ImageSource.FromFile(
+            Device.RuntimePlatform == Device.iOS ? "Images/" + imageUri : imageUri
+        );
+
+        /// <summary>
+        /// </summary>
         /// <param name="degrees"></param>
         /// <returns></returns>
         public string LongCompass(int degrees) => $"{Compass.Get(degrees).Name} ({Degrees(degrees)})";

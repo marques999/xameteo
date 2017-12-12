@@ -4,9 +4,7 @@ using System.Threading.Tasks;
 using Refit;
 using ModernHttpClient;
 
-using Xameteo.API;
-
-namespace Xameteo.Google
+namespace Xameteo.API
 {
     /// <summary>
     /// </summary>

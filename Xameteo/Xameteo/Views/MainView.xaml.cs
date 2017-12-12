@@ -20,14 +20,9 @@ namespace Xameteo.Views
             InitializeComponent();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
 
-            Xameteo.Events.SubscribeView(this, async (sender, args) =>
+            Xameteo.Events.SubscribeView(this, (sender, args) =>
             {
-                var forecast = await Xameteo.Apixu.Forecast(args);
-
-                if (forecast != null)
-                {
-                    Detail = new NavigationPage(new LocationView(forecast));
-                }
+                Detail = new NavigationPage(new LocationView(args.Forecast));
             });
         }
 
@@ -44,20 +39,15 @@ namespace Xameteo.Views
                     return;
                 }
 
-                if (item.Location == null)
+                if (item.ViewModel == null)
                 {
                     ResetNavigation();
                     Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
                 }
                 else
                 {
-                    var forecast = await Xameteo.Apixu.Forecast(item.Location);
-
-                    if (forecast != null)
-                    {
-                        ResetNavigation();
-                        Detail = new NavigationPage(new LocationView(forecast));
-                    }
+                    ResetNavigation();
+                    Detail = new NavigationPage(new LocationView(item.ViewModel.Forecast));
                 }
             }
             catch (Exception exception)

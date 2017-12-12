@@ -19,22 +19,30 @@ namespace Xameteo.Views
     {
         /// <summary>
         /// </summary>
+        private readonly MainModel _settingsPage = new MainModel
+        {
+            ViewModel = null,
+            Title = "Settings",
+            TargetType = typeof(SettingsView),
+            Icon = Xameteo.Localization.GetDrawable("icon_settings.png")
+        };
+
+        /// <summary>
+        /// </summary>
+        private readonly MainModel _homePage = new MainModel
+        {
+            Title = "Home",
+            ViewModel = null,
+            TargetType = typeof(HomeView),
+            Icon = Xameteo.Localization.GetDrawable("icon_home.png")
+        };
+
+        /// <summary>
+        /// </summary>
         public MainViewModel()
         {
-            MenuItems.Add(new MainModel
-            {
-                Location = null,
-                Title = "Home",
-                TargetType = typeof(MainViewDetail)
-            });
-
-            MenuItems.Add(new MainModel
-            {
-                Location = null,
-                Title = "Settings",
-                TargetType = typeof(SettingsView)
-            });
-
+            MenuItems.Add(_homePage);
+            MenuItems.Add(_settingsPage);
             Xameteo.Places.ForEach(InsertLocation);
         }
 
@@ -49,14 +57,15 @@ namespace Xameteo.Views
 
         /// <summary>
         /// </summary>
-        /// <param name="adapter"></param>
-        public void InsertLocation(ApixuAdapter adapter)
+        /// <param name="viewModel"></param>
+        public void InsertLocation(ApixuPlace viewModel)
         {
             MenuItems.Add(new MainModel
             {
-                Location = adapter,
-                Title = adapter.Parameters,
-                TargetType = typeof(LocationView)
+                ViewModel = viewModel,
+                Title = viewModel.Forecast.Location.ToString(),
+                TargetType = typeof(LocationView),
+                Icon = Xameteo.Localization.GetDrawable(viewModel.Adapter.Icon)
             });
         }
 
@@ -64,7 +73,7 @@ namespace Xameteo.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="adapter"></param>
-        public void InsertLocation(IEventObject sender, ApixuAdapter adapter)
+        public void InsertLocation(IEventObject sender, ApixuPlace adapter)
         {
             InsertLocation(adapter);
         }
@@ -81,9 +90,9 @@ namespace Xameteo.Views
         /// </summary>
         /// <param name="source"></param>
         /// <param name="adapter"></param>
-        public void RemoveLocation(IEventObject source, ApixuAdapter adapter)
+        public void RemoveLocation(IEventObject source, ApixuPlace adapter)
         {
-            var previous = MenuItems.FirstOrDefault(it => it.Location == adapter);
+            var previous = MenuItems.FirstOrDefault(it => it.ViewModel == adapter);
 
             if (previous != null)
             {

@@ -1,4 +1,5 @@
 ﻿using Xameteo.Resx;
+using Newtonsoft.Json;
 
 namespace Xameteo.Model
 {
@@ -9,7 +10,8 @@ namespace Xameteo.Model
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        private Airport(string code, string name)
+        [JsonConstructor]
+        public Airport(string code, string name)
         {
             Code = code;
             Name = name;
@@ -17,14 +19,17 @@ namespace Xameteo.Model
 
         /// <summary>
         /// </summary>
+        [JsonProperty("code")]
         public string Code { get; }
 
         /// <summary>
         /// </summary>
+        [JsonProperty("name")]
         public string Name { get; }
 
         /// <summary>
         /// </summary>
+        [JsonIgnore]
         public static readonly Airport[] Instances =
         {
             new Airport("FAO", Resources.Airport_FAO),

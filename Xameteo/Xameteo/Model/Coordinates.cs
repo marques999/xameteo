@@ -1,5 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
+using System.Globalization;
+using Plugin.Geolocator.Abstractions;
 
 namespace Xameteo.Model
 {
@@ -10,21 +12,31 @@ namespace Xameteo.Model
         /// <summary>
         /// </summary>
         [JsonProperty("lat")]
-        public double Latitude { get; set; }
+        public double Latitude { get; }
 
         /// <summary>
         /// </summary>
         [JsonProperty("lng")]
-        public double Longitude { get; set; }
+        public double Longitude { get; }
 
         /// <summary>
         /// </summary>
         /// <param name="latitude"></param>
         /// <param name="longitude"></param>
+        [JsonConstructor]
         public Coordinates(double latitude, double longitude)
         {
             Latitude = latitude;
             Longitude = longitude;
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="geolocator"></param>
+        public Coordinates(Position geolocator)
+        {
+            Latitude = geolocator.Latitude;
+            Longitude = geolocator.Longitude;
         }
 
         /// <summary>
@@ -58,6 +70,9 @@ namespace Xameteo.Model
         /// <summary>
         /// </summary>
         /// <returns></returns>
-        public override string ToString() => StandardizeLatitude() + " " + StandardizeLongitude();
+        public override string ToString()
+        {
+            return Latitude.ToString(CultureInfo.InvariantCulture) + "," + Longitude.ToString(CultureInfo.InvariantCulture);
+        }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
@@ -13,16 +12,14 @@ using Xameteo.Helpers;
 
 namespace Xameteo.Views
 {
+    /// <inheritdoc />
     /// <summary>
     /// </summary>
-    internal class MainDetailViewModel : IEventObject
+    internal class HomeViewModel : IEventObject
     {
         /// <summary>
         /// </summary>
-        public ObservableCollection<MainDetailModel> Items
-        {
-            get;
-        } = new ObservableCollection<MainDetailModel>();
+        public ObservableCollection<ApixuPlace> Items = Xameteo.Places;
 
         /// <summary>
         /// </summary>
@@ -30,7 +27,7 @@ namespace Xameteo.Views
 
         /// <summary>
         /// </summary>
-        public MainDetailViewModel()
+        public HomeViewModel()
         {
             _options.Add(new ActionSheetOption(Resources.Source_Device, LocationByDevice));
             _options.Add(new ActionSheetOption(Resources.Source_Airport, LocationByAirport));
@@ -102,33 +99,6 @@ namespace Xameteo.Views
 
         /// <summary>
         /// </summary>
-        public async Task InitializeList()
-        {
-            using (var progressDialog = Xameteo.Dialogs.InfiniteProgress)
-            {
-                try
-                {
-                    Items.Clear();
-                    progressDialog.Show();
-
-                    foreach (var adapter in Xameteo.Places)
-                    {
-                        Items.Add(new MainDetailModel(await Xameteo.Apixu.Current(adapter), adapter));
-                    }
-                }
-                catch (Exception exception)
-                {
-                    await Xameteo.Dialogs.Alert(exception);
-                }
-                finally
-                {
-                    progressDialog.Hide();
-                }
-            }
-        }
-
-        /// <summary>
-        /// </summary>
         /// <param name="apixuAdapter"></param>
         private async void SaveLocation(ApixuAdapter apixuAdapter)
         {
@@ -138,10 +108,11 @@ namespace Xameteo.Views
                 {
                     progressDialog.Show();
 
-                    if (Xameteo.InsertPlace(apixuAdapter))
+                    var viewModel = await Xameteo.InsertPlace(apixuAdapter);
+
+                    if (viewModel != null)
                     {
-                        Xameteo.Events.Insert(this, apixuAdapter);
-                        Items.Add(new MainDetailModel(await Xameteo.Apixu.Current(apixuAdapter), apixuAdapter));
+                        Xameteo.Events.Insert(this, viewModel);
                     }
                 }
                 catch (Exception exception)
@@ -158,13 +129,12 @@ namespace Xameteo.Views
         /// <summary>
         /// </summary>
         /// <param name="model"></param>
-        public async void RemoveItem(MainDetailModel model)
+        public async void RemoveItem(ApixuPlace model)
         {
-            if (await Xameteo.Dialogs.PromptYesNo(Resources.Remove_Title, string.Format(Resources.Remove_Message, model.Weather.Location)))
+            if (await Xameteo.Dialogs.PromptYesNo(Resources.Remove_Title, string.Format(Resources.Remove_Message, model.Forecast.Location)))
             {
-                if (Xameteo.Places.Remove(model.Adapter))
+                if (Xameteo.Places.Remove(model))
                 {
-                    Items.Remove(model);
                     Xameteo.Events.Remove(this, model.Adapter);
                 }
             }
@@ -180,12 +150,7 @@ namespace Xameteo.Views
 
                 try
                 {
-                    var position = await Xameteo.Geolocator.GetPositionAsync(Xameteo.Globals.AsyncTimeout);
-
-                    if (position != null)
-                    {
-                        SaveLocation(new CoordinatesAdapter(new Coordinates(position.Latitude, position.Longitude)));
-                    }
+                    SaveLocation(new CoordinatesAdapter(new Coordinates(await Xameteo.Geolocator.GetPositionAsync(Xameteo.Globals.AsyncTimeout))));
                 }
                 catch (Exception exception)
                 {

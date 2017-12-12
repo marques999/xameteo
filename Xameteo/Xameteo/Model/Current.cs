@@ -1,8 +1,7 @@
 ﻿using System;
-using Newtonsoft.Json;
-
 using Xameteo.Resx;
 using Xamarin.Forms;
+using Newtonsoft.Json;
 
 namespace Xameteo.Model
 {

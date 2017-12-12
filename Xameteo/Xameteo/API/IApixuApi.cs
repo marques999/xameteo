@@ -13,12 +13,6 @@ namespace Xameteo.API
         /// <summary>
         /// </summary>
         /// <returns></returns>
-        [Get("/current.json")]
-        Task<ApixuCurrent> GetCurrent(string key, string q);
-
-        /// <summary>
-        /// </summary>
-        /// <returns></returns>
         [Get("/forecast.json")]
         Task<ApixuForecast> GetForecast(string key, string q, int days);
 

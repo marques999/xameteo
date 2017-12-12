@@ -1,5 +1,6 @@
 ﻿using System;
 using Xameteo.API;
+using Xamarin.Forms;
 
 namespace Xameteo.Views
 {
@@ -9,14 +10,18 @@ namespace Xameteo.Views
     {
         /// <summary>
         /// </summary>
-        public ApixuAdapter Location { get; set; }
-
-        /// <summary>
-        /// </summary>
         public string Title { get; set; }
 
         /// <summary>
         /// </summary>
-        public Type TargetType { get; set; } = typeof(MainViewDetail);
+        public ImageSource Icon { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public ApixuPlace ViewModel { get; set; }
+
+        /// <summary>
+        /// </summary>
+        public Type TargetType { get; set; } = typeof(HomeView);
     }
 }

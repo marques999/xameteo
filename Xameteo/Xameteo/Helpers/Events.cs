@@ -1,7 +1,7 @@
 ﻿using Xameteo.API;
 using Xamarin.Forms;
 
-using XameteoEvent = System.Action<Xameteo.Helpers.IEventObject, Xameteo.API.ApixuAdapter>;
+using XameteoEvent = System.Action<Xameteo.Helpers.IEventObject, Xameteo.API.ApixuPlace>;
 
 namespace Xameteo.Helpers
 {
@@ -25,13 +25,13 @@ namespace Xameteo.Helpers
         /// </summary>
         /// <param name="source"></param>
         /// <param name="adapter"></param>
-        public void View(IEventObject source, ApixuAdapter adapter) => MessagingCenter.Send(source, ViewTag, adapter);
+        public void View(IEventObject source, ApixuPlace adapter) => MessagingCenter.Send(source, ViewTag, adapter);
 
         /// <summary>
         /// </summary>
         /// <param name="source"></param>
         /// <param name="adapter"></param>
-        public void Insert(IEventObject source, ApixuAdapter adapter) => MessagingCenter.Send(source, InsertTag, adapter);
+        public void Insert(IEventObject source, ApixuPlace adapter) => MessagingCenter.Send(source, InsertTag, adapter);
 
         /// <summary>
         /// </summary>

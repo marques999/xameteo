@@ -28,6 +28,6 @@ namespace Xameteo.Helpers
 
         /// <summary>
         /// </summary>
-        public DateTimeOffset CacheInvalidate { get; } = DateTimeOffset.Now.AddHours(12);
+        public TimeSpan CacheInvalidate { get; } = TimeSpan.FromHours(1);
     }
 }

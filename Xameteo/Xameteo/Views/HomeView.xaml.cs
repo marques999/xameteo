@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Diagnostics;
 
+using Xameteo.API;
 using Xameteo.Helpers;
 
 using Xamarin.Forms;
@@ -11,7 +11,7 @@ namespace Xameteo.Views
     /// <summary>
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainViewDetail : IEventObject
+    public partial class HomeView : IEventObject
     {
         /// <summary>
         /// </summary>
@@ -23,7 +23,7 @@ namespace Xameteo.Views
 
         /// <summary>
         /// </summary>
-        private readonly MainDetailViewModel _viewModel;
+        private readonly HomeViewModel _viewModel;
 
         /// <summary>
         /// </summary>
@@ -55,7 +55,7 @@ namespace Xameteo.Views
 
         /// <summary>
         /// </summary>
-        private async void ExecuteRefresh()
+        private void ExecuteRefresh()
         {
             if (IsRefreshing)
             {
@@ -64,16 +64,16 @@ namespace Xameteo.Views
 
             IsRefreshing = true;
             RefreshCommand.ChangeCanExecute();
-            await _viewModel.InitializeList();
+            Xameteo.RefreshPlaces();
             IsRefreshing = false;
             RefreshCommand.ChangeCanExecute();
         }
 
         /// <summary>
         /// </summary>
-        public MainViewDetail()
+        public HomeView()
         {
-            _viewModel = new MainDetailViewModel();
+            _viewModel = new HomeViewModel();
             BindingContext = _viewModel;
             InitializeComponent();
         }
@@ -84,7 +84,7 @@ namespace Xameteo.Views
         /// <param name="args"></param>
         private void DeleteClicked(object sender, EventArgs args)
         {
-            if (sender is Button button && button.CommandParameter is MainDetailModel model)
+            if (sender is Button button && button.CommandParameter is ApixuPlace model)
             {
                 _viewModel.RemoveItem(model);
             }
@@ -96,9 +96,9 @@ namespace Xameteo.Views
         /// <param name="args"></param>
         private void ViewClicked(object sender, EventArgs args)
         {
-            if (sender is MenuItem menuItem && menuItem.CommandParameter is MainDetailModel model)
+            if (sender is MenuItem menuItem && menuItem.CommandParameter is ApixuPlace model)
             {
-                Xameteo.Events.View(this, model.Adapter);
+                Xameteo.Events.View(this, model);
             }
         }
 
@@ -108,28 +108,12 @@ namespace Xameteo.Views
         /// <param name="args"></param>
         private void ItemClicked(object sender, ItemTappedEventArgs args)
         {
-            if (args.Item is MainDetailModel model)
+            if (args.Item is ApixuPlace model)
             {
-                Debug.WriteLine(model.Adapter.Parameters);
-                Xameteo.Events.View(this, model.Adapter);
+                Xameteo.Events.View(this, model);
             }
 
             ((ListView)sender).SelectedItem = null;
-        }
-
-        /// <inheritdoc />
-        /// <summary>
-        /// </summary>
-        protected override async void OnAppearing()
-        {
-            try
-            {
-                await _viewModel.InitializeList();
-            }
-            catch (Exception exception)
-            {
-                await Xameteo.Dialogs.Alert(exception);
-            }
         }
     }
 }

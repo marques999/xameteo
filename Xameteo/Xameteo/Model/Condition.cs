@@ -22,16 +22,8 @@ namespace Xameteo.Model
         /// </summary>
         /// <param name="isDay"></param>
         /// <returns></returns>
-        public ImageSource Image(bool isDay) => GetFile(
+        public ImageSource Image(bool isDay) => Xameteo.Localization.GetDrawable(
             isDay ? $"day_{Id}.png" : $"night_{Id}.png"
-        );
-
-        /// <summary>
-        /// </summary>
-        /// <param name="imageUri"></param>
-        /// <returns></returns>
-        private static ImageSource GetFile(string imageUri) => ImageSource.FromFile(
-            Device.RuntimePlatform == Device.iOS ? "Images/" + imageUri : imageUri
         );
 
         /// <summary>

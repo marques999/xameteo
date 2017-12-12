@@ -1,7 +1,4 @@
-﻿using System.Net;
-using System.Globalization;
-
-using Xameteo.Model;
+﻿using Xameteo.Model;
 using Newtonsoft.Json;
 
 namespace Xameteo.API
@@ -31,6 +28,11 @@ namespace Xameteo.API
     /// </summary>
     public class AirportAdapter : ApixuAdapter
     {
+        /// <summary>
+        /// </summary>
+        [JsonProperty("airport")]
+        public Airport Airport { get; }
+
         /// <inheritdoc />
         /// <summary>
         /// </summary>
@@ -40,19 +42,16 @@ namespace Xameteo.API
             Airport = airport;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// </summary>
-        [JsonProperty("airport")]
-        public Airport Airport { get; private set; }
+        [JsonIgnore]
+        public override string Icon => "icon_plane.png";
 
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public override string Icon => "fa-plane";
-
-        /// <inheritdoc />
-        /// <summary>
-        /// </summary>
+        [JsonIgnore]
         public override string Parameters => "iata:" + Airport.Code;
     }
 
@@ -61,6 +60,11 @@ namespace Xameteo.API
     /// </summary>
     public class CoordinatesAdapter : ApixuAdapter
     {
+        /// <summary>
+        /// </summary>
+        [JsonProperty("coordinates")]
+        public Coordinates Coordinates { get; }
+
         /// <inheritdoc />
         /// <summary>
         /// </summary>
@@ -70,85 +74,16 @@ namespace Xameteo.API
             Coordinates = coordinates;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// </summary>
-        [JsonProperty("coordinates")]
-        public Coordinates Coordinates { get; private set; }
+        [JsonIgnore]
+        public override string Icon => "icon_compass.png";
 
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public override string Icon => "fa-safari";
-
-        /// <inheritdoc />
-        /// <summary>
-        /// </summary>
-        public override string Parameters
-        {
-            get => Coordinates.Latitude.ToString(CultureInfo.InvariantCulture) + "," + Coordinates.Longitude.ToString(CultureInfo.InvariantCulture);
-        }
-    }
-
-    /// <inheritdoc />
-    /// <summary>
-    /// </summary>
-    public class GeolocationAdapter : ApixuAdapter
-    {
-        /// <inheritdoc />
-        /// <summary>
-        /// </summary>
-        /// <param name="query"></param>
-        public GeolocationAdapter(string query)
-        {
-            Query = query;
-        }
-
-        /// <summary>
-        /// </summary>
-        [JsonProperty("query")]
-        public string Query { get; private set; }
-
-        /// <inheritdoc />
-        /// <summary>
-        /// </summary>
-        public override string Icon => "fa-search";
-
-        /// <inheritdoc />
-        /// <summary>
-        /// </summary>
-        public override string Parameters => WebUtility.UrlEncode(Query);
-    }
-
-    /// <inheritdoc />
-    /// <summary>
-    /// </summary>
-    public class DeviceAdapter : ApixuAdapter
-    {
-        /// <inheritdoc />
-        /// <summary>
-        /// </summary>
-        /// <param name="coordinates"></param>
-        public DeviceAdapter(Coordinates coordinates)
-        {
-            Coordinates = coordinates;
-        }
-
-        /// <summary>
-        /// </summary>
-        [JsonProperty("coordinates")]
-        public Coordinates Coordinates { get; private set; }
-
-        /// <inheritdoc />
-        /// <summary>
-        /// </summary>
-        public override string Icon => "fa-mobile-phone";
-
-        /// <inheritdoc />
-        /// <summary>
-        /// </summary>
-        public override string Parameters
-        {
-            get => Coordinates.Latitude.ToString(CultureInfo.InvariantCulture) + "," + Coordinates.Longitude.ToString(CultureInfo.InvariantCulture);
-        }
+        [JsonIgnore]
+        public override string Parameters => Coordinates.ToString();
     }
 }

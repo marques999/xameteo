@@ -88,11 +88,26 @@ namespace Xameteo.Model
                 Resources.Forecast_Visibility,
                 Xameteo.Settings.Distance.Convert(Visibility)
             ),
-            TableItem.Precipitation(Precipitation),
-            TableItem.RainProbability(RainProbability),
-            TableItem.SnowProbability(SnowProbability),
-            TableItem.WindVelocity(WindVelocity),
-            TableItem.WindDegree(WindDegree)
+            new TableItem(
+                Resources.Forecast_Precipitation,
+                Xameteo.Settings.Precipitation.Convert(Precipitation)
+            ),
+            new TableItem(
+                Resources.Forecast_Rain,
+                Xameteo.Localization.Percentage(RainProbability)
+            ),
+            new TableItem(
+                Resources.Forecast_Snow,
+                Xameteo.Localization.Percentage(SnowProbability)
+            ),
+            new TableItem(
+                Resources.Forecast_Wind_Velocity,
+                Xameteo.Settings.Velocity.Convert(WindVelocity)
+            ),
+            new TableItem(
+                Resources.Forecast_Wind_Direction,
+                Xameteo.Localization.LongCompass(WindDegree)
+            )
         };
     }
 }
