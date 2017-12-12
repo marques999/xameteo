@@ -1,7 +1,9 @@
 ﻿using System;
+
 using Xameteo.Resx;
-using Newtonsoft.Json;
 using Xameteo.Globalization;
+
+using Newtonsoft.Json;
 
 namespace Xameteo.Model
 {

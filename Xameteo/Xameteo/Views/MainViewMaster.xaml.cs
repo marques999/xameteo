@@ -1,8 +1,6 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using Xameteo.Helpers;
-
 namespace Xameteo.Views
 {
     /// <summary>
@@ -29,7 +27,7 @@ namespace Xameteo.Views
         {
             BindingContext = viewModel;
             ListView = MenuItemsListView;
-            XameteoApp.Events.SubscribeUpdates(this, viewModel.InsertLocation, viewModel.RemoveLocation);
+            XameteoApp.Instance.Events.SubscribeUpdates(this, viewModel.InsertLocation, viewModel.RemoveLocation);
         }
     }
 }

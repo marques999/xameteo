@@ -1,13 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             Title="Xameteo"
-             x:Class="Xameteo.Views.MainViewMaster">
+             xmlns:globalization="clr-namespace:Xameteo.Globalization;assembly=Xameteo"
+             x:Class="Xameteo.Views.MainViewMaster"
+             Title="{globalization:Translate Title_Xameteo}">
   <StackLayout>
-    <ListView x:Name="MenuItemsListView"
-              SeparatorVisibility="None"
-              HasUnevenRows="true"
-              ItemsSource="{Binding MenuItems}">
+    <ListView x:Name="MenuItemsListView" SeparatorVisibility="None" HasUnevenRows="true" ItemsSource="{Binding MenuItems}">
       <ListView.Header>
         <Grid BackgroundColor="Accent">
           <Grid.ColumnDefinitions>

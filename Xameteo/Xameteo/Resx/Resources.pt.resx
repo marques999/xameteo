@@ -619,7 +619,7 @@
     <value>As minhas localizações</value>
   </data>
   <data name="Title_Preferences" xml:space="preserve">
-    <value>Preferences</value>
+    <value>Preferências</value>
   </data>
   <data name="Remove_Message" xml:space="preserve">
     <value>Tem a certeza que pretende apagar "{0}" das suas localizações?</value>
@@ -716,5 +716,11 @@
   </data>
   <data name="Exists_Title" xml:space="preserve">
     <value>Localização existe</value>
+  </data>
+  <data name="Title_Xameteo" xml:space="preserve">
+    <value>Xameteo</value>
+  </data>
+  <data name="Tab_Location" xml:space="preserve">
+    <value>Localização</value>
   </data>
 </root>

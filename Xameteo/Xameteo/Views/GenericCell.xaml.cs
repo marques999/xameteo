@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms.Xaml;
 
-namespace Xameteo.Fragments
+namespace Xameteo.Views
 {
     /// <inheritdoc />
     /// <summary>

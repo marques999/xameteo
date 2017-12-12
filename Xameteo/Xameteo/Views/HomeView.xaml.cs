@@ -1,8 +1,6 @@
 ﻿using System;
 
 using Xameteo.API;
-using Xameteo.Helpers;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -98,7 +96,7 @@ namespace Xameteo.Views
         {
             if (sender is MenuItem menuItem && menuItem.CommandParameter is ApixuPlace model)
             {
-                XameteoApp.Events.View(this, model);
+                XameteoApp.Instance.Events.View(this, model);
             }
         }
 
@@ -110,7 +108,7 @@ namespace Xameteo.Views
         {
             if (args.Item is ApixuPlace model)
             {
-                XameteoApp.Events.View(this, model);
+                XameteoApp.Instance.Events.View(this, model);
             }
 
             ((ListView)sender).SelectedItem = null;

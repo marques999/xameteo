@@ -1,8 +1,8 @@
 ﻿using Acr.UserDialogs;
 
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 using Xameteo.Resx;
 
@@ -14,9 +14,12 @@ namespace Xameteo
     {
         /// <summary>
         /// </summary>
-        /// <param name="ex"></param>
+        public static void HideLoading() => UserDialogs.Instance.HideLoading();
+
+        /// <summary>
+        /// </summary>
         /// <returns></returns>
-        public static IDisposable Alert(Exception ex) => UserDialogs.Instance.Alert(ex.Message, ex.GetType().Name);
+        public static void ShowLoading() => UserDialogs.Instance.ShowLoading(Resources.Loading_Title, MaskType.Gradient);
 
         /// <summary>
         /// </summary>
@@ -27,12 +30,9 @@ namespace Xameteo
 
         /// <summary>
         /// </summary>
+        /// <param name="exception"></param>
         /// <returns></returns>
-        public static void ShowLoading() => UserDialogs.Instance.ShowLoading(Resources.Loading_Title, MaskType.Gradient);
-
-        /// <summary>
-        /// </summary>
-        public static void HideLoading() => UserDialogs.Instance.HideLoading();
+        public static IDisposable Alert(Exception exception) => UserDialogs.Instance.Alert(exception.Message, exception.GetType().Name);
 
         /// <summary>
         /// </summary>
@@ -60,6 +60,12 @@ namespace Xameteo
             CancelText = Resources.Global_No
         });
 
+        /// <summary>
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="message"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static Task<PromptResult> PromptNumber(string title, string message, int value) => UserDialogs.Instance.PromptAsync(new PromptConfig
         {
             Title = title,

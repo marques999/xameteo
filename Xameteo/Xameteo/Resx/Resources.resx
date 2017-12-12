@@ -598,7 +598,7 @@
     <value>Forecast</value>
   </data>
   <data name="Tab_History" xml:space="preserve">
-    <value>HIstory</value>
+    <value>History</value>
   </data>
   <data name="Tab_Now" xml:space="preserve">
     <value>Now</value>
@@ -716,5 +716,11 @@
   </data>
   <data name="Exists_Title" xml:space="preserve">
     <value>Location exists</value>
+  </data>
+  <data name="Title_Xameteo" xml:space="preserve">
+    <value>Xameteo</value>
+  </data>
+  <data name="Tab_Location" xml:space="preserve">
+    <value>Location</value>
   </data>
 </root>

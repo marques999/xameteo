@@ -7,7 +7,6 @@ using Xamarin.Forms.Internals;
 
 using Xameteo.API;
 using Xameteo.Resx;
-using Xameteo.Helpers;
 using Xameteo.Globalization;
 using Xameteo.Views.Location;
 using Xameteo.Views.Settings;

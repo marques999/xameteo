@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:fragments="clr-namespace:Xameteo.Fragments;assembly=Xameteo"
              xmlns:globalization="clr-namespace:Xameteo.Globalization;assembly=Xameteo"
+             xmlns:views="clr-namespace:Xameteo.Views;assembly=Xameteo"
              x:Class="Xameteo.Views.Location.DetailsView"
-             Title="{globalization:Translate Tab_Now}">
+             Title="{globalization:Translate Tab_Location}">
   <ContentPage.Content>
     <ListView ItemsSource="{Binding Items}" CachingStrategy="RecycleElement">
       <ListView.ItemTemplate>
         <DataTemplate>
-          <fragments:GenericCell />
+          <views:GenericCell />
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>

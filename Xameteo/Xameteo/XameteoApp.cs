@@ -10,12 +10,10 @@ using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 
 using Xameteo.API;
+using Xameteo.Model;
 using Xameteo.Units;
-using Xameteo.Helpers;
-
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
-using Xameteo.Model;
 
 namespace Xameteo
 {
@@ -159,7 +157,7 @@ namespace Xameteo
 
         /// <summary>
         /// </summary>
-        public static Events Events { get; } = new Events();
+        public XameteoEvents Events { get; } = new XameteoEvents();
 
         /// <summary>
         /// </summary>

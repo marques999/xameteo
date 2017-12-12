@@ -8,7 +8,6 @@ using Acr.UserDialogs;
 using Xameteo.API;
 using Xameteo.Resx;
 using Xameteo.Model;
-using Xameteo.Helpers;
 
 namespace Xameteo.Views
 {
@@ -117,7 +116,7 @@ namespace Xameteo.Views
 
                 if (viewModel != null)
                 {
-                    XameteoApp.Events.Insert(this, viewModel);
+                    XameteoApp.Instance.Events.Insert(this, viewModel);
                 }
                 else
                 {
@@ -141,7 +140,7 @@ namespace Xameteo.Views
         {
             if (await XameteoDialogs.PromptYesNo(Resources.Remove_Title, string.Format(Resources.Remove_Message, model.Forecast.Location)) && XameteoApp.Instance.Places.Remove(model))
             {
-                XameteoApp.Events.Remove(this, model.Adapter);
+                XameteoApp.Instance.Events.Remove(this, model.Adapter);
             }
         }
 

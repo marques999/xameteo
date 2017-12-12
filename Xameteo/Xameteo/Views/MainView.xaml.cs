@@ -2,8 +2,6 @@
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
-using Xameteo.Helpers;
 using Xameteo.Views.Location;
 
 namespace Xameteo.Views
@@ -20,7 +18,7 @@ namespace Xameteo.Views
             InitializeComponent();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
 
-            XameteoApp.Events.SubscribeView(this, (sender, args) =>
+            XameteoApp.Instance.Events.SubscribeView(this, (sender, args) =>
             {
                 Detail = new NavigationPage(new LocationView(args.Forecast));
             });

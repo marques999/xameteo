@@ -1655,11 +1655,20 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to HIstory.
+        ///   Looks up a localized string similar to History.
         /// </summary>
         internal static string Tab_History {
             get {
                 return ResourceManager.GetString("Tab_History", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location.
+        /// </summary>
+        internal static string Tab_Location {
+            get {
+                return ResourceManager.GetString("Tab_Location", resourceCulture);
             }
         }
         
@@ -1705,6 +1714,15 @@ namespace Xameteo.Resx {
         internal static string Title_Preferences {
             get {
                 return ResourceManager.GetString("Title_Preferences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Xameteo.
+        /// </summary>
+        internal static string Title_Xameteo {
+            get {
+                return ResourceManager.GetString("Title_Xameteo", resourceCulture);
             }
         }
         

@@ -41,7 +41,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Fragments\GenericCell.xaml.cs">
+    <Compile Include="Views\GenericCell.xaml.cs">
       <DependentUpon>GenericCell.xaml</DependentUpon>
     </Compile>
     <Compile Include="Globalization\AbstractConverter.cs" />
@@ -54,7 +54,7 @@
     <Compile Include="API\GoogleApi.cs" />
     <Compile Include="API\GoogleModel.cs" />
     <Compile Include="API\IGoogleApi.cs" />
-    <Compile Include="Helpers\Events.cs" />
+    <Compile Include="XameteoEvents.cs" />
     <Compile Include="XameteoGlobals.cs" />
     <Compile Include="Model\Airport.cs" />
     <Compile Include="Model\Compass.cs" />
@@ -259,7 +259,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Fragments\GenericCell.xaml">
+    <EmbeddedResource Include="Views\GenericCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

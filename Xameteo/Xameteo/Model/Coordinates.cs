@@ -1,6 +1,8 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+
+using System;
 using System.Globalization;
+
 using Plugin.Geolocator.Abstractions;
 
 namespace Xameteo.Model

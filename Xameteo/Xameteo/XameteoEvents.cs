@@ -1,9 +1,9 @@
 ﻿using Xameteo.API;
 using Xamarin.Forms;
 
-using XameteoEvent = System.Action<Xameteo.Helpers.IEventObject, Xameteo.API.ApixuPlace>;
+using XameteoEvent = System.Action<Xameteo.IEventObject, Xameteo.API.ApixuPlace>;
 
-namespace Xameteo.Helpers
+namespace Xameteo
 {
     /// <summary>
     /// </summary>
@@ -13,7 +13,7 @@ namespace Xameteo.Helpers
 
     /// <summary>
     /// </summary>
-    public class Events
+    public class XameteoEvents
     {
         /// <summary>
         /// </summary>
