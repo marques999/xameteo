@@ -12,7 +12,6 @@ namespace Xameteo
         public App()
         {
             InitializeComponent();
-            Xameteo.Initialize();
             MainPage = new MainView();
         }
 

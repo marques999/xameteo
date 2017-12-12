@@ -14,14 +14,6 @@ namespace Xameteo.Views.Location
         /// <param name="apixuForecast"></param>
         public LocationView(ApixuForecast apixuForecast)
         {
-            InitializeView(apixuForecast);
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="apixuForecast"></param>
-        public async void InitializeView(ApixuForecast apixuForecast)
-        {
             try
             {
                 Title = apixuForecast.Location.ToString();
@@ -44,7 +36,7 @@ namespace Xameteo.Views.Location
             }
             catch (Exception exception)
             {
-                await Xameteo.Dialogs.Alert(exception);
+                XameteoDialogs.Alert(exception);
             }
         }
     }

@@ -55,7 +55,7 @@
     <Compile Include="API\GoogleModel.cs" />
     <Compile Include="API\IGoogleApi.cs" />
     <Compile Include="Helpers\Events.cs" />
-    <Compile Include="Helpers\Globals.cs" />
+    <Compile Include="XameteoGlobals.cs" />
     <Compile Include="Model\Airport.cs" />
     <Compile Include="Model\Compass.cs" />
     <Compile Include="Model\Coordinates.cs" />
@@ -75,10 +75,10 @@
     <Compile Include="Units\Pressure.cs" />
     <Compile Include="Units\Temperature.cs" />
     <Compile Include="Units\Velocity.cs" />
-    <Compile Include="Globalization\Localization.cs" />
+    <Compile Include="Globalization\XameteoL10N.cs" />
     <Compile Include="Globalization\TranslateExtension.cs" />
     <Compile Include="API\ApixuModel.cs" />
-    <Compile Include="Helpers\Dialogs.cs" />
+    <Compile Include="XameteoDialogs.cs" />
     <Compile Include="Model\Astrology.cs" />
     <Compile Include="Model\Condition.cs" />
     <Compile Include="Model\Current.cs" />
@@ -123,8 +123,7 @@
       <DependentUpon>ForecastPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Settings\SettingsViewModel.cs" />
-    <Compile Include="Xameteo.cs" />
-    <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="XameteoApp.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">

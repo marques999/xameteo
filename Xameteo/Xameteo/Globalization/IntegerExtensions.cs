@@ -8,7 +8,7 @@
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public ShortCompassConverter() : base(Xameteo.Localization.ShortCompass)
+        public ShortCompassConverter() : base(XameteoL10N.ShortCompass)
         {
         }
     }
@@ -21,7 +21,7 @@
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public LongCompassConverter() : base(Xameteo.Localization.LongCompass)
+        public LongCompassConverter() : base(XameteoL10N.LongCompass)
         {
         }
     }

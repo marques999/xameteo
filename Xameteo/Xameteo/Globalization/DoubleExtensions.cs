@@ -8,7 +8,7 @@
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public DegreesConverter() : base(Xameteo.Localization.Degrees)
+        public DegreesConverter() : base(XameteoL10N.Degrees)
         {
         }
     }
@@ -21,7 +21,7 @@
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public FixedPointConverter() : base(Xameteo.Localization.FixedPoint)
+        public FixedPointConverter() : base(XameteoL10N.FixedPoint)
         {
         }
     }
@@ -34,7 +34,7 @@
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public PercentageConverter() : base(Xameteo.Localization.Percentage)
+        public PercentageConverter() : base(XameteoL10N.Percentage)
         {
         }
     }
@@ -47,7 +47,7 @@
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public DistanceConverter() : base(Xameteo.Settings.Distance.Convert)
+        public DistanceConverter() : base(XameteoApp.Instance.Distance.Convert)
         {
         }
     }
@@ -60,7 +60,7 @@
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public PrecipitationConverter() : base(Xameteo.Settings.Precipitation.Convert)
+        public PrecipitationConverter() : base(XameteoApp.Instance.Precipitation.Convert)
         {
         }
     }
@@ -73,7 +73,7 @@
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public PressureConverter() : base(Xameteo.Settings.Pressure.Convert)
+        public PressureConverter() : base(XameteoApp.Instance.Pressure.Convert)
         {
         }
     }
@@ -86,7 +86,7 @@
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public TemperatureConverter() : base(Xameteo.Settings.Temperature.Convert)
+        public TemperatureConverter() : base(XameteoApp.Instance.Temperature.Convert)
         {
         }
     }
@@ -99,7 +99,7 @@
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public VelocityConverter() : base(Xameteo.Settings.Velocity.Convert)
+        public VelocityConverter() : base(XameteoApp.Instance.Velocity.Convert)
         {
         }
     }

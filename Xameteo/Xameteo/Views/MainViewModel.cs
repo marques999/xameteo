@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using Xamarin.Forms.Internals;
 
 using Xameteo.API;
+using Xameteo.Globalization;
 using Xameteo.Helpers;
 using Xameteo.Views.Location;
 using Xameteo.Views.Settings;
@@ -24,7 +25,7 @@ namespace Xameteo.Views
             ViewModel = null,
             Title = "Settings",
             TargetType = typeof(SettingsView),
-            Icon = Xameteo.Localization.GetDrawable("icon_settings.png")
+            Icon = XameteoL10N.GetDrawable("icon_settings.png")
         };
 
         /// <summary>
@@ -34,7 +35,7 @@ namespace Xameteo.Views
             Title = "Home",
             ViewModel = null,
             TargetType = typeof(HomeView),
-            Icon = Xameteo.Localization.GetDrawable("icon_home.png")
+            Icon = XameteoL10N.GetDrawable("icon_home.png")
         };
 
         /// <summary>
@@ -43,7 +44,7 @@ namespace Xameteo.Views
         {
             MenuItems.Add(_homePage);
             MenuItems.Add(_settingsPage);
-            Xameteo.Places.ForEach(InsertLocation);
+            XameteoApp.Instance.Places.ForEach(InsertLocation);
         }
 
         /// <inheritdoc />
@@ -65,7 +66,7 @@ namespace Xameteo.Views
                 ViewModel = viewModel,
                 Title = viewModel.Forecast.Location.ToString(),
                 TargetType = typeof(LocationView),
-                Icon = Xameteo.Localization.GetDrawable(viewModel.Adapter.Icon)
+                Icon = XameteoL10N.GetDrawable(viewModel.Adapter.Icon)
             });
         }
 

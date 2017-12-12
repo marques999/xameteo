@@ -3,7 +3,6 @@ using System.Resources;
 using System.Reflection;
 using System.Globalization;
 
-using Xameteo.Resx;
 using Xamarin.Forms;
 using Xameteo.Model;
 
@@ -23,25 +22,25 @@ namespace Xameteo.Globalization
 
     /// <summary>
     /// </summary>
-    public class Localization
+    public static class XameteoL10N
     {
         /// <summary>
         /// </summary>
-        private readonly CultureInfo _culture = DependencyService.Get<ILocale>().GetCurrentCultureInfo();
+        private static readonly CultureInfo Culture = DependencyService.Get<ILocale>().GetCurrentCultureInfo();
 
         /// <summary>
         /// </summary>
-        private readonly ResourceManager _resources = new ResourceManager("Xameteo.Resx.Resources", typeof(Localization).GetTypeInfo().Assembly);
+        private static readonly ResourceManager Resources = new ResourceManager("Xameteo.Resx.Resources", typeof(XameteoL10N).GetTypeInfo().Assembly);
 
         /// <summary>
         /// </summary>
         /// <param name="dateTime"></param>
         /// <returns></returns>
-        public DateTime ParseTime(string dateTime)
+        public static DateTime ParseTime(string dateTime)
         {
             try
             {
-                return DateTime.ParseExact(dateTime, "hh:mm tt", _culture.DateTimeFormat);
+                return DateTime.ParseExact(dateTime, "hh:mm tt", Culture.DateTimeFormat);
             }
             catch (FormatException)
             {
@@ -53,13 +52,13 @@ namespace Xameteo.Globalization
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public string Get(string key) => _resources.GetString(key, _culture) ?? key;
+        public static string Get(string key) => Resources.GetString(key, Culture) ?? key;
 
         /// <summary>
         /// </summary>
         /// <param name="imageUri"></param>
         /// <returns></returns>
-        public ImageSource GetDrawable(string imageUri) => ImageSource.FromFile(
+        public static ImageSource GetDrawable(string imageUri) => ImageSource.FromFile(
             Device.RuntimePlatform == Device.iOS ? "Images/" + imageUri : imageUri
         );
 
@@ -67,66 +66,66 @@ namespace Xameteo.Globalization
         /// </summary>
         /// <param name="degrees"></param>
         /// <returns></returns>
-        public string LongCompass(int degrees) => $"{Compass.Get(degrees).Name} ({Degrees(degrees)})";
-        public string ShortCompass(int degrees) => $"{Compass.Get(degrees).Symbol} ({Degrees(degrees)})";
+        public static string LongCompass(int degrees) => $"{Compass.Get(degrees).Name} ({Degrees(degrees)})";
+        public static string ShortCompass(int degrees) => $"{Compass.Get(degrees).Symbol} ({Degrees(degrees)})";
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <param name="format"></param>
         /// <returns></returns>
-        private string FormatNumber(double value, string format) => value.ToString(format, _culture.NumberFormat);
+        private static string FormatNumber(double value, string format) => value.ToString(format, Culture.NumberFormat);
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <param name="format"></param>
         /// <returns></returns>
-        private string FormatDate(DateTime value, string format) => value.ToString(format, _culture.DateTimeFormat);
+        private static string FormatDate(DateTime value, string format) => value.ToString(format, Culture.DateTimeFormat);
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public string ShortTime(DateTime value) => FormatDate(value, "t");
-        public string ShortDate(DateTime value) => FormatDate(value, "d");
+        public static string ShortTime(DateTime value) => FormatDate(value, "t");
+        public static string ShortDate(DateTime value) => FormatDate(value, "d");
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public string LongDate(DateTime value) => FormatDate(value, "D");
-        public string LongDateTime(DateTime value) => FormatDate(value, "f");
+        public static string LongDate(DateTime value) => FormatDate(value, "D");
+        public static string LongDateTime(DateTime value) => FormatDate(value, "f");
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public string WeekDay(DateTime value) => FormatDate(value, "dddd");
+        public static string WeekDay(DateTime value) => FormatDate(value, "dddd");
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public string FixedPoint(double value) => FormatNumber(value, "N2");
-        public string Percentage(double value) => FormatNumber(value / 100, "P0");
+        public static string FixedPoint(double value) => FormatNumber(value, "N2");
+        public static string Percentage(double value) => FormatNumber(value / 100, "P0");
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public string Degrees(int value)
+        public static string Degrees(int value)
         {
-            return FormatNumber(value, "N0") + " " + Resources.Symbol_Degrees;
+            return FormatNumber(value, "N0") + " " + Resx.Resources.Symbol_Degrees;
         }
 
         /// <summary>
         /// </summary>
         /// <param name="condition"></param>
         /// <returns></returns>
-        public string GetCondition(Condition condition)
+        public static string GetCondition(Condition condition)
         {
-            return _resources.GetString("Condition_" + condition.Id, _culture) ?? condition.Description;
+            return Resources.GetString("Condition_" + condition.Id, Culture) ?? condition.Description;
         }
     }
 }

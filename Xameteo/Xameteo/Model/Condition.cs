@@ -1,5 +1,8 @@
-﻿using Xameteo.Resx;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
+
+using Xameteo.Resx;
+using Xameteo.Globalization;
+
 using Newtonsoft.Json;
 
 namespace Xameteo.Model
@@ -22,7 +25,7 @@ namespace Xameteo.Model
         /// </summary>
         /// <param name="isDay"></param>
         /// <returns></returns>
-        public ImageSource Image(bool isDay) => Xameteo.Localization.GetDrawable(
+        public ImageSource Image(bool isDay) => XameteoL10N.GetDrawable(
             isDay ? $"day_{Id}.png" : $"night_{Id}.png"
         );
 
@@ -30,7 +33,7 @@ namespace Xameteo.Model
         /// </summary>
         /// <returns></returns>
         public TableItem GenerateTable() => new TableItem(
-            Resources.Forecast_Condition, Xameteo.Localization.GetCondition(this)
+            Resources.Forecast_Condition, XameteoL10N.GetCondition(this)
         );
     }
 }

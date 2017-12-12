@@ -64,7 +64,7 @@ namespace Xameteo.Views
 
             IsRefreshing = true;
             RefreshCommand.ChangeCanExecute();
-            Xameteo.RefreshPlaces();
+            XameteoApp.Instance.RefreshPlaces();
             IsRefreshing = false;
             RefreshCommand.ChangeCanExecute();
         }
@@ -98,7 +98,7 @@ namespace Xameteo.Views
         {
             if (sender is MenuItem menuItem && menuItem.CommandParameter is ApixuPlace model)
             {
-                Xameteo.Events.View(this, model);
+                XameteoApp.Events.View(this, model);
             }
         }
 
@@ -110,7 +110,7 @@ namespace Xameteo.Views
         {
             if (args.Item is ApixuPlace model)
             {
-                Xameteo.Events.View(this, model);
+                XameteoApp.Events.View(this, model);
             }
 
             ((ListView)sender).SelectedItem = null;

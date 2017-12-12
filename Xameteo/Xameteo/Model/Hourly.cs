@@ -1,5 +1,8 @@
 ﻿using System;
+
 using Xameteo.Resx;
+using Xameteo.Globalization;
+
 using Newtonsoft.Json;
 
 namespace Xameteo.Model
@@ -78,36 +81,18 @@ namespace Xameteo.Model
         /// <summary>
         /// </summary>
         /// <returns></returns>
-        public TableGroup GenerateTable() => new TableGroup(Xameteo.Localization.ShortTime(Date))
+        public TableGroup GenerateTable() => new TableGroup(XameteoL10N.ShortTime(Date))
         {
-            new TableItem(Resources.Forecast_Temperature, Xameteo.Settings.Temperature.Convert(Temperature)),
-            new TableItem(Resources.Forecast_Feels_Like, Xameteo.Settings.Temperature.Convert(FeelsLike)),
-            new TableItem(Resources.Forecast_Humidity, Xameteo.Localization.Percentage(Humidity)),
-            new TableItem(Resources.Forecast_Pressure, Xameteo.Settings.Pressure.Convert(Pressure)),
-            new TableItem(
-                Resources.Forecast_Visibility,
-                Xameteo.Settings.Distance.Convert(Visibility)
-            ),
-            new TableItem(
-                Resources.Forecast_Precipitation,
-                Xameteo.Settings.Precipitation.Convert(Precipitation)
-            ),
-            new TableItem(
-                Resources.Forecast_Rain,
-                Xameteo.Localization.Percentage(RainProbability)
-            ),
-            new TableItem(
-                Resources.Forecast_Snow,
-                Xameteo.Localization.Percentage(SnowProbability)
-            ),
-            new TableItem(
-                Resources.Forecast_Wind_Velocity,
-                Xameteo.Settings.Velocity.Convert(WindVelocity)
-            ),
-            new TableItem(
-                Resources.Forecast_Wind_Direction,
-                Xameteo.Localization.LongCompass(WindDegree)
-            )
+            new TableItem(Resources.Forecast_Temperature, XameteoApp.Instance.Temperature.Convert(Temperature)),
+            new TableItem(Resources.Forecast_Feels_Like, XameteoApp.Instance.Temperature.Convert(FeelsLike)),
+            new TableItem(Resources.Forecast_Humidity, XameteoL10N.Percentage(Humidity)),
+            new TableItem(Resources.Forecast_Pressure, XameteoApp.Instance.Pressure.Convert(Pressure)),
+            new TableItem(Resources.Forecast_Visibility,XameteoApp.Instance.Distance.Convert(Visibility)),
+            new TableItem(Resources.Forecast_Precipitation,XameteoApp.Instance.Precipitation.Convert(Precipitation)),
+            new TableItem(Resources.Forecast_Rain,XameteoL10N.Percentage(RainProbability)),
+            new TableItem(Resources.Forecast_Snow,XameteoL10N.Percentage(SnowProbability)),
+            new TableItem(Resources.Forecast_Wind_Velocity,XameteoApp.Instance.Velocity.Convert(WindVelocity)),
+            new TableItem(Resources.Forecast_Wind_Direction, XameteoL10N.LongCompass(WindDegree))
         };
     }
 }

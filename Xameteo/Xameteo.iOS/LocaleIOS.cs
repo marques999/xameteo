@@ -1,7 +1,6 @@
-﻿using System.Globalization;
-
-using Foundation;
+﻿using Foundation;
 using Xamarin.Forms;
+using System.Globalization;
 
 using Xameteo.iOS;
 using Xameteo.Globalization;

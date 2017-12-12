@@ -1,48 +1,40 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using Acr.UserDialogs;
+
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 using Xameteo.Resx;
 
-using Acr.UserDialogs;
-
-namespace Xameteo.Helpers
+namespace Xameteo
 {
     /// <summary>
     /// </summary>
-    internal class Dialogs
+    internal static class XameteoDialogs
     {
-        /// <summary>
-        /// </summary>
-        private readonly IUserDialogs _userDialogs = UserDialogs.Instance;
-
         /// <summary>
         /// </summary>
         /// <param name="ex"></param>
         /// <returns></returns>
-        public Task Alert(Exception ex) => _userDialogs.AlertAsync(ex.Message, ex.GetType().Name);
+        public static IDisposable Alert(Exception ex) => UserDialogs.Instance.Alert(ex.Message, ex.GetType().Name);
 
         /// <summary>
         /// </summary>
         /// <param name="title"></param>
         /// <param name="message"></param>
         /// <returns></returns>
-        public Task Alert(string title, string message) => _userDialogs.AlertAsync(message, title);
-
-        /// <summary>
-        /// </summary>
-        private readonly ActionSheetOption _cancelButton = new ActionSheetOption(Resources.Button_Cancel);
+        public static IDisposable Alert(string title, string message) => UserDialogs.Instance.Alert(message, title);
 
         /// <summary>
         /// </summary>
         /// <param name="result"></param>
         /// <returns></returns>
-        public bool ValidatePrompt(PromptResult result) => result.Ok && result.Text.Trim().Length > 0;
+        public static bool ValidatePrompt(PromptResult result) => result.Ok && result.Text.Trim().Length > 0;
 
         /// <summary>
         /// </summary>
         /// <returns></returns>
-        public IProgressDialog InfiniteProgress => _userDialogs.Progress(new ProgressDialogConfig
+        public static IProgressDialog InfiniteProgress => UserDialogs.Instance.Progress(new ProgressDialogConfig
         {
             AutoShow = true,
             IsDeterministic = false,
@@ -54,12 +46,12 @@ namespace Xameteo.Helpers
         /// <param name="options"></param>
         /// <param name="title"></param>
         /// <returns></returns>
-        public IDisposable ActionSheet(List<ActionSheetOption> options, string title) => _userDialogs.ActionSheet(new ActionSheetConfig
+        public static IDisposable ActionSheet(List<ActionSheetOption> options, string title) => UserDialogs.Instance.ActionSheet(new ActionSheetConfig
         {
             Title = title,
             Options = options,
-            Cancel = _cancelButton,
-            UseBottomSheet = false
+            UseBottomSheet = false,
+            Cancel = new ActionSheetOption(Resources.Button_Cancel)
         });
 
         /// <summary>
@@ -67,7 +59,7 @@ namespace Xameteo.Helpers
         /// <param name="title"></param>
         /// <param name="message"></param>
         /// <returns></returns>
-        public Task<bool> PromptYesNo(string title, string message) => _userDialogs.ConfirmAsync(new ConfirmConfig
+        public static Task<bool> PromptYesNo(string title, string message) => UserDialogs.Instance.ConfirmAsync(new ConfirmConfig
         {
             Title = title,
             Message = message,
@@ -75,7 +67,7 @@ namespace Xameteo.Helpers
             CancelText = Resources.Global_No
         });
 
-        public Task<PromptResult> PromptNumber(string title, string message, int value) => _userDialogs.PromptAsync(new PromptConfig
+        public static Task<PromptResult> PromptNumber(string title, string message, int value) => UserDialogs.Instance.PromptAsync(new PromptConfig
         {
             Title = title,
             Message = message,
@@ -91,7 +83,7 @@ namespace Xameteo.Helpers
         /// <param name="title"></param>
         /// <param name="message"></param>
         /// <param name="placeholder"></param>
-        public Task<PromptResult> Prompt(string title, string message, string placeholder) => _userDialogs.PromptAsync(new PromptConfig
+        public static Task<PromptResult> Prompt(string title, string message, string placeholder) => UserDialogs.Instance.PromptAsync(new PromptConfig
         {
             Title = title,
             Message = message,

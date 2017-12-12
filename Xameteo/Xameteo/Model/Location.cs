@@ -1,6 +1,7 @@
 ﻿using System;
 using Xameteo.Resx;
 using Newtonsoft.Json;
+using Xameteo.Globalization;
 
 namespace Xameteo.Model
 {
@@ -84,7 +85,7 @@ namespace Xameteo.Model
             new TableItem(Resources.Location_Timezone, TimeZone),
             new TableItem(Resources.Location_Latitude, Coordinates.StandardizeLatitude()),
             new TableItem(Resources.Location_Longitude, Coordinates.StandardizeLongitude()),
-            new TableItem(Resources.Location_Local_Time, Xameteo.Localization.ShortTime(LocalTime))
+            new TableItem(Resources.Location_Local_Time, XameteoL10N.ShortTime(LocalTime))
         };
     }
 }

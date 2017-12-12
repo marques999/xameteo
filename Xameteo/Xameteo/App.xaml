@@ -7,7 +7,7 @@
     <ResourceDictionary>
       <!-- Boolean Conversions -->
       <globalization:ConditionConverter x:Key="XamlConditionConverter" />
-        <!-- Compass Conversions -->
+      <!-- Compass Conversions -->
       <globalization:LongCompassConverter x:Key="XamlLongCompassConverter"/>
       <globalization:ShortCompassConverter x:Key="XamlShortCompassConverter" />
       <!-- Coordinates Conversions -->

@@ -1,6 +1,9 @@
-﻿using Xameteo.Resx;
+﻿
 using Xamarin.Forms;
 using Newtonsoft.Json;
+
+using Xameteo.Resx;
+using Xameteo.Globalization;
 
 namespace Xameteo.Model
 {
@@ -65,15 +68,15 @@ namespace Xameteo.Model
         /// <returns></returns>
         public TableGroup GenerateTable() => new TableGroup(Resources.Group_Temperature)
         {
-            new TableItem(Resources.Forecast_Precipitation, Xameteo.Settings.Precipitation.Convert(Precipitation)),
-            new TableItem(Resources.Forecast_Wind_Velocity, Xameteo.Settings.Velocity.Convert(WindVelocity)),
-            new TableItem(Resources.Forecast_Humidity, Xameteo.Localization.Percentage(Humidity)),
-            new TableItem(Resources.Forecast_Visibility, Xameteo.Settings.Distance.Convert(Visibility)),
-            new TableItem(Resources.Forecast_Ultraviolet, Xameteo.Localization.FixedPoint(Ultraviolet)),
+            new TableItem(Resources.Forecast_Precipitation, XameteoApp.Instance.Precipitation.Convert(Precipitation)),
+            new TableItem(Resources.Forecast_Wind_Velocity, XameteoApp.Instance.Velocity.Convert(WindVelocity)),
+            new TableItem(Resources.Forecast_Humidity, XameteoL10N.Percentage(Humidity)),
+            new TableItem(Resources.Forecast_Visibility, XameteoApp.Instance.Distance.Convert(Visibility)),
+            new TableItem(Resources.Forecast_Ultraviolet, XameteoL10N.FixedPoint(Ultraviolet)),
             Condition.GenerateTable(),
-            new TableItem(Resources.Forecast_Average, Xameteo.Settings.Temperature.Convert(Average)),
-            new TableItem(Resources.Forecast_Minimum, Xameteo.Settings.Temperature.Convert(Minimum)),
-            new TableItem(Resources.Forecast_Maxmum, Xameteo.Settings.Temperature.Convert(Maximum))
+            new TableItem(Resources.Forecast_Average, XameteoApp.Instance.Temperature.Convert(Average)),
+            new TableItem(Resources.Forecast_Minimum, XameteoApp.Instance.Temperature.Convert(Minimum)),
+            new TableItem(Resources.Forecast_Maxmum, XameteoApp.Instance.Temperature.Convert(Maximum))
         };
     }
 }

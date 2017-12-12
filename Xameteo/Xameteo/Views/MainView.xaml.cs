@@ -20,7 +20,7 @@ namespace Xameteo.Views
             InitializeComponent();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
 
-            Xameteo.Events.SubscribeView(this, (sender, args) =>
+            XameteoApp.Events.SubscribeView(this, (sender, args) =>
             {
                 Detail = new NavigationPage(new LocationView(args.Forecast));
             });
@@ -30,7 +30,7 @@ namespace Xameteo.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs args)
+        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             try
             {
@@ -52,7 +52,7 @@ namespace Xameteo.Views
             }
             catch (Exception exception)
             {
-                await Xameteo.Dialogs.Alert(exception);
+                XameteoDialogs.Alert(exception);
             }
         }
 

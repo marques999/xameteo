@@ -21,6 +21,7 @@ namespace Xameteo.Droid
         {
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// </summary>
         public override void OnCreate()
@@ -29,6 +30,7 @@ namespace Xameteo.Droid
             RegisterActivityLifecycleCallbacks(this);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// </summary>
         public override void OnTerminate()

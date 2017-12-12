@@ -29,7 +29,7 @@ namespace Xameteo.Views
         {
             BindingContext = viewModel;
             ListView = MenuItemsListView;
-            Xameteo.Events.SubscribeUpdates(this, viewModel.InsertLocation, viewModel.RemoveLocation);
+            XameteoApp.Events.SubscribeUpdates(this, viewModel.InsertLocation, viewModel.RemoveLocation);
         }
     }
 }

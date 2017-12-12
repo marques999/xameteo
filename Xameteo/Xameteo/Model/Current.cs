@@ -1,7 +1,9 @@
 ﻿using System;
-using Xameteo.Resx;
 using Xamarin.Forms;
 using Newtonsoft.Json;
+using Xameteo.Globalization;
+using Xameteo.Resx;
+using Xameteo.Helpers;
 
 namespace Xameteo.Model
 {
@@ -76,13 +78,13 @@ namespace Xameteo.Model
         /// <returns></returns>
         public TableGroup GenerateTable() => new TableGroup("Current")
         {
-            new TableItem(Resources.Forecast_Feels_Like, Xameteo.Settings.Temperature.Convert(FeelsLike)),
-            new TableItem(Resources.Forecast_Humidity, Xameteo.Localization.Percentage(Humidity)),
-            new TableItem(Resources.Forecast_Wind_Velocity, Xameteo.Settings.Velocity.Convert(WindVelocity)),
-            new TableItem(Resources.Forecast_Wind_Direction, Xameteo.Localization.LongCompass(WindDegree)),
-            new TableItem(Resources.Forecast_Pressure, Xameteo.Settings.Pressure.Convert(Pressure)),
-            new TableItem(Resources.Forecast_Precipitation,Xameteo.Settings.Precipitation.Convert(Precipitation)),
-            new TableItem(Resources.Forecast_Visibility,Xameteo.Settings.Distance.Convert(Visibility))
+            new TableItem(Resources.Forecast_Feels_Like, XameteoApp.Instance.Temperature.Convert(FeelsLike)),
+            new TableItem(Resources.Forecast_Humidity, XameteoL10N.Percentage(Humidity)),
+            new TableItem(Resources.Forecast_Wind_Velocity, XameteoApp.Instance.Velocity.Convert(WindVelocity)),
+            new TableItem(Resources.Forecast_Wind_Direction, XameteoL10N.LongCompass(WindDegree)),
+            new TableItem(Resources.Forecast_Pressure, XameteoApp.Instance.Pressure.Convert(Pressure)),
+            new TableItem(Resources.Forecast_Precipitation, XameteoApp.Instance.Precipitation.Convert(Precipitation)),
+            new TableItem(Resources.Forecast_Visibility, XameteoApp.Instance.Distance.Convert(Visibility))
         };
     }
 }

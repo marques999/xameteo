@@ -10,7 +10,7 @@ namespace Xameteo.Globalization
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public ShortTimeConverter() : base(Xameteo.Localization.ShortTime)
+        public ShortTimeConverter() : base(XameteoL10N.ShortTime)
         {
         }
     }
@@ -23,7 +23,7 @@ namespace Xameteo.Globalization
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public ShortDateConverter() : base(Xameteo.Localization.ShortDate)
+        public ShortDateConverter() : base(XameteoL10N.ShortDate)
         {
         }
     }
@@ -36,7 +36,7 @@ namespace Xameteo.Globalization
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public LongDateConverter() : base(Xameteo.Localization.LongDate)
+        public LongDateConverter() : base(XameteoL10N.LongDate)
         {
         }
     }
@@ -49,7 +49,7 @@ namespace Xameteo.Globalization
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public WeekdayConverter() : base(Xameteo.Localization.WeekDay)
+        public WeekdayConverter() : base(XameteoL10N.WeekDay)
         {
         }
     }
@@ -62,7 +62,7 @@ namespace Xameteo.Globalization
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public LongDateTimeConverter() : base(Xameteo.Localization.LongDateTime)
+        public LongDateTimeConverter() : base(XameteoL10N.LongDateTime)
         {
         }
     }

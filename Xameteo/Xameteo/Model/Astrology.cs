@@ -1,5 +1,7 @@
-﻿using Xameteo.Resx;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+
+using Xameteo.Resx;
+using Xameteo.Globalization;
 
 namespace Xameteo.Model
 {
@@ -34,10 +36,10 @@ namespace Xameteo.Model
         /// <returns></returns>
         public TableGroup GenerateTable() => new TableGroup("Astrology")
         {
-            new TableItem(Resources.Astro_Sunrise, Xameteo.Localization.ShortTime(Xameteo.Localization.ParseTime(Sunrise))),
-            new TableItem(Resources.Astro_Sunset, Xameteo.Localization.ShortTime(Xameteo.Localization.ParseTime(Sunset))),
-            new TableItem(Resources.Astro_Moonrise, Xameteo.Localization.ShortTime(Xameteo.Localization.ParseTime(Moonrise))),
-            new TableItem(Resources.Astro_Moonset, Xameteo.Localization.ShortTime(Xameteo.Localization.ParseTime(Moonset)))
+            new TableItem(Resources.Astro_Sunrise, XameteoL10N.ShortTime(XameteoL10N.ParseTime(Sunrise))),
+            new TableItem(Resources.Astro_Sunset, XameteoL10N.ShortTime(XameteoL10N.ParseTime(Sunset))),
+            new TableItem(Resources.Astro_Moonrise, XameteoL10N.ShortTime(XameteoL10N.ParseTime(Moonrise))),
+            new TableItem(Resources.Astro_Moonset, XameteoL10N.ShortTime(XameteoL10N.ParseTime(Moonset)))
         };
     }
 }

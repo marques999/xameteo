@@ -15,7 +15,7 @@ namespace Xameteo.Globalization
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public ConditionConverter() : base(Xameteo.Localization.GetCondition)
+        public ConditionConverter() : base(XameteoL10N.GetCondition)
         {
         }
     }
@@ -35,6 +35,6 @@ namespace Xameteo.Globalization
         /// </summary>
         /// <param name="provider"></param>
         /// <returns></returns>
-        public object ProvideValue(IServiceProvider provider) => Text == null ? null : Xameteo.Localization.Get(Text);
+        public object ProvideValue(IServiceProvider provider) => Text == null ? null : XameteoL10N.Get(Text);
     }
 }
