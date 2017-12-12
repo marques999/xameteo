@@ -1,4 +1,5 @@
-﻿using Xameteo.Resx;
+﻿using System;
+using Xameteo.Resx;
 using Plugin.Settings.Abstractions;
 
 namespace Xameteo.Units
@@ -36,7 +37,7 @@ namespace Xameteo.Units
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        private Precipitation(int id, string symbol, string name, FormulaDelegate formula) : base(id, symbol, name, formula)
+        private Precipitation(int id, string symbol, string name, Func<double, double> formula) : base(id, symbol, name, formula)
         {
         }
     }
