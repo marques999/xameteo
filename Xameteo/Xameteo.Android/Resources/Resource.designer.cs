@@ -2313,124 +2313,124 @@ namespace Xameteo.Droid
 			public const int day_1069 = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int day_185 = 2130837597;
+			public const int day_1072 = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int day_200 = 2130837598;
+			public const int day_1087 = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int day_227 = 2130837599;
+			public const int day_1114 = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int day_230 = 2130837600;
+			public const int day_1117 = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int day_248 = 2130837601;
+			public const int day_1135 = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int day_260 = 2130837602;
+			public const int day_1147 = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int day_263 = 2130837603;
+			public const int day_1150 = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int day_266 = 2130837604;
+			public const int day_1153 = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int day_281 = 2130837605;
+			public const int day_1168 = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int day_284 = 2130837606;
+			public const int day_1171 = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int day_293 = 2130837607;
+			public const int day_1180 = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int day_296 = 2130837608;
+			public const int day_1183 = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int day_299 = 2130837609;
+			public const int day_1186 = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int day_302 = 2130837610;
+			public const int day_1189 = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int day_305 = 2130837611;
+			public const int day_1192 = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int day_308 = 2130837612;
+			public const int day_1195 = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int day_311 = 2130837613;
+			public const int day_1198 = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int day_314 = 2130837614;
+			public const int day_1201 = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int day_317 = 2130837615;
+			public const int day_1204 = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int day_320 = 2130837616;
+			public const int day_1207 = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int day_323 = 2130837617;
+			public const int day_1210 = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int day_326 = 2130837618;
+			public const int day_1213 = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int day_329 = 2130837619;
+			public const int day_1216 = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int day_332 = 2130837620;
+			public const int day_1219 = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int day_335 = 2130837621;
+			public const int day_1222 = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int day_338 = 2130837622;
+			public const int day_1225 = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int day_350 = 2130837623;
+			public const int day_1237 = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int day_353 = 2130837624;
+			public const int day_1240 = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int day_356 = 2130837625;
+			public const int day_1243 = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int day_359 = 2130837626;
+			public const int day_1246 = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int day_362 = 2130837627;
+			public const int day_1249 = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int day_365 = 2130837628;
+			public const int day_1252 = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int day_368 = 2130837629;
+			public const int day_1255 = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int day_371 = 2130837630;
+			public const int day_1258 = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int day_374 = 2130837631;
+			public const int day_1261 = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int day_377 = 2130837632;
+			public const int day_1264 = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int day_386 = 2130837633;
+			public const int day_1273 = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int day_389 = 2130837634;
+			public const int day_1276 = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int day_392 = 2130837635;
+			public const int day_1279 = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int day_395 = 2130837636;
+			public const int day_1282 = 2130837636;
 			
 			// aapt resource value: 0x7f020085
 			public const int design_bottom_navigation_item_background = 2130837637;
@@ -2961,148 +2961,148 @@ namespace Xameteo.Droid
 			public const int navigation_empty_icon = 2130837812;
 			
 			// aapt resource value: 0x7f020135
-			public const int night_113 = 2130837813;
+			public const int night_1000 = 2130837813;
 			
 			// aapt resource value: 0x7f020136
-			public const int night_116 = 2130837814;
+			public const int night_1003 = 2130837814;
 			
 			// aapt resource value: 0x7f020137
-			public const int night_119 = 2130837815;
+			public const int night_1006 = 2130837815;
 			
 			// aapt resource value: 0x7f020138
-			public const int night_122 = 2130837816;
+			public const int night_1009 = 2130837816;
 			
 			// aapt resource value: 0x7f020139
-			public const int night_143 = 2130837817;
+			public const int night_1030 = 2130837817;
 			
 			// aapt resource value: 0x7f02013a
-			public const int night_176 = 2130837818;
+			public const int night_1063 = 2130837818;
 			
 			// aapt resource value: 0x7f02013b
-			public const int night_179 = 2130837819;
+			public const int night_1066 = 2130837819;
 			
 			// aapt resource value: 0x7f02013c
-			public const int night_182 = 2130837820;
+			public const int night_1069 = 2130837820;
 			
 			// aapt resource value: 0x7f02013d
-			public const int night_185 = 2130837821;
+			public const int night_1072 = 2130837821;
 			
 			// aapt resource value: 0x7f02013e
-			public const int night_200 = 2130837822;
+			public const int night_1087 = 2130837822;
 			
 			// aapt resource value: 0x7f02013f
-			public const int night_227 = 2130837823;
+			public const int night_1114 = 2130837823;
 			
 			// aapt resource value: 0x7f020140
-			public const int night_230 = 2130837824;
+			public const int night_1117 = 2130837824;
 			
 			// aapt resource value: 0x7f020141
-			public const int night_248 = 2130837825;
+			public const int night_1135 = 2130837825;
 			
 			// aapt resource value: 0x7f020142
-			public const int night_260 = 2130837826;
+			public const int night_1147 = 2130837826;
 			
 			// aapt resource value: 0x7f020143
-			public const int night_263 = 2130837827;
+			public const int night_1150 = 2130837827;
 			
 			// aapt resource value: 0x7f020144
-			public const int night_266 = 2130837828;
+			public const int night_1153 = 2130837828;
 			
 			// aapt resource value: 0x7f020145
-			public const int night_281 = 2130837829;
+			public const int night_1168 = 2130837829;
 			
 			// aapt resource value: 0x7f020146
-			public const int night_284 = 2130837830;
+			public const int night_1171 = 2130837830;
 			
 			// aapt resource value: 0x7f020147
-			public const int night_293 = 2130837831;
+			public const int night_1180 = 2130837831;
 			
 			// aapt resource value: 0x7f020148
-			public const int night_296 = 2130837832;
+			public const int night_1183 = 2130837832;
 			
 			// aapt resource value: 0x7f020149
-			public const int night_299 = 2130837833;
+			public const int night_1186 = 2130837833;
 			
 			// aapt resource value: 0x7f02014a
-			public const int night_302 = 2130837834;
+			public const int night_1189 = 2130837834;
 			
 			// aapt resource value: 0x7f02014b
-			public const int night_305 = 2130837835;
+			public const int night_1192 = 2130837835;
 			
 			// aapt resource value: 0x7f02014c
-			public const int night_308 = 2130837836;
+			public const int night_1195 = 2130837836;
 			
 			// aapt resource value: 0x7f02014d
-			public const int night_311 = 2130837837;
+			public const int night_1198 = 2130837837;
 			
 			// aapt resource value: 0x7f02014e
-			public const int night_314 = 2130837838;
+			public const int night_1201 = 2130837838;
 			
 			// aapt resource value: 0x7f02014f
-			public const int night_317 = 2130837839;
+			public const int night_1204 = 2130837839;
 			
 			// aapt resource value: 0x7f020150
-			public const int night_320 = 2130837840;
+			public const int night_1207 = 2130837840;
 			
 			// aapt resource value: 0x7f020151
-			public const int night_323 = 2130837841;
+			public const int night_1210 = 2130837841;
 			
 			// aapt resource value: 0x7f020152
-			public const int night_326 = 2130837842;
+			public const int night_1213 = 2130837842;
 			
 			// aapt resource value: 0x7f020153
-			public const int night_329 = 2130837843;
+			public const int night_1216 = 2130837843;
 			
 			// aapt resource value: 0x7f020154
-			public const int night_332 = 2130837844;
+			public const int night_1219 = 2130837844;
 			
 			// aapt resource value: 0x7f020155
-			public const int night_335 = 2130837845;
+			public const int night_1222 = 2130837845;
 			
 			// aapt resource value: 0x7f020156
-			public const int night_338 = 2130837846;
+			public const int night_1225 = 2130837846;
 			
 			// aapt resource value: 0x7f020157
-			public const int night_350 = 2130837847;
+			public const int night_1237 = 2130837847;
 			
 			// aapt resource value: 0x7f020158
-			public const int night_353 = 2130837848;
+			public const int night_1240 = 2130837848;
 			
 			// aapt resource value: 0x7f020159
-			public const int night_356 = 2130837849;
+			public const int night_1243 = 2130837849;
 			
 			// aapt resource value: 0x7f02015a
-			public const int night_359 = 2130837850;
+			public const int night_1246 = 2130837850;
 			
 			// aapt resource value: 0x7f02015b
-			public const int night_362 = 2130837851;
+			public const int night_1249 = 2130837851;
 			
 			// aapt resource value: 0x7f02015c
-			public const int night_365 = 2130837852;
+			public const int night_1252 = 2130837852;
 			
 			// aapt resource value: 0x7f02015d
-			public const int night_368 = 2130837853;
+			public const int night_1255 = 2130837853;
 			
 			// aapt resource value: 0x7f02015e
-			public const int night_371 = 2130837854;
+			public const int night_1258 = 2130837854;
 			
 			// aapt resource value: 0x7f02015f
-			public const int night_374 = 2130837855;
+			public const int night_1261 = 2130837855;
 			
 			// aapt resource value: 0x7f020160
-			public const int night_377 = 2130837856;
+			public const int night_1264 = 2130837856;
 			
 			// aapt resource value: 0x7f020161
-			public const int night_386 = 2130837857;
+			public const int night_1273 = 2130837857;
 			
 			// aapt resource value: 0x7f020162
-			public const int night_389 = 2130837858;
+			public const int night_1276 = 2130837858;
 			
 			// aapt resource value: 0x7f020163
-			public const int night_392 = 2130837859;
+			public const int night_1279 = 2130837859;
 			
 			// aapt resource value: 0x7f020164
-			public const int night_395 = 2130837860;
+			public const int night_1282 = 2130837860;
 			
 			// aapt resource value: 0x7f020165
 			public const int notification_action_background = 2130837861;
