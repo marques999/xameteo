@@ -9,6 +9,16 @@ namespace Xameteo.Model
     {
         /// <summary>
         /// </summary>
+        /// <param name="symbol"></param>
+        /// <param name="name"></param>
+        private Compass(string symbol, string name)
+        {
+            Name = name;
+            Symbol = symbol;
+        }
+
+        /// <summary>
+        /// </summary>
         public string Name { get; }
 
         /// <summary>
@@ -36,16 +46,6 @@ namespace Xameteo.Model
             new Compass(Resources.Symbol_NW, Resources.Compass_NW) ,
             new Compass(Resources.Symbol_NNW, Resources.Compass_NNW)
         };
-
-        /// <summary>
-        /// </summary>
-        /// <param name="symbol"></param>
-        /// <param name="name"></param>
-        private Compass(string symbol, string name)
-        {
-            Name = name;
-            Symbol = symbol;
-        }
 
         /// <summary>
         /// </summary>

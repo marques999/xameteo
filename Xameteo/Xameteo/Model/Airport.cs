@@ -6,6 +6,15 @@ namespace Xameteo.Model
     /// </summary>
     public class Airport
     {
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        private Airport(string code, string name)
+        {
+            Code = code;
+            Name = name;
+        }
+
         /// <summary>
         /// </summary>
         public string Code { get; }
@@ -13,11 +22,6 @@ namespace Xameteo.Model
         /// <summary>
         /// </summary>
         public string Name { get; }
-
-        /// <summary>
-        /// </summary>
-        /// <returns></returns>
-        public override string ToString() => $"[{Code}] {Name}";
 
         /// <summary>
         /// </summary>
@@ -34,13 +38,9 @@ namespace Xameteo.Model
             new Airport("TER", Resources.Airport_TER),
         };
 
-        /// <inheritdoc />
         /// <summary>
         /// </summary>
-        private Airport(string code, string name)
-        {
-            Code = code;
-            Name = name;
-        }
+        /// <returns></returns>
+        public override string ToString() => $"[{Code}] {Name}";
     }
 }

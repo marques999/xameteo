@@ -1,5 +1,4 @@
-﻿using System;
-using Xameteo.Resx;
+﻿using Xameteo.Resx;
 
 namespace Xameteo.Model
 {
@@ -29,27 +28,9 @@ namespace Xameteo.Model
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static TableItem Temperature(double value) => new TableItem(
-            Resources.Forecast_Temperature,
-            Xameteo.Settings.Temperature.Convert(value)
-        );
-
-        /// <summary>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
         public static TableItem Precipitation(double value) => new TableItem(
             Resources.Forecast_Precipitation,
             Xameteo.Settings.Precipitation.Convert(value)
-        );
-
-        /// <summary>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public static TableItem Humidity(double value) => new TableItem(
-           Resources.Forecast_Humidity,
-           Xameteo.Localization.Percentage(value)
         );
 
         /// <summary>
@@ -76,7 +57,7 @@ namespace Xameteo.Model
         /// <returns></returns>
         public static TableItem Condition(Condition condition) => new TableItem(
             Resources.Forecast_Condition,
-            Xameteo.Localization.GetCondition(condition.Id)
+            Xameteo.Localization.GetCondition(condition)
         );
 
         /// <summary>
@@ -104,33 +85,6 @@ namespace Xameteo.Model
         public static TableItem Visibility(double value) => new TableItem(
             Resources.Forecast_Visibility,
             Xameteo.Settings.Distance.Convert(value)
-        );
-
-        /// <summary>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public static TableItem Pressure(double value) => new TableItem(
-            Resources.Forecast_Pressure,
-            Xameteo.Settings.Pressure.Convert(value)
-        );
-
-        /// <summary>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public static TableItem FeelsLike(double value) => new TableItem(
-            Resources.Forecast_Feels_Like,
-            Xameteo.Settings.Temperature.Convert(value)
-        );
-
-        /// <summary>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public static TableItem LastUpdated(DateTime value) => new TableItem(
-            Resources.Forecast_Last_Updated,
-            Xameteo.Localization.LongDateTime(value)
         );
     }
 }
