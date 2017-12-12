@@ -74,8 +74,8 @@ namespace Xameteo.Views
         public HomeView()
         {
             _viewModel = new HomeViewModel();
-            BindingContext = _viewModel;
             InitializeComponent();
+            BindingContext = _viewModel;
         }
 
         /// <summary>

@@ -595,7 +595,7 @@
     <value>SSO</value>
   </data>
   <data name="Symbol_SW" xml:space="preserve">
-    <value>So</value>
+    <value>SO</value>
   </data>
   <data name="Symbol_W" xml:space="preserve">
     <value>O</value>
@@ -698,5 +698,23 @@
   </data>
   <data name="Forecast_Ultraviolet" xml:space="preserve">
     <value>Índice ultravioleta</value>
+  </data>
+  <data name="Reset_Message" xml:space="preserve">
+    <value>Reverte a configuração da aplicação para os valores por omissão</value>
+  </data>
+  <data name="Reset_Title" xml:space="preserve">
+    <value>Repor definições</value>
+  </data>
+  <data name="Reset_Prompt" xml:space="preserve">
+    <value>Tem a certeza que deseja repor as configurações da aplicação para os seus valores por omissão?</value>
+  </data>
+  <data name="Title_Home" xml:space="preserve">
+    <value>Início</value>
+  </data>
+  <data name="Exists_Message" xml:space="preserve">
+    <value>A localização que tentou adicionar já existe na lista.</value>
+  </data>
+  <data name="Exists_Title" xml:space="preserve">
+    <value>Localização existe</value>
   </data>
 </root>

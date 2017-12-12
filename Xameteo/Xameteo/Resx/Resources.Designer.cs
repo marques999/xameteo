@@ -818,6 +818,24 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The location you are trying to insert already exists..
+        /// </summary>
+        internal static string Exists_Message {
+            get {
+                return ResourceManager.GetString("Exists_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location exists.
+        /// </summary>
+        internal static string Exists_Title {
+            get {
+                return ResourceManager.GetString("Exists_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Average Temperature.
         /// </summary>
         internal static string Forecast_Average {
@@ -1259,6 +1277,33 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reverts application settings to their defaults.
+        /// </summary>
+        internal static string Reset_Message {
+            get {
+                return ResourceManager.GetString("Reset_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to revert the application settings to their defaults?.
+        /// </summary>
+        internal static string Reset_Prompt {
+            get {
+                return ResourceManager.GetString("Reset_Prompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset settings.
+        /// </summary>
+        internal static string Reset_Title {
+            get {
+                return ResourceManager.GetString("Reset_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} units.
         /// </summary>
         internal static string Settings_Units {
@@ -1633,6 +1678,15 @@ namespace Xameteo.Resx {
         internal static string Tab_Today {
             get {
                 return ResourceManager.GetString("Tab_Today", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        internal static string Title_Home {
+            get {
+                return ResourceManager.GetString("Title_Home", resourceCulture);
             }
         }
         

@@ -15,6 +15,7 @@ using Xameteo.Helpers;
 
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
+using Xameteo.Model;
 
 namespace Xameteo
 {
@@ -34,25 +35,33 @@ namespace Xameteo
         /// </summary>
         private XameteoApp()
         {
-            using (var progressDialog = XameteoDialogs.InfiniteProgress)
+            try
             {
-                try
-                {
-                    progressDialog.Show();
-                    Apixu = new ApixuApi(this);
-                    Geocoding = new GoogleApi(this);
-                    InitializePlaces();
-                }
-                catch (Exception exception)
-                {
-                    XameteoDialogs.Alert(exception);
-                }
-                finally
-                {
-                    progressDialog.Hide();
-                }
+                XameteoDialogs.ShowLoading();
+                Apixu = new ApixuApi(this);
+                Geocoding = new GoogleApi(this);
+                InitializePlaces();
+            }
+            catch (Exception exception)
+            {
+                XameteoDialogs.Alert(exception);
+            }
+            finally
+            {
+                XameteoDialogs.HideLoading();
             }
         }
+
+        /// <summary>
+        /// </summary>
+        public void ResetSettngs() => _settings.Clear();
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        public async Task<Coordinates> DeviceLocation() => new Coordinates(
+            await Geolocator.GetPositionAsync(XameteoGlobals.AsyncTimeout)
+        );
 
         /// <summary>
         /// </summary>

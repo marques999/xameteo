@@ -6,8 +6,9 @@ using System.Runtime.CompilerServices;
 using Xamarin.Forms.Internals;
 
 using Xameteo.API;
-using Xameteo.Globalization;
+using Xameteo.Resx;
 using Xameteo.Helpers;
+using Xameteo.Globalization;
 using Xameteo.Views.Location;
 using Xameteo.Views.Settings;
 
@@ -18,26 +19,6 @@ namespace Xameteo.Views
     /// </summary>
     internal class MainViewModel : INotifyPropertyChanged
     {
-        /// <summary>
-        /// </summary>
-        private readonly MainModel _settingsPage = new MainModel
-        {
-            ViewModel = null,
-            Title = "Settings",
-            TargetType = typeof(SettingsView),
-            Icon = XameteoL10N.GetDrawable("icon_settings.png")
-        };
-
-        /// <summary>
-        /// </summary>
-        private readonly MainModel _homePage = new MainModel
-        {
-            Title = "Home",
-            ViewModel = null,
-            TargetType = typeof(HomeView),
-            Icon = XameteoL10N.GetDrawable("icon_home.png")
-        };
-
         /// <summary>
         /// </summary>
         public MainViewModel()
@@ -54,21 +35,31 @@ namespace Xameteo.Views
 
         /// <summary>
         /// </summary>
-        public ObservableCollection<MainModel> MenuItems { get; set; } = new ObservableCollection<MainModel>();
+        public ObservableCollection<MainModel> MenuItems
+        {
+            get;
+            set;
+        } = new ObservableCollection<MainModel>();
 
         /// <summary>
         /// </summary>
-        /// <param name="viewModel"></param>
-        public void InsertLocation(ApixuPlace viewModel)
+        private readonly MainModel _settingsPage = new MainModel
         {
-            MenuItems.Add(new MainModel
-            {
-                ViewModel = viewModel,
-                Title = viewModel.Forecast.Location.ToString(),
-                TargetType = typeof(LocationView),
-                Icon = XameteoL10N.GetDrawable(viewModel.Adapter.Icon)
-            });
-        }
+            ViewModel = null,
+            TargetType = typeof(SettingsView),
+            Title = Resources.Title_Preferences,
+            Icon = XameteoL10N.GetDrawable("icon_settings.png")
+        };
+
+        /// <summary>
+        /// </summary>
+        private readonly MainModel _homePage = new MainModel
+        {
+            ViewModel = null,
+            Title = Resources.Title_Home,
+            TargetType = typeof(HomeView),
+            Icon = XameteoL10N.GetDrawable("icon_home.png")
+        };
 
         /// <summary>
         /// </summary>
@@ -78,6 +69,17 @@ namespace Xameteo.Views
         {
             InsertLocation(adapter);
         }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="viewModel"></param>
+        public void InsertLocation(ApixuPlace viewModel) => MenuItems.Add(new MainModel
+        {
+            ViewModel = viewModel,
+            Title = viewModel.Forecast.Location.ToString(),
+            TargetType = typeof(LocationView),
+            Icon = XameteoL10N.GetDrawable(viewModel.Adapter.Icon)
+        });
 
         /// <summary>
         /// </summary>

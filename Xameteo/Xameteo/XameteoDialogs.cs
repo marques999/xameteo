@@ -27,19 +27,12 @@ namespace Xameteo
 
         /// <summary>
         /// </summary>
-        /// <param name="result"></param>
         /// <returns></returns>
-        public static bool ValidatePrompt(PromptResult result) => result.Ok && result.Text.Trim().Length > 0;
+        public static void ShowLoading() => UserDialogs.Instance.ShowLoading(Resources.Loading_Title, MaskType.Gradient);
 
         /// <summary>
         /// </summary>
-        /// <returns></returns>
-        public static IProgressDialog InfiniteProgress => UserDialogs.Instance.Progress(new ProgressDialogConfig
-        {
-            AutoShow = true,
-            IsDeterministic = false,
-            Title = Resources.Loading_Title
-        });
+        public static void HideLoading() => UserDialogs.Instance.HideLoading();
 
         /// <summary>
         /// </summary>

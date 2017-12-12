@@ -15,6 +15,13 @@ namespace Xameteo.Views.Settings
     {
         /// <summary>
         /// </summary>
+        public SettingsViewModel()
+        {
+            RefreshView();
+        }
+
+        /// <summary>
+        /// </summary>
         public ObservableCollection<SettingsModel> Items
         {
             get;
@@ -34,25 +41,16 @@ namespace Xameteo.Views.Settings
         /// <param name="units"></param>
         /// <param name="generator"></param>
         /// <returns></returns>
-        public static IDisposable SelectUnit<T>(T[] units, Action<T> generator) where T : Unit
-        {
-            return XameteoDialogs.ActionSheet(units.Select(unit =>
-                new ActionSheetOption(unit.ToString(), () => generator(unit))
-            ).ToList(), string.Format(Resources.Settings_Units, units[0].Type));
-        }
-
-        /// <summary>
-        /// </summary>
-        public SettingsViewModel()
-        {
-            RefreshView();
-        }
+        public static IDisposable SelectUnit<T>(T[] units, Action<T> generator) where T : Unit => XameteoDialogs.ActionSheet(
+            units.Select(unit => new ActionSheetOption(unit.ToString(), () => generator(unit))).ToList(),
+            string.Format(Resources.Settings_Units, units[0].Type)
+        );
 
         /// <summary>
         /// </summary>
         private void RefreshView()
         {
-            Items.Add(new SettingsModel("Reset settings", "Reverts application settings to their defaults", ResetSettings));
+            Items.Add(new SettingsModel(Resources.Reset_Title, Resources.Reset_Message, ResetSettings));
             Items.Add(new SettingsModel(Resources.ApixuKey_Title, XameteoApp.Instance.ApixuKey, UpdateApixuKey));
             Items.Add(new SettingsModel(Resources.GoogleKey_Title, XameteoApp.Instance.GoogleKey, UpdateGoogleKey));
             Items.Add(new SettingsModel(Resources.ForecastDays_Title, XameteoApp.Instance.ForecastDays.ToString(), UpdateForecastDays));
@@ -67,11 +65,14 @@ namespace Xameteo.Views.Settings
         /// </summary>
         private async void ResetSettings(SettingsModel source)
         {
-            if (await XameteoDialogs.PromptYesNo("Reset settings", "Are you sure you want to revert the application settings to their defaults?"))
+            if (await XameteoDialogs.PromptYesNo(Resources.Reset_Title, Resources.Reset_Prompt) == false)
             {
-                Items.Clear();
-                RefreshView();
+                return;
             }
+
+            Items.Clear();
+            XameteoApp.Instance.ResetSettngs();
+            RefreshView();
         }
 
         /// <summary>
@@ -80,14 +81,20 @@ namespace Xameteo.Views.Settings
         private static async void UpdateApixuKey(SettingsModel source)
         {
             var dialogResult = await XameteoDialogs.Prompt(Resources.ApixuKey_Title, Resources.ApixuKey_Message, XameteoApp.Instance.ApixuKey);
+
+            if (dialogResult.Ok == false)
+            {
+                return;
+            }
+
             var userChoice = dialogResult.Text.Trim();
 
-            if (XameteoDialogs.ValidatePrompt(dialogResult))
+            if (userChoice.Length > 0)
             {
                 source.Value = userChoice;
                 XameteoApp.Instance.ApixuKey = userChoice;
             }
-            else
+            else if (dialogResult.Ok)
             {
                 XameteoDialogs.Alert(Resources.ApixuKey_Title, Resources.Prompt_Error);
             }
@@ -99,9 +106,15 @@ namespace Xameteo.Views.Settings
         public static async void UpdateGoogleKey(SettingsModel source)
         {
             var dialogResult = await XameteoDialogs.Prompt(Resources.GoogleKey_Title, Resources.GoogleKey_Message, XameteoApp.Instance.GoogleKey);
+
+            if (dialogResult.Ok == false)
+            {
+                return;
+            }
+
             var userChoice = dialogResult.Text.Trim();
 
-            if (XameteoDialogs.ValidatePrompt(dialogResult))
+            if (userChoice.Length > 0)
             {
                 source.Value = userChoice;
                 XameteoApp.Instance.GoogleKey = userChoice;
@@ -118,9 +131,15 @@ namespace Xameteo.Views.Settings
         public static async void UpdateForecastDays(SettingsModel source)
         {
             var dialogResult = await XameteoDialogs.PromptNumber(Resources.ForecastDays_Title, Resources.ForecastDays_Message, XameteoApp.Instance.ForecastDays);
+
+            if (dialogResult.Ok == false)
+            {
+                return;
+            }
+
             var userChoice = dialogResult.Text.Trim();
 
-            if (XameteoDialogs.ValidatePrompt(dialogResult))
+            if (userChoice.Length > 0)
             {
                 try
                 {

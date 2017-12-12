@@ -699,4 +699,22 @@
   <data name="Forecast_Ultraviolet" xml:space="preserve">
     <value>Ultraviolet Index</value>
   </data>
+  <data name="Reset_Message" xml:space="preserve">
+    <value>Reverts application settings to their defaults</value>
+  </data>
+  <data name="Reset_Title" xml:space="preserve">
+    <value>Reset settings</value>
+  </data>
+  <data name="Reset_Prompt" xml:space="preserve">
+    <value>Are you sure you want to revert the application settings to their defaults?</value>
+  </data>
+  <data name="Title_Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Exists_Message" xml:space="preserve">
+    <value>The location you are trying to insert already exists.</value>
+  </data>
+  <data name="Exists_Title" xml:space="preserve">
+    <value>Location exists</value>
+  </data>
 </root>

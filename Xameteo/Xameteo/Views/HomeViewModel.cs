@@ -19,14 +19,6 @@ namespace Xameteo.Views
     {
         /// <summary>
         /// </summary>
-        public ObservableCollection<ApixuPlace> Items = XameteoApp.Instance.Places;
-
-        /// <summary>
-        /// </summary>
-        private readonly List<ActionSheetOption> _options = new List<ActionSheetOption>();
-
-        /// <summary>
-        /// </summary>
         public HomeViewModel()
         {
             _options.Add(new ActionSheetOption(Resources.Source_Device, LocationByDevice));
@@ -36,49 +28,64 @@ namespace Xameteo.Views
 
         /// <summary>
         /// </summary>
+        public ObservableCollection<ApixuPlace> Items = XameteoApp.Instance.Places;
+
+        /// <summary>
+        /// </summary>
+        private readonly List<ActionSheetOption> _options = new List<ActionSheetOption>();
+
+        /// <summary>
+        /// </summary>
         private async void LocationByGeocoding()
         {
             var dialogResult = await XameteoDialogs.Prompt(Resources.Geolocation_Title, Resources.Geolocation_Message, string.Empty);
 
-            if (XameteoDialogs.ValidatePrompt(dialogResult))
+            if (dialogResult.Ok == false)
             {
-                using (var progressDialog = XameteoDialogs.InfiniteProgress)
+                return;
+            }
+
+            var userChoice = dialogResult.Text.Trim();
+
+            if (userChoice.Length > 0)
+            {
+                XameteoDialogs.ShowLoading();
+
+                try
                 {
-                    progressDialog.Show();
+                    var googleResponse = await XameteoApp.Instance.Geocoding.Get(userChoice);
 
-                    try
+                    if (googleResponse.Status != "OK")
                     {
-                        var response = await XameteoApp.Instance.Geocoding.Get(dialogResult.Text.Trim());
-
-                        if (response.Status != "OK")
-                        {
-                            throw new InvalidOperationException(string.Format(Resources.Geolocation_Error, response.Status));
-                        }
-
-                        var geocodingResults = response.Results;
-
-                        if (geocodingResults.Count < 1)
-                        {
-                            throw new InvalidOperationException(Resources.Geolocation_Zero);
-                        }
-
-                        if (geocodingResults.Count == 1)
-                        {
-                            SaveLocation(new CoordinatesAdapter(response.Results[0].GeocodingGeometry.Location));
-                        }
-                        else
-                        {
-                            XameteoDialogs.ActionSheet(geocodingResults.Select(it => new ActionSheetOption(it.Address, () => SaveLocation(new CoordinatesAdapter(it.GeocodingGeometry.Location)))).ToList(), Resources.Geolocation_Multiple);
-                        }
+                        throw new InvalidOperationException(string.Format(Resources.Geolocation_Error, googleResponse.Status));
                     }
-                    catch (Exception exception)
+
+                    var geocodingResults = googleResponse.Results;
+
+                    if (geocodingResults.Count < 1)
                     {
-                        XameteoDialogs.Alert(exception);
+                        throw new InvalidOperationException(Resources.Geolocation_Zero);
                     }
-                    finally
+
+                    if (geocodingResults.Count == 1)
                     {
-                        progressDialog.Hide();
+                        SaveLocation(new CoordinatesAdapter(googleResponse.Results[0].GeocodingGeometry.Location));
                     }
+                    else
+                    {
+                        XameteoDialogs.ActionSheet(
+                            geocodingResults.Select(it => new ActionSheetOption(it.Address, () => SaveLocation(new CoordinatesAdapter(it.GeocodingGeometry.Location)))).ToList(),
+                            Resources.Geolocation_Multiple
+                        );
+                    }
+                }
+                catch (Exception exception)
+                {
+                    XameteoDialogs.Alert(exception);
+                }
+                finally
+                {
+                    XameteoDialogs.HideLoading();
                 }
             }
             else
@@ -102,27 +109,28 @@ namespace Xameteo.Views
         /// <param name="apixuAdapter"></param>
         private async void SaveLocation(ApixuAdapter apixuAdapter)
         {
-            using (var progressDialog = XameteoDialogs.InfiniteProgress)
+            try
             {
-                try
-                {
-                    progressDialog.Show();
+                XameteoDialogs.ShowLoading();
 
-                    var viewModel = await XameteoApp.Instance.InsertPlace(apixuAdapter);
+                var viewModel = await XameteoApp.Instance.InsertPlace(apixuAdapter);
 
-                    if (viewModel != null)
-                    {
-                        XameteoApp.Events.Insert(this, viewModel);
-                    }
-                }
-                catch (Exception exception)
+                if (viewModel != null)
                 {
-                    XameteoDialogs.Alert(exception);
+                    XameteoApp.Events.Insert(this, viewModel);
                 }
-                finally
+                else
                 {
-                    progressDialog.Hide();
+                    XameteoDialogs.Alert(Resources.Exists_Title, Resources.Exists_Message);
                 }
+            }
+            catch (Exception exception)
+            {
+                XameteoDialogs.Alert(exception);
+            }
+            finally
+            {
+                XameteoDialogs.HideLoading();
             }
         }
 
@@ -131,12 +139,9 @@ namespace Xameteo.Views
         /// <param name="model"></param>
         public async void RemoveItem(ApixuPlace model)
         {
-            if (await XameteoDialogs.PromptYesNo(Resources.Remove_Title, string.Format(Resources.Remove_Message, model.Forecast.Location)))
+            if (await XameteoDialogs.PromptYesNo(Resources.Remove_Title, string.Format(Resources.Remove_Message, model.Forecast.Location)) && XameteoApp.Instance.Places.Remove(model))
             {
-                if (XameteoApp.Instance.Places.Remove(model))
-                {
-                    XameteoApp.Events.Remove(this, model.Adapter);
-                }
+                XameteoApp.Events.Remove(this, model.Adapter);
             }
         }
 
@@ -144,22 +149,18 @@ namespace Xameteo.Views
         /// </summary>
         private async void LocationByDevice()
         {
-            using (var progressDialog = XameteoDialogs.InfiniteProgress)
+            try
             {
-                progressDialog.Show();
-
-                try
-                {
-                    SaveLocation(new CoordinatesAdapter(new Coordinates(await XameteoApp.Instance.Geolocator.GetPositionAsync(XameteoGlobals.AsyncTimeout))));
-                }
-                catch (Exception exception)
-                {
-                    XameteoDialogs.Alert(exception);
-                }
-                finally
-                {
-                    progressDialog.Hide();
-                }
+                XameteoDialogs.ShowLoading();
+                SaveLocation(new CoordinatesAdapter(await XameteoApp.Instance.DeviceLocation()));
+            }
+            catch (Exception exception)
+            {
+                XameteoDialogs.Alert(exception);
+            }
+            finally
+            {
+                XameteoDialogs.HideLoading();
             }
         }
     }
