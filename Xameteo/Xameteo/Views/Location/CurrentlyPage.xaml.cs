@@ -11,12 +11,17 @@ namespace Xameteo.Views.Location
     {
         /// <summary>
         /// </summary>
+        public Current Weather { get; }
+
+        /// <summary>
+        /// </summary>
         public TableGroup Items { get; }
 
         /// <summary>
         /// </summary>
-        public CurrentlyPage(ITableProvider current)
+        public CurrentlyPage(Current current)
         {
+            Weather = current;
             Items = current.GenerateTable();
             InitializeComponent();
             BindingContext = this;

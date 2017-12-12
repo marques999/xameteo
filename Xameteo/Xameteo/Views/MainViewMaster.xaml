@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:globalization="clr-namespace:Xameteo.Globalization;assembly=Xameteo"
              Title="Xameteo"
              x:Class="Xameteo.Views.MainViewMaster">
   <StackLayout>
@@ -9,7 +10,7 @@
               HasUnevenRows="true"
               ItemsSource="{Binding MenuItems}">
       <ListView.Header>
-        <Grid BackgroundColor="#03A9F4">
+        <Grid BackgroundColor="Accent">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="*"/>
@@ -21,14 +22,20 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="10"/>
           </Grid.RowDefinitions>
-          <Label Grid.Row="2" Grid.Column="1" Text="Locations" Style="{DynamicResource SubtitleStyle}"/>
+          <Label Grid.Row="2" Grid.Column="1" Text="Locations" Style="{DynamicResource SubtitleStyle}" TextColor="White"/>
         </Grid>
       </ListView.Header>
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Padding="16,12" HorizontalOptions="FillAndExpand">
-              <Label VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" Text="{Binding Title}" FontSize="20"/>
+            <StackLayout Padding="16,12"
+                         Orientation="Horizontal"
+                         HorizontalOptions="FillAndExpand">
+              <Image Source="{globalization:ImageResource day_1003.png}" WidthRequest="32"></Image>
+              <Label FontSize="20"
+                     Text="{Binding Title}"
+                     VerticalOptions="FillAndExpand"
+                     VerticalTextAlignment="Center"/>
             </StackLayout>
           </ViewCell>
         </DataTemplate>

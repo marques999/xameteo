@@ -44,12 +44,12 @@ namespace Xameteo.Globalization
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    public class ShortDateTimeConverter : AbstractConverter<DateTime>
+    public class WeekdayConverter : AbstractConverter<DateTime>
     {
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public ShortDateTimeConverter() : base(Xameteo.Localization.ShortDateTime)
+        public WeekdayConverter() : base(Xameteo.Localization.WeekDay)
         {
         }
     }

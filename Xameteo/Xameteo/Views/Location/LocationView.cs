@@ -40,7 +40,7 @@ namespace Xameteo.Views.Location
                     }
                 }
 
-                Children.Add(new HistoryPage());
+                Children.Add(new HistoryPage(apixuForecast.Forecast.Days[2]));
             }
             catch (Exception exception)
             {

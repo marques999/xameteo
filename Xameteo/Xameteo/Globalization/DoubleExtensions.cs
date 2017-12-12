@@ -38,4 +38,69 @@
         {
         }
     }
+
+    /// <inheritdoc />
+    /// <summary>
+    /// </summary>
+    public class DistanceConverter : AbstractConverter<double>
+    {
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        public DistanceConverter() : base(Xameteo.Settings.Distance.Convert)
+        {
+        }
+    }
+
+    /// <inheritdoc />
+    /// <summary>
+    /// </summary>
+    public class PrecipitationConverter : AbstractConverter<double>
+    {
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        public PrecipitationConverter() : base(Xameteo.Settings.Precipitation.Convert)
+        {
+        }
+    }
+
+    /// <inheritdoc />
+    /// <summary>
+    /// </summary>
+    public class PressureConverter : AbstractConverter<double>
+    {
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        public PressureConverter() : base(Xameteo.Settings.Pressure.Convert)
+        {
+        }
+    }
+
+    /// <inheritdoc />
+    /// <summary>
+    /// </summary>
+    public class TemperatureConverter : AbstractConverter<double>
+    {
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        public TemperatureConverter() : base(Xameteo.Settings.Temperature.Convert)
+        {
+        }
+    }
+
+    /// <inheritdoc />
+    /// <summary>
+    /// </summary>
+    public class VelocityConverter : AbstractConverter<double>
+    {
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        public VelocityConverter() : base(Xameteo.Settings.Velocity.Convert)
+        {
+        }
+    }
 }

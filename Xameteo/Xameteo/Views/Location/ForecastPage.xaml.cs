@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-
+using System.Linq;
+using Xamarin.Forms;
 using Xameteo.Model;
 using Xamarin.Forms.Xaml;
 
@@ -19,9 +20,18 @@ namespace Xameteo.Views.Location
         /// </summary>
         public ForecastPage(Forecast forecast)
         {
-            InitializeComponent();
             Items = forecast.Days;
+            InitializeComponent();
             BindingContext = this;
+        }
+
+        private async void ShowModal(object sender, ItemTappedEventArgs e)
+        {
+            if ((sender as ListView)?.SelectedItem != null)
+            {
+                var detailPage = new HistoryPage(Items[0]);
+                await Navigation.PushModalAsync(detailPage);
+            }
         }
     }
 }

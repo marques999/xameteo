@@ -111,7 +111,7 @@ namespace Xameteo.Views
                     Items.Clear();
                     progressDialog.Show();
 
-                    foreach (var adapter in Xameteo.Places.List)
+                    foreach (var adapter in Xameteo.Places)
                     {
                         Items.Add(new MainDetailModel(await Xameteo.Apixu.Current(adapter), adapter));
                     }
@@ -138,7 +138,7 @@ namespace Xameteo.Views
                 {
                     progressDialog.Show();
 
-                    if (Xameteo.Places.Insert(apixuAdapter))
+                    if (Xameteo.InsertPlace(apixuAdapter))
                     {
                         Xameteo.Events.Insert(this, apixuAdapter);
                         Items.Add(new MainDetailModel(await Xameteo.Apixu.Current(apixuAdapter), apixuAdapter));

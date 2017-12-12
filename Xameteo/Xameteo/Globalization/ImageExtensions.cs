@@ -13,11 +13,7 @@ namespace Xameteo.Globalization
     {
         /// <summary>
         /// </summary>
-        public string Source
-        {
-            get;
-            set;
-        }
+        public string Source { get; set; }
 
         /// <inheritdoc />
         /// <summary>

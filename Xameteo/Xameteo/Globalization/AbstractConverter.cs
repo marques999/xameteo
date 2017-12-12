@@ -12,14 +12,14 @@ namespace Xameteo.Globalization
     {
         /// <summary>
         /// </summary>
-        private readonly Func<T, string> _converterFunction;
+        private readonly Func<T, string> _function;
 
         /// <summary>
         /// </summary>
-        /// <param name="converterFunction"></param>
-        protected AbstractConverter(Func<T, string> converterFunction)
+        /// <param name="function"></param>
+        protected AbstractConverter(Func<T, string> function)
         {
-            _converterFunction = converterFunction;
+            _function = function;
         }
 
         /// <summary>
@@ -40,9 +40,9 @@ namespace Xameteo.Globalization
         /// <param name="parameter"></param>
         /// <param name="culture"></param>
         /// <returns></returns>
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return value;
+            return Prefix(value is T tvalue ? _function(tvalue) : "N/A", parameter);
         }
 
         /// <inheritdoc />
@@ -53,9 +53,35 @@ namespace Xameteo.Globalization
         /// <param name="parameter"></param>
         /// <param name="culture"></param>
         /// <returns></returns>
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return Prefix(value is T tvalue ? _converterFunction(tvalue) : "N/A", parameter);
+            return value;
         }
+    }
+
+    /// <inheritdoc />
+    /// <summary>
+    /// </summary>
+    public abstract class CoordinatesConverter : IValueConverter
+    {
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="targetType"></param>
+        /// <param name="parameter"></param>
+        /// <param name="culture"></param>
+        /// <returns></returns>
+        public abstract object Convert(object value, Type targetType, object parameter, CultureInfo culture);
+
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="targetType"></param>
+        /// <param name="parameter"></param>
+        /// <param name="culture"></param>
+        /// <returns></returns>
+        public abstract object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture);
     }
 }

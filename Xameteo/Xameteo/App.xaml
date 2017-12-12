@@ -6,8 +6,8 @@
   <Application.Resources>
     <ResourceDictionary>
       <!-- Boolean Conversions -->
-      <globalization:BooleanConverter x:Key="XamlBooleanConverter"/>
-      <!-- Compass Conversions -->
+      <globalization:ConditionConverter x:Key="XamlConditionConverter" />
+        <!-- Compass Conversions -->
       <globalization:LongCompassConverter x:Key="XamlLongCompassConverter"/>
       <globalization:ShortCompassConverter x:Key="XamlShortCompassConverter" />
       <!-- Coordinates Conversions -->
@@ -18,7 +18,7 @@
       <globalization:ShortDateConverter x:Key="XamlShortDateConverter"/>
       <globalization:ShortTimeConverter x:Key="XamlShortTimeConverter"/>
       <globalization:LongDateTimeConverter x:Key="XamlLongDateTimeConverter"/>
-      <globalization:ShortDateTimeConverter x:Key="XamlShortDateTimeConverter"/>
+      <globalization:WeekdayConverter x:Key="XamlWeekdayConverter"/>
       <!-- Number Conversions -->
       <globalization:DegreesConverter x:Key="XamlDegreesConverter"/>
       <globalization:FixedPointConverter x:Key="XamlFixedPointConverter"/>

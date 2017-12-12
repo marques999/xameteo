@@ -1,4 +1,10 @@
-﻿using Xameteo.API;
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
+
+using Newtonsoft.Json;
+
+using Xameteo.API;
 using Xameteo.Google;
 using Xameteo.Helpers;
 using Xameteo.Globalization;
@@ -14,16 +20,19 @@ namespace Xameteo
     {
         /// <summary>
         /// </summary>
-        public static void Initialize()
+        public static async void Initialize()
         {
-            Apixu = new ApixuApi();
-            Geocoding = new GoogleApi();
-            Places = new Places(Settings.Places);
+            try
+            {
+                Apixu = new ApixuApi();
+                Geocoding = new GoogleApi();
+                Places.AddRange(JsonConvert.DeserializeObject<IEnumerable<ApixuAdapter>>(Settings.Places));
+            }
+            catch (Exception exception)
+            {
+                await Dialogs.Alert(exception);
+            }
         }
-
-        /// <summary>
-        /// </summary>
-        public static Places Places { get; private set; }
 
         /// <summary>
         /// </summary>
@@ -39,7 +48,7 @@ namespace Xameteo
 
         /// <summary>
         /// </summary>
-        public static L10N Localization { get; } = new L10N();
+        public static Localization Localization { get; } = new Localization();
 
         /// <summary>
         /// </summary>
@@ -56,5 +65,44 @@ namespace Xameteo
         /// <summary>
         /// </summary>
         public static IGeolocator Geolocator { get; } = CrossGeolocator.Current;
+
+        /// <summary>
+        /// </summary>
+        public static List<ApixuAdapter> Places { get; } = new List<ApixuAdapter>();
+
+        /// <summary>
+        /// </summary>
+        /// <param name="adapter"></param>
+        /// <returns></returns>
+        public static bool InsertPlace(ApixuAdapter adapter)
+        {
+            if (Places.FirstOrDefault(it => it.Parameters == adapter.Parameters) != null)
+            {
+                return false;
+            }
+
+            Places.Add(adapter);
+            Settings.Places = JsonConvert.SerializeObject(Places, Formatting.None);
+
+            return true;
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="adapter"></param>
+        /// <returns></returns>
+        public static bool RemovePlace(ApixuAdapter adapter)
+        {
+            if (Places.Remove(adapter))
+            {
+                Settings.Places = JsonConvert.SerializeObject(Places, Formatting.None);
+            }
+            else
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }

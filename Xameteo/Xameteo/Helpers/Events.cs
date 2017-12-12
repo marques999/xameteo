@@ -7,6 +7,12 @@ namespace Xameteo.Helpers
 {
     /// <summary>
     /// </summary>
+    public interface IEventObject
+    {
+    }
+
+    /// <summary>
+    /// </summary>
     public class Events
     {
         /// <summary>
