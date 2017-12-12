@@ -161,6 +161,7 @@
     <Content Include="icon_compass.png" />
     <Content Include="icon_home.png" />
     <Content Include="icon_plane.png" />
+    <Content Include="icon_plus.png" />
     <Content Include="icon_settings.png" />
     <Content Include="night_1000.png" />
     <Content Include="night_1003.png" />

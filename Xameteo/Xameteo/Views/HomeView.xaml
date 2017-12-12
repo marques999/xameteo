@@ -5,7 +5,7 @@
              x:Class="Xameteo.Views.HomeView"
              Title="{globalization:Translate Title_Locations}">
   <ContentPage.ToolbarItems>
-    <ToolbarItem Text="New" Order="Primary" Clicked="InsertLocation" />
+    <ToolbarItem Text="New" Order="Primary" Icon="{globalization:ImageResource icon_plus.png}" Clicked="InsertLocation" />
   </ContentPage.ToolbarItems>
   <ContentPage.Content>
     <ListView ItemsSource="{Binding Items}"
