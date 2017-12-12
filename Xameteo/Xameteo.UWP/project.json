@@ -1,7 +1,7 @@
 ﻿{
   "dependencies": {
     "Acr.UserDialogs": "6.5.1",
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3",
     "modernhttpclient": "2.4.2",
     "Newtonsoft.Json": "10.0.3",
     "Refit": "3.1.0",

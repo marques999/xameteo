@@ -568,9 +568,9 @@ namespace Xameteo.Resx {
         /// <summary>
         ///   Looks up a localized string similar to Moderate rain at times.
         /// </summary>
-        internal static string Condition_1185 {
+        internal static string Condition_1186 {
             get {
-                return ResourceManager.GetString("Condition_1185", resourceCulture);
+                return ResourceManager.GetString("Condition_1186", resourceCulture);
             }
         }
         
