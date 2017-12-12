@@ -7,19 +7,15 @@
   <StackLayout>
     <ListView x:Name="MenuItemsListView" SeparatorVisibility="None" HasUnevenRows="true" ItemsSource="{Binding MenuItems}">
       <ListView.Header>
-        <Grid BackgroundColor="Accent">
-          <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="10"/>
-          </Grid.ColumnDefinitions>
+        <Grid HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Accent">
           <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
           </Grid.RowDefinitions>
-          <Label Grid.Row="2" Grid.Column="1" Text="Locations" Style="{DynamicResource SubtitleStyle}" TextColor="White"/>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+          <Image Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" Source="{globalization:ImageResource background.jpg}" HeightRequest="192" Aspect="AspectFill"/>
+          <Label Grid.Row="0" Grid.Column="0" Margin="16, 12" Text="{globalization:Translate Title_Xameteo}" VerticalTextAlignment="End" Style="{DynamicResource SubtitleStyle}" TextColor="White"/>
         </Grid>
       </ListView.Header>
       <ListView.ItemTemplate>

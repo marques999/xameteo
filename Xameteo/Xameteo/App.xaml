@@ -68,6 +68,9 @@
         <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
         <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
       </Style>
+      <Style x:Key="DefaultPadding" TargetType="Layout">
+        <Setter Property="Padding" Value="16, 8"></Setter>
+      </Style>
     </ResourceDictionary>
   </Application.Resources>
 </Application>

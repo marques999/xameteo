@@ -110,6 +110,7 @@
     <None Include="Xameteo.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="background.jpg" />
     <Content Include="day_1000.png" />
     <Content Include="day_1003.png" />
     <Content Include="day_1006.png" />
