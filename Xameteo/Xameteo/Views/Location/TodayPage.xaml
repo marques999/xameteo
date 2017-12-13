@@ -3,50 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:globalization="clr-namespace:Xameteo.Globalization;assembly=Xameteo"
              xmlns:views="clr-namespace:Xameteo.Views;assembly=Xameteo"
+             xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              x:Class="Xameteo.Views.Location.TodayPage"
              Title="{globalization:Translate Tab_Today}">
   <ContentPage.Content>
-    <!--StackLayout Orientation="Horizontal" VerticalOptions="End">
-        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-          <Label Text="{Binding Astrology.Sunrise}"
-                 Style="{StaticResource StyleAstroText}"/>
-          <Label Text="{globalization:Translate Astro_Sunrise}"
-                 Style="{StaticResource StyleAstroLabel}" />
-          <Label Text="{Binding Astrology.Sunset}"
-                 Style="{StaticResource StyleAstroText}" />
-          <Label Text="{globalization:Translate Astro_Sunset}"
-                 Style="{StaticResource StyleAstroLabel}" />
-        </StackLayout>
-        <BoxView Color="#5b5d68"
-                 WidthRequest="1" 
-                 HorizontalOptions="Center" />
-        <StackLayout Orientation="Vertical" Padding="16, 8" HorizontalOptions="FillAndExpand">
-          <Label Text="{Binding Astrology.Moonrise}"
-                 Style="{StaticResource StyleAstroText}"/>
-          <Label Text="{globalization:Translate Astro_Moonrise}"
-                 Style="{StaticResource StyleAstroLabel}" />
-          <Label Text="{Binding Astrology.Moonset}"
-                 Style="{StaticResource StyleAstroText}" />
-          <Label Text="{globalization:Translate Astro_Moonset}"
-                 Style="{StaticResource StyleAstroLabel}" />
-        </StackLayout>
-      </>-->
     <ListView HasUnevenRows="True"
-              IsGroupingEnabled="true"
-              ItemsSource="{Binding Items}"
-              CachingStrategy="RecycleElement"
-              GroupDisplayBinding="{Binding Name}"
-              GroupShortNameBinding="{Binding Name}">
+                IsGroupingEnabled="true"
+                ItemsSource="{Binding Items}"
+                CachingStrategy="RecycleElement"
+                GroupDisplayBinding="{Binding Name}"
+                GroupShortNameBinding="{Binding Name}">
+      <ListView.Header>
+        <forms:SKCanvasView HeightRequest="360"
+                            PaintSurface="OnDrawGraph"
+                            HorizontalOptions="FillAndExpand" />
+      </ListView.Header>
       <ListView.GroupHeaderTemplate>
         <DataTemplate>
           <ViewCell>
             <StackLayout Padding="4"
                          BackgroundColor="Accent">
               <Label TextColor="White"
-                     Text="{Binding Name}"
-                     FontAttributes="Bold"
-                     HorizontalTextAlignment="Center"
-                     VerticalOptions="CenterAndExpand" />
+                       Text="{Binding Name}"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="CenterAndExpand" />
             </StackLayout>
           </ViewCell>
         </DataTemplate>

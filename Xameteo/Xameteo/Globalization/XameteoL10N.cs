@@ -26,11 +26,15 @@ namespace Xameteo.Globalization
     {
         /// <summary>
         /// </summary>
+        private const string ResourceId = "Xameteo.Resx";
+
+        /// <summary>
+        /// </summary>
         private static readonly CultureInfo Culture = DependencyService.Get<ILocale>().GetCurrentCultureInfo();
 
         /// <summary>
         /// </summary>
-        private static readonly ResourceManager Resources = new ResourceManager("Xameteo.Resx.Resources", typeof(XameteoL10N).GetTypeInfo().Assembly);
+        private static readonly ResourceManager Resources = new ResourceManager($"{ResourceId}.Resources", typeof(XameteoL10N).GetTypeInfo().Assembly);
 
         /// <summary>
         /// </summary>
@@ -53,14 +57,7 @@ namespace Xameteo.Globalization
         /// <param name="key"></param>
         /// <returns></returns>
         public static string Get(string key) => Resources.GetString(key, Culture) ?? key;
-
-        /// <summary>
-        /// </summary>
-        /// <param name="imageUri"></param>
-        /// <returns></returns>
-        public static ImageSource GetDrawable(string imageUri) => ImageSource.FromFile(
-            Device.RuntimePlatform == Device.iOS ? "Images/" + imageUri : imageUri
-        );
+        public static string GetDrawable(string imageUri) => $"{ResourceId}.{imageUri}";
 
         /// <summary>
         /// </summary>
@@ -89,6 +86,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public static string ShortTime(DateTime value) => FormatDate(value, "t");
         public static string ShortDate(DateTime value) => FormatDate(value, "d");
+        public static string OnlyHour(DateTime value) => value.ToString("h tt", Culture.DateTimeFormat);
 
         /// <summary>
         /// </summary>
@@ -107,7 +105,6 @@ namespace Xameteo.Globalization
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static string FixedPoint(double value) => FormatNumber(value, "N2");
         public static string Percentage(double value) => FormatNumber(value / 100, "P0");
 
         /// <summary>

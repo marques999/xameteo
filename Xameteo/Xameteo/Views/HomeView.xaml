@@ -54,7 +54,7 @@
                        Text="{Binding Forecast.Current.LastUpdated, Converter={StaticResource XamlShortTimeConverter}}" />
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="CenterAndExpand">
-                  <Image Source="{Binding Forecast.Current.Image}"/>
+                  <Image Source="{Binding Forecast.Current.ImageResource}"/>
                   <Label VerticalOptions="Center"
                          Text="{Binding Forecast.Current.Condition, Converter={StaticResource XamlConditionConverter}}" />
                 </StackLayout>

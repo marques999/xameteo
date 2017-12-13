@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="API\ApixuApi.cs" />
+    <Compile Include="API\SkiaGraph.cs" />
     <Compile Include="API\IApixuApi.cs" />
     <Compile Include="API\ApixuAdapter.cs" />
     <Compile Include="App.xaml.cs">
@@ -170,6 +171,12 @@
     <Reference Include="Rg.Plugins.Popup.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Rg.Plugins.Popup.1.0.4\lib\portable-win+net45+wp8+win8+wpa81\Rg.Plugins.Popup.Platform.dll</HintPath>
     </Reference>
+    <Reference Include="SkiaSharp, Version=1.59.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SkiaSharp.1.59.2\lib\portable-net45+win8+wpa81+wp8\SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.Forms, Version=1.59.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SkiaSharp.Views.Forms.1.59.2\lib\portable-net45+win8+wpa81+wp8\SkiaSharp.Views.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="Splat, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Splat.2.0.0\lib\netstandard1.1\Splat.dll</HintPath>
     </Reference>
@@ -263,6 +270,104 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resx\day_1000.png" />
+    <EmbeddedResource Include="Resx\day_1003.png" />
+    <EmbeddedResource Include="Resx\day_1006.png" />
+    <EmbeddedResource Include="Resx\day_1009.png" />
+    <EmbeddedResource Include="Resx\day_1030.png" />
+    <EmbeddedResource Include="Resx\day_1063.png" />
+    <EmbeddedResource Include="Resx\day_1066.png" />
+    <EmbeddedResource Include="Resx\day_1069.png" />
+    <EmbeddedResource Include="Resx\day_1072.png" />
+    <EmbeddedResource Include="Resx\day_1087.png" />
+    <EmbeddedResource Include="Resx\day_1114.png" />
+    <EmbeddedResource Include="Resx\day_1117.png" />
+    <EmbeddedResource Include="Resx\day_1135.png" />
+    <EmbeddedResource Include="Resx\day_1147.png" />
+    <EmbeddedResource Include="Resx\day_1150.png" />
+    <EmbeddedResource Include="Resx\day_1153.png" />
+    <EmbeddedResource Include="Resx\day_1168.png" />
+    <EmbeddedResource Include="Resx\day_1171.png" />
+    <EmbeddedResource Include="Resx\day_1180.png" />
+    <EmbeddedResource Include="Resx\day_1183.png" />
+    <EmbeddedResource Include="Resx\day_1186.png" />
+    <EmbeddedResource Include="Resx\day_1189.png" />
+    <EmbeddedResource Include="Resx\day_1192.png" />
+    <EmbeddedResource Include="Resx\day_1195.png" />
+    <EmbeddedResource Include="Resx\day_1198.png" />
+    <EmbeddedResource Include="Resx\day_1201.png" />
+    <EmbeddedResource Include="Resx\day_1204.png" />
+    <EmbeddedResource Include="Resx\day_1207.png" />
+    <EmbeddedResource Include="Resx\day_1210.png" />
+    <EmbeddedResource Include="Resx\day_1213.png" />
+    <EmbeddedResource Include="Resx\day_1216.png" />
+    <EmbeddedResource Include="Resx\day_1219.png" />
+    <EmbeddedResource Include="Resx\day_1222.png" />
+    <EmbeddedResource Include="Resx\day_1225.png" />
+    <EmbeddedResource Include="Resx\day_1237.png" />
+    <EmbeddedResource Include="Resx\day_1240.png" />
+    <EmbeddedResource Include="Resx\day_1243.png" />
+    <EmbeddedResource Include="Resx\day_1246.png" />
+    <EmbeddedResource Include="Resx\day_1249.png" />
+    <EmbeddedResource Include="Resx\day_1252.png" />
+    <EmbeddedResource Include="Resx\day_1255.png" />
+    <EmbeddedResource Include="Resx\day_1258.png" />
+    <EmbeddedResource Include="Resx\day_1261.png" />
+    <EmbeddedResource Include="Resx\day_1264.png" />
+    <EmbeddedResource Include="Resx\day_1273.png" />
+    <EmbeddedResource Include="Resx\day_1276.png" />
+    <EmbeddedResource Include="Resx\day_1279.png" />
+    <EmbeddedResource Include="Resx\day_1282.png" />
+    <EmbeddedResource Include="Resx\night_1000.png" />
+    <EmbeddedResource Include="Resx\night_1003.png" />
+    <EmbeddedResource Include="Resx\night_1006.png" />
+    <EmbeddedResource Include="Resx\night_1009.png" />
+    <EmbeddedResource Include="Resx\night_1030.png" />
+    <EmbeddedResource Include="Resx\night_1063.png" />
+    <EmbeddedResource Include="Resx\night_1066.png" />
+    <EmbeddedResource Include="Resx\night_1069.png" />
+    <EmbeddedResource Include="Resx\night_1072.png" />
+    <EmbeddedResource Include="Resx\night_1087.png" />
+    <EmbeddedResource Include="Resx\night_1114.png" />
+    <EmbeddedResource Include="Resx\night_1117.png" />
+    <EmbeddedResource Include="Resx\night_1135.png" />
+    <EmbeddedResource Include="Resx\night_1147.png" />
+    <EmbeddedResource Include="Resx\night_1150.png" />
+    <EmbeddedResource Include="Resx\night_1153.png" />
+    <EmbeddedResource Include="Resx\night_1168.png" />
+    <EmbeddedResource Include="Resx\night_1171.png" />
+    <EmbeddedResource Include="Resx\night_1180.png" />
+    <EmbeddedResource Include="Resx\night_1183.png" />
+    <EmbeddedResource Include="Resx\night_1186.png" />
+    <EmbeddedResource Include="Resx\night_1189.png" />
+    <EmbeddedResource Include="Resx\night_1192.png" />
+    <EmbeddedResource Include="Resx\night_1195.png" />
+    <EmbeddedResource Include="Resx\night_1198.png" />
+    <EmbeddedResource Include="Resx\night_1201.png" />
+    <EmbeddedResource Include="Resx\night_1204.png" />
+    <EmbeddedResource Include="Resx\night_1207.png" />
+    <EmbeddedResource Include="Resx\night_1210.png" />
+    <EmbeddedResource Include="Resx\night_1213.png" />
+    <EmbeddedResource Include="Resx\night_1216.png" />
+    <EmbeddedResource Include="Resx\night_1219.png" />
+    <EmbeddedResource Include="Resx\night_1222.png" />
+    <EmbeddedResource Include="Resx\night_1225.png" />
+    <EmbeddedResource Include="Resx\night_1237.png" />
+    <EmbeddedResource Include="Resx\night_1240.png" />
+    <EmbeddedResource Include="Resx\night_1243.png" />
+    <EmbeddedResource Include="Resx\night_1246.png" />
+    <EmbeddedResource Include="Resx\night_1249.png" />
+    <EmbeddedResource Include="Resx\night_1252.png" />
+    <EmbeddedResource Include="Resx\night_1255.png" />
+    <EmbeddedResource Include="Resx\night_1258.png" />
+    <EmbeddedResource Include="Resx\night_1261.png" />
+    <EmbeddedResource Include="Resx\night_1264.png" />
+    <EmbeddedResource Include="Resx\night_1273.png" />
+    <EmbeddedResource Include="Resx\night_1276.png" />
+    <EmbeddedResource Include="Resx\night_1279.png" />
+    <EmbeddedResource Include="Resx\night_1282.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.4.0.280\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.4.0.280\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />

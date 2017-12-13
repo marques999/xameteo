@@ -22,7 +22,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public object ProvideValue(IServiceProvider serviceProvider)
         {
-            return Source == null ? null : ImageSource.FromFile(Device.RuntimePlatform == Device.iOS ? "Images/" + Source : Source);
+            return Source == null ? null : ImageSource.FromResource(Source);
         }
     }
 }

@@ -70,7 +70,12 @@ namespace Xameteo.Model
         /// <summary>
         /// </summary>
         [JsonIgnore]
-        public ImageSource Image => Condition.Image(IsDay);
+        public string Image => Condition.Image(IsDay);
+
+        /// <summary>
+        /// </summary>
+        [JsonIgnore]
+        public ImageSource ImageResource => Condition.ImageResource(IsDay);
 
         /// <inheritdoc />
         /// <summary>

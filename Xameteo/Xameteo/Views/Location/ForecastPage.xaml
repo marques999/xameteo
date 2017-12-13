@@ -22,7 +22,7 @@
                   <Label FontAttributes="Bold"
                          Text="{Binding Date, Converter={StaticResource XamlWeekdayConverter}}" />
                 </StackLayout>
-                <Image Source="{Binding Day.Image}" />
+                <Image Source="{Binding Day.ImageResource}" />
                 <Label VerticalOptions="Center"
                        Text="{Binding Day.Condition, Converter={StaticResource XamlConditionConverter}}" />
                 <StackLayout Padding="8, 16"

@@ -1,9 +1,9 @@
-﻿using Xamarin.Forms;
-
+﻿using System.Diagnostics;
 using Xameteo.Resx;
 using Xameteo.Globalization;
 
 using Newtonsoft.Json;
+using Xamarin.Forms;
 
 namespace Xameteo.Model
 {
@@ -25,9 +25,16 @@ namespace Xameteo.Model
         /// </summary>
         /// <param name="isDay"></param>
         /// <returns></returns>
-        public ImageSource Image(bool isDay) => XameteoL10N.GetDrawable(
-            isDay ? $"day_{Id}.png" : $"night_{Id}.png"
-        );
+        public string Image(bool isDay) => XameteoL10N.GetDrawable(isDay ? $"day_{Id}.png" : $"night_{Id}.png");
+
+        /// <summary>
+        /// </summary>
+        /// <param name="isDay"></param>
+        /// <returns></returns>
+        public ImageSource ImageResource(bool isDay)
+        {
+            return ImageSource.FromResource(Image(isDay));
+        }
 
         /// <summary>
         /// </summary>

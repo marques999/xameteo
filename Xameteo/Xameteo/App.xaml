@@ -21,7 +21,6 @@
       <globalization:WeekdayConverter x:Key="XamlWeekdayConverter"/>
       <!-- Number Conversions -->
       <globalization:DegreesConverter x:Key="XamlDegreesConverter"/>
-      <globalization:FixedPointConverter x:Key="XamlFixedPointConverter"/>
       <globalization:PercentageConverter x:Key="XamlPercentageConverter"/>
       <!-- Unit Conversions -->
       <globalization:DistanceConverter x:Key="XamlDistanceConverter"/>

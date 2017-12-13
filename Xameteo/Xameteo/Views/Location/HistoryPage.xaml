@@ -10,7 +10,7 @@
       <StackLayout Padding="8, 16"
                    Orientation="Vertical"
                    BackgroundColor="Accent">
-        <Image Source="{Binding Day.Image}"
+        <Image Source="{Binding Day.ImageResource}"
                VerticalOptions="FillAndExpand"
                HorizontalOptions="CenterAndExpand"/>
         <Label FontSize="18"

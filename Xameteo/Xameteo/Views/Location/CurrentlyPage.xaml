@@ -13,7 +13,7 @@
         <StackLayout Padding="8, 16"
                      Orientation="Vertical"
                      BackgroundColor="Accent">
-          <Image Source="{Binding Weather.Image}"
+          <Image Source="{Binding Weather.ImageResource}"
                  VerticalOptions="FillAndExpand"
                  HorizontalOptions="CenterAndExpand"/>
           <Label FontSize="18"

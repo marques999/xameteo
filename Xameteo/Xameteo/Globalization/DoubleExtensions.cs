@@ -16,19 +16,6 @@
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    public class FixedPointConverter : AbstractConverter<double>
-    {
-        /// <inheritdoc />
-        /// <summary>
-        /// </summary>
-        public FixedPointConverter() : base(XameteoL10N.FixedPoint)
-        {
-        }
-    }
-
-    /// <inheritdoc />
-    /// <summary>
-    /// </summary>
     public class PercentageConverter : AbstractConverter<double>
     {
         /// <inheritdoc />

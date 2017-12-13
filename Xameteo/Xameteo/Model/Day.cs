@@ -60,7 +60,12 @@ namespace Xameteo.Model
         /// <summary>
         /// </summary>
         [JsonIgnore]
-        public ImageSource Image => Condition.Image(true);
+        public string Image => Condition.Image(true);
+
+        /// <summary>
+        /// </summary>
+        [JsonIgnore]
+        public ImageSource ImageResource => Condition.ImageResource(true);
 
         /// <inheritdoc />
         /// <summary>
@@ -72,7 +77,7 @@ namespace Xameteo.Model
             new TableItem(Resources.Forecast_Wind_Velocity, XameteoApp.Instance.Velocity.Convert(WindVelocity)),
             new TableItem(Resources.Forecast_Humidity, XameteoL10N.Percentage(Humidity)),
             new TableItem(Resources.Forecast_Visibility, XameteoApp.Instance.Distance.Convert(Visibility)),
-            new TableItem(Resources.Forecast_Ultraviolet, XameteoL10N.FixedPoint(Ultraviolet)),
+            new TableItem(Resources.Forecast_Ultraviolet, Ultraviolet.ToString()),
             Condition.GenerateTable(),
             new TableItem(Resources.Forecast_Average, XameteoApp.Instance.Temperature.Convert(Average)),
             new TableItem(Resources.Forecast_Minimum, XameteoApp.Instance.Temperature.Convert(Minimum)),

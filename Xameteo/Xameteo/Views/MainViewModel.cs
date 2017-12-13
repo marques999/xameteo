@@ -3,7 +3,7 @@ using System.Linq;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 using System.Runtime.CompilerServices;
-
+using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
 using Xameteo.API;
@@ -69,7 +69,7 @@ namespace Xameteo.Views
             ViewModel = null,
             TargetType = typeof(SettingsView),
             Title = Resources.Title_Preferences,
-            Icon = XameteoL10N.GetDrawable("icon_settings.png")
+            Icon = ImageSource.FromFile("icon_settings.png") 
         };
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Xameteo.Views
             ViewModel = null,
             Title = Resources.Title_Home,
             TargetType = typeof(HomeView),
-            Icon = XameteoL10N.GetDrawable("icon_home.png")
+            Icon = ImageSource.FromFile("icon_home.png")
         };
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Xameteo.Views
                 ViewModel = viewModel,
                 TargetType = typeof(LocationView),
                 Title = viewModel.Forecast.Location.Formatted,
-                Icon = XameteoL10N.GetDrawable(viewModel.Adapter.Icon)
+                Icon = ImageSource.FromFile(viewModel.Adapter.Icon)
             });
         }
 
