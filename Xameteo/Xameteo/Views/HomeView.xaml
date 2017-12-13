@@ -5,16 +5,18 @@
              x:Class="Xameteo.Views.HomeView"
              Title="{globalization:Translate Title_Locations}">
   <ContentPage.ToolbarItems>
-    <ToolbarItem Text="New" Order="Primary" Icon="{globalization:ImageResource icon_plus.png}" Clicked="InsertLocation" />
+    <ToolbarItem Text="New" Order="Primary" Priority="0" Icon="{globalization:ImageResource icon_plus.png}" Clicked="InsertClicked" />
+    <ToolbarItem Text="New" Order="Primary" Priority="1"  Icon="{globalization:ImageResource icon_refresh.png}" Clicked="RefreshClicked" />
   </ContentPage.ToolbarItems>
   <ContentPage.Content>
-    <ListView ItemsSource="{Binding Items}"
+    <ListView x:Name="LocationsList"
+              ItemsSource="{Binding Items}"
               ItemTapped="ItemClicked"
               IsPullToRefreshEnabled="True"
               HasUnevenRows="True"
               CachingStrategy="RecycleElement"
               RefreshCommand="{Binding RefreshCommand}"
-              IsRefreshing="{Binding IsRefreshing, Mode=OneWay}">
+              IsRefreshing="{Binding IsBusy}">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>

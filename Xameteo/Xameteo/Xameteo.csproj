@@ -103,7 +103,6 @@
       <DependentUpon>TodayPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="API\ApixuPlace.cs" />
-    <Compile Include="Views\HomeViewModel.cs" />
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>

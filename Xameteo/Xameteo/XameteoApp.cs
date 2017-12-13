@@ -20,7 +20,7 @@ namespace Xameteo
 {
     /// <summary>
     /// </summary>
-    public class XameteoApp: IEventObject
+    public class XameteoApp
     {
         /// <summary>
         /// </summary>
@@ -147,7 +147,7 @@ namespace Xameteo
 
             if (operationResult)
             {
-                Events.Remove(this, adapter);
+                Events.Remove(adapter);
             }
 
             return operationResult;
@@ -177,6 +177,26 @@ namespace Xameteo
 
         /// <summary>
         /// </summary>
+        /// <param name="apixuPlace"></param>
+        /// <returns></returns>
+        public async Task<ApixuPlace> RefreshPlace(ApixuPlace apixuPlace)
+        {
+            var placeIndex = Places.IndexOf(apixuPlace);
+
+            if (placeIndex < 0)
+            {
+                return null;
+            }
+
+            var place = new ApixuPlace(apixuPlace.Adapter, await Apixu.Forecast(apixuPlace.Adapter));
+
+            Places[placeIndex] = place;
+
+            return place;
+        }
+
+        /// <summary>
+        /// </summary>
         public async Task RefreshPlaces()
         {
             Places.Clear();
@@ -201,7 +221,7 @@ namespace Xameteo
             var viewModel = new ApixuPlace(adapter, await Apixu.Forecast(adapter));
 
             Places.Add(viewModel);
-            Events.Insert(this, viewModel);
+            Events.Insert(viewModel);
             SavePlaces();
 
             return true;

@@ -2,14 +2,16 @@
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
 using Xameteo.Views.Location;
 
 namespace Xameteo.Views
 {
+    /// <inheritdoc />
     /// <summary>
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainView : IEventObject
+    public partial class MainView
     {
         /// <summary>
         /// </summary>
@@ -18,9 +20,9 @@ namespace Xameteo.Views
             InitializeComponent();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
 
-            XameteoApp.Instance.Events.SubscribeView(this, (sender, args) =>
+            XameteoApp.Instance.Events.SubscribeView((sender, args) =>
             {
-                Detail = new NavigationPage(new LocationView(args.Forecast));
+                Detail = new NavigationPage(new LocationView(args));
             });
         }
 
@@ -45,7 +47,7 @@ namespace Xameteo.Views
                 else
                 {
                     ResetNavigation();
-                    Detail = new NavigationPage(new LocationView(item.ViewModel.Forecast));
+                    Detail = new NavigationPage(new LocationView(item.ViewModel));
                 }
             }
             catch (Exception exception)

@@ -1,16 +1,10 @@
-﻿using Xameteo.API;
-using Xamarin.Forms;
+﻿using System;
 
-using XameteoEvent = System.Action<Xameteo.IEventObject, Xameteo.API.ApixuPlace>;
+using Xameteo.API;
+using Xamarin.Forms;
 
 namespace Xameteo
 {
-    /// <summary>
-    /// </summary>
-    public interface IEventObject
-    {
-    }
-
     /// <summary>
     /// </summary>
     public class XameteoEvents
@@ -23,37 +17,32 @@ namespace Xameteo
 
         /// <summary>
         /// </summary>
-        /// <param name="source"></param>
         /// <param name="adapter"></param>
-        public void View(IEventObject source, ApixuPlace adapter) => MessagingCenter.Send(source, ViewTag, adapter);
+        public void View(ApixuPlace adapter) => MessagingCenter.Send(this, ViewTag, adapter);
 
         /// <summary>
         /// </summary>
-        /// <param name="source"></param>
         /// <param name="adapter"></param>
-        public void Insert(IEventObject source, ApixuPlace adapter) => MessagingCenter.Send(source, InsertTag, adapter);
+        public void Insert(ApixuPlace adapter) => MessagingCenter.Send(this, InsertTag, adapter);
 
         /// <summary>
         /// </summary>
-        /// <param name="source"></param>
         /// <param name="adapter"></param>
-        public void Remove(IEventObject source, ApixuPlace adapter) => MessagingCenter.Send(source, RemoveTag, adapter);
+        public void Remove(ApixuPlace adapter) => MessagingCenter.Send(this, RemoveTag, adapter);
 
         /// <summary>
         /// </summary>
-        /// <param name="source"></param>
         /// <param name="callback"></param>
-        public void SubscribeView(IEventObject source, XameteoEvent callback)
+        public void SubscribeView(Action<XameteoEvents, ApixuPlace> callback)
         {
             MessagingCenter.Subscribe(this, ViewTag, callback);
         }
 
         /// <summary>
         /// </summary>
-        /// <param name="source"></param>
         /// <param name="insertHandler"></param>
         /// <param name="removeHandler"></param>
-        public void SubscribeUpdates(IEventObject source, XameteoEvent insertHandler, XameteoEvent removeHandler)
+        public void SubscribeUpdates(Action<XameteoEvents, ApixuPlace> insertHandler, Action<XameteoEvents, ApixuPlace> removeHandler)
         {
             MessagingCenter.Subscribe(this, InsertTag, insertHandler);
             MessagingCenter.Subscribe(this, RemoveTag, removeHandler);

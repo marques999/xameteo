@@ -14,16 +14,17 @@ using Xameteo.Views.Settings;
 
 namespace Xameteo.Views
 {
+    /// <inheritdoc />
     /// <summary>
     /// </summary>
-    internal class MainViewModel : IEventObject, INotifyPropertyChanged
+    internal class MainViewModel : INotifyPropertyChanged
     {
         /// <summary>
         /// </summary>
         public MainViewModel()
         {
             InitializeView();
-            XameteoApp.Instance.Events.SubscribeUpdates(this, InsertLocation, RemoveLocation);
+            XameteoApp.Instance.Events.SubscribeUpdates(InsertLocation, RemoveLocation);
         }
 
         /// <summary>
@@ -83,11 +84,11 @@ namespace Xameteo.Views
 
         /// <summary>
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="adapter"></param>
-        public void InsertLocation(IEventObject sender, ApixuPlace adapter)
+        /// <param name="events"></param>
+        /// <param name="viewModel"></param>
+        public void InsertLocation(XameteoEvents events, ApixuPlace viewModel)
         {
-            InsertLocation(adapter);
+            InsertLocation(viewModel);
         }
 
         /// <summary>
@@ -114,9 +115,9 @@ namespace Xameteo.Views
 
         /// <summary>
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="events"></param>
         /// <param name="adapter"></param>
-        public void RemoveLocation(IEventObject source, ApixuPlace adapter)
+        public void RemoveLocation(XameteoEvents events, ApixuPlace adapter)
         {
             var previous = MenuItems.FirstOrDefault(it => it.ViewModel == adapter);
 
