@@ -1,11 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using SkiaSharp.Views.Forms;
-using Xamarin.Forms;
-using Xameteo.Model;
-using Xamarin.Forms.Xaml;
+﻿using System.Linq;
+using System.Collections.Generic;
+
 using Xameteo.API;
+using Xameteo.Model;
 using Xameteo.Globalization;
+
+using SkiaSharp.Views.Forms;
+
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace Xameteo.Views.Location
 {
@@ -32,7 +35,7 @@ namespace Xameteo.Views.Location
                 Hide = false,
                 Y = (float)hour.Day.Average,
                 ImageId = hour.Day.Condition.Image(true),
-                Label = XameteoL10N.OnlyDayMonth(hour.Date)     
+                Label = XameteoL10N.OnlyDayMonth(hour.Date)
             }).Take(5).ToList());
 
             Items = forecast.Days;

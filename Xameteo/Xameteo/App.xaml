@@ -5,59 +5,15 @@
              x:Class="Xameteo.App">
   <Application.Resources>
     <ResourceDictionary>
-      <!-- Boolean Conversions -->
+      <globalization:CompassConverter x:Key="XamlCompassConverter" />
       <globalization:ConditionConverter x:Key="XamlConditionConverter" />
-      <!-- Compass Conversions -->
-      <globalization:LongCompassConverter x:Key="XamlLongCompassConverter"/>
-      <globalization:ShortCompassConverter x:Key="XamlShortCompassConverter" />
-      <!-- Coordinates Conversions -->
-      <globalization:LatitudeConverter x:Key="XamlLatitudeConverter"/>
-      <globalization:LongitudeConverter x:Key="XamlLongitudeConverter"/>
-      <!-- DateTime Conversions -->
-      <globalization:ShortTimeConverter x:Key="XamlShortTimeConverter"/>
-      <globalization:ShortDateTimeConverter x:Key="XamlShortDateTimeConverter"/>
-      <globalization:LongDateTimeConverter x:Key="XamlLongDateTimeConverter"/>
-      <globalization:WeekdayConverter x:Key="XamlWeekdayConverter"/>
-      <!-- Number Conversions -->
-      <globalization:DegreesConverter x:Key="XamlDegreesConverter"/>
-      <globalization:PercentageConverter x:Key="XamlPercentageConverter"/>
-      <!-- Unit Conversions -->
-      <globalization:DistanceConverter x:Key="XamlDistanceConverter"/>
-      <globalization:PressureConverter x:Key="XamlPressureConverter"/>
-      <globalization:VelocityConverter x:Key="XamlVelocityConverter"/>
-      <globalization:TemperatureConverter x:Key="XamlTemperatureConverter"/>
+      <globalization:DateTimeConverter x:Key="XamlDateTimeConverter"/>
       <globalization:PrecipitationConverter x:Key="XamlPrecipitationConverter"/>
-      <!-- Global Styles -->
-      <Style x:Key="GridItemDescription" TargetType="Label">
-        <Setter Property="HorizontalTextAlignment" Value="End" />
-        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
-        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
-      </Style>
-      <Style x:Key="GridItem" TargetType="Label">
-        <Setter Property="FontAttributes" Value="Bold"></Setter>
-        <Setter Property="HorizontalTextAlignment" Value="Start" />
-        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
-        <Setter Property="HorizontalOptions" Value="Fill"/>
-      </Style>
-      <Style x:Key="HorizontalSeparator" TargetType="BoxView">
-        <Setter Property="Color" Value="#5b5d68" />
-        <Setter Property="HeightRequest" Value="1" />
-        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-      </Style>
-      <Style x:Key="VerticalSeparator" TargetType="BoxView">
-        <Setter Property="Color" Value="#5b5d68" />
-        <Setter Property="WidthRequest" Value="1" />
-        <Setter Property="VerticalOptions" Value="FillAndExpand" />
-      </Style>
-      <Style x:Key="LabelCenter" TargetType="Label">
-        <Setter Property="FontAttributes" Value="Bold"></Setter>
-        <Setter Property="HorizontalTextAlignment" Value="Center" />
-        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
-        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
-      </Style>
-      <Style x:Key="DefaultPadding" TargetType="Layout">
-        <Setter Property="Padding" Value="16, 8"></Setter>
-      </Style>
+      <globalization:PressureConverter x:Key="XamlPressureConverter"/>
+      <globalization:TemperatureConverter x:Key="XamlTemperatureConverter"/>
+      <globalization:TimeConverter x:Key="XamlTimeConverter"/>
+      <globalization:VelocityConverter x:Key="XamlVelocityConverter"/>
+      <globalization:WeekdayConverter x:Key="XamlWeekdayConverter"/>
     </ResourceDictionary>
   </Application.Resources>
 </Application>

@@ -137,15 +137,6 @@ namespace Xameteo.Globalization
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static string LongDateTime(DateTime value)
-        {
-            return value.ToString("f", Culture.DateTimeFormat);
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
         public static string WeekDay(DateTime value)
         {
             return value.ToString("dddd", Culture.DateTimeFormat);

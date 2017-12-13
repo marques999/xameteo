@@ -30,9 +30,11 @@
       <ListView.GroupHeaderTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Orientation="Vertical" Padding="4, 0">
+            <StackLayout Padding="4, 0"
+                         Orientation="Vertical">
               <BoxView HeightRequest="8" />
-              <ContentView BackgroundColor="Accent" Padding="4, 8">
+              <ContentView Padding="4, 8"
+                           BackgroundColor="Accent">
                 <Label TextColor="White"
                        Text="{Binding Name}"
                        FontAttributes="Bold"
@@ -49,8 +51,8 @@
         </DataTemplate>
       </ListView.ItemTemplate>
       <ListView.Footer>
-        <StackLayout Margin="0, 4, 0, 0"
-                     Padding="4, 8"
+        <StackLayout Padding="4, 8"
+                     Margin="0, 4, 0, 0"
                      Orientation="Horizontal"
                      BackgroundColor="Accent">
           <Label TextColor="White"
@@ -59,7 +61,7 @@
                  HorizontalOptions="FillAndExpand"
                  Text="{globalization:Translate Forecast_Last_Updated}" />
           <Label TextColor="White"
-                 Text="{Binding Weather.LastUpdated, Converter={StaticResource XamlShortDateTimeConverter}}"
+                 Text="{Binding Weather.LastUpdated, Converter={StaticResource XamlDateTimeConverter}}"
                  HorizontalTextAlignment="Start"
                  HorizontalOptions="FillAndExpand" />
         </StackLayout>

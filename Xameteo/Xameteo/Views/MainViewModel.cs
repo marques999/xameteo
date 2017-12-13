@@ -3,12 +3,12 @@ using System.Linq;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 using System.Runtime.CompilerServices;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
 using Xameteo.API;
 using Xameteo.Resx;
-using Xameteo.Globalization;
 using Xameteo.Views.Location;
 using Xameteo.Views.Settings;
 
@@ -69,7 +69,7 @@ namespace Xameteo.Views
             ViewModel = null,
             TargetType = typeof(SettingsView),
             Title = Resources.Title_Preferences,
-            Icon = ImageSource.FromFile("icon_settings.png") 
+            Icon = ImageSource.FromFile("icon_settings.png")
         };
 
         /// <summary>

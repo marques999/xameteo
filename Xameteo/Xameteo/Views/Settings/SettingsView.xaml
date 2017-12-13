@@ -12,8 +12,8 @@
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Orientation="Vertical"
-                         Style="{StaticResource DefaultPadding}">
+            <StackLayout Padding="16, 8"
+                         Orientation="Vertical">
               <Label Text="{Binding Name}"
                      FontAttributes="Bold"
                      Style="{DynamicResource ListItemTextStyle}" />

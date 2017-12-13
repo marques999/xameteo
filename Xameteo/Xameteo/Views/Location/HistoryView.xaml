@@ -17,9 +17,11 @@
       <ListView.GroupHeaderTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Orientation="Vertical" Padding="4, 0">
+            <StackLayout Padding="4, 0"
+                         Orientation="Vertical">
               <BoxView HeightRequest="8" />
-              <ContentView BackgroundColor="Accent" Padding="4, 8">
+              <ContentView Padding="4, 8"
+                           BackgroundColor="Accent">
                 <Label TextColor="White"
                        Text="{Binding Name}"
                        FontAttributes="Bold"

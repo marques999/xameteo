@@ -94,30 +94,4 @@ namespace Xameteo.Globalization
             return value;
         }
     }
-
-    /// <inheritdoc />
-    /// <summary>
-    /// </summary>
-    public abstract class CoordinatesConverter : IValueConverter
-    {
-        /// <inheritdoc />
-        /// <summary>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="targetType"></param>
-        /// <param name="parameter"></param>
-        /// <param name="culture"></param>
-        /// <returns></returns>
-        public abstract object Convert(object value, Type targetType, object parameter, CultureInfo culture);
-
-        /// <inheritdoc />
-        /// <summary>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="targetType"></param>
-        /// <param name="parameter"></param>
-        /// <param name="culture"></param>
-        /// <returns></returns>
-        public abstract object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture);
-    }
 }

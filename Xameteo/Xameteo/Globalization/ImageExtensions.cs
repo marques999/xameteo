@@ -22,7 +22,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public object ProvideValue(IServiceProvider serviceProvider)
         {
-            return Source == null ? null : ImageSource.FromResource(Source);
+            return Source == null ? null : ImageSource.FromResource(XameteoL10N.GetDrawable(Source));
         }
     }
 }

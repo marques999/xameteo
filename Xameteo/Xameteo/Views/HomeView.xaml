@@ -17,14 +17,14 @@
                  Icon="{globalization:ImageResource icon_refresh.png}" />
   </ContentPage.ToolbarItems>
   <ContentPage.Content>
-    <ListView x:Name="LocationsList"
-              ItemsSource="{Binding Items}"
+    <ListView HasUnevenRows="True"
+              x:Name="LocationsList"
               ItemTapped="ItemClicked"
+              ItemsSource="{Binding Items}"
               IsPullToRefreshEnabled="True"
-              HasUnevenRows="True"
               CachingStrategy="RecycleElement"
-              RefreshCommand="{Binding RefreshCommand}"
-              IsRefreshing="{Binding IsBusy}">
+              IsRefreshing="{Binding IsBusy}"
+              RefreshCommand="{Binding RefreshCommand}">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
@@ -51,7 +51,7 @@
                 <Label FontSize="16"
                        VerticalOptions="CenterAndExpand"
                        HorizontalOptions="StartAndExpand"
-                       Text="{Binding Forecast.Current.LastUpdated, Converter={StaticResource XamlShortTimeConverter}}" />
+                       Text="{Binding Forecast.Current.LastUpdated, Converter={StaticResource XamlTimeConverter}}" />
                 <StackLayout Orientation="Horizontal"
                              HorizontalOptions="CenterAndExpand">
                   <Image Source="{Binding Forecast.Current.ImageResource}"/>

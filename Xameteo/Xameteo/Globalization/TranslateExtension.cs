@@ -3,23 +3,8 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using Condition = Xameteo.Model.Condition;
-
 namespace Xameteo.Globalization
 {
-    /// <inheritdoc />
-    /// <summary>
-    /// </summary>
-    public class ConditionConverter : AbstractConverter<Condition>
-    {
-        /// <inheritdoc />
-        /// <summary>
-        /// </summary>
-        public ConditionConverter() : base(XameteoL10N.GetCondition)
-        {
-        }
-    }
-
     /// <inheritdoc />
     /// <summary>
     /// </summary>

@@ -3,7 +3,8 @@
           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
           x:Class="Xameteo.Views.GenericCell">
   <ViewCell.View>
-    <StackLayout Padding="8, 6" Orientation="Horizontal">
+    <StackLayout Padding="8, 6"
+                 Orientation="Horizontal">
       <Label Text="{Binding Title}"
              FontAttributes="Bold"
              HorizontalOptions="Fill"

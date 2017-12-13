@@ -1,14 +1,16 @@
-﻿namespace Xameteo.Globalization
+﻿using Xameteo.Model;
+
+namespace Xameteo.Globalization
 {
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    public class ShortCompassConverter : AbstractConverter<int>
+    public class CompassConverter : AbstractConverter<int>
     {
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public ShortCompassConverter() : base(XameteoL10N.ShortCompass)
+        public CompassConverter() : base(XameteoL10N.ShortCompass)
         {
         }
     }
@@ -16,12 +18,12 @@
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    public class LongCompassConverter : AbstractConverter<int>
+    public class ConditionConverter : AbstractConverter<Condition>
     {
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public LongCompassConverter() : base(XameteoL10N.LongCompass)
+        public ConditionConverter() : base(XameteoL10N.GetCondition)
         {
         }
     }

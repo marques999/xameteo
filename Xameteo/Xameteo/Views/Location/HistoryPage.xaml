@@ -6,9 +6,18 @@
              Title="{globalization:Translate Tab_History}">
   <ContentPage.Content>
     <StackLayout Orientation="Vertical">
-      <StackLayout Orientation="Horizontal" BackgroundColor="Accent" Padding="8, 8">
-        <Label VerticalOptions="CenterAndExpand" Text="{Binding Selected}" TextColor="White" FontAttributes="Bold" HorizontalOptions="StartAndExpand"></Label>
-        <Button VerticalOptions="CenterAndExpand" Text="Select" Clicked="SelectClicked" TextColor="White" HorizontalOptions="EndAndExpand"></Button>
+      <StackLayout Padding="8, 8"
+                   Orientation="Horizontal"
+                   BackgroundColor="Accent">
+        <Label FontAttributes="Bold"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="StartAndExpand"
+               Text="{Binding Selected}" TextColor="White" />
+        <Button Text="Select"
+                TextColor="White"
+                Clicked="SelectClicked"
+                HorizontalOptions="EndAndExpand"
+                VerticalOptions="CenterAndExpand" />
       </StackLayout>
       <ContentView x:Name="HistoryView" VerticalOptions="FillAndExpand"/>
     </StackLayout>

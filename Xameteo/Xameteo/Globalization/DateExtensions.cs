@@ -5,12 +5,12 @@ namespace Xameteo.Globalization
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    public class ShortTimeConverter : AbstractConverter<DateTime>
+    public class TimeConverter : AbstractConverter<DateTime>
     {
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public ShortTimeConverter() : base(XameteoL10N.ShortTime)
+        public TimeConverter() : base(XameteoL10N.ShortTime)
         {
         }
     }
@@ -31,25 +31,12 @@ namespace Xameteo.Globalization
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    public class LongDateTimeConverter : AbstractConverter<DateTime>
+    public class DateTimeConverter : AbstractConverter<DateTime>
     {
         /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public LongDateTimeConverter() : base(XameteoL10N.LongDateTime)
-        {
-        }
-    }
-
-    /// <inheritdoc />
-    /// <summary>
-    /// </summary>
-    public class ShortDateTimeConverter : AbstractConverter<DateTime>
-    {
-        /// <inheritdoc />
-        /// <summary>
-        /// </summary>
-        public ShortDateTimeConverter() : base(XameteoL10N.ShortDateTime)
+        public DateTimeConverter() : base(XameteoL10N.ShortDateTime)
         {
         }
     }

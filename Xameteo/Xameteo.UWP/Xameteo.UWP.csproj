@@ -110,7 +110,6 @@
     <None Include="Xameteo.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="background.jpg" />
     <Content Include="icon_compass.png" />
     <Content Include="icon_home.png" />
     <Content Include="icon_plane.png" />
