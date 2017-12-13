@@ -2,7 +2,6 @@
 using System.Globalization;
 
 using Xamarin.Forms;
-using Xameteo.Units;
 
 namespace Xameteo.Globalization
 {

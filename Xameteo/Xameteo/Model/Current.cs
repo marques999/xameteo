@@ -76,7 +76,7 @@ namespace Xameteo.Model
         /// <summary>
         /// </summary>
         /// <returns></returns>
-        public TableGroup GenerateTable() => new TableGroup("Current")
+        public TableGroup GenerateTable() => new TableGroup(Resources.Tab_Now)
         {
             new TableItem(Resources.Forecast_Feels_Like, XameteoApp.Instance.Temperature.Convert(FeelsLike)),
             new TableItem(Resources.Forecast_Humidity, XameteoL10N.Percentage(Humidity)),

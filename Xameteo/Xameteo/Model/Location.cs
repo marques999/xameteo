@@ -60,7 +60,7 @@ namespace Xameteo.Model
         /// <summary>
         /// </summary>
         /// <returns></returns>
-        public TableGroup GenerateTable() => new TableGroup("Location")
+        public TableGroup GenerateTable() => new TableGroup(Resources.Tab_Location)
         {
             new TableItem(Resources.Location_Name, Name),
             new TableItem(Resources.Location_Region, Region),

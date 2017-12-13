@@ -66,7 +66,7 @@ namespace Xameteo.Model
         /// <summary>
         /// </summary>
         /// <returns></returns>
-        public TableGroup GenerateTable() => new TableGroup(Resources.Group_Temperature)
+        public TableGroup GenerateTable() => new TableGroup(Resources.Tab_Today)
         {
             new TableItem(Resources.Forecast_Precipitation, XameteoApp.Instance.Precipitation.Convert(Precipitation)),
             new TableItem(Resources.Forecast_Wind_Velocity, XameteoApp.Instance.Velocity.Convert(WindVelocity)),
