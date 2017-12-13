@@ -31,17 +31,22 @@
                  Style="{StaticResource StyleAstroLabel}" />
         </StackLayout>
       </>-->
-    <ListView IsGroupingEnabled="true"
+    <ListView HasUnevenRows="True"
+              IsGroupingEnabled="true"
               ItemsSource="{Binding Items}"
               CachingStrategy="RecycleElement"
-              HasUnevenRows="True"
               GroupDisplayBinding="{Binding Name}"
               GroupShortNameBinding="{Binding Name}">
       <ListView.GroupHeaderTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout BackgroundColor="Accent" Padding="4">
-              <Label HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" Text="{Binding Name}" TextColor="White" FontAttributes="Bold"></Label>
+            <StackLayout Padding="4"
+                         BackgroundColor="Accent">
+              <Label TextColor="White"
+                     Text="{Binding Name}"
+                     FontAttributes="Bold"
+                     HorizontalTextAlignment="Center"
+                     VerticalOptions="CenterAndExpand" />
             </StackLayout>
           </ViewCell>
         </DataTemplate>

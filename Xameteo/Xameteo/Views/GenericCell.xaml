@@ -9,12 +9,12 @@
              HorizontalOptions="Fill"
              HorizontalTextAlignment="Start"
              VerticalOptions="CenterAndExpand" 
-             Style="{DynamicResource ListItemTextStyle}"/>
+             Style="{DynamicResource ListItemTextStyle}" />
       <Label Text="{Binding Description}"
              HorizontalTextAlignment="End"
              HorizontalOptions="FillAndExpand"
              VerticalOptions="CenterAndExpand"
-             Style="{DynamicResource ListItemDetailTextStyle}"/>
+             Style="{DynamicResource ListItemDetailTextStyle}" />
     </StackLayout>
   </ViewCell.View>
 </ViewCell>

@@ -5,25 +5,47 @@
              x:Class="Xameteo.Views.MainViewMaster"
              Title="{globalization:Translate Title_Xameteo}">
   <StackLayout>
-    <ListView x:Name="MenuItemsListView" SeparatorVisibility="None" HasUnevenRows="true" ItemsSource="{Binding MenuItems}">
+    <ListView HasUnevenRows="true"
+              x:Name="MenuItemsListView"
+              SeparatorVisibility="None"
+              ItemsSource="{Binding MenuItems}">
       <ListView.Header>
-        <Grid HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Accent">
+        <Grid VerticalOptions="Center"
+              BackgroundColor="Accent"
+              HorizontalOptions="Center">
           <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
           </Grid.RowDefinitions>
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
           </Grid.ColumnDefinitions>
-          <Image Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" Source="{globalization:ImageResource background.jpg}" HeightRequest="224" Aspect="AspectFill"/>
-          <Label Grid.Row="0" Grid.Column="0" Margin="16, 12" Text="{globalization:Translate Title_Xameteo}" VerticalTextAlignment="End" Style="{DynamicResource SubtitleStyle}" TextColor="White"/>
+          <Image Grid.Row="0"
+                 Grid.Column="0"
+                 Aspect="AspectFill"
+                 HeightRequest="224"
+                 HorizontalOptions="Center"
+                 Source="{globalization:ImageResource background.jpg}" />
+          <Label Grid.Row="0"
+                 Grid.Column="0"
+                 Margin="16, 12"
+                 TextColor="White"
+                 VerticalTextAlignment="End"
+                 Style="{DynamicResource SubtitleStyle}" 
+                 Text="{globalization:Translate Title_Xameteo}" />
         </Grid>
       </ListView.Header>
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Padding="16, 12" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-              <Image Source="{Binding Icon}" WidthRequest="24" />
-              <Label FontSize="16" Text="{Binding Title}" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
+            <StackLayout Padding="16, 12"
+                         Orientation="Horizontal"
+                         HorizontalOptions="FillAndExpand">
+              <Image WidthRequest="24"
+                     Source="{Binding Icon}" />
+              <Label FontSize="16"
+                     Text="{Binding Title}"
+                     VerticalTextAlignment="Center"
+                     VerticalOptions="FillAndExpand" />
             </StackLayout>
           </ViewCell>
         </DataTemplate>

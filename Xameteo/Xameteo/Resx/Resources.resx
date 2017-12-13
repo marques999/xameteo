@@ -723,4 +723,10 @@
   <data name="Tab_Location" xml:space="preserve">
     <value>Location</value>
   </data>
+  <data name="Button_New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="Button_Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
 </root>

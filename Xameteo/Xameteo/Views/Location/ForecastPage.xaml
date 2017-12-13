@@ -5,7 +5,10 @@
              x:Class="Xameteo.Views.Location.ForecastPage"
              Title="{globalization:Translate Tab_Forecast}">
   <ContentPage.Content>
-    <ListView ItemsSource="{Binding Items}" HasUnevenRows="True" ItemTapped="ShowModal" CachingStrategy="RecycleElement">
+    <ListView HasUnevenRows="True"
+              ItemTapped="ShowModal"
+              ItemsSource="{Binding Items}"
+              CachingStrategy="RecycleElement">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
@@ -15,13 +18,13 @@
                              Orientation="Vertical"
                              VerticalOptions="Start">
                   <Label FontSize="32"
-                         Text="{Binding Date.Day}"></Label>
+                         Text="{Binding Date.Day}" />
                   <Label FontAttributes="Bold"
-                         Text="{Binding Date, Converter={StaticResource XamlWeekdayConverter}}"></Label>
+                         Text="{Binding Date, Converter={StaticResource XamlWeekdayConverter}}" />
                 </StackLayout>
-                <Image Source="{Binding Day.Image}"/>
+                <Image Source="{Binding Day.Image}" />
                 <Label VerticalOptions="Center"
-                       Text="{Binding Day.Condition, Converter={StaticResource XamlConditionConverter}}"></Label>
+                       Text="{Binding Day.Condition, Converter={StaticResource XamlConditionConverter}}" />
                 <StackLayout Padding="8, 16"
                              Orientation="Horizontal"
                              HorizontalOptions="EndAndExpand">
@@ -30,12 +33,12 @@
                          FontAttributes="Bold"
                          HorizontalTextAlignment="End"
                          VerticalOptions="CenterAndExpand"
-                         Text="{Binding Day.Maximum, Converter={StaticResource XamlTemperatureConverter}}"></Label>
+                         Text="{Binding Day.Maximum, Converter={StaticResource XamlTemperatureConverter}}" />
                   <Label Margin="8, 0"
                          WidthRequest="64"
                          HorizontalTextAlignment="End"
                          VerticalOptions="CenterAndExpand"
-                         Text="{Binding Day.Minimum, Converter={StaticResource XamlTemperatureConverter}}"></Label>
+                         Text="{Binding Day.Minimum, Converter={StaticResource XamlTemperatureConverter}}" />
                 </StackLayout>
               </StackLayout>
             </ViewCell.View>

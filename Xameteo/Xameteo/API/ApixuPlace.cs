@@ -9,11 +9,6 @@ namespace Xameteo.API
     {
         /// <summary>
         /// </summary>
-        [JsonProperty("timestamp")]
-        public DateTime Timestamp { get; }
-
-        /// <summary>
-        /// </summary>
         [JsonProperty("adapter")]
         public ApixuAdapter Adapter { get; }
 
@@ -30,7 +25,6 @@ namespace Xameteo.API
         {
             Adapter = adapter;
             Forecast = forecast;
-            Timestamp = DateTime.Now;
         }
     }
 }

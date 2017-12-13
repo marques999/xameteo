@@ -6,12 +6,26 @@
              x:Class="Xameteo.Views.Location.CurrentlyPage"
              Title="{globalization:Translate Tab_Now}">
   <ContentPage.Content>
-    <ListView ItemsSource="{Binding Items}" CachingStrategy="RecycleElement">
+    <ListView HasUnevenRows="True"
+              ItemsSource="{Binding Items}"
+              CachingStrategy="RecycleElement">
       <ListView.Header>
-        <StackLayout Orientation="Vertical" BackgroundColor="Accent" Padding="8, 16">
-          <Image Source="{Binding Weather.Image}" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"/>
-          <Label Text="{Binding Weather.Temperature, Converter={StaticResource XamlTemperatureConverter}}" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White"></Label>
-          <Label Text="{Binding Weather.Condition, Converter={StaticResource XamlConditionConverter}}" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White"></Label>
+        <StackLayout Padding="8, 16"
+                     Orientation="Vertical"
+                     BackgroundColor="Accent">
+          <Image Source="{Binding Weather.Image}"
+                 VerticalOptions="FillAndExpand"
+                 HorizontalOptions="CenterAndExpand"/>
+          <Label FontSize="18"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 HorizontalTextAlignment="Center"
+                 HorizontalOptions="FillAndExpand"
+                 Text="{Binding Weather.Temperature, Converter={StaticResource XamlTemperatureConverter}}" />
+          <Label TextColor="White"
+                 HorizontalTextAlignment="Center"
+                 HorizontalOptions="FillAndExpand"
+                 Text="{Binding Weather.Condition, Converter={StaticResource XamlConditionConverter}}" />
         </StackLayout>
       </ListView.Header>
       <ListView.ItemTemplate>
@@ -20,9 +34,19 @@
         </DataTemplate>
       </ListView.ItemTemplate>
       <ListView.Footer>
-        <StackLayout Orientation="Horizontal" Padding="0, 4" Margin="0, 4" BackgroundColor="Accent">
-          <Label Text="{globalization:Translate Forecast_Last_Updated}" FontAttributes="Bold" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" TextColor="White"></Label>
-          <Label Text="{Binding LastUpdate}" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" TextColor="White"></Label>
+        <StackLayout Margin="0, 4"
+                     Padding="0, 4"
+                     Orientation="Horizontal"
+                     BackgroundColor="Accent">
+          <Label TextColor="White"
+                 FontAttributes="Bold"
+                 HorizontalTextAlignment="End"
+                 HorizontalOptions="FillAndExpand"
+                 Text="{globalization:Translate Forecast_Last_Updated}" />
+          <Label TextColor="White"
+                 Text="{Binding LastUpdate}"
+                 HorizontalTextAlignment="Start"
+                 HorizontalOptions="FillAndExpand" />
         </StackLayout>
       </ListView.Footer>
     </ListView>

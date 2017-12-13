@@ -1,8 +1,6 @@
 ﻿using System;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
 using Xameteo.Views.Location;
 
 namespace Xameteo.Views
@@ -34,32 +32,17 @@ namespace Xameteo.Views
         {
             try
             {
-                if (!(args.SelectedItem is MainModel item))
+                if (args.SelectedItem is MainModel item)
                 {
-                    return;
-                }
-
-                if (item.ViewModel == null)
-                {
-                    ResetNavigation();
-                    Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
-                }
-                else
-                {
-                    ResetNavigation();
-                    Detail = new NavigationPage(new LocationView(item.ViewModel));
+                    IsPresented = false;
+                    MasterPage.ListView.SelectedItem = null;
+                    Detail = new NavigationPage(item.ViewModel == null ? (Page)Activator.CreateInstance(item.TargetType) : new LocationView(item.ViewModel));
                 }
             }
             catch (Exception exception)
             {
                 XameteoDialogs.Alert(exception);
             }
-        }
-
-        private void ResetNavigation()
-        {
-            IsPresented = false;
-            MasterPage.ListView.SelectedItem = null;
         }
     }
 }

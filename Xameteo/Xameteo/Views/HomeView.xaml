@@ -5,8 +5,16 @@
              x:Class="Xameteo.Views.HomeView"
              Title="{globalization:Translate Title_Locations}">
   <ContentPage.ToolbarItems>
-    <ToolbarItem Text="New" Order="Primary" Priority="0" Icon="{globalization:ImageResource icon_plus.png}" Clicked="InsertClicked" />
-    <ToolbarItem Text="New" Order="Primary" Priority="1"  Icon="{globalization:ImageResource icon_refresh.png}" Clicked="RefreshClicked" />
+    <ToolbarItem Priority="0"
+                 Order="Primary"
+                 Clicked="InsertClicked"
+                 Text="{globalization:Translate Button_New}"
+                 Icon="{globalization:ImageResource icon_plus.png}" />
+    <ToolbarItem Priority="1"
+                 Order="Primary"
+                 Clicked="RefreshClicked"
+                 Text="{globalization:Translate Button_Refresh}"
+                 Icon="{globalization:ImageResource icon_refresh.png}" />
   </ContentPage.ToolbarItems>
   <ContentPage.Content>
     <ListView x:Name="LocationsList"
@@ -30,21 +38,33 @@
                         Text="{globalization:Translate Button_Delete}" />
             </ViewCell.ContextActions>
             <StackLayout Orientation="Vertical">
-              <StackLayout Orientation="Horizontal" BackgroundColor="Accent" Padding="4">
-                <Label HorizontalOptions="CenterAndExpand" Text="{Binding Forecast.Location.Formatted}" TextColor="White" FontAttributes="Bold"></Label>
+              <StackLayout Padding="4"
+                           Orientation="Horizontal"
+                           BackgroundColor="Accent">
+                <Label TextColor="White"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"
+                       Text="{Binding Forecast.Location.Formatted}" />
               </StackLayout>
-              <StackLayout Orientation="Horizontal" Padding="8, 0">
-                <Label HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" FontSize="16" Text="{Binding Forecast.Current.LastUpdated, Converter={StaticResource XamlShortTimeConverter}}" ></Label>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+              <StackLayout Padding="8, 0"
+                           Orientation="Horizontal">
+                <Label FontSize="16"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="StartAndExpand"
+                       Text="{Binding Forecast.Current.LastUpdated, Converter={StaticResource XamlShortTimeConverter}}" />
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="CenterAndExpand">
                   <Image Source="{Binding Forecast.Current.Image}"/>
-                  <Label VerticalOptions="Center" Text="{Binding Forecast.Current.Condition, Converter={StaticResource XamlConditionConverter}}"></Label>
+                  <Label VerticalOptions="Center"
+                         Text="{Binding Forecast.Current.Condition, Converter={StaticResource XamlConditionConverter}}" />
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="EndAndExpand">
                   <Label Margin="8, 0"
-                           FontAttributes="Bold"
-                           HorizontalTextAlignment="End"
-                           VerticalOptions="CenterAndExpand"
-                           Text="{Binding Forecast.Current.Temperature, Converter={StaticResource XamlTemperatureConverter}}"></Label>
+                         FontAttributes="Bold"
+                         HorizontalTextAlignment="End"
+                         VerticalOptions="CenterAndExpand"
+                         Text="{Binding Forecast.Current.Temperature, Converter={StaticResource XamlTemperatureConverter}}" />
                 </StackLayout>
               </StackLayout>
             </StackLayout>

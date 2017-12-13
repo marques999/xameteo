@@ -5,13 +5,20 @@
              x:Class="Xameteo.Views.Settings.SettingsView"
              Title="{globalization:Translate Title_Preferences}">
   <ContentPage.Content>
-    <ListView HasUnevenRows="True" ItemTapped="HandleClick" ItemsSource="{Binding Items}" CachingStrategy="RecycleElement">
+    <ListView HasUnevenRows="True"
+              ItemTapped="HandleClick"
+              ItemsSource="{Binding Items}"
+              CachingStrategy="RecycleElement">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Style="{StaticResource DefaultPadding}" Orientation="Vertical">
-              <Label Text="{Binding Name}" Style="{DynamicResource ListItemTextStyle}" FontAttributes="Bold" />
-              <Label Text="{Binding Value}" Style="{DynamicResource ListItemDetailTextStyle}"/>
+            <StackLayout Orientation="Vertical"
+                         Style="{StaticResource DefaultPadding}">
+              <Label Text="{Binding Name}"
+                     FontAttributes="Bold"
+                     Style="{DynamicResource ListItemTextStyle}" />
+              <Label Text="{Binding Value}"
+                     Style="{DynamicResource ListItemDetailTextStyle}" />
             </StackLayout>
           </ViewCell>
         </DataTemplate>

@@ -30,17 +30,6 @@
       <globalization:TemperatureConverter x:Key="XamlTemperatureConverter"/>
       <globalization:PrecipitationConverter x:Key="XamlPrecipitationConverter"/>
       <!-- Global Styles -->
-      <Style x:Key="StyleAstroLabel" TargetType="Label">
-        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-        <Setter Property="VerticalOptions" Value="Center" />
-        <Setter Property="TextColor" Value="Accent"></Setter>
-        <Setter Property="FontSize" Value="12"></Setter>
-      </Style>
-      <Style x:Key="StyleAstroText" TargetType="Label">
-        <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
-        <Setter Property="VerticalOptions" Value="Center"></Setter>
-        <Setter Property="FontAttributes" Value="Bold"></Setter>
-      </Style>
       <Style x:Key="GridItemDescription" TargetType="Label">
         <Setter Property="HorizontalTextAlignment" Value="End" />
         <Setter Property="VerticalOptions" Value="CenterAndExpand"/>

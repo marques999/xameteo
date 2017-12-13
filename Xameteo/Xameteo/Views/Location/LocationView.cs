@@ -22,7 +22,7 @@ namespace Xameteo.Views.Location
             {
                 _place = apixuPlace;
                 InitializeView(apixuPlace.Forecast);
-                ToolbarItems.Add(new ToolbarItem("Refresh", "icon_refresh.png", RefreshPlace));
+                ToolbarItems.Add(new ToolbarItem(Resx.Resources.Button_Refresh, "icon_refresh.png", RefreshPlace));
             }
             catch (Exception exception)
             {

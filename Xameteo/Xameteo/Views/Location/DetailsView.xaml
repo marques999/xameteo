@@ -6,7 +6,9 @@
              x:Class="Xameteo.Views.Location.DetailsView"
              Title="{globalization:Translate Tab_Location}">
   <ContentPage.Content>
-    <ListView ItemsSource="{Binding Items}" CachingStrategy="RecycleElement">
+    <ListView HasUnevenRows="True"
+              ItemsSource="{Binding Items}"
+              CachingStrategy="RecycleElement">
       <ListView.ItemTemplate>
         <DataTemplate>
           <views:GenericCell />
