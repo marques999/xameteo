@@ -75,8 +75,8 @@ namespace Xameteo.Views
         public void InsertLocation(ApixuPlace viewModel) => MenuItems.Add(new MainModel
         {
             ViewModel = viewModel,
-            Title = viewModel.Forecast.Location.ToString(),
             TargetType = typeof(LocationView),
+            Title = viewModel.Forecast.Location.Formatted,
             Icon = XameteoL10N.GetDrawable(viewModel.Adapter.Icon)
         });
 

@@ -5,7 +5,7 @@
              x:Class="Xameteo.Views.Location.ForecastPage"
              Title="{globalization:Translate Tab_Forecast}">
   <ContentPage.Content>
-    <ListView ItemsSource="{Binding Items}" ItemTapped="ShowModal" CachingStrategy="RecycleElement">
+    <ListView ItemsSource="{Binding Items}" HasUnevenRows="True" ItemTapped="ShowModal" CachingStrategy="RecycleElement">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>

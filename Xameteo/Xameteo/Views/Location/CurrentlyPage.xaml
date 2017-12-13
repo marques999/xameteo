@@ -6,25 +6,25 @@
              x:Class="Xameteo.Views.Location.CurrentlyPage"
              Title="{globalization:Translate Tab_Now}">
   <ContentPage.Content>
-    <StackLayout Orientation="Vertical">
-      <StackLayout Orientation="Vertical" BackgroundColor="Accent" Padding="8, 16">
-        <Image Source="{Binding Weather.Image}" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"/>
-        <Label Text="{Binding Weather.Temperature, Converter={StaticResource XamlTemperatureConverter}}" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White"></Label>
-        <Label Text="{Binding Weather.Condition, Converter={StaticResource XamlConditionConverter}}" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White"></Label>
-      </StackLayout>
-      <ListView ItemsSource="{Binding Items}" CachingStrategy="RecycleElement">
-        <ListView.ItemTemplate>
-          <DataTemplate>
-            <views:GenericCell />
-          </DataTemplate>
-        </ListView.ItemTemplate>
-        <ListView.Footer>
-          <StackLayout Orientation="Horizontal" Padding="0, 4" Margin="0, 4" BackgroundColor="Accent">
-            <Label Text="{globalization:Translate Forecast_Last_Updated}" FontAttributes="Bold" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" TextColor="White"></Label>
-            <Label Text="{Binding LastUpdate}" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" TextColor="White"></Label>
-          </StackLayout>
-        </ListView.Footer>
-      </ListView>
-    </StackLayout>
+    <ListView ItemsSource="{Binding Items}" CachingStrategy="RecycleElement">
+      <ListView.Header>
+        <StackLayout Orientation="Vertical" BackgroundColor="Accent" Padding="8, 16">
+          <Image Source="{Binding Weather.Image}" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"/>
+          <Label Text="{Binding Weather.Temperature, Converter={StaticResource XamlTemperatureConverter}}" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White"></Label>
+          <Label Text="{Binding Weather.Condition, Converter={StaticResource XamlConditionConverter}}" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White"></Label>
+        </StackLayout>
+      </ListView.Header>
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <views:GenericCell />
+        </DataTemplate>
+      </ListView.ItemTemplate>
+      <ListView.Footer>
+        <StackLayout Orientation="Horizontal" Padding="0, 4" Margin="0, 4" BackgroundColor="Accent">
+          <Label Text="{globalization:Translate Forecast_Last_Updated}" FontAttributes="Bold" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" TextColor="White"></Label>
+          <Label Text="{Binding LastUpdate}" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" TextColor="White"></Label>
+        </StackLayout>
+      </ListView.Footer>
+    </ListView>
   </ContentPage.Content>
 </ContentPage>

@@ -32,11 +32,7 @@ namespace Xameteo
 
         /// <summary>
         /// </summary>
-        public static TimeSpan AsyncTimeout { get; } = TimeSpan.FromSeconds(5);
-
-        /// <summary>
-        /// </summary>
-        public static TimeSpan CacheInvalidate { get; } = TimeSpan.FromHours(1);
+        public static TimeSpan AsyncTimeout { get; } = TimeSpan.FromSeconds(10);
 
         /// <summary>
         /// </summary>

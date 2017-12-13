@@ -34,8 +34,18 @@
     <ListView IsGroupingEnabled="true"
               ItemsSource="{Binding Items}"
               CachingStrategy="RecycleElement"
+              HasUnevenRows="True"
               GroupDisplayBinding="{Binding Name}"
               GroupShortNameBinding="{Binding Name}">
+      <ListView.GroupHeaderTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout BackgroundColor="Accent" Padding="4">
+              <Label HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" Text="{Binding Name}" TextColor="White" FontAttributes="Bold"></Label>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.GroupHeaderTemplate>
       <ListView.ItemTemplate>
         <DataTemplate>
           <views:GenericCell/>

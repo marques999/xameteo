@@ -41,10 +41,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Globalization\UnitExtensions.cs" />
     <Compile Include="Views\GenericCell.xaml.cs">
       <DependentUpon>GenericCell.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Globalization\AbstractConverter.cs" />
+    <Compile Include="Globalization\Converter.cs" />
     <Compile Include="Globalization\IntegerExtensions.cs" />
     <Compile Include="Globalization\CoordinateExtensions.cs" />
     <Compile Include="Globalization\DateExtensions.cs" />

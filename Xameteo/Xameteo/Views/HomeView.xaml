@@ -11,6 +11,7 @@
     <ListView ItemsSource="{Binding Items}"
               ItemTapped="ItemClicked"
               IsPullToRefreshEnabled="True"
+              HasUnevenRows="True"
               CachingStrategy="RecycleElement"
               RefreshCommand="{Binding RefreshCommand}"
               IsRefreshing="{Binding IsRefreshing, Mode=OneWay}">
@@ -27,10 +28,24 @@
                         Text="{globalization:Translate Button_Delete}" />
             </ViewCell.ContextActions>
             <StackLayout Orientation="Vertical">
-              <Label Text="{Binding Weather.Location.Name}"
-                     Style="{DynamicResource ListItemTextStyle}" />
-              <Label Text="{Binding Weather.Current.Temperature}"
-                     Style="{DynamicResource ListItemDetailTextStyle}"/>
+              <StackLayout Orientation="Horizontal" BackgroundColor="Accent" Padding="4">
+                <Label HorizontalOptions="CenterAndExpand" Text="{Binding Forecast.Location.Formatted}"></Label>
+              </StackLayout>
+              <StackLayout Orientation="Horizontal" Padding="8, 0">
+                <Label HorizontalOptions="Start" VerticalOptions="CenterAndExpand" FontSize="16" Text="{Binding Forecast.Current.LastUpdated, Converter={StaticResource XamlShortTimeConverter}}" ></Label>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                  <Image Source="{Binding Forecast.Current.Image}"/>
+                  <Label VerticalOptions="Center" Text="{Binding Forecast.Current.Condition, Converter={StaticResource XamlConditionConverter}}"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                  <Label Margin="8, 0"
+                           WidthRequest="64"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="End"
+                           VerticalOptions="CenterAndExpand"
+                           Text="{Binding Forecast.Current.Temperature, Converter={StaticResource XamlTemperatureConverter}}"></Label>
+                </StackLayout>
+              </StackLayout>
             </StackLayout>
           </ViewCell>
         </DataTemplate>

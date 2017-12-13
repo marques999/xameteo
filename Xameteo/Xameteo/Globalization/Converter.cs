@@ -2,6 +2,7 @@
 using System.Globalization;
 
 using Xamarin.Forms;
+using Xameteo.Units;
 
 namespace Xameteo.Globalization
 {
@@ -43,6 +44,42 @@ namespace Xameteo.Globalization
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return Prefix(value is T tvalue ? _function(tvalue) : "N/A", parameter);
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="targetType"></param>
+        /// <param name="parameter"></param>
+        /// <param name="culture"></param>
+        /// <returns></returns>
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return value;
+        }
+    }
+
+    /// <inheritdoc />
+    /// <summary>
+    /// </summary>
+    public abstract class UnitConverter : IValueConverter
+    {
+        /// <summary>
+        /// </summary>
+        protected abstract string Delegate(double unit);
+
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="targetType"></param>
+        /// <param name="parameter"></param>
+        /// <param name="culture"></param>
+        /// <returns></returns>
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return value is double number ? Delegate(number) : "N/A";
         }
 
         /// <inheritdoc />

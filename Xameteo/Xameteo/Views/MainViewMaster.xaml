@@ -14,7 +14,7 @@
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
           </Grid.ColumnDefinitions>
-          <Image Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" Source="{globalization:ImageResource background.jpg}" HeightRequest="192" Aspect="AspectFill"/>
+          <Image Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" Source="{globalization:ImageResource background.jpg}" HeightRequest="224" Aspect="AspectFill"/>
           <Label Grid.Row="0" Grid.Column="0" Margin="16, 12" Text="{globalization:Translate Title_Xameteo}" VerticalTextAlignment="End" Style="{DynamicResource SubtitleStyle}" TextColor="White"/>
         </Grid>
       </ListView.Header>

@@ -12,6 +12,7 @@ using Plugin.Geolocator.Abstractions;
 using Xameteo.API;
 using Xameteo.Model;
 using Xameteo.Units;
+
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
 
@@ -38,7 +39,7 @@ namespace Xameteo
                 XameteoDialogs.ShowLoading();
                 Apixu = new ApixuApi(this);
                 Geocoding = new GoogleApi(this);
-                InitializePlaces();
+                RefreshPlaces();
             }
             catch (Exception exception)
             {
@@ -48,35 +49,6 @@ namespace Xameteo
             {
                 XameteoDialogs.HideLoading();
             }
-        }
-
-        /// <summary>
-        /// </summary>
-        public void ResetSettngs() => _settings.Clear();
-
-        /// <summary>
-        /// </summary>
-        /// <returns></returns>
-        public async Task<Coordinates> DeviceLocation() => new Coordinates(
-            await Geolocator.GetPositionAsync(XameteoGlobals.AsyncTimeout)
-        );
-
-        /// <summary>
-        /// </summary>
-        /// <param name="viewModel"></param>
-        /// <returns></returns>
-        private static bool CacheExpired(ApixuPlace viewModel)
-        {
-            return DateTime.Now > viewModel.Timestamp.Add(XameteoGlobals.CacheInvalidate);
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="adapter"></param>
-        /// <returns></returns>
-        private async Task<ApixuPlace> FetchPlace(ApixuAdapter adapter)
-        {
-            return new ApixuPlace(adapter, await Apixu.Forecast(adapter));
         }
 
         /// <summary>
@@ -172,38 +144,35 @@ namespace Xameteo
 
         /// <summary>
         /// </summary>
+        public void ResetSettngs() => _settings.Clear();
+
+        /// <summary>
+        /// </summary>
         /// <param name="adapter"></param>
         /// <returns></returns>
-        public bool RemovePlace(ApixuPlace adapter)
-        {
-            return Places.Remove(adapter) && SavePlaces();
-        }
+        public bool RemovePlace(ApixuPlace adapter) => Places.Remove(adapter) && SavePlaces();
 
         /// <summary>
         /// </summary>
         /// <returns></returns>
-        private string LoadPlaces()
-        {
-            return _settings.GetValueOrDefault(XameteoGlobals.PropertyPlaces, "[]");
-        }
+        private bool SavePlaces() => _settings.AddOrUpdateValue(
+            XameteoGlobals.PropertyPlaces,
+            JsonConvert.SerializeObject(Places.Select(it => it.Adapter), _jsonSettings)
+        );
 
         /// <summary>
         /// </summary>
         /// <returns></returns>
-        private bool SavePlaces()
-        {
-            return _settings.AddOrUpdateValue(XameteoGlobals.PropertyPlaces, JsonConvert.SerializeObject(Places, _jsonSettings));
-        }
+        public async Task<Coordinates> DeviceLocation() => new Coordinates(
+            await Geolocator.GetPositionAsync(XameteoGlobals.AsyncTimeout)
+        );
 
         /// <summary>
         /// </summary>
-        private async void InitializePlaces()
-        {
-            foreach (var place in JsonConvert.DeserializeObject<List<ApixuPlace>>(LoadPlaces(), _jsonSettings))
-            {
-                Places.Add(CacheExpired(place) ? await FetchPlace(place.Adapter) : place);
-            }
-        }
+        /// <returns></returns>
+        private IEnumerable<ApixuAdapter> LoadPlaces() => JsonConvert.DeserializeObject<IEnumerable<ApixuAdapter>>(
+            _settings.GetValueOrDefault(XameteoGlobals.PropertyPlaces, "[]"), _jsonSettings
+        );
 
         /// <summary>
         /// </summary>
@@ -211,9 +180,9 @@ namespace Xameteo
         {
             Places.Clear();
 
-            foreach (var place in JsonConvert.DeserializeObject<List<ApixuPlace>>(LoadPlaces(), _jsonSettings))
+            foreach (var adapter in LoadPlaces())
             {
-                Places.Add(await FetchPlace(place.Adapter));
+                Places.Add(new ApixuPlace(adapter, await Apixu.Forecast(adapter)));
             }
         }
 
@@ -228,7 +197,7 @@ namespace Xameteo
                 return null;
             }
 
-            var viewModel = await FetchPlace(adapter);
+            var viewModel = new ApixuPlace(adapter, await Apixu.Forecast(adapter));
 
             Places.Add(viewModel);
             SavePlaces();

@@ -16,7 +16,7 @@ namespace Xameteo.Views.Location
         {
             try
             {
-                Title = apixuForecast.Location.ToString();
+                Title = apixuForecast.Location.Formatted;
                 Children.Add(new CurrentlyPage(apixuForecast.Current));
                 Children.Add(new DetailsView(apixuForecast.Location));
 

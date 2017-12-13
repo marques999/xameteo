@@ -27,7 +27,7 @@ namespace Xameteo.Views
 
         /// <summary>
         /// </summary>
-        public ObservableCollection<ApixuPlace> Items = XameteoApp.Instance.Places;
+        public ObservableCollection<ApixuPlace> Items => XameteoApp.Instance.Places;
 
         /// <summary>
         /// </summary>
