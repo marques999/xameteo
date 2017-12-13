@@ -82,7 +82,7 @@ namespace Xameteo.Views
         /// <param name="args"></param>
         private void DeleteClicked(object sender, EventArgs args)
         {
-            if (sender is Button button && button.CommandParameter is ApixuPlace model)
+            if (sender is MenuItem menuItem && menuItem.CommandParameter is ApixuPlace model)
             {
                 _viewModel.RemoveItem(model);
             }

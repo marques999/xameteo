@@ -29,17 +29,16 @@
             </ViewCell.ContextActions>
             <StackLayout Orientation="Vertical">
               <StackLayout Orientation="Horizontal" BackgroundColor="Accent" Padding="4">
-                <Label HorizontalOptions="CenterAndExpand" Text="{Binding Forecast.Location.Formatted}"></Label>
+                <Label HorizontalOptions="CenterAndExpand" Text="{Binding Forecast.Location.Formatted}" TextColor="White" FontAttributes="Bold"></Label>
               </StackLayout>
               <StackLayout Orientation="Horizontal" Padding="8, 0">
-                <Label HorizontalOptions="Start" VerticalOptions="CenterAndExpand" FontSize="16" Text="{Binding Forecast.Current.LastUpdated, Converter={StaticResource XamlShortTimeConverter}}" ></Label>
+                <Label HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" FontSize="16" Text="{Binding Forecast.Current.LastUpdated, Converter={StaticResource XamlShortTimeConverter}}" ></Label>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                   <Image Source="{Binding Forecast.Current.Image}"/>
                   <Label VerticalOptions="Center" Text="{Binding Forecast.Current.Condition, Converter={StaticResource XamlConditionConverter}}"></Label>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
                   <Label Margin="8, 0"
-                           WidthRequest="64"
                            FontAttributes="Bold"
                            HorizontalTextAlignment="End"
                            VerticalOptions="CenterAndExpand"

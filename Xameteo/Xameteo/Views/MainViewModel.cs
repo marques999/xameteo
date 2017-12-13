@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 using System.Runtime.CompilerServices;
@@ -13,24 +14,39 @@ using Xameteo.Views.Settings;
 
 namespace Xameteo.Views
 {
-    /// <inheritdoc />
     /// <summary>
     /// </summary>
-    internal class MainViewModel : INotifyPropertyChanged
+    internal class MainViewModel : IEventObject, INotifyPropertyChanged
     {
         /// <summary>
         /// </summary>
         public MainViewModel()
         {
-            MenuItems.Add(_homePage);
-            MenuItems.Add(_settingsPage);
-            XameteoApp.Instance.Places.ForEach(InsertLocation);
+            InitializeView();
+            XameteoApp.Instance.Events.SubscribeUpdates(this, InsertLocation, RemoveLocation);
         }
 
-        /// <inheritdoc />
         /// <summary>
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        private async void InitializeView()
+        {
+            try
+            {
+                MenuItems.Add(_homePage);
+                XameteoDialogs.ShowLoading();
+                await XameteoApp.Instance.RefreshPlaces();
+                XameteoApp.Instance.Places.ForEach(InsertLocation);
+            }
+            catch (Exception exception)
+            {
+                XameteoDialogs.Alert(exception);
+            }
+            finally
+            {
+                MenuItems.Add(_settingsPage);
+                XameteoDialogs.HideLoading();
+            }
+        }
 
         /// <summary>
         /// </summary>
@@ -39,6 +55,11 @@ namespace Xameteo.Views
             get;
             set;
         } = new ObservableCollection<MainModel>();
+
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// </summary>
@@ -72,13 +93,16 @@ namespace Xameteo.Views
         /// <summary>
         /// </summary>
         /// <param name="viewModel"></param>
-        public void InsertLocation(ApixuPlace viewModel) => MenuItems.Add(new MainModel
+        public void InsertLocation(ApixuPlace viewModel)
         {
-            ViewModel = viewModel,
-            TargetType = typeof(LocationView),
-            Title = viewModel.Forecast.Location.Formatted,
-            Icon = XameteoL10N.GetDrawable(viewModel.Adapter.Icon)
-        });
+            MenuItems.Add(new MainModel
+            {
+                ViewModel = viewModel,
+                TargetType = typeof(LocationView),
+                Title = viewModel.Forecast.Location.Formatted,
+                Icon = XameteoL10N.GetDrawable(viewModel.Adapter.Icon)
+            });
+        }
 
         /// <summary>
         /// </summary>

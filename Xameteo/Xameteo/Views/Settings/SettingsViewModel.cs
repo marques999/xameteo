@@ -53,7 +53,6 @@ namespace Xameteo.Views.Settings
             Items.Add(new SettingsModel(Resources.Reset_Title, Resources.Reset_Message, ResetSettings));
             Items.Add(new SettingsModel(Resources.ApixuKey_Title, XameteoApp.Instance.ApixuKey, UpdateApixuKey));
             Items.Add(new SettingsModel(Resources.GoogleKey_Title, XameteoApp.Instance.GoogleKey, UpdateGoogleKey));
-            Items.Add(new SettingsModel(Resources.ForecastDays_Title, XameteoApp.Instance.ForecastDays.ToString(), UpdateForecastDays));
             InsertUnit(XameteoApp.Instance.Distance, UpdateDistance);
             InsertUnit(XameteoApp.Instance.Precipitation, UpdatePrecipitation);
             InsertUnit(XameteoApp.Instance.Pressure, UpdatePressure);
@@ -122,47 +121,6 @@ namespace Xameteo.Views.Settings
             else
             {
                 XameteoDialogs.Alert(Resources.GoogleKey_Title, Resources.Prompt_Error);
-            }
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="source"></param>
-        public static async void UpdateForecastDays(SettingsModel source)
-        {
-            var dialogResult = await XameteoDialogs.PromptNumber(Resources.ForecastDays_Title, Resources.ForecastDays_Message, XameteoApp.Instance.ForecastDays);
-
-            if (dialogResult.Ok == false)
-            {
-                return;
-            }
-
-            var userChoice = dialogResult.Text.Trim();
-
-            if (userChoice.Length > 0)
-            {
-                try
-                {
-                    var numberDays = int.Parse(userChoice);
-
-                    if (numberDays > 0 && numberDays <= 30)
-                    {
-                        source.Value = userChoice;
-                        XameteoApp.Instance.ForecastDays = int.Parse(userChoice);
-                    }
-                    else
-                    {
-                        XameteoDialogs.Alert(Resources.ForecastDays_Title, Resources.ForecastDays_Error);
-                    }
-                }
-                catch (Exception exception)
-                {
-                    XameteoDialogs.Alert(exception);
-                }
-            }
-            else
-            {
-                XameteoDialogs.Alert(Resources.ForecastDays_Title, Resources.Prompt_Error);
             }
         }
 

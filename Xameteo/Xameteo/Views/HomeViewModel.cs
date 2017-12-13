@@ -11,10 +11,9 @@ using Xameteo.Model;
 
 namespace Xameteo.Views
 {
-    /// <inheritdoc />
     /// <summary>
     /// </summary>
-    internal class HomeViewModel : IEventObject
+    internal class HomeViewModel
     {
         /// <summary>
         /// </summary>
@@ -112,13 +111,7 @@ namespace Xameteo.Views
             {
                 XameteoDialogs.ShowLoading();
 
-                var viewModel = await XameteoApp.Instance.InsertPlace(apixuAdapter);
-
-                if (viewModel != null)
-                {
-                    XameteoApp.Instance.Events.Insert(this, viewModel);
-                }
-                else
+                if (await XameteoApp.Instance.InsertPlace(apixuAdapter) == false)
                 {
                     XameteoDialogs.Alert(Resources.Exists_Title, Resources.Exists_Message);
                 }
@@ -138,9 +131,9 @@ namespace Xameteo.Views
         /// <param name="model"></param>
         public async void RemoveItem(ApixuPlace model)
         {
-            if (await XameteoDialogs.PromptYesNo(Resources.Remove_Title, string.Format(Resources.Remove_Message, model.Forecast.Location)) && XameteoApp.Instance.Places.Remove(model))
+            if (await XameteoDialogs.PromptYesNo(Resources.Remove_Title, string.Format(Resources.Remove_Message, model.Forecast.Location)))
             {
-                XameteoApp.Instance.Events.Remove(this, model.Adapter);
+                XameteoApp.Instance.RemovePlace(model);
             }
         }
 

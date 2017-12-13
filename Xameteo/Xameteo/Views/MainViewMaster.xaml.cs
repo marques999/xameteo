@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System.Diagnostics;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Xameteo.Views
@@ -6,7 +7,7 @@ namespace Xameteo.Views
     /// <summary>
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainViewMaster : IEventObject
+    public partial class MainViewMaster
     {
         /// <summary>
         /// </summary>
@@ -27,7 +28,6 @@ namespace Xameteo.Views
         {
             BindingContext = viewModel;
             ListView = MenuItemsListView;
-            XameteoApp.Instance.Events.SubscribeUpdates(this, viewModel.InsertLocation, viewModel.RemoveLocation);
         }
     }
 }

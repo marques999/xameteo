@@ -37,7 +37,7 @@ namespace Xameteo
         /// </summary>
         /// <param name="source"></param>
         /// <param name="adapter"></param>
-        public void Remove(IEventObject source, ApixuAdapter adapter) => MessagingCenter.Send(source, RemoveTag, adapter);
+        public void Remove(IEventObject source, ApixuPlace adapter) => MessagingCenter.Send(source, RemoveTag, adapter);
 
         /// <summary>
         /// </summary>

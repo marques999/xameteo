@@ -8,6 +8,10 @@ namespace Xameteo
     {
         /// <summary>
         /// </summary>
+        public const int ForecastDays = 15;
+        
+        /// <summary>
+        /// </summary>
         public const string PropertyDays = "days";
 
         /// <summary>

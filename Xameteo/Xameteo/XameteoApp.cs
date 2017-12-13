@@ -20,7 +20,7 @@ namespace Xameteo
 {
     /// <summary>
     /// </summary>
-    public class XameteoApp
+    public class XameteoApp: IEventObject
     {
         /// <summary>
         /// </summary>
@@ -39,7 +39,6 @@ namespace Xameteo
                 XameteoDialogs.ShowLoading();
                 Apixu = new ApixuApi(this);
                 Geocoding = new GoogleApi(this);
-                RefreshPlaces();
             }
             catch (Exception exception)
             {
@@ -54,14 +53,6 @@ namespace Xameteo
         /// <summary>
         /// </summary>
         private readonly ISettings _settings = CrossSettings.Current;
-
-        /// <summary>
-        /// </summary>
-        public int ForecastDays
-        {
-            get => _settings.GetValueOrDefault(XameteoGlobals.PropertyDays, 15);
-            set => _settings.AddOrUpdateValue(XameteoGlobals.PropertyDays, value);
-        }
 
         /// <summary>
         /// </summary>
@@ -150,7 +141,17 @@ namespace Xameteo
         /// </summary>
         /// <param name="adapter"></param>
         /// <returns></returns>
-        public bool RemovePlace(ApixuPlace adapter) => Places.Remove(adapter) && SavePlaces();
+        public bool RemovePlace(ApixuPlace adapter)
+        {
+            var operationResult = Places.Remove(adapter) && SavePlaces();
+
+            if (operationResult)
+            {
+                Events.Remove(this, adapter);
+            }
+
+            return operationResult;
+        }
 
         /// <summary>
         /// </summary>
@@ -176,7 +177,7 @@ namespace Xameteo
 
         /// <summary>
         /// </summary>
-        public async void RefreshPlaces()
+        public async Task RefreshPlaces()
         {
             Places.Clear();
 
@@ -190,19 +191,20 @@ namespace Xameteo
         /// </summary>
         /// <param name="adapter"></param>
         /// <returns></returns>
-        public async Task<ApixuPlace> InsertPlace(ApixuAdapter adapter)
+        public async Task<bool> InsertPlace(ApixuAdapter adapter)
         {
             if (Places.FirstOrDefault(it => it.Adapter.Parameters == adapter.Parameters) != null)
             {
-                return null;
+                return false;
             }
 
             var viewModel = new ApixuPlace(adapter, await Apixu.Forecast(adapter));
 
             Places.Add(viewModel);
+            Events.Insert(this, viewModel);
             SavePlaces();
 
-            return viewModel;
+            return true;
         }
 
         /// <summary>

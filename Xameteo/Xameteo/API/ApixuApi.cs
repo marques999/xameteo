@@ -34,21 +34,21 @@ namespace Xameteo.API
         /// <summary>
         /// </summary>
         /// <param name="adapter"></param>
-        /// <returns></returns>
-        public async Task<ApixuForecast> Forecast(ApixuAdapter adapter)
-        {
-            return await _api.GetForecast(_xameteoApp.ApixuKey, adapter.Parameters, _xameteoApp.ForecastDays);
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <param name="adapter"></param>
         /// <param name="start"></param>
         /// <param name="end"></param>
         /// <returns></returns>
         public async Task<ApixuHistory> History(ApixuAdapter adapter, DateTime start, DateTime? end)
         {
             return await _api.GetHistory(_xameteoApp.ApixuKey, adapter.Parameters, start, end);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="adapter"></param>
+        /// <returns></returns>
+        public async Task<ApixuForecast> Forecast(ApixuAdapter adapter)
+        {
+            return await _api.GetForecast(_xameteoApp.ApixuKey, adapter.Parameters, XameteoGlobals.ForecastDays);
         }
     }
 }
