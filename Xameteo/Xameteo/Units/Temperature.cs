@@ -19,7 +19,7 @@ namespace Xameteo.Units
         public static readonly Temperature[] Units =
         {
             new Temperature(0, Resources.Symbol_Celsius, Resources.Units_Celsius, null),
-            new Temperature(1, Resources.Symbol_Kelvin, Resources.Units_Kelvin, value => value - 273.15),
+            new Temperature(1, Resources.Symbol_Kelvin, Resources.Units_Kelvin, value => value + 273.15),
             new Temperature(2, Resources.Symbol_Fahrenheit, Resources.Units_Fahrenheit, value => value * 1.8 + 32)
         };
 
