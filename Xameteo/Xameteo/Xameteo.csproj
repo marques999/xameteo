@@ -90,9 +90,6 @@
     <Compile Include="Model\Hourly.cs" />
     <Compile Include="Model\Location.cs" />
     <Compile Include="Units\Unit.cs" />
-    <Compile Include="Views\Location\DetailsView.xaml.cs">
-      <DependentUpon>DetailsView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Location\HistoryPage.xaml.cs">
       <DependentUpon>HistoryPage.xaml</DependentUpon>
     </Compile>
@@ -255,12 +252,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Location\HistoryPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Views\Location\DetailsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

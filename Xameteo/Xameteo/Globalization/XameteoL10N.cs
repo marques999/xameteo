@@ -56,56 +56,91 @@ namespace Xameteo.Globalization
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public static string Get(string key) => Resources.GetString(key, Culture) ?? key;
-        public static string GetDrawable(string imageUri) => $"{ResourceId}.{imageUri}";
+        public static string Get(string key)
+        {
+            return Resources.GetString(key, Culture) ?? key;
+        }
 
         /// <summary>
         /// </summary>
-        /// <param name="degrees"></param>
+        /// <param name="imageUri"></param>
         /// <returns></returns>
-        public static string LongCompass(int degrees) => $"{Compass.Get(degrees).Name} ({Degrees(degrees)})";
-        public static string ShortCompass(int degrees) => $"{Compass.Get(degrees).Symbol} ({Degrees(degrees)})";
-
-        /// <summary>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="format"></param>
-        /// <returns></returns>
-        private static string FormatNumber(double value, string format) => value.ToString(format, Culture.NumberFormat);
-
-        /// <summary>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="format"></param>
-        /// <returns></returns>
-        private static string FormatDate(DateTime value, string format) => value.ToString(format, Culture.DateTimeFormat);
+        public static string GetDrawable(string imageUri)
+        {
+            return $"{ResourceId}.{imageUri}";
+        }
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static string ShortTime(DateTime value) => FormatDate(value, "t");
-        public static string ShortDate(DateTime value) => FormatDate(value, "d");
-        public static string OnlyHour(DateTime value) => value.ToString("h tt", Culture.DateTimeFormat);
+        public static string LongCompass(int value)
+        {
+            return $"{Compass.Get(value).Name} ({Degrees(value)})";
+        }
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static string LongDate(DateTime value) => FormatDate(value, "D");
-        public static string LongDateTime(DateTime value) => FormatDate(value, "f");
+        public static string ShortCompass(int value)
+        {
+            return $"{Compass.Get(value).Symbol} ({Degrees(value)})";
+        }
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static string WeekDay(DateTime value) => FormatDate(value, "dddd");
+        public static string ShortTime(DateTime value)
+        {
+            return value.ToString("t", Culture.DateTimeFormat);
+        }
 
         /// <summary>
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static string Percentage(double value) => FormatNumber(value / 100, "P0");
+        public static string ShortDateTime(DateTime value)
+        {
+            return value.ToString("G", Culture.DateTimeFormat);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string OnlyHour(DateTime value)
+        {
+            return value.ToString("h tt", Culture.DateTimeFormat);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string LongDateTime(DateTime value)
+        {
+            return value.ToString("f", Culture.DateTimeFormat);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string WeekDay(DateTime value)
+        {
+            return value.ToString("dddd", Culture.DateTimeFormat);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string Percentage(double value)
+        {
+            return (value / 100).ToString("P0", Culture.NumberFormat);
+        }
 
         /// <summary>
         /// </summary>
@@ -113,7 +148,7 @@ namespace Xameteo.Globalization
         /// <returns></returns>
         public static string Degrees(int value)
         {
-            return FormatNumber(value, "N0") + " " + Resx.Resources.Symbol_Degrees;
+            return value.ToString("N0", Culture.NumberFormat) + " " + Resx.Resources.Symbol_Degrees;
         }
 
         /// <summary>

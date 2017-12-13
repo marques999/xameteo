@@ -14,9 +14,8 @@
       <globalization:LatitudeConverter x:Key="XamlLatitudeConverter"/>
       <globalization:LongitudeConverter x:Key="XamlLongitudeConverter"/>
       <!-- DateTime Conversions -->
-      <globalization:LongDateConverter x:Key="XamlLongDateConverter"/>
-      <globalization:ShortDateConverter x:Key="XamlShortDateConverter"/>
       <globalization:ShortTimeConverter x:Key="XamlShortTimeConverter"/>
+      <globalization:ShortDateTimeConverter x:Key="XamlShortDateTimeConverter"/>
       <globalization:LongDateTimeConverter x:Key="XamlLongDateTimeConverter"/>
       <globalization:WeekdayConverter x:Key="XamlWeekdayConverter"/>
       <!-- Number Conversions -->

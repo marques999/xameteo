@@ -1,4 +1,8 @@
-﻿using Xameteo.Model;
+﻿using System.Collections.Generic;
+
+using Xameteo.API;
+using Xameteo.Model;
+
 using Xamarin.Forms.Xaml;
 
 namespace Xameteo.Views.Location
@@ -15,14 +19,17 @@ namespace Xameteo.Views.Location
 
         /// <summary>
         /// </summary>
-        public TableGroup Items { get; }
+        public List<TableGroup> Items { get; } = new List<TableGroup>();
 
         /// <summary>
         /// </summary>
-        public CurrentlyPage(Current current)
+        public CurrentlyPage(ApixuForecast forecast)
         {
-            Weather = current;
-            Items = current.GenerateTable();
+            Weather = forecast.Current;
+            Items.Add(forecast.Current.GenerateTable());
+            Items.Add(forecast.Forecast.Days[0].Astro.GenerateTable());
+            Items.Add(forecast.Forecast.Days[0].Day.GenerateTable());
+            Items.Add(forecast.Location.GenerateTable());
             InitializeComponent();
             BindingContext = this;
         }

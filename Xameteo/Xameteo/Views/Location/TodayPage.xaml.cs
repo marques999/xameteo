@@ -1,8 +1,13 @@
-﻿using Xameteo.Model;
-using Xamarin.Forms.Xaml;
+﻿using System.Linq;
 using System.Collections.Generic;
+
+using Xamarin.Forms.Xaml;
+using Xamarin.Forms.Internals;
+
 using SkiaSharp.Views.Forms;
+
 using Xameteo.API;
+using Xameteo.Model;
 using Xameteo.Globalization;
 
 namespace Xameteo.Views.Location
@@ -15,32 +20,25 @@ namespace Xameteo.Views.Location
     {
         /// <summary>
         /// </summary>
-        public List<TableGroup> Items { get; } = new List<TableGroup>();
+        private readonly SkiaGraph _graph;
 
-        private SkiaGraph _graph;
+        /// <summary>
+        /// </summary>
+        public List<TableGroup> Items { get; } = new List<TableGroup>();
 
         /// <summary>
         /// </summary>
         public TodayPage(ForecastDaily forecast)
         {
-            Items.Add(forecast.Astro.GenerateTable());
-
-            var graphPoints = new List<GraphIndex>();
-
-            foreach (var hour in forecast.Hours)
+            _graph = new SkiaGraph(forecast.Hours.Select(hour => new GraphIndex
             {
-                Items.Add(hour.GenerateTable());
+                Hide = hour.Date.Hour % 3 != 1,
+                Y = (float)hour.Temperature,
+                Label = XameteoL10N.OnlyHour(hour.Date),
+                ImageId = hour.Condition.Image(hour.IsDay)
+            }).ToList());
 
-                graphPoints.Add(new GraphIndex
-                {
-                    Hide = hour.Date.Hour % 3 != 1,
-                    Label = XameteoL10N.OnlyHour(hour.Date),
-                    ImageId = hour.Condition.Image(hour.IsDay),
-                    Y = (float) hour.Temperature
-                });
-            }
-
-            _graph = new SkiaGraph(graphPoints);
+            forecast.Hours.ForEach(it => Items.Add(it.GenerateTable()));
             InitializeComponent();
             BindingContext = this;
         }

@@ -21,13 +21,17 @@
       <ListView.GroupHeaderTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Padding="4"
-                         BackgroundColor="Accent">
-              <Label TextColor="White"
+            <StackLayout Padding="4, 0"
+                         Orientation="Vertical">
+              <BoxView HeightRequest="8" />
+              <ContentView Padding="4, 8"
+                           BackgroundColor="Accent">
+                <Label TextColor="White"
                        Text="{Binding Name}"
                        FontAttributes="Bold"
-                       HorizontalTextAlignment="Center"
-                       VerticalOptions="CenterAndExpand" />
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand" />
+              </ContentView>
             </StackLayout>
           </ViewCell>
         </DataTemplate>

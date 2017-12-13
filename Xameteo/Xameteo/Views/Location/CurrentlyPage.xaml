@@ -7,35 +7,50 @@
              Title="{globalization:Translate Tab_Now}">
   <ContentPage.Content>
     <ListView HasUnevenRows="True"
+              IsGroupingEnabled="True"
               ItemsSource="{Binding Items}"
               CachingStrategy="RecycleElement">
       <ListView.Header>
-        <StackLayout Padding="8, 16"
-                     Orientation="Vertical"
-                     BackgroundColor="Accent">
+        <StackLayout Padding="8, 8"
+                     Orientation="Vertical">
           <Image Source="{Binding Weather.ImageResource}"
                  VerticalOptions="FillAndExpand"
                  HorizontalOptions="CenterAndExpand"/>
           <Label FontSize="18"
-                 TextColor="White"
                  FontAttributes="Bold"
                  HorizontalTextAlignment="Center"
                  HorizontalOptions="FillAndExpand"
                  Text="{Binding Weather.Temperature, Converter={StaticResource XamlTemperatureConverter}}" />
-          <Label TextColor="White"
+          <Label 
                  HorizontalTextAlignment="Center"
                  HorizontalOptions="FillAndExpand"
                  Text="{Binding Weather.Condition, Converter={StaticResource XamlConditionConverter}}" />
         </StackLayout>
       </ListView.Header>
+      <ListView.GroupHeaderTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Vertical" Padding="4, 0">
+              <BoxView HeightRequest="8" />
+              <ContentView BackgroundColor="Accent" Padding="4, 8">
+                <Label TextColor="White"
+                       Text="{Binding Name}"
+                       FontAttributes="Bold"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand" />
+              </ContentView>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.GroupHeaderTemplate>
       <ListView.ItemTemplate>
         <DataTemplate>
           <views:GenericCell />
         </DataTemplate>
       </ListView.ItemTemplate>
       <ListView.Footer>
-        <StackLayout Margin="0, 4"
-                     Padding="0, 4"
+        <StackLayout Margin="0, 4, 0, 0"
+                     Padding="4, 8"
                      Orientation="Horizontal"
                      BackgroundColor="Accent">
           <Label TextColor="White"
@@ -44,7 +59,7 @@
                  HorizontalOptions="FillAndExpand"
                  Text="{globalization:Translate Forecast_Last_Updated}" />
           <Label TextColor="White"
-                 Text="{Binding LastUpdate}"
+                 Text="{Binding Weather.LastUpdated, Converter={StaticResource XamlShortDateTimeConverter}}"
                  HorizontalTextAlignment="Start"
                  HorizontalOptions="FillAndExpand" />
         </StackLayout>

@@ -62,14 +62,13 @@ namespace Xameteo.Views.Location
         /// <param name="apixuForecast"></param>
         private void InitializeView(ApixuForecast apixuForecast)
         {
-            Title = apixuForecast.Location.Formatted;
-            Children.Add(new CurrentlyPage(apixuForecast.Current));
-            Children.Add(new DetailsView(apixuForecast.Location));
+            Title = apixuForecast.Location.Formatted;     
 
             var days = apixuForecast.Forecast.Days;
 
             if (days.Count > 0)
             {
+                Children.Add(new CurrentlyPage(apixuForecast));
                 Children.Add(new TodayPage(days[0]));
 
                 if (days.Count > 1)

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
+
 using Xamarin.Forms;
 using Xameteo.Model;
 using Xamarin.Forms.Xaml;
