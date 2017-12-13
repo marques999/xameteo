@@ -1,16 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:globalization="clr-namespace:Xameteo.Globalization;assembly=Xameteo"
-             xmlns:views="clr-namespace:Xameteo.Views;assembly=Xameteo"
              xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
-             x:Class="Xameteo.Views.Location.TodayPage"
-             Title="{globalization:Translate Tab_Today}">
-  <ContentPage.Content>
+             xmlns:views="clr-namespace:Xameteo.Views;assembly=Xameteo"
+             x:Class="Xameteo.Views.Location.HistoryView">
+  <ContentView.Content>
     <ListView HasUnevenRows="True"
-                IsGroupingEnabled="true"
-                ItemsSource="{Binding Items}"
-                CachingStrategy="RecycleElement">
+              IsGroupingEnabled="True"
+              ItemsSource="{Binding Items}"
+              CachingStrategy="RecycleElement">
       <ListView.Header>
         <forms:SKCanvasView HeightRequest="360"
                             PaintSurface="OnDrawGraph"
@@ -19,11 +17,9 @@
       <ListView.GroupHeaderTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Padding="4, 0"
-                         Orientation="Vertical">
+            <StackLayout Orientation="Vertical" Padding="4, 0">
               <BoxView HeightRequest="8" />
-              <ContentView Padding="4, 8"
-                           BackgroundColor="Accent">
+              <ContentView BackgroundColor="Accent" Padding="4, 8">
                 <Label TextColor="White"
                        Text="{Binding Name}"
                        FontAttributes="Bold"
@@ -36,9 +32,9 @@
       </ListView.GroupHeaderTemplate>
       <ListView.ItemTemplate>
         <DataTemplate>
-          <views:GenericCell/>
+          <views:GenericCell />
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-  </ContentPage.Content>
-</ContentPage>
+  </ContentView.Content>
+</ContentView>

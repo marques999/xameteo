@@ -2,52 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:globalization="clr-namespace:Xameteo.Globalization;assembly=Xameteo"
-             xmlns:views="clr-namespace:Xameteo.Views;assembly=Xameteo"
              x:Class="Xameteo.Views.Location.HistoryPage"
              Title="{globalization:Translate Tab_History}">
   <ContentPage.Content>
     <StackLayout Orientation="Vertical">
-      <StackLayout Padding="8, 16"
-                   Orientation="Vertical"
-                   BackgroundColor="Accent">
-        <Image Source="{Binding Day.ImageResource}"
-               VerticalOptions="FillAndExpand"
-               HorizontalOptions="CenterAndExpand"/>
-        <Label FontSize="18"
-               TextColor="White"
-               FontAttributes="Bold"
-               HorizontalTextAlignment="Center"
-               HorizontalOptions="FillAndExpand"
-               Text="{Binding Day.Temperature, Converter={StaticResource XamlTemperatureConverter}}" />
-        <Label TextColor="White"
-               HorizontalTextAlignment="Center"
-               HorizontalOptions="FillAndExpand"
-               Text="{Binding Day.Condition, Converter={StaticResource XamlConditionConverter}}" />
+      <StackLayout Orientation="Horizontal" BackgroundColor="Accent" Padding="8, 8">
+        <Label VerticalOptions="CenterAndExpand" Text="{Binding Selected}" TextColor="White" FontAttributes="Bold" HorizontalOptions="StartAndExpand"></Label>
+        <Button VerticalOptions="CenterAndExpand" Text="Select" Clicked="SelectClicked" TextColor="White" HorizontalOptions="EndAndExpand"></Button>
       </StackLayout>
-      <ListView ItemsSource="{Binding Items}"
-                CachingStrategy="RecycleElement">
-        <ListView.ItemTemplate>
-          <DataTemplate>
-            <views:GenericCell />
-          </DataTemplate>
-        </ListView.ItemTemplate>
-        <ListView.Footer>
-          <StackLayout Margin="0, 4"
-                       Padding="0, 4"
-                       Orientation="Horizontal"
-                       BackgroundColor="Accent">
-            <Label TextColor="White"
-                   FontAttributes="Bold"
-                   HorizontalTextAlignment="End"
-                   HorizontalOptions="FillAndExpand"
-                   Text="{globalization:Translate Forecast_Last_Updated}" />
-            <Label TextColor="White"
-                   Text="{Binding LastUpdate}"
-                   HorizontalTextAlignment="Start"
-                   HorizontalOptions="FillAndExpand" />
-          </StackLayout>
-        </ListView.Footer>
-      </ListView>
+      <ContentView x:Name="HistoryView" VerticalOptions="FillAndExpand"/>
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>

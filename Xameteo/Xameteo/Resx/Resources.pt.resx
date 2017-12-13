@@ -729,4 +729,7 @@
   <data name="Button_Refresh" xml:space="preserve">
     <value>Actualizar</value>
   </data>
+  <data name="History_Prompt" xml:space="preserve">
+    <value>Por favor escolha uma data através do selector...</value>
+  </data>
 </root>

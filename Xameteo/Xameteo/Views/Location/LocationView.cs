@@ -77,7 +77,7 @@ namespace Xameteo.Views.Location
                 }
             }
 
-            Children.Add(new HistoryPage(apixuForecast.Forecast.Days[2]));
+            Children.Add(new HistoryPage(_place.Adapter));
         }
     }
 }

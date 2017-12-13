@@ -36,6 +36,20 @@ namespace Xameteo
 
         /// <summary>
         /// </summary>
+        /// <param name="minimum"></param>
+        /// <param name="maximum"></param>
+        /// <returns></returns>
+        public static Task<DatePromptResult> DatePicker(DateTime minimum, DateTime maximum) => UserDialogs.Instance.DatePromptAsync(new DatePromptConfig
+        {
+            IsCancellable = true,
+            MinimumDate = minimum,
+            MaximumDate = maximum,
+            OkText = Resources.Button_OK,
+            CancelText = Resources.Button_Cancel
+        });
+
+        /// <summary>
+        /// </summary>
         /// <param name="options"></param>
         /// <param name="title"></param>
         /// <returns></returns>

@@ -92,6 +92,15 @@ namespace Xameteo.Globalization
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
+        public static string LongDate(DateTime value)
+        {
+            return value.ToString("D", Culture.DateTimeFormat);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static string ShortTime(DateTime value)
         {
             return value.ToString("t", Culture.DateTimeFormat);
@@ -113,6 +122,15 @@ namespace Xameteo.Globalization
         public static string OnlyHour(DateTime value)
         {
             return value.ToString("h tt", Culture.DateTimeFormat);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string OnlyDayMonth(DateTime value)
+        {
+            return value.ToString("d/M", Culture.DateTimeFormat);
         }
 
         /// <summary>

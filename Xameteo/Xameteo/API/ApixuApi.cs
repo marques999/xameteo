@@ -34,12 +34,11 @@ namespace Xameteo.API
         /// <summary>
         /// </summary>
         /// <param name="adapter"></param>
-        /// <param name="start"></param>
-        /// <param name="end"></param>
+        /// <param name="day"></param>
         /// <returns></returns>
-        public async Task<ApixuHistory> History(ApixuAdapter adapter, DateTime start, DateTime? end)
+        public async Task<ApixuHistory> History(ApixuAdapter adapter, string day)
         {
-            return await _api.GetHistory(_xameteoApp.ApixuKey, adapter.Parameters, start, end);
+            return await _api.GetHistory(_xameteoApp.ApixuKey, adapter.Parameters, day, day);
         }
 
         /// <summary>

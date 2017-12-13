@@ -1178,6 +1178,15 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select a date from the picker....
+        /// </summary>
+        internal static string History_Prompt {
+            get {
+                return ResourceManager.GetString("History_Prompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please wait....
         /// </summary>
         internal static string Loading_Title {

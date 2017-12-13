@@ -56,6 +56,9 @@
     <Compile Include="API\GoogleApi.cs" />
     <Compile Include="API\GoogleModel.cs" />
     <Compile Include="API\IGoogleApi.cs" />
+    <Compile Include="Views\Location\HistoryView.xaml.cs">
+      <DependentUpon>HistoryView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="XameteoEvents.cs" />
     <Compile Include="XameteoGlobals.cs" />
     <Compile Include="Model\Airport.cs" />
@@ -359,6 +362,12 @@
     <EmbeddedResource Include="Resx\night_1276.png" />
     <EmbeddedResource Include="Resx\night_1279.png" />
     <EmbeddedResource Include="Resx\night_1282.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Location\HistoryView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.4.0.280\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.4.0.280\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
