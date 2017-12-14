@@ -62,14 +62,13 @@ namespace Xameteo.Views.Location
                 {
                     HistoryView.Content = new HistoryView(history[0]);
                 }
+
+                XameteoDialogs.HideLoading();
             }
             catch (Exception exception)
             {
-                XameteoDialogs.Alert(exception);
-            }
-            finally
-            {
                 XameteoDialogs.HideLoading();
+                XameteoDialogs.Alert(exception);
             }
         }
     }

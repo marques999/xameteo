@@ -39,13 +39,11 @@ namespace Xameteo
                 XameteoDialogs.ShowLoading();
                 Apixu = new ApixuApi(this);
                 Geocoding = new GoogleApi(this);
+                XameteoDialogs.HideLoading();
             }
             catch (Exception exception)
             {
                 XameteoDialogs.Alert(exception);
-            }
-            finally
-            {
                 XameteoDialogs.HideLoading();
             }
         }

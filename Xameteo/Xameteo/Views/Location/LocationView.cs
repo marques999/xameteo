@@ -46,13 +46,12 @@ namespace Xameteo.Views.Location
                     _place = place;
                     InitializeView(place.Forecast);
                 }
+
+                XameteoDialogs.HideLoading();
             }
             catch (Exception exception)
             {
                 XameteoDialogs.Alert(exception);
-            }
-            finally
-            {
                 XameteoDialogs.HideLoading();
             }
         }

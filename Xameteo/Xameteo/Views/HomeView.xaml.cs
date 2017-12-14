@@ -125,6 +125,8 @@ namespace Xameteo.Views
                         throw new InvalidOperationException(Resx.Resources.Geolocation_Zero);
                     }
 
+                    XameteoDialogs.HideLoading();
+
                     if (geocodingResults.Count == 1)
                     {
                         SaveLocation(new CoordinatesAdapter(googleResponse.Results[0].GeocodingGeometry.Location));
@@ -135,14 +137,11 @@ namespace Xameteo.Views
                             geocodingResults.Select(it => new ActionSheetOption(it.Address, () => SaveLocation(new CoordinatesAdapter(it.GeocodingGeometry.Location)))).ToList(),
                             Resx.Resources.Geolocation_Multiple
                         );
-                    }
+                    }  
                 }
                 catch (Exception exception)
                 {
                     XameteoDialogs.Alert(exception);
-                }
-                finally
-                {
                     XameteoDialogs.HideLoading();
                 }
             }
@@ -176,15 +175,17 @@ namespace Xameteo.Views
 
                 if (await XameteoApp.Instance.InsertPlace(apixuAdapter) == false)
                 {
+                    XameteoDialogs.HideLoading();
                     XameteoDialogs.Alert(Resx.Resources.Exists_Title, Resx.Resources.Exists_Message);
+                }
+                else
+                {
+                    XameteoDialogs.HideLoading();
                 }
             }
             catch (Exception exception)
             {
                 XameteoDialogs.Alert(exception);
-            }
-            finally
-            {
                 XameteoDialogs.HideLoading();
             }
         }
@@ -197,13 +198,11 @@ namespace Xameteo.Views
             {
                 XameteoDialogs.ShowLoading();
                 SaveLocation(new CoordinatesAdapter(await XameteoApp.Instance.DeviceLocation()));
+                XameteoDialogs.HideLoading();
             }
             catch (Exception exception)
             {
                 XameteoDialogs.Alert(exception);
-            }
-            finally
-            {
                 XameteoDialogs.HideLoading();
             }
         }

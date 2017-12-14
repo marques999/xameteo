@@ -37,14 +37,11 @@ namespace Xameteo.Views
                 MenuItems.Add(_settingsPage);
                 XameteoDialogs.ShowLoading();
                 await XameteoApp.Instance.RefreshPlaces(0);
-                //XameteoApp.Instance.Places.ForEach(InsertLocation);
+                XameteoDialogs.HideLoading();
             }
             catch (Exception exception)
             {
                 XameteoDialogs.Alert(exception);
-            }
-            finally
-            {
                 XameteoDialogs.HideLoading();
             }
         }
