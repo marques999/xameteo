@@ -34,7 +34,7 @@ namespace Xameteo.Model
         /// <summary>
         /// </summary>
         /// <returns></returns>
-        public TableGroup GenerateTable() => new TableGroup("Astrology")
+        public TableGroup GenerateTable() => new TableGroup(Resources.Title_Astro)
         {
             new TableItem(Resources.Astro_Sunrise, XameteoL10N.ShortTime(XameteoL10N.ParseTime(Sunrise))),
             new TableItem(Resources.Astro_Sunset, XameteoL10N.ShortTime(XameteoL10N.ParseTime(Sunset))),

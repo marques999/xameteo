@@ -24,7 +24,7 @@ namespace Xameteo.Views.Location
 
         /// <summary>
         /// </summary>
-        public string Selected => _selected == DateTime.MinValue ? Resx.Resources.Reset_Prompt : XameteoL10N.LongDate(_selected);
+        public string Selected => _selected == DateTime.MinValue ? Resx.Resources.History_Prompt : XameteoL10N.LongDate(_selected);
 
         /// <summary>
         /// </summary>

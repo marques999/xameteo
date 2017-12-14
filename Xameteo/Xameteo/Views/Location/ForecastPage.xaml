@@ -23,35 +23,37 @@
                            Orientation="Horizontal">
                 <StackLayout Margin="4, 4"
                              Padding="4, 8"
-                             WidthRequest="96"
+                             WidthRequest="112"
                              Orientation="Vertical"
+                             HorizontalOptions="Fill"
                              BackgroundColor="Accent">
                   <Label FontSize="32"
                          TextColor="White"
                          Text="{Binding Date.Day}"
                          HorizontalOptions="CenterAndExpand" />
                   <Label TextColor="White"
+                         FontSize="12"
                          FontAttributes="Bold"
                          HorizontalOptions="CenterAndExpand"
                          Text="{Binding Date, Converter={StaticResource XamlWeekdayConverter}}" />
                 </StackLayout>
-                <StackLayout Orientation="Horizontal"
-                             VerticalOptions="CenterAndExpand">
-                  <Image Source="{Binding Day.ImageResource}" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                  <Image WidthRequest="48"
+                         HeightRequest="48"
+                         Source="{Binding Day.ImageResource}" />
                   <Label VerticalOptions="CenterAndExpand"
                          Text="{Binding Day.Condition, Converter={StaticResource XamlConditionConverter}}" />
                 </StackLayout>
-                <StackLayout Padding="8, 16"
-                             Orientation="Horizontal"
+                <StackLayout Padding="4, 16"
+                             WidthRequest="112"
+                             Orientation="Vertical"
                              VerticalOptions="CenterAndExpand"
-                             HorizontalOptions="EndAndExpand">
-                  <Label Margin="8, 0"
-                         WidthRequest="72"
+                             HorizontalOptions="FillAndExpand">
+                  <Label Margin="4, 0"
                          FontAttributes="Bold"
                          HorizontalTextAlignment="End"                        
                          Text="{Binding Day.Maximum, Converter={StaticResource XamlTemperatureConverter}}" />
-                  <Label Margin="8, 0"
-                         WidthRequest="72"
+                  <Label Margin="4, 0"
                          HorizontalTextAlignment="End"
                          Text="{Binding Day.Minimum, Converter={StaticResource XamlTemperatureConverter}}" />
                 </StackLayout>

@@ -619,7 +619,7 @@
     <value>Preferences</value>
   </data>
   <data name="Title_Locations" xml:space="preserve">
-    <value>My Locations</value>
+    <value>Places</value>
   </data>
   <data name="Remove_Message" xml:space="preserve">
     <value>Are you sure you want to remove "{0}" from your locations?</value>
@@ -730,6 +730,9 @@
     <value>Refresh</value>
   </data>
   <data name="History_Prompt" xml:space="preserve">
-    <value>Please select a date from the picker...</value>
+    <value>Please choose a date...</value>
+  </data>
+  <data name="Title_Astro" xml:space="preserve">
+    <value>Astrology</value>
   </data>
 </root>

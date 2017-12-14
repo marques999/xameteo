@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using Xameteo.API;
 using Xameteo.Model;
@@ -19,6 +20,10 @@ namespace Xameteo.Views.Location
 
         /// <summary>
         /// </summary>
+        public DateTime LastUpdated { get; }
+
+        /// <summary>
+        /// </summary>
         public List<TableGroup> Items { get; } = new List<TableGroup>();
 
         /// <summary>
@@ -26,6 +31,7 @@ namespace Xameteo.Views.Location
         public CurrentlyPage(ApixuForecast forecast)
         {
             Weather = forecast.Current;
+            LastUpdated = forecast.Location.LocalTime;
             Items.Add(forecast.Current.GenerateTable());
             Items.Add(forecast.Forecast.Days[0].Astro.GenerateTable());
             Items.Add(forecast.Forecast.Days[0].Day.GenerateTable());

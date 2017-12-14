@@ -34,6 +34,7 @@ namespace Xameteo.Views
             try
             {
                 MenuItems.Add(_homePage);
+                MenuItems.Add(_settingsPage);
                 XameteoDialogs.ShowLoading();
                 await XameteoApp.Instance.RefreshPlaces();
                 XameteoApp.Instance.Places.ForEach(InsertLocation);
@@ -44,7 +45,6 @@ namespace Xameteo.Views
             }
             finally
             {
-                MenuItems.Add(_settingsPage);
                 XameteoDialogs.HideLoading();
             }
         }

@@ -616,7 +616,7 @@
     <value>Unidades de {0}</value>
   </data>
   <data name="Title_Locations" xml:space="preserve">
-    <value>As minhas localizações</value>
+    <value>Locais</value>
   </data>
   <data name="Title_Preferences" xml:space="preserve">
     <value>Preferências</value>
@@ -730,6 +730,9 @@
     <value>Actualizar</value>
   </data>
   <data name="History_Prompt" xml:space="preserve">
-    <value>Por favor escolha uma data através do selector...</value>
+    <value>Por favor escolha uma data...</value>
+  </data>
+  <data name="Title_Astro" xml:space="preserve">
+    <value>Astrologia</value>
   </data>
 </root>

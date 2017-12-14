@@ -1178,7 +1178,7 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please select a date from the picker....
+        ///   Looks up a localized string similar to Please choose a date....
         /// </summary>
         internal static string History_Prompt {
             get {
@@ -1718,6 +1718,15 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Astrology.
+        /// </summary>
+        internal static string Title_Astro {
+            get {
+                return ResourceManager.GetString("Title_Astro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         internal static string Title_Home {
@@ -1727,7 +1736,7 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to My Locations.
+        ///   Looks up a localized string similar to Places.
         /// </summary>
         internal static string Title_Locations {
             get {

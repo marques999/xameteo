@@ -13,17 +13,15 @@
       <ListView.Header>
         <StackLayout Padding="8, 8"
                      Orientation="Vertical">
-          <Image Source="{Binding Weather.ImageResource}"
-                 VerticalOptions="FillAndExpand"
-                 HorizontalOptions="CenterAndExpand"/>
+          <Image WidthRequest="64"
+                 HeightRequest="64"
+                 HorizontalOptions="CenterAndExpand"
+                 Source="{Binding Weather.ImageResource}" />
           <Label FontSize="18"
                  FontAttributes="Bold"
-                 HorizontalTextAlignment="Center"
-                 HorizontalOptions="FillAndExpand"
+                 HorizontalOptions="CenterAndExpand"
                  Text="{Binding Weather.Temperature, Converter={StaticResource XamlTemperatureConverter}}" />
-          <Label 
-                 HorizontalTextAlignment="Center"
-                 HorizontalOptions="FillAndExpand"
+          <Label HorizontalOptions="CenterAndExpand"
                  Text="{Binding Weather.Condition, Converter={StaticResource XamlConditionConverter}}" />
         </StackLayout>
       </ListView.Header>
@@ -51,6 +49,7 @@
         </DataTemplate>
       </ListView.ItemTemplate>
       <ListView.Footer>
+
         <StackLayout Padding="4, 8"
                      Margin="0, 4, 0, 0"
                      Orientation="Horizontal"
@@ -61,7 +60,7 @@
                  HorizontalOptions="FillAndExpand"
                  Text="{globalization:Translate Forecast_Last_Updated}" />
           <Label TextColor="White"
-                 Text="{Binding Weather.LastUpdated, Converter={StaticResource XamlDateTimeConverter}}"
+                 Text="{Binding LastUpdated, Converter={StaticResource XamlDateTimeConverter}}"
                  HorizontalTextAlignment="Start"
                  HorizontalOptions="FillAndExpand" />
         </StackLayout>

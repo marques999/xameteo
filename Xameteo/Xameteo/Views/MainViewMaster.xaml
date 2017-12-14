@@ -10,9 +10,8 @@
               SeparatorVisibility="None"
               ItemsSource="{Binding MenuItems}">
       <ListView.Header>
-        <Grid VerticalOptions="Center"
-              BackgroundColor="Accent"
-              HorizontalOptions="Center">
+        <Grid VerticalOptions="FillAndExpand"
+              HorizontalOptions="FillAndExpand">
           <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
           </Grid.RowDefinitions>
@@ -23,14 +22,13 @@
                  Grid.Column="0"
                  Aspect="AspectFill"
                  HeightRequest="224"
-                 HorizontalOptions="Center"
                  Source="{globalization:ImageResource background.jpg}" />
           <Label Grid.Row="0"
                  Grid.Column="0"
-                 Margin="16, 12"
+                 Margin="16, 16"
                  TextColor="White"
                  VerticalTextAlignment="End"
-                 Style="{DynamicResource SubtitleStyle}" 
+                 Style="{DynamicResource TitleStyle}" 
                  Text="{globalization:Translate Title_Xameteo}" />
         </Grid>
       </ListView.Header>

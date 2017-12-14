@@ -44,7 +44,7 @@ namespace Xameteo.Globalization
         {
             try
             {
-                return DateTime.ParseExact(dateTime, "hh:mm tt", Culture.DateTimeFormat);
+                return DateTime.ParseExact(dateTime, "hh:mm tt", CultureInfo.InvariantCulture);
             }
             catch (FormatException)
             {

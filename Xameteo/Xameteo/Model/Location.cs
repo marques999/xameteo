@@ -67,8 +67,7 @@ namespace Xameteo.Model
             new TableItem(Resources.Location_Country, Country),
             new TableItem(Resources.Location_Timezone, TimeZone),
             new TableItem(Resources.Location_Latitude, Coordinates.StandardizeLatitude()),
-            new TableItem(Resources.Location_Longitude, Coordinates.StandardizeLongitude()),
-            new TableItem(Resources.Location_Local_Time, XameteoL10N.ShortTime(LocalTime))
+            new TableItem(Resources.Location_Longitude, Coordinates.StandardizeLongitude())
         };
     }
 }

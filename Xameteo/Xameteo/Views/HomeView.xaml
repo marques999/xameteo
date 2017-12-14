@@ -17,13 +17,14 @@
                  Icon="{globalization:ImageResource icon_refresh.png}" />
   </ContentPage.ToolbarItems>
   <ContentPage.Content>
-    <ListView HasUnevenRows="True"
+    <ListView Margin="8, 4"
+              HasUnevenRows="True"
               x:Name="LocationsList"
               ItemTapped="ItemClicked"
               ItemsSource="{Binding Items}"
               IsPullToRefreshEnabled="True"
-              CachingStrategy="RecycleElement"
               IsRefreshing="{Binding IsBusy}"
+              CachingStrategy="RecycleElement"
               RefreshCommand="{Binding RefreshCommand}">
       <ListView.ItemTemplate>
         <DataTemplate>
@@ -37,34 +38,58 @@
                         CommandParameter="{Binding .}"
                         Text="{globalization:Translate Button_Delete}" />
             </ViewCell.ContextActions>
-            <StackLayout Orientation="Vertical">
-              <StackLayout Padding="4"
+            <StackLayout Margin="0, 8"
+                         Orientation="Vertical">
+              <StackLayout Padding="8, 4"
                            Orientation="Horizontal"
                            BackgroundColor="Accent">
                 <Label TextColor="White"
                        FontAttributes="Bold"
-                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="Start"
                        Text="{Binding Forecast.Location.Formatted}" />
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="EndAndExpand">
+                  <Label TextColor="White"
+                         FontAttributes="Bold"
+                         HorizontalTextAlignment="End"
+                         VerticalOptions="CenterAndExpand"
+                         Text="{Binding Forecast.Current.Temperature, Converter={StaticResource XamlTemperatureConverter}}" />
+                  <Image WidthRequest="32"
+                         HeightRequest="32"
+                         Source="{Binding Forecast.Current.ImageResource}"/>
+                </StackLayout>
               </StackLayout>
-              <StackLayout Padding="8, 0"
+              <StackLayout Padding="8, 4"
                            Orientation="Horizontal">
                 <Label FontSize="16"
                        VerticalOptions="CenterAndExpand"
                        HorizontalOptions="StartAndExpand"
                        Text="{Binding Forecast.Current.LastUpdated, Converter={StaticResource XamlTimeConverter}}" />
-                <StackLayout Orientation="Horizontal"
-                             HorizontalOptions="CenterAndExpand">
-                  <Image Source="{Binding Forecast.Current.ImageResource}"/>
-                  <Label VerticalOptions="Center"
-                         Text="{Binding Forecast.Current.Condition, Converter={StaticResource XamlConditionConverter}}" />
-                </StackLayout>
-                <StackLayout Orientation="Horizontal"
-                             HorizontalOptions="EndAndExpand">
-                  <Label Margin="8, 0"
+                <StackLayout WidthRequest="112"
+                             Orientation="Horizontal">
+                  <Image WidthRequest="24"
+                         VerticalOptions="CenterAndExpand"
+                         Source="{globalization:ImageResource icon_precipitation.png}" />
+                  <Label Margin="4, 0"
                          FontAttributes="Bold"
                          HorizontalTextAlignment="End"
                          VerticalOptions="CenterAndExpand"
-                         Text="{Binding Forecast.Current.Temperature, Converter={StaticResource XamlTemperatureConverter}}" />
+                         Text="{Binding Forecast.Current.Pressure, Converter={StaticResource XamlPressureConverter}}" />
+                </StackLayout>
+                <BoxView Margin="4, 0"
+                         Color="Accent"
+                         WidthRequest="2" />
+                <StackLayout WidthRequest="112"
+                             Orientation="Horizontal">
+                  <Image WidthRequest="24"
+                         VerticalOptions="CenterAndExpand"
+                         Source="{globalization:ImageResource icon_wind.png}" />
+                  <Label Margin="4, 0"
+                         FontAttributes="Bold"
+                         HorizontalTextAlignment="End"
+                         VerticalOptions="CenterAndExpand"
+                         Text="{Binding Forecast.Current.WindVelocity, Converter={StaticResource XamlVelocityConverter}}" />
                 </StackLayout>
               </StackLayout>
             </StackLayout>
