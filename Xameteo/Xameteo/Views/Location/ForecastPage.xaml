@@ -37,9 +37,11 @@
                          HorizontalOptions="CenterAndExpand"
                          Text="{Binding Date, Converter={StaticResource XamlWeekdayConverter}}" />
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="Center">
                   <Image WidthRequest="48"
                          HeightRequest="48"
+                         VerticalOptions="CenterAndExpand"
                          Source="{Binding Day.ImageResource}" />
                   <Label VerticalOptions="CenterAndExpand"
                          Text="{Binding Day.Condition, Converter={StaticResource XamlConditionConverter}}" />

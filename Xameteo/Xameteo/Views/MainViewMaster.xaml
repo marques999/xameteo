@@ -28,7 +28,7 @@
                  Margin="16, 16"
                  TextColor="White"
                  VerticalTextAlignment="End"
-                 Style="{DynamicResource TitleStyle}" 
+                 Style="{DynamicResource SubtitleStyle}" 
                  Text="{globalization:Translate Title_Xameteo}" />
         </Grid>
       </ListView.Header>

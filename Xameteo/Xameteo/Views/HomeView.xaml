@@ -70,7 +70,7 @@
                              Orientation="Horizontal">
                   <Image WidthRequest="24"
                          VerticalOptions="CenterAndExpand"
-                         Source="{globalization:ImageResource icon_precipitation.png}" />
+                         Source="{globalization:ImageResource icon_cloud.png}" />
                   <Label Margin="4, 0"
                          FontAttributes="Bold"
                          HorizontalTextAlignment="End"
