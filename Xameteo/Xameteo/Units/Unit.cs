@@ -49,6 +49,6 @@ namespace Xameteo.Units
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public string Convert(double value) => $"{_formula?.Invoke(value) ?? value:#.##} {_symbol}";
+        public string Convert(double value) => $"{_formula?.Invoke(value) ?? value:0.##} {_symbol}";
     }
 }

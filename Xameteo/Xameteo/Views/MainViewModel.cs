@@ -23,8 +23,8 @@ namespace Xameteo.Views
         /// </summary>
         public MainViewModel()
         {
-            InitializeView();
             XameteoApp.Instance.Events.SubscribeUpdates(InsertLocation, RemoveLocation);
+            InitializeView();
         }
 
         /// <summary>
@@ -36,8 +36,8 @@ namespace Xameteo.Views
                 MenuItems.Add(_homePage);
                 MenuItems.Add(_settingsPage);
                 XameteoDialogs.ShowLoading();
-                await XameteoApp.Instance.RefreshPlaces();
-                XameteoApp.Instance.Places.ForEach(InsertLocation);
+                await XameteoApp.Instance.RefreshPlaces(0);
+                //XameteoApp.Instance.Places.ForEach(InsertLocation);
             }
             catch (Exception exception)
             {
@@ -47,6 +47,27 @@ namespace Xameteo.Views
             {
                 XameteoDialogs.HideLoading();
             }
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="previousIndex"></param>
+        /// <returns></returns>
+        public MainModel RefreshView(int previousIndex)
+        {
+            try
+            {
+                MenuItems.Clear();
+                MenuItems.Add(_homePage);
+                MenuItems.Add(_settingsPage);
+                XameteoApp.Instance.Places.ForEach(InsertLocation);
+            }
+            catch (Exception exception)
+            {
+                XameteoDialogs.Alert(exception);
+            }
+
+            return MenuItems[previousIndex];
         }
 
         /// <summary>
@@ -61,6 +82,15 @@ namespace Xameteo.Views
         /// <summary>
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// </summary>
+        /// <param name="place"></param>
+        /// <returns></returns>
+        public MainModel FindModel(ApixuPlace place)
+        {
+            return MenuItems.FirstOrDefault(it => it.ViewModel == place);
+        }
 
         /// <summary>
         /// </summary>

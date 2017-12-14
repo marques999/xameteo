@@ -1,13 +1,13 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Collections.Generic;
+
+using SkiaSharp.Views.Forms;
 
 using Xameteo.API;
 using Xameteo.Model;
 using Xameteo.Globalization;
 
-using SkiaSharp.Views.Forms;
-
-using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Xameteo.Views.Location
@@ -16,7 +16,7 @@ namespace Xameteo.Views.Location
     /// <summary>
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ForecastPage
+    public partial class ForecastPopup
     {
         /// <summary>
         /// </summary>
@@ -24,21 +24,28 @@ namespace Xameteo.Views.Location
 
         /// <summary>
         /// </summary>
-        public List<ForecastDaily> Items { get; }
+        public DateTime DateTime { get; }
 
         /// <summary>
         /// </summary>
-        public ForecastPage(Forecast forecast)
-        {
-            _graph = new SkiaGraph(forecast.Days.Select(hour => new GraphIndex
-            {
-                Hide = false,
-                Y = (float)hour.Day.Average,
-                ImageId = hour.Day.Condition.Image(true),
-                Label = XameteoL10N.OnlyDayMonth(hour.Date)
-            }).Take(5).ToList());
+        public List<TableGroup> Items { get; } = new List<TableGroup>();
 
-            Items = forecast.Days;
+        /// <summary>
+        /// </summary>
+        /// <param name="forecast"></param>
+        public ForecastPopup(ForecastDaily forecast)
+        {
+            _graph = new SkiaGraph(forecast.Hours.Select(hour => new GraphIndex
+            {
+                Y = (float)hour.Temperature,
+                Hide = hour.Date.Hour % 3 != 1,
+                Label = XameteoL10N.OnlyHour(hour.Date),
+                ImageId = hour.Condition.Image(hour.IsDay)
+            }).ToList());
+
+            DateTime = forecast.Date;
+            Items.Add(forecast.Day.GenerateTable());
+            Items.Add(forecast.Astro.GenerateTable());
             InitializeComponent();
             BindingContext = this;
         }
@@ -47,17 +54,9 @@ namespace Xameteo.Views.Location
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private async void ShowModal(object sender, ItemTappedEventArgs args)
+        private void CloseClicked(object sender, EventArgs args)
         {
-            if (sender is ListView listView)
-            {
-                if (listView.SelectedItem is ForecastDaily forecast)
-                {
-                    await Navigation.PushModalAsync(new ForecastPopup(forecast));
-                }
-
-                listView.SelectedItem = null;
-            }
+            Navigation.PopModalAsync(true);
         }
 
         /// <summary>

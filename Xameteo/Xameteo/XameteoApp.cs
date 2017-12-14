@@ -191,13 +191,14 @@ namespace Xameteo
             var place = new ApixuPlace(apixuPlace.Adapter, await Apixu.Forecast(apixuPlace.Adapter));
 
             Places[placeIndex] = place;
+            Events.Refresh(placeIndex + 2);
 
             return place;
         }
 
         /// <summary>
         /// </summary>
-        public async Task RefreshPlaces()
+        public async Task RefreshPlaces(int previousIndex)
         {
             Places.Clear();
 
@@ -205,6 +206,8 @@ namespace Xameteo
             {
                 Places.Add(new ApixuPlace(adapter, await Apixu.Forecast(adapter)));
             }
+
+            Events.Refresh(previousIndex);
         }
 
         /// <summary>

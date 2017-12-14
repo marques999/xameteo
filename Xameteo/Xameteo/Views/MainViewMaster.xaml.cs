@@ -3,6 +3,7 @@ using Xamarin.Forms.Xaml;
 
 namespace Xameteo.Views
 {
+    /// <inheritdoc />
     /// <summary>
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -14,19 +15,17 @@ namespace Xameteo.Views
 
         /// <summary>
         /// </summary>
-        public MainViewMaster()
-        {
-            InitializeComponent();
-            InitializeView(new MainViewModel());
-        }
+        private readonly MainViewModel _viewModel = new MainViewModel();
 
         /// <summary>
         /// </summary>
-        /// <param name="viewModel"></param>
-        private void InitializeView(MainViewModel viewModel)
+        public MainViewMaster()
         {
-            BindingContext = viewModel;
+            InitializeComponent();
+            BindingContext = _viewModel;
             ListView = MenuItemsListView;
+            XameteoApp.Instance.Events.SubscribeView((source, args) => ListView.SelectedItem = _viewModel.FindModel(args));
+            XameteoApp.Instance.Events.SubscribeRefresh((source, args) => ListView.SelectedItem = _viewModel.RefreshView(args));
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
 using Xameteo.Views.Location;
 
 namespace Xameteo.Views
@@ -17,11 +19,6 @@ namespace Xameteo.Views
         {
             InitializeComponent();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
-
-            XameteoApp.Instance.Events.SubscribeView((sender, args) =>
-            {
-                Detail = new NavigationPage(new LocationView(args));
-            });
         }
 
         /// <summary>
@@ -35,7 +32,6 @@ namespace Xameteo.Views
                 if (args.SelectedItem is MainModel item)
                 {
                     IsPresented = false;
-                    MasterPage.ListView.SelectedItem = null;
                     Detail = new NavigationPage(item.ViewModel == null ? (Page)Activator.CreateInstance(item.TargetType) : new LocationView(item.ViewModel));
                 }
             }

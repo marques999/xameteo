@@ -13,7 +13,7 @@
              Style="{DynamicResource ListItemTextStyle}" />
       <Label Text="{Binding Description}"
              HorizontalTextAlignment="End"
-             HorizontalOptions="FillAndExpand"
+             HorizontalOptions="EndAndExpand"
              VerticalOptions="CenterAndExpand"
              Style="{DynamicResource ListItemDetailTextStyle}" />
     </StackLayout>

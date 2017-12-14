@@ -18,6 +18,19 @@ namespace Xameteo.Globalization
     /// <inheritdoc />
     /// <summary>
     /// </summary>
+    public class DateConverter : AbstractConverter<DateTime>
+    {
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
+        public DateConverter() : base(XameteoL10N.LongDate)
+        {
+        }
+    }
+
+    /// <inheritdoc />
+    /// <summary>
+    /// </summary>
     public class WeekdayConverter : AbstractConverter<DateTime>
     {
         /// <inheritdoc />

@@ -9,12 +9,12 @@
                  Order="Primary"
                  Clicked="InsertClicked"
                  Text="{globalization:Translate Button_New}"
-                 Icon="{globalization:ImageResource icon_plus.png}" />
+                 Icon="icon_plus.png" />
     <ToolbarItem Priority="1"
                  Order="Primary"
                  Clicked="RefreshClicked"
                  Text="{globalization:Translate Button_Refresh}"
-                 Icon="{globalization:ImageResource icon_refresh.png}" />
+                 Icon="icon_refresh.png" />
   </ContentPage.ToolbarItems>
   <ContentPage.Content>
     <ListView Margin="8, 4"
@@ -73,7 +73,7 @@
                          Source="{globalization:ImageResource icon_cloud.png}" />
                   <Label Margin="4, 0"
                          FontAttributes="Bold"
-                         HorizontalTextAlignment="End"
+                         HorizontalOptions="CenterAndExpand"
                          VerticalOptions="CenterAndExpand"
                          Text="{Binding Forecast.Current.Pressure, Converter={StaticResource XamlPressureConverter}}" />
                 </StackLayout>
@@ -87,7 +87,7 @@
                          Source="{globalization:ImageResource icon_wind.png}" />
                   <Label Margin="4, 0"
                          FontAttributes="Bold"
-                         HorizontalTextAlignment="End"
+                         HorizontalOptions="CenterAndExpand"
                          VerticalOptions="CenterAndExpand"
                          Text="{Binding Forecast.Current.WindVelocity, Converter={StaticResource XamlVelocityConverter}}" />
                 </StackLayout>

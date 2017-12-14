@@ -88,7 +88,7 @@ namespace Xameteo.Views
         public Command RefreshCommand => _refreshComand ?? (_refreshComand = new Command(async () =>
         {
             IsBusy = true;
-            await XameteoApp.Instance.RefreshPlaces();
+            await XameteoApp.Instance.RefreshPlaces(0);
             IsBusy = false;
         }));
 
@@ -215,7 +215,7 @@ namespace Xameteo.Views
         private async void RefreshClicked(object sender, EventArgs args)
         {
             XameteoDialogs.ShowLoading();
-            await XameteoApp.Instance.RefreshPlaces();
+            await XameteoApp.Instance.RefreshPlaces(0);
             XameteoDialogs.HideLoading();
         }
     }

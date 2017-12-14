@@ -7,6 +7,7 @@
     <ResourceDictionary>
       <globalization:CompassConverter x:Key="XamlCompassConverter" />
       <globalization:ConditionConverter x:Key="XamlConditionConverter" />
+      <globalization:DateConverter x:Key="XamlDateConverter" />
       <globalization:DateTimeConverter x:Key="XamlDateTimeConverter"/>
       <globalization:PrecipitationConverter x:Key="XamlPrecipitationConverter"/>
       <globalization:PressureConverter x:Key="XamlPressureConverter"/>
