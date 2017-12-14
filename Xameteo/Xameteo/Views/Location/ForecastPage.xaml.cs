@@ -36,7 +36,7 @@ namespace Xameteo.Views.Location
                 Y = (float)hour.Day.Average,
                 ImageId = hour.Day.Condition.Image(true),
                 Label = XameteoL10N.OnlyDayMonth(hour.Date)
-            }).Take(5).ToList());
+            }).Take(7).ToList());
 
             Items = forecast.Days;
             InitializeComponent();
