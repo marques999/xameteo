@@ -43,16 +43,25 @@ namespace Xameteo.Model
 
         /// <summary>
         /// </summary>
+        /// <param name="coordinate"></param>
+        /// <param name="direction"></param>
         /// <returns></returns>
-        public string StandardizeLatitude()
+        private static string StandardizeCoordinate(double coordinate, char direction)
         {
-            var absolute = Math.Abs(Latitude);
-            var direction = Latitude < 0 ? "S" : "N";
+            var absolute = Math.Abs(coordinate);
             var degrees = Math.Truncate(absolute);
             var minutePart = (absolute - degrees) * 60;
             var minutes = Math.Truncate(minutePart);
             var seconds = (minutePart - minutes) * 60;
-            return $@"{degrees:N2}º {minutes:N2}' {seconds:N2}"" {direction}";
+            return $@"{degrees:####}º {minutes:####}' {seconds:####}"" {direction} ({coordinate:N} {direction})";
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        public string StandardizeLatitude()
+        {
+            return StandardizeCoordinate(Latitude, Latitude < 0 ? 'S' : 'N');
         }
 
         /// <summary>
@@ -60,13 +69,7 @@ namespace Xameteo.Model
         /// <returns></returns>
         public string StandardizeLongitude()
         {
-            var absolute = Math.Abs(Longitude);
-            var direction = Longitude < 0 ? "W" : "E";
-            var degrees = Math.Truncate(absolute);
-            var minutePart = (absolute - degrees) * 60;
-            var minutes = Math.Truncate(minutePart);
-            var seconds = (minutePart - minutes) * 60;
-            return $@"{degrees:N2}º {minutes:N2}' {seconds:N2}"" {direction}";
+            return StandardizeCoordinate(Longitude, Longitude < 0 ? 'W' : 'E');
         }
 
         /// <summary>

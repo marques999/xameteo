@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Xameteo.Resx;
+﻿using Xameteo.Resx;
 using Xameteo.Globalization;
 
 using Newtonsoft.Json;
