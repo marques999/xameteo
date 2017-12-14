@@ -61,7 +61,7 @@ namespace Xameteo.Views.Location
         /// <param name="apixuForecast"></param>
         private void InitializeView(ApixuForecast apixuForecast)
         {
-            Title = apixuForecast.Location.Formatted;     
+            Title = apixuForecast.Location.Formatted;
 
             var days = apixuForecast.Forecast.Days;
 

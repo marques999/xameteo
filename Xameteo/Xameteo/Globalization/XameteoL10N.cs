@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Xamarin.Forms;
+
+using System;
 using System.Resources;
 using System.Reflection;
 using System.Globalization;
 
-using Xamarin.Forms;
 using Xameteo.Model;
 
 using Condition = Xameteo.Model.Condition;

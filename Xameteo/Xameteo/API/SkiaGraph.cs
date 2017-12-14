@@ -1,73 +1,121 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Collections.Generic;
+
 using SkiaSharp;
 
 namespace Xameteo.API
 {
+    /// <summary>
+    /// </summary>
     public class GraphIndex
     {
+        /// <summary>
+        /// </summary>
         public float Y;
-        public string Label = "";
-        public string ImageId = null;
+
+        /// <summary>
+        /// </summary>
         public bool Hide = false;
+
+        /// <summary>
+        /// </summary>
+        public string ImageId = null;
+
+        /// <summary>
+        /// </summary>
+        public string Label = string.Empty;
     }
 
-    class SkiaGraph
+    /// <summary>
+    /// </summary>
+    public class SkiaGraph
     {
+        /// <summary>
+        /// </summary>
         private readonly List<GraphIndex> _graph;
 
+        /// <summary>
+        /// </summary>
+        private float _minY;
+
+        /// <summary>
+        /// </summary>
+        private float _maxY;
+
+        /// <summary>
+        /// </summary>
+        private float _scale;
+
+        /// <summary>
+        /// </summary>
+        private float _sizeX;
+
+        /// <summary>
+        /// </summary>
+        private float _sizeY;
+
+        /// <summary>
+        /// </summary>
+        private float _paddingH;
+
+        /// <summary>
+        /// </summary>
+        private float _paddingW;
+
+        /// <summary>
+        /// </summary>
         private float _availableH;
+
+        /// <summary>
+        /// </summary>
         private float _availableW;
 
-        private float paddingW;
-        private float paddingH;
-
-        private float minY;
-        private float maxY;
-
-        private float sizeY;
-        private float sizeX;
-
-        private float scale;
-
-
+        /// <summary>
+        /// </summary>
+        /// <param name="graph"></param>
         public SkiaGraph(List<GraphIndex> graph)
         {
             _graph = graph;
         }
 
+        /// <summary>
+        /// </summary>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
         private void UpdateReferences(int width, int height)
         {
             const float paddingFactorY = 0.8f;
             const float paddingFactorX = 0.9f;
 
-            sizeX = _graph.Count;
-
-            maxY = _graph.Max(i => i.Y);
-            minY = _graph.Min(i => i.Y);
-
-            sizeY = maxY - minY;
-
+            _sizeX = _graph.Count;
+            _maxY = _graph.Max(i => i.Y);
+            _minY = _graph.Min(i => i.Y);
+            _sizeY = _maxY - _minY;
             _availableH = height * paddingFactorY;
             _availableW = width * paddingFactorX;
-
-            paddingW = (width - _availableW) / 2;
-            paddingH = (height - _availableH) / 2;
+            _paddingW = (width - _availableW) / 2;
+            _paddingH = (height - _availableH) / 2;
         }
 
+        /// <summary>
+        /// </summary>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
         private void SetScale(int width, int height)
         {
-            const float scaleFactor = .3f;
-            const float imageWidth = 125f;
-
-            scale = Math.Min(height, width) / imageWidth * scaleFactor;
-
-            
+            _scale = Math.Min(height, width) / 125.0f * 0.3f;
         }
 
-        private void DrawYVal(SKCanvas canvas, GraphIndex p, float x, float y, float scale)
+        /// <summary>
+        /// </summary>
+        /// <param name="canvas"></param>
+        /// <param name="p"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="scale"></param>
+        private static void DrawYVal(SKCanvas canvas, GraphIndex p, float x, float y, float scale)
         {
             using (var paint = new SKPaint())
             {
@@ -101,7 +149,13 @@ namespace Xameteo.API
             }
         }
 
-
+        /// <summary>
+        /// </summary>
+        /// <param name="canvas"></param>
+        /// <param name="p"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="scale"></param>
         private void DrawLabel(SKCanvas canvas, GraphIndex p, float x, float y, float scale)
         {
             using (var paint = new SKPaint())
@@ -118,17 +172,23 @@ namespace Xameteo.API
                 paint.IsAntialias = true;
                 paint.TextSize = 15 * scale;
                 paint.Style = SKPaintStyle.StrokeAndFill;
-
                 paint.MeasureText(p.Label, ref textBounds);
-                canvas.DrawText(p.Label, x - textBounds.MidX, _availableH - textBounds.Top + paddingH, paint);
+                canvas.DrawText(p.Label, x - textBounds.MidX, _availableH - textBounds.Top + _paddingH, paint);
             }
         }
 
+        /// <summary>
+        /// </summary>
+        /// <param name="canvas"></param>
+        /// <param name="p"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="scale"></param>
         private void DrawWeatherImag(SKCanvas canvas, GraphIndex p, float x, float y, float scale)
         {
             using (var paint = new SKPaint())
             {
-                if (p.Hide || p.ImageId == null) //??????
+                if (p.Hide || p.ImageId == null)
                 {
                     return;
                 }
@@ -149,7 +209,11 @@ namespace Xameteo.API
             }
         }
 
-        private SKColor CalcColor(float y)
+        /// <summary>
+        /// </summary>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        private static SKColor CalcColor(float y)
         {
             var colorVal = (int)Math.Round(1530 / (40 + 25) * y + 510);
 
@@ -180,21 +244,35 @@ namespace Xameteo.API
             }
         }
 
+        /// <summary>
+        /// </summary>
+        /// <param name="canvas"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="i"></param>
+        /// <param name="p0"></param>
+        /// <param name="p1"></param>
         private void DrawLine(SKCanvas canvas, int width, int height, int i, GraphIndex p0, GraphIndex p1)
         {
             using (var paint = new SKPaint())
             {
                 paint.Color = SKColors.DarkBlue;
                 paint.Style = SKPaintStyle.Stroke;
-                paint.StrokeWidth = 4 * scale;
+                paint.StrokeWidth = 4 * _scale;
                 paint.IsAntialias = true;
                 paint.StrokeCap = SKStrokeCap.Round;
 
-                var x0 = paddingW + _availableW * (i - 1) / (sizeX - 1);
-                var y0 = height - (paddingH * 2f + 0.8f * _availableH * (p0.Y - minY) / sizeY);
-                var x1 = paddingW + _availableW * i / (sizeX - 1);
-                var y1 = height - (paddingH * 2f + 0.8f * _availableH * (p1.Y - minY) / sizeY);
-                var colors = new[] { CalcColor(p0.Y), CalcColor(p1.Y) };
+                var x0 = _paddingW + _availableW * (i - 1) / (_sizeX - 1);
+                var y0 = height - (_paddingH * 2f + 0.8f * _availableH * (p0.Y - _minY) / _sizeY);
+                var x1 = _paddingW + _availableW * i / (_sizeX - 1);
+                var y1 = height - (_paddingH * 2f + 0.8f * _availableH * (p1.Y - _minY) / _sizeY);
+
+                var colors = new[]
+                {
+                    CalcColor(p0.Y),
+                    CalcColor(p1.Y)
+                };
+
                 var shader = SKShader.CreateLinearGradient(new SKPoint(x0, y0), new SKPoint(x1, y1), colors, null, SKShaderTileMode.Clamp);
 
                 paint.Shader = shader;
@@ -202,13 +280,16 @@ namespace Xameteo.API
             }
         }
 
+        /// <summary>
+        /// </summary>
+        /// <param name="canvas"></param>
         private void DrawSeparators(SKCanvas canvas)
         {
             using (var paint = new SKPaint())
             {
                 paint.Color = new SKColor(166, 186, 219);
                 paint.Style = SKPaintStyle.Stroke;
-                paint.StrokeWidth = 1 * scale;
+                paint.StrokeWidth = 1 * _scale;
                 paint.IsAntialias = true;
 
                 var lastI = 0;
@@ -226,9 +307,9 @@ namespace Xameteo.API
                         continue;
                     }
 
-                    var x0 = paddingW + _availableW * (lastI + (i - lastI) / 2f) / (sizeX - 1);
-                    var y0 = 0.5f * paddingH;
-                    var y1 = _availableH + 1.5f * paddingH;
+                    var x0 = _paddingW + _availableW * (lastI + (i - lastI) / 2f) / (_sizeX - 1);
+                    var y0 = 0.5f * _paddingH;
+                    var y1 = _availableH + 1.5f * _paddingH;
 
                     canvas.DrawLine(x0, y0, x0, y1, paint);
                     lastI = i;
@@ -236,10 +317,14 @@ namespace Xameteo.API
             }
         }
 
+        /// <summary>
+        /// </summary>
+        /// <param name="canvas"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
         public void DrawGraph(SKCanvas canvas, int width, int height)
         {
             UpdateReferences(width, height);
-
             SetScale(width, height);
 
             using (var paint = new SKPaint())
@@ -276,12 +361,12 @@ namespace Xameteo.API
 
             for (var i = 0; i < _graph.Count; i++)
             {
-                var x = paddingW + _availableW * i / (sizeX - 1);
-                var y = height - (paddingH * 2f + 0.8f * _availableH * (_graph[i].Y - minY) / sizeY);
+                var x = _paddingW + _availableW * i / (_sizeX - 1);
+                var y = height - (_paddingH * 2f + 0.8f * _availableH * (_graph[i].Y - _minY) / _sizeY);
 
-                DrawWeatherImag(canvas, _graph[i], x, y, scale);
-                DrawYVal(canvas, _graph[i], x, y, scale);
-                DrawLabel(canvas, _graph[i], x, y, scale);
+                DrawWeatherImag(canvas, _graph[i], x, y, _scale);
+                DrawYVal(canvas, _graph[i], x, y, _scale);
+                DrawLabel(canvas, _graph[i], x, y, _scale);
             }
         }
     }

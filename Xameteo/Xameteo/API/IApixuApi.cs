@@ -1,7 +1,5 @@
-﻿using System;
+﻿using Refit;
 using System.Threading.Tasks;
-
-using Refit;
 
 namespace Xameteo.API
 {

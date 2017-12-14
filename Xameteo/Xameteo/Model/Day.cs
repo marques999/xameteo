@@ -1,9 +1,9 @@
-﻿using Xamarin.Forms;
+﻿using Newtonsoft.Json;
 
 using Xameteo.Resx;
 using Xameteo.Globalization;
 
-using Newtonsoft.Json;
+using Xamarin.Forms;
 
 namespace Xameteo.Model
 {

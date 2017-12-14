@@ -137,7 +137,7 @@ namespace Xameteo.Views
                             geocodingResults.Select(it => new ActionSheetOption(it.Address, () => SaveLocation(new CoordinatesAdapter(it.GeocodingGeometry.Location)))).ToList(),
                             Resx.Resources.Geolocation_Multiple
                         );
-                    }  
+                    }
                 }
                 catch (Exception exception)
                 {
