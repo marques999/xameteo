@@ -141,8 +141,8 @@ namespace Xameteo.Views
                 }
                 catch (Exception exception)
                 {
-                    XameteoDialogs.Alert(exception);
                     XameteoDialogs.HideLoading();
+                    XameteoDialogs.Alert(exception);
                 }
             }
             else
@@ -185,8 +185,8 @@ namespace Xameteo.Views
             }
             catch (Exception exception)
             {
-                XameteoDialogs.Alert(exception);
                 XameteoDialogs.HideLoading();
+                XameteoDialogs.Alert(exception);
             }
         }
 
@@ -202,8 +202,8 @@ namespace Xameteo.Views
             }
             catch (Exception exception)
             {
-                XameteoDialogs.Alert(exception);
                 XameteoDialogs.HideLoading();
+                XameteoDialogs.Alert(exception);
             }
         }
 

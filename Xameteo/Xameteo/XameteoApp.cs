@@ -43,8 +43,8 @@ namespace Xameteo
             }
             catch (Exception exception)
             {
-                XameteoDialogs.Alert(exception);
                 XameteoDialogs.HideLoading();
+                XameteoDialogs.Alert(exception);
             }
         }
 
