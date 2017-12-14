@@ -9,17 +9,19 @@
       <StackLayout Padding="8, 8"
                    Orientation="Horizontal"
                    BackgroundColor="Accent">
-        <Label FontAttributes="Bold"
+        <Label TextColor="White"
+               FontAttributes="Bold"
+               Text="{Binding Selected}"
                VerticalOptions="CenterAndExpand"
-               HorizontalOptions="StartAndExpand"
-               Text="{Binding Selected}" TextColor="White" />
-        <Button Text="Select"
-                TextColor="White"
+               HorizontalOptions="StartAndExpand" />
+        <Button TextColor="White"
                 Clicked="SelectClicked"
                 HorizontalOptions="EndAndExpand"
-                VerticalOptions="CenterAndExpand" />
+                VerticalOptions="CenterAndExpand"
+                Text="{globalization:Translate Button_Select}"/>
       </StackLayout>
-      <ContentView x:Name="HistoryView" VerticalOptions="FillAndExpand"/>
+      <ContentView x:Name="HistoryView"
+                   VerticalOptions="FillAndExpand"/>
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>

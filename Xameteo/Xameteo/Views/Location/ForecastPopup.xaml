@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              xmlns:views="clr-namespace:Xameteo.Views;assembly=Xameteo"
+             xmlns:globalization="clr-namespace:Xameteo.Globalization;assembly=Xameteo"
              x:Class="Xameteo.Views.Location.ForecastPopup">
   <ContentPage.Content>
     <StackLayout Orientation="Vertical">
@@ -14,11 +15,11 @@
                VerticalOptions="CenterAndExpand"
                HorizontalOptions="StartAndExpand"
                Text="{Binding DateTime, Converter={StaticResource XamlDateConverter}}" />
-        <Button Text="Close"
-                TextColor="White"
+        <Button TextColor="White"
                 Clicked="CloseClicked"
                 HorizontalOptions="EndAndExpand"
-                VerticalOptions="CenterAndExpand" />
+                VerticalOptions="CenterAndExpand"
+                Text="{globalization:Translate Button_Close}" />
       </StackLayout>
       <ListView HasUnevenRows="True"
                 IsGroupingEnabled="True"

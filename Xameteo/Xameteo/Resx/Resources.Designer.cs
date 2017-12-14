@@ -206,6 +206,15 @@ namespace Xameteo.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        internal static string Button_Close {
+            get {
+                return ResourceManager.GetString("Button_Close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Click here!.
         /// </summary>
         internal static string Button_Default {
@@ -247,6 +256,15 @@ namespace Xameteo.Resx {
         internal static string Button_Refresh {
             get {
                 return ResourceManager.GetString("Button_Refresh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select.
+        /// </summary>
+        internal static string Button_Select {
+            get {
+                return ResourceManager.GetString("Button_Select", resourceCulture);
             }
         }
         

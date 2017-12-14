@@ -735,4 +735,10 @@
   <data name="Title_Astro" xml:space="preserve">
     <value>Astrologia</value>
   </data>
+  <data name="Button_Close" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="Button_Select" xml:space="preserve">
+    <value>Escolher</value>
+  </data>
 </root>
