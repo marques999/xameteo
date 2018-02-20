@@ -3,19 +3,6 @@
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    public class PrecipitationConverter : UnitConverter
-    {
-        /// <inheritdoc />
-        /// <summary>
-        /// </summary>
-        /// <param name="unit"></param>
-        /// <returns></returns>
-        protected override string Delegate(double unit) => XameteoApp.Instance.Precipitation.Convert(unit);
-    }
-
-    /// <inheritdoc />
-    /// <summary>
-    /// </summary>
     public class PressureConverter : UnitConverter
     {
         /// <inheritdoc />

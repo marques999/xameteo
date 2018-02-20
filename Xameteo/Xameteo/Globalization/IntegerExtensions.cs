@@ -5,19 +5,6 @@ namespace Xameteo.Globalization
     /// <inheritdoc />
     /// <summary>
     /// </summary>
-    public class CompassConverter : AbstractConverter<int>
-    {
-        /// <inheritdoc />
-        /// <summary>
-        /// </summary>
-        public CompassConverter() : base(XameteoL10N.ShortCompass)
-        {
-        }
-    }
-
-    /// <inheritdoc />
-    /// <summary>
-    /// </summary>
     public class ConditionConverter : AbstractConverter<Condition>
     {
         /// <inheritdoc />
